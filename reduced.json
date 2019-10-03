@@ -14940,7 +14940,7 @@
     "P1024R0": "Usability Enhancements for std::span",
     "P1024R1": "Usability Enhancements for std::span",
     "P1024R2": "Usability Enhancements for std::span",
-    "P1024R3": "Usability Enhancements for std::span",
+    "P1024R3": "Usability Enhancements for `std::span`",
     "P1025R0": "Update The Reference To The Unicode Standard",
     "P1025R1": "Update The Reference To The Unicode Standard",
     "P1026R0": "A call for a Data Persistence (iostream v2) study group",

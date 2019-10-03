@@ -1,0 +1,5 @@
+#!/usr/bin/env python
+import bs4
+
+html = bs4.BeautifulSoup(open('sd6.html').read(), 'html.parser')
+print(html.body)
