@@ -28,7 +28,7 @@ attributes:
   - value: 201603
     papers: P0189R1
   - value: 201907
-    papers: "P1301R4 P1771R1"
+    papers: P1301R4 P1771R1
 - name: noreturn
   rows:
   - value: 200809
@@ -295,8 +295,8 @@ library:
   - value: 201603
     papers: LWG2296
 - name: __cpp_lib_allocator_traits_is_always_equal
-  header_list: memory scoped_allocator string deque forward_list list vector map
-    set unordered_map unordered_set
+  header_list: memory scoped_allocator string deque forward_list list vector map set
+    unordered_map unordered_set
   rows:
   - value: 201411
     papers: N4258
@@ -428,12 +428,18 @@ library:
   - value: 201806
     papers: P0898R3
 - name: __cpp_lib_constexpr
-  header_info: any C++ library header from [Table 19](
-    http://eel.is/c++draft/headers#tab:headers.cpp)
+  header_info: any C++ library header from [Table 19]( http://eel.is/c++draft/headers#tab:headers.cpp)
     or any C++ header for C library facilities from [Table 20]( http://eel.is/c++draft/headers#tab:headers.cpp.c)
   rows:
   - value: 201811
     papers: P1032R1
+- name: __cpp_lib_constexpr_algorithms
+  header_list: algorithm
+  rows:
+  - value: 201703
+    papers: P0202R3
+  - value: 201806
+    papers: P0879R0
 - name: __cpp_lib_constexpr_dynamic_alloc
   header_list: memory
   rows:
@@ -449,13 +455,6 @@ library:
   rows:
   - value: 201907
     papers: P0980R1
-- name: __cpp_lib_constexpr_algorithms
-  header_list: algorithm
-  rows:
-  - value: 201703
-    papers: P0202R3
-  - value: 201806
-    papers: P0879R0
 - name: __cpp_lib_constexpr_vector
   header_list: vector
   rows:
@@ -475,7 +474,7 @@ library:
   header_list: bit
   rows:
   - value: 201907
-    papers: "P0463R1 P1612R1"
+    papers: P0463R1 P1612R1
 - name: __cpp_lib_erase_if
   header_list: string deque forward_list list vector map set unordered_map unordered_set
   rows:
@@ -506,7 +505,7 @@ library:
   header_list: format
   rows:
   - value: 201907
-    papers: "P0645R10 P1361R2 P1652R1"
+    papers: P0645R10 P1361R2 P1652R1
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -801,7 +800,7 @@ library:
   header_list: charconv
   rows:
   - value: 201611
-    papers: "P0067R5 P0682R1 LWG3137"
+    papers: P0067R5 P0682R1 LWG3137
 - name: __cpp_lib_transformation_trait_aliases
   header_list: type_traits
   rows:
@@ -849,4 +848,3 @@ library:
   rows:
   - value: 201411
     papers: N3911
-
