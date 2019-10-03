@@ -303,6 +303,14 @@ references:
     issued:
       year: 2019
     URL: https://wg21.link/p1004r2
+  - id: P1024R3
+    citation-label: P1024R3
+    title: "Usability Enhancements for `std::span`"
+    author:
+      - family: Tristan Brindle
+    issued:
+      year: 2019
+    URL: https://wg21.link/p1024r3
   - id: P1065R2
     citation-label: P1065R2
     title: "constexpr _`INVOKE`_"

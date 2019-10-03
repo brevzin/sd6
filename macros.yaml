@@ -772,6 +772,13 @@ library:
   rows:
   - value: 201907
     papers: P1614R2
+- name: __cpp_lib_span
+  header_list: span
+  rows:
+  - value: '201803'
+    papers: P0122R7
+  - value: '201902'
+    papers: P1024R3
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
