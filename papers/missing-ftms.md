@@ -297,6 +297,108 @@ necessary.
 
 ## San Diego (201811)
 
+[@P0982R1] (Weaken Release Sequences): no macro necessary.
+
+[@P1084R2] (Today's _return-type-requirement_s Are Insufficient): [this paper
+proposes to bump `__cpp_concepts`]{.addu}, which was also added by this paper.
+
+[@P1131R2] (Core Issue 2292: _simple-template-id_ is ambiguous between
+_class-name_ and _type-name_): no macro necessary.
+
+[@P1289R1] (Access control in contract conditions): no macro necessary
+
+[@P1002R1] (Try-catch blocks in constexpr functions): [this paper proposes to
+bump `__cpp_constexpr`]{.addu}, as per previous arguments to allow more
+functions to be declared `constexpr`. This one more important than the rest as
+actually writing `try` in a function already makes `constexpr` ill-formed.
+
+[@P1327R1] (Allowing `dynamic_cast`, polymorphic typeid in Constant Expressions):
+[this paper proposes to bump `__cpp_constexpr`]{.addu}.
+
+[@P1236R1] (Alternative Wording for P0907R4 Signed Integers are Two's Complement):
+no macro necessary.
+
+[@P0482R6] (`char8_t`: A type for UTF-8 characters and strings (Revision 6)):
+already has a macro.
+
+[@P1353R0] (Missing Feature Test Macros): already adopted.
+
+[@P1073R3] (Immediate functions): [this paper proposes the macro
+`__cpp_consteval`]{.addu}. There are some functions that you really only want to
+run at compile time. You cannot enforce this in C++17, but having this macro
+would allow you to conditionally enforce it as it becomes available.
+
+[@P0595R2] (`std::is_constant_evaluated()`): already has a macro.
+
+[@P1141R2] (Yet another approach for constrained declarations): no macro necessary.
+
+[@P1094R2] (Nested Inline Namespaces): no macro necessary.
+
+[@P1330R0] (Changing the active member of a union inside constexpr): [this paper
+proposes to bump `__cpp_constexpr`]{.addu}, as per previous arguments. This would
+allow making `std::optional` fully `constexpr`, for instance.
+
+[@P1123R0] (Editorial Guidance for merging P0019r8 and P0528r3): no macro
+necessary.
+
+[@P0487R1] (Fixing `operator>>(basic_istream&, CharT*)` (LWG 2499)): no macro
+necessary.
+
+[@P0602R4] (variant and optional should propagate copy/move triviality): no
+macro necessary.
+
+[@P0655R1] (`visit<R>`: Explicit Return Type for visit): no macro necessary.
+
+[@P0972R0] (`<chrono>` `zero()`, `min()`, and `max()` should be `noexcept`): no
+macro necessary.
+
+[@P1006R1] (Constexpr in `std::pointer_traits`): [this paper proposes the macro
+`__cpp_lib_constexpr_pointer_traits`]{.addu}.
+
+[@P1148R0] (Cleaning up Clause 20): no macro necessary.
+
+[@P0318R1] (`unwrap_ref_decay` and `unwrap_reference`): [this paper proposes the
+macro `__cpp_lib_unwrap_ref`]{.addu}.
+
+[@P0357R3] (`reference_wrapper` for incomplete types): no macro necessary.
+
+[@P0608R3] (A sane variant converting constructor): no macro necessary.
+
+[@P0771R1] (`std::function` move constructor should be `noexcept`): no macro
+necessary.
+
+[@P1007R3] (`std::assume_aligned`): [this paper proposes the macro 
+`__cpp_lib_assume_aligned`]{.addu}.
+
+[@P1020R1] (Smart pointer creation with default initialization): [this paper
+proposes the macro `__cpp_lib_smart_ptr_default_init`]{.addu}.
+
+[@P1285R0] (Improving Completeness Requirements for Type Traits): no macro
+necessary.
+
+[@P1248R1] (Remove CommonReference requirement from StrictWeakOrdering (a.k.a Fixing 
+Relations): no macro necessary.
+
+[@P0591R4] (Utility functions to implement uses-allocator construction): no
+macro necessary.
+
+[@P0899R1] (LWG 3016 is Not a Defect): no macro necessary.
+
+[@P1085R2] (Should Span be Regular?): no macro necessary.
+
+[@P1165R1] (Make stateful allocator propagation more consistent for
+`operator+(basic_string)`): no macro necessary.
+
+[@P0896R4] (The One Ranges Proposal): already has a macro.
+
+[@P0356R5] (Simplified partial function application): already has a macro.
+
+[@P0919R3] (Heterogeneous lookup for unordered containers): already has a macro.
+
+[@P1209R0] (Adopt Consistent Container Erasure from Library Fundamentals 2 for C++20):
+already has a macro.
+
+
 # 2019
 
 ## Kona (201902)
@@ -314,9 +416,10 @@ Modify table 17 in 15.10 [cpp.predefined] with the following added:
 <th>Value</th>
 </tr>
 <tr><td>[`__cpp_familiar_template_lambda`]{.addu}</td><td>[`201707L`]{.addu}</td></tr>
-<tr><td>[`__cpp_concepts`]{.addu}</td><td>[`201707L`]{.addu}</td></tr>
+<tr><td>[`__cpp_concepts`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
 <tr><td>[`__cpp_impl_constexpr_members_defined`]{.addu}</td><td>[`201711L`]{.addu}</td></tr>
 <tr><td>[`__cpp_lambda_init_capture_pack`]{.addu}</td><td>[`201803L`]{.addu}</td></tr>
+<tr><td>[`__cpp_consteval`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
 </table>
 :::
 
@@ -344,5 +447,9 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <tr><td>[`__cpp_lib_nothrow_convertible `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_int_pow2 `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<bit>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_atomic_ref `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_constexpr_pointer_traits `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_unwrap_ref `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_assume_aligned `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_smart_ptr_default_init `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 </table>
 :::
