@@ -9575,7 +9575,7 @@
     "LWG3271": "Parsing functions should save and restore stream format state",
     "LWG3272": "%I%p should parse/format duration since midnight",
     "LWG3273": "Specify weekday_indexed to range of [0, 7]",
-    "LWG3274": "Missing feature test macro for <span>",
+    "LWG3274": "Missing feature test macro for `<span>`",
     "LWG3275": "Why does time_get::do_get require a valid pointer when none of the others do?",
     "LWG3276": "Class split_view::outer_iterator::value_type should inherit from view_interface",
     "LWG3277": "Pre-increment on prvalues is not a requirement of weakly_incrementable",

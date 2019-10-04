@@ -776,7 +776,7 @@ library:
   header_list: span
   rows:
   - value: '201803'
-    papers: P0122R7
+    papers: P0122R7 LWG3274
   - value: '201902'
     papers: P1024R3
 - name: __cpp_lib_string_udls
