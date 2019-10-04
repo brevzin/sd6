@@ -217,6 +217,16 @@ this paper.
 
 [@P0858R0] (Constexpr iterator requirements): already has a macro.
 
+## Rapperswil (201806)
+
+## San Diego (201811)
+
+# 2019
+
+## Kona (201902)
+
+## Cologne (201907)
+
 # Wording
 
 Modify table 17 in 15.10 [cpp.predefined] with the following added:
