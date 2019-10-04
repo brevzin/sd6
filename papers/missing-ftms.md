@@ -86,8 +86,9 @@ from [@P1612R1].
 [@P0682R1] (Repairing elementary string conversions): Already have a macro
 from [@LWG3137].
 
-[@P0674R1] (Extending make_shared to Support Arrays): no macro necessary.
-What would you write if you didn't have the feature?
+[@P0674R1] (Extending make_shared to Support Arrays): [this paper proposes to
+bump `__cpp_lib_shared_ptr_arrays`]{.addu}, since `make_shared` can save an
+allocation.
 
 ## Albuquerque (201711)
 
@@ -219,6 +220,81 @@ this paper.
 
 ## Rapperswil (201806)
 
+[@P0806R2] (Deprecate implicit capture of `this` via `[=]`): no macro necessary.
+
+[@P1042R1] (`__VA_OPT__` wording clarifications): no macro necessary.
+
+[@P0929R2] (Checking for abstract class types): no macro necessary.
+
+[@P0732R2] (Class Types in Non-Type Template Parameters): already has a macro.
+
+[@P1025R1] (Update The Reference To The Unicode Standard): no macro necessary.
+
+[@P0528R3] (The Curious Case of Padding Bits, Featuring Atomic Compare-and-Exchange):
+no macro necessary.
+
+[@P0722R3] (Efficient sized delete for variable sized classes): already has a macro.
+
+[@P1064R0] (Allowing Virtual Function Calls in Constant Expressions): [this paper
+proposes to bump `__cpp_constexpr`]{.addu}. There are functions that include
+`virtual` calls that would be able to be made `constexpr`. This macro already
+has a higher value in the standard, so no wording changes necessary - just to
+track in SD-6.
+
+[@P1008R1] (Prohibit aggregates with user-declared constructors): no macro necessary.
+
+[@P1120R0] (Consistency improvements for <=> and other comparison operators):
+no macro necessary.
+
+[@P0542R5] (Support for contract based programming in C++): would have been
+checked by the attribute.
+
+[@P0941R2] (Integrating feature-test macros into the C++ WD (rev. 2)): very meta.
+
+[@P0892R2] (`explicit(bool)`): already has a macro.
+
+[@P0476R2] (Bit-casting object representations): already has a macro.
+
+[@P0788R3] (Standard Library Specification in a Concepts and Contracts World): no
+macro necessary.
+
+[@P0458R2] (Checking for Existence of an Element in Associative Containers): no
+macro necessary. The new algorithms are nicer to use, but if you need to support
+the old code, then the old code works just as well.
+
+[@P0759R1] (fpos Requirements): no macro necessary.
+
+[@P1023R0] (constexpr comparison operators for `std::array`): [this paper proposes
+the macro `__cpp_lib_constexpr_array_comparisons`]{.addu} for the same reason as
+earlier: it allows more functions to be marked `constexpr`.
+
+[@P0769R2] (Add shift to `<algorithm>`): [this paper proposes the macro
+`__cpp_lib_shift`]{.addu}.
+
+[@P0887R1] (The identity metafunction): [this paper proposes the macro
+`__cpp_lib_type_identity`]{.addu}.
+
+[@P0879R0] (Constexpr for swap and swap related functions): already has a macro.
+
+[@P0758R1] (Implicit conversion traits and utility functions). [this paper proposes
+the macro `__cpp_lib_nothrow_convertible`]{.addu}.
+
+[@P0556R3] (Integral power-of-2 operations): [this paper proposes the macro
+`__cpp_lib_int_pow2`]{.addu}.
+
+[@P0019R8] (Atomic Ref): [this paper proposes the macro `__cpp_lib_atomic_ref`]{.addu}.
+
+[@P0935R0] (Eradicating unnecessarily explicit default constructors from the
+standard library): no macro necessary.
+
+[@P0646R1] (Improving the Return Value of Erase-Like Algorithms): already has
+a macro.
+
+[@P0619R4] (Reviewing Deprecated Facilities of C++17 for C++20): no macro
+necessary.
+
+[@P0898R3] (Standard Library Concepts): already has a macro.
+
 ## San Diego (201811)
 
 # 2019
@@ -253,6 +329,7 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <th>Value</th>
 <th>Header(s)</th>
 </tr>
+<tr><td>[`__cpp_lib_shared_ptr_arrays`]{.addu}</td><td>[`201611L`]{.rm} [`201707L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_remove_cvref`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_syncbuf`]{.addu}</td><td>[`201803L`]{.addu}</td><td>[`<syncstream>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_to_address`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
@@ -261,5 +338,11 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <tr><td>[`__cpp_lib_atomic_float`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_starts_ends_with`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<string> <string_view>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_chrono_date`]{.addu}</td><td>[`201803L`]{.addu}</td><td>[`<chrono>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_constexpr_array_comparisons `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<array>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_shift `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<algorithm>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_type_identity `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_nothrow_convertible `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_int_pow2 `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<bit>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_atomic_ref `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
 </table>
 :::

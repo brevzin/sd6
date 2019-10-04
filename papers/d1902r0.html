@@ -612,7 +612,7 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <p><span class="citation" data-cites="P0734R0">[<a href="#ref-P0734R0" role="doc-biblioref">P0734R0</a>]</span> (Wording Paper, C++ extensions for Concepts): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_concepts</code></span>, which will be bumped later, but for SD-6 purposes will start here with the value 201707.</p>
 <p><span class="citation" data-cites="P0463R1">[<a href="#ref-P0463R1" role="doc-biblioref">P0463R1</a>]</span> (Endian just Endian) to the C++ working paper: Already have a macro from <span class="citation" data-cites="P1612R1">[<a href="#ref-P1612R1" role="doc-biblioref">P1612R1</a>]</span>.</p>
 <p><span class="citation" data-cites="P0682R1">[<a href="#ref-P0682R1" role="doc-biblioref">P0682R1</a>]</span> (Repairing elementary string conversions): Already have a macro from <span class="citation" data-cites="LWG3137">[<a href="#ref-LWG3137" role="doc-biblioref">LWG3137</a>]</span>.</p>
-<p><span class="citation" data-cites="P0674R1">[<a href="#ref-P0674R1" role="doc-biblioref">P0674R1</a>]</span> (Extending make_shared to Support Arrays): no macro necessary. What would you write if you didn’t have the feature?</p>
+<p><span class="citation" data-cites="P0674R1">[<a href="#ref-P0674R1" role="doc-biblioref">P0674R1</a>]</span> (Extending make_shared to Support Arrays): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_lib_shared_ptr_arrays</code></span>, since <code class="sourceCode cpp">make_shared</code> can save an allocation.</p>
 <h2 id="albuquerque-201711"><span class="header-section-number">2.2</span> Albuquerque (201711)<a href="#albuquerque-201711" class="self-link"></a></h2>
 <p><span class="citation" data-cites="P0614R1">[<a href="#ref-P0614R1" role="doc-biblioref">P0614R1</a>]</span> (Range-based for statements with initializer): no macro necessary.</p>
 <p><span class="citation" data-cites="P0588R1">[<a href="#ref-P0588R1" role="doc-biblioref">P0588R1</a>]</span> (Simplifying implicit lambda capture): no macro necessary.</p>
@@ -670,6 +670,34 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <p><span class="citation" data-cites="P0122R7">[<a href="#ref-P0122R7" role="doc-biblioref">P0122R7</a>]</span> (<code class="sourceCode cpp"><span class="op">&lt;</span>span<span class="op">&gt;</span></code>): already has a macro by way of <span class="citation" data-cites="LWG3274">[<a href="#ref-LWG3274" role="doc-biblioref">LWG3274</a>]</span>.</p>
 <p><span class="citation" data-cites="P0858R0">[<a href="#ref-P0858R0" role="doc-biblioref">P0858R0</a>]</span> (Constexpr iterator requirements): already has a macro.</p>
 <h2 id="rapperswil-201806"><span class="header-section-number">3.2</span> Rapperswil (201806)<a href="#rapperswil-201806" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P0806R2">[<a href="#ref-P0806R2" role="doc-biblioref">P0806R2</a>]</span> (Deprecate implicit capture of <code class="sourceCode cpp"><span class="kw">this</span></code> via <code class="sourceCode cpp"><span class="op">[=]</span></code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P1042R1">[<a href="#ref-P1042R1" role="doc-biblioref">P1042R1</a>]</span> (<code class="sourceCode cpp">__VA_OPT__</code> wording clarifications): no macro necessary.</p>
+<p><span class="citation" data-cites="P0929R2">[<a href="#ref-P0929R2" role="doc-biblioref">P0929R2</a>]</span> (Checking for abstract class types): no macro necessary.</p>
+<p><span class="citation" data-cites="P0732R2">[<a href="#ref-P0732R2" role="doc-biblioref">P0732R2</a>]</span> (Class Types in Non-Type Template Parameters): already has a macro.</p>
+<p><span class="citation" data-cites="P1025R1">[<a href="#ref-P1025R1" role="doc-biblioref">P1025R1</a>]</span> (Update The Reference To The Unicode Standard): no macro necessary.</p>
+<p><span class="citation" data-cites="P0528R3">[<a href="#ref-P0528R3" role="doc-biblioref">P0528R3</a>]</span> (The Curious Case of Padding Bits, Featuring Atomic Compare-and-Exchange): no macro necessary.</p>
+<p><span class="citation" data-cites="P0722R3">[<a href="#ref-P0722R3" role="doc-biblioref">P0722R3</a>]</span> (Efficient sized delete for variable sized classes): already has a macro.</p>
+<p><span class="citation" data-cites="P1064R0">[<a href="#ref-P1064R0" role="doc-biblioref">P1064R0</a>]</span> (Allowing Virtual Function Calls in Constant Expressions): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_constexpr</code></span>. There are functions that include <code class="sourceCode cpp"><span class="kw">virtual</span></code> calls that would be able to be made <code class="sourceCode cpp"><span class="kw">constexpr</span></code>. This macro already has a higher value in the standard, so no wording changes necessary - just to track in SD-6.</p>
+<p><span class="citation" data-cites="P1008R1">[<a href="#ref-P1008R1" role="doc-biblioref">P1008R1</a>]</span> (Prohibit aggregates with user-declared constructors): no macro necessary.</p>
+<p><span class="citation" data-cites="P1120R0">[<a href="#ref-P1120R0" role="doc-biblioref">P1120R0</a>]</span> (Consistency improvements for &lt;=&gt; and other comparison operators): no macro necessary.</p>
+<p><span class="citation" data-cites="P0542R5">[<a href="#ref-P0542R5" role="doc-biblioref">P0542R5</a>]</span> (Support for contract based programming in C++): would have been checked by the attribute.</p>
+<p><span class="citation" data-cites="P0941R2">[<a href="#ref-P0941R2" role="doc-biblioref">P0941R2</a>]</span> (Integrating feature-test macros into the C++ WD (rev. 2)): very meta.</p>
+<p><span class="citation" data-cites="P0892R2">[<a href="#ref-P0892R2" role="doc-biblioref">P0892R2</a>]</span> (<code class="sourceCode cpp"><span class="kw">explicit</span><span class="op">(</span><span class="dt">bool</span><span class="op">)</span></code>): already has a macro.</p>
+<p><span class="citation" data-cites="P0476R2">[<a href="#ref-P0476R2" role="doc-biblioref">P0476R2</a>]</span> (Bit-casting object representations): already has a macro.</p>
+<p><span class="citation" data-cites="P0788R3">[<a href="#ref-P0788R3" role="doc-biblioref">P0788R3</a>]</span> (Standard Library Specification in a Concepts and Contracts World): no macro necessary.</p>
+<p><span class="citation" data-cites="P0458R2">[<a href="#ref-P0458R2" role="doc-biblioref">P0458R2</a>]</span> (Checking for Existence of an Element in Associative Containers): no macro necessary. The new algorithms are nicer to use, but if you need to support the old code, then the old code works just as well.</p>
+<p><span class="citation" data-cites="P0759R1">[<a href="#ref-P0759R1" role="doc-biblioref">P0759R1</a>]</span> (fpos Requirements): no macro necessary.</p>
+<p><span class="citation" data-cites="P1023R0">[<a href="#ref-P1023R0" role="doc-biblioref">P1023R0</a>]</span> (constexpr comparison operators for <code class="sourceCode cpp">std<span class="op">::</span>array</code>): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_constexpr_array_comparisons</code></span> for the same reason as earlier: it allows more functions to be marked <code class="sourceCode cpp"><span class="kw">constexpr</span></code>.</p>
+<p><span class="citation" data-cites="P0769R2">[<a href="#ref-P0769R2" role="doc-biblioref">P0769R2</a>]</span> (Add shift to <code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code>): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_shift</code></span>.</p>
+<p><span class="citation" data-cites="P0887R1">[<a href="#ref-P0887R1" role="doc-biblioref">P0887R1</a>]</span> (The identity metafunction): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_type_identity</code></span>.</p>
+<p><span class="citation" data-cites="P0879R0">[<a href="#ref-P0879R0" role="doc-biblioref">P0879R0</a>]</span> (Constexpr for swap and swap related functions): already has a macro.</p>
+<p><span class="citation" data-cites="P0758R1">[<a href="#ref-P0758R1" role="doc-biblioref">P0758R1</a>]</span> (Implicit conversion traits and utility functions). <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_nothrow_convertible</code></span>.</p>
+<p><span class="citation" data-cites="P0556R3">[<a href="#ref-P0556R3" role="doc-biblioref">P0556R3</a>]</span> (Integral power-of-2 operations): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_int_pow2</code></span>.</p>
+<p><span class="citation" data-cites="P0019R8">[<a href="#ref-P0019R8" role="doc-biblioref">P0019R8</a>]</span> (Atomic Ref): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_atomic_ref</code></span>.</p>
+<p><span class="citation" data-cites="P0935R0">[<a href="#ref-P0935R0" role="doc-biblioref">P0935R0</a>]</span> (Eradicating unnecessarily explicit default constructors from the standard library): no macro necessary.</p>
+<p><span class="citation" data-cites="P0646R1">[<a href="#ref-P0646R1" role="doc-biblioref">P0646R1</a>]</span> (Improving the Return Value of Erase-Like Algorithms): already has a macro.</p>
+<p><span class="citation" data-cites="P0619R4">[<a href="#ref-P0619R4" role="doc-biblioref">P0619R4</a>]</span> (Reviewing Deprecated Facilities of C++17 for C++20): no macro necessary.</p>
+<p><span class="citation" data-cites="P0898R3">[<a href="#ref-P0898R3" role="doc-biblioref">P0898R3</a>]</span> (Standard Library Concepts): already has a macro.</p>
 <h2 id="san-diego-201811"><span class="header-section-number">3.3</span> San Diego (201811)<a href="#san-diego-201811" class="self-link"></a></h2>
 <h1 id="section-2" style="border-bottom:1px solid #cccccc"><span class="header-section-number">4</span> 2019<a href="#section-2" class="self-link"></a></h1>
 <h2 id="kona-201902"><span class="header-section-number">4.1</span> Kona (201902)<a href="#kona-201902" class="self-link"></a></h2>
@@ -733,6 +761,17 @@ Value
 <th>
 Header(s)
 </th>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_shared_ptr_arrays</code></span>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201611</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201707</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code></span>
+</td>
 </tr>
 <tr>
 <td>
@@ -822,6 +861,72 @@ Header(s)
 <span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>chrono<span class="op">&gt;</span></code></span>
 </td>
 </tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_constexpr_array_comparisons</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>array<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_shift</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_type_identity</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>type_traits<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_nothrow_convertible</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>type_traits<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_int_pow2</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>bit<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_atomic_ref</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>atomic<span class="op">&gt;</span></code></span>
+</td>
+</tr>
 </table>
 </blockquote>
 <h1 id="references" style="border-bottom:1px solid #cccccc"><span class="header-section-number">6</span> References<a href="#references" class="self-link"></a></h1>
@@ -834,6 +939,10 @@ Header(s)
 <div id="ref-LWG3274">
 <p>[LWG3274] Jonathan Wakely. Missing feature test macro for <code class="sourceCode cpp"><span class="op">&lt;</span>span<span class="op">&gt;</span></code>. <br />
 <a href="https://wg21.link/lwg3274">https://wg21.link/lwg3274</a></p>
+</div>
+<div id="ref-P0019R8">
+<p>[P0019R8] Daniel Sunderland, H. Carter Edwards, Hans Boehm, Olivier Giroux, Mark Hoemmen, David Hollman, Bryce Adelstein Lelbach, Jens Maurer. 2018. Atomic Ref. <br />
+<a href="https://wg21.link/p0019r8">https://wg21.link/p0019r8</a></p>
 </div>
 <div id="ref-P0020R6">
 <p>[P0020R6] H. Carter Edwards, Hans Boehm, Olivier Giroux, JF Bastien, James Reus. 2017. Floating Point Atomic. <br />
@@ -887,9 +996,17 @@ Header(s)
 <p>[P0457R2] Mikhail Maltsev. 2017. String Prefix and Suffix Checking. <br />
 <a href="https://wg21.link/p0457r2">https://wg21.link/p0457r2</a></p>
 </div>
+<div id="ref-P0458R2">
+<p>[P0458R2] Mikhail Maltsev. 2018. Checking for Existence of an Element in Associative Containers. <br />
+<a href="https://wg21.link/p0458r2">https://wg21.link/p0458r2</a></p>
+</div>
 <div id="ref-P0463R1">
 <p>[P0463R1] Howard Hinnant. 2017. endian, Just endian. <br />
 <a href="https://wg21.link/p0463r1">https://wg21.link/p0463r1</a></p>
+</div>
+<div id="ref-P0476R2">
+<p>[P0476R2] JF Bastien. 2017. Bit-casting object representations. <br />
+<a href="https://wg21.link/p0476r2">https://wg21.link/p0476r2</a></p>
 </div>
 <div id="ref-P0479R5">
 <p>[P0479R5] Clay Trychta. 2018. Proposed wording for likely and unlikely attributes. <br />
@@ -899,6 +1016,14 @@ Header(s)
 <p>[P0515R3] Herb Sutter, Jens Maurer, Walter E. Brown. 2017. Consistent comparison. <br />
 <a href="https://wg21.link/p0515r3">https://wg21.link/p0515r3</a></p>
 </div>
+<div id="ref-P0528R3">
+<p>[P0528R3] JF Bastien, Michael Spencer. 2018. The Curious Case of Padding Bits, Featuring Atomic Compare-and-Exchange. <br />
+<a href="https://wg21.link/p0528r3">https://wg21.link/p0528r3</a></p>
+</div>
+<div id="ref-P0542R5">
+<p>[P0542R5] J. Daniel Garcia. 2018. Support for contract based programming in C++. <br />
+<a href="https://wg21.link/p0542r5">https://wg21.link/p0542r5</a></p>
+</div>
 <div id="ref-P0550R2">
 <p>[P0550R2] Walter E. Brown. 2017. Transformation Trait remove_cvref. <br />
 <a href="https://wg21.link/p0550r2">https://wg21.link/p0550r2</a></p>
@@ -906,6 +1031,10 @@ Header(s)
 <div id="ref-P0551R3">
 <p>[P0551R3] Walter E. Brown. 2018. Thou Shalt Not Specialize std Function Templates! <br />
 <a href="https://wg21.link/p0551r3">https://wg21.link/p0551r3</a></p>
+</div>
+<div id="ref-P0556R3">
+<p>[P0556R3] Jens Maurer. 2018. Integral power-of-2 operations. <br />
+<a href="https://wg21.link/p0556r3">https://wg21.link/p0556r3</a></p>
 </div>
 <div id="ref-P0588R1">
 <p>[P0588R1] Richard Smith. 2017. Simplifying implicit lambda capture. <br />
@@ -923,6 +1052,10 @@ Header(s)
 <p>[P0616R0] Peter Sommerlad. 2017. de-pessimize legacy <numeric> algorithms with std::move. <br />
 <a href="https://wg21.link/p0616r0">https://wg21.link/p0616r0</a></p>
 </div>
+<div id="ref-P0619R4">
+<p>[P0619R4] Alisdair Meredith, Alisdair Meredith, Tomasz Kamiński. 2018. Reviewing Deprecated Facilities of C++17 for C++20. <br />
+<a href="https://wg21.link/p0619r4">https://wg21.link/p0619r4</a></p>
+</div>
 <div id="ref-P0624R2">
 <p>[P0624R2] Louis Dionne. 2017. Default constructible and assignable stateless lambdas. <br />
 <a href="https://wg21.link/p0624r2">https://wg21.link/p0624r2</a></p>
@@ -934,6 +1067,10 @@ Header(s)
 <div id="ref-P0641R2">
 <p>[P0641R2] Daniel Krügler, Botond Ballo. 2017. Resolving Core Issue #1331 (const mismatch with defaulted copy constructor). <br />
 <a href="https://wg21.link/p0641r2">https://wg21.link/p0641r2</a></p>
+</div>
+<div id="ref-P0646R1">
+<p>[P0646R1] Marc Mutz. 2018. Improving the Return Value of Erase-Like Algorithms I: list/forward list. <br />
+<a href="https://wg21.link/p0646r1">https://wg21.link/p0646r1</a></p>
 </div>
 <div id="ref-P0653R2">
 <p>[P0653R2] Glen Joseph Fernandes. 2017. Utility to convert a pointer to a raw pointer. <br />
@@ -967,6 +1104,14 @@ Header(s)
 <p>[P0718R2] Alisdair Meredith. 2017. Revising atomic_shared_ptr for C++20. <br />
 <a href="https://wg21.link/p0718r2">https://wg21.link/p0718r2</a></p>
 </div>
+<div id="ref-P0722R3">
+<p>[P0722R3] Richard Smith, Andrew Hunter. 2018. Efficient sized delete for variable sized classes. <br />
+<a href="https://wg21.link/p0722r3">https://wg21.link/p0722r3</a></p>
+</div>
+<div id="ref-P0732R2">
+<p>[P0732R2] Jeff Snyder, Louis Dionne. 2018. Class Types in Non-Type Template Parameters. <br />
+<a href="https://wg21.link/p0732r2">https://wg21.link/p0732r2</a></p>
+</div>
 <div id="ref-P0734R0">
 <p>[P0734R0] Andrew Sutton. 2017. Wording Paper, C++ extensions for Concepts. <br />
 <a href="https://wg21.link/p0734r0">https://wg21.link/p0734r0</a></p>
@@ -979,6 +1124,14 @@ Header(s)
 <p>[P0754R2] Alan Talbot. 2018. <code class="sourceCode cpp"><span class="op">&lt;</span>version<span class="op">&gt;</span></code>. <br />
 <a href="https://wg21.link/p0754r2">https://wg21.link/p0754r2</a></p>
 </div>
+<div id="ref-P0758R1">
+<p>[P0758R1] Daniel Krügler. 2018. Implicit conversion traits and utility functions. <br />
+<a href="https://wg21.link/p0758r1">https://wg21.link/p0758r1</a></p>
+</div>
+<div id="ref-P0759R1">
+<p>[P0759R1] Daniel Krügler. 2018. fpos requirements. <br />
+<a href="https://wg21.link/p0759r1">https://wg21.link/p0759r1</a></p>
+</div>
 <div id="ref-P0767R1">
 <p>[P0767R1] Jens Maurer. 2017. Deprecate POD. <br />
 <a href="https://wg21.link/p0767r1">https://wg21.link/p0767r1</a></p>
@@ -987,6 +1140,10 @@ Header(s)
 <p>[P0768R1] Walter E. Brown. 2017. Library Support for the Spaceship (Comparison) Operator. <br />
 <a href="https://wg21.link/p0768r1">https://wg21.link/p0768r1</a></p>
 </div>
+<div id="ref-P0769R2">
+<p>[P0769R2] Dan Raviv. 2018. Add shift to . <br />
+<a href="https://wg21.link/p0769r2">https://wg21.link/p0769r2</a></p>
+</div>
 <div id="ref-P0777R1">
 <p>[P0777R1] Walter E. Brown. 2017. Treating Unnecessary decay. <br />
 <a href="https://wg21.link/p0777r1">https://wg21.link/p0777r1</a></p>
@@ -994,6 +1151,14 @@ Header(s)
 <div id="ref-P0780R2">
 <p>[P0780R2] Barry Revzin. 2018. Allow pack expansion in lambda init-capture. <br />
 <a href="https://wg21.link/p0780r2">https://wg21.link/p0780r2</a></p>
+</div>
+<div id="ref-P0788R3">
+<p>[P0788R3] Walter E. Brown. 2018. Standard Library Specification in a Concepts and Contracts World. <br />
+<a href="https://wg21.link/p0788r3">https://wg21.link/p0788r3</a></p>
+</div>
+<div id="ref-P0806R2">
+<p>[P0806R2] Thomas Köppe. 2018. Deprecate implicit capture of this via [=]. <br />
+<a href="https://wg21.link/p0806r2">https://wg21.link/p0806r2</a></p>
 </div>
 <div id="ref-P0809R0">
 <p>[P0809R0] Titus Winters. 2017. Comparing Unordered Containers. <br />
@@ -1019,9 +1184,33 @@ Header(s)
 <p>[P0859R0] Richard Smith. 2017. Core Issue 1581: When are constexpr member functions defined? <br />
 <a href="https://wg21.link/p0859r0">https://wg21.link/p0859r0</a></p>
 </div>
+<div id="ref-P0879R0">
+<p>[P0879R0] Antony Polukhin. 2017. Constexpr for swap and swap related functions. <br />
+<a href="https://wg21.link/p0879r0">https://wg21.link/p0879r0</a></p>
+</div>
+<div id="ref-P0887R1">
+<p>[P0887R1] Timur Doumler. 2018. The identity metafunction. <br />
+<a href="https://wg21.link/p0887r1">https://wg21.link/p0887r1</a></p>
+</div>
+<div id="ref-P0892R2">
+<p>[P0892R2] Barry Revzin, Stephan T. Lavavej. 2018. <code class="sourceCode cpp"><span class="kw">explicit</span><span class="op">(</span><span class="dt">bool</span><span class="op">)</span></code>. <br />
+<a href="https://wg21.link/p0892r2">https://wg21.link/p0892r2</a></p>
+</div>
+<div id="ref-P0898R3">
+<p>[P0898R3] Casey Carter, Eric Niebler. 2018. Standard Library Concepts. <br />
+<a href="https://wg21.link/p0898r3">https://wg21.link/p0898r3</a></p>
+</div>
 <div id="ref-P0905R1">
 <p>[P0905R1] Tomasz Kamiński, Herb Sutter, Richard Smith. 2018. Symmetry for spaceship. <br />
 <a href="https://wg21.link/p0905r1">https://wg21.link/p0905r1</a></p>
+</div>
+<div id="ref-P0929R2">
+<p>[P0929R2] Jens Maurer. 2018. Checking for abstract class types. <br />
+<a href="https://wg21.link/p0929r2">https://wg21.link/p0929r2</a></p>
+</div>
+<div id="ref-P0935R0">
+<p>[P0935R0] Tim Song. 2018. Eradicating unnecessarily explicit default constructors from the standard library. <br />
+<a href="https://wg21.link/p0935r0">https://wg21.link/p0935r0</a></p>
 </div>
 <div id="ref-P0941R2">
 <p>[P0941R2] Ville Voutilainen, Jonathan Wakely. 2018. Integrating feature-test macros into the C++ WD. <br />
@@ -1043,9 +1232,33 @@ Header(s)
 <p>[P0969R0] Timur Doumler. 2018. Allow structured bindings to accessible members. <br />
 <a href="https://wg21.link/p0969r0">https://wg21.link/p0969r0</a></p>
 </div>
+<div id="ref-P1008R1">
+<p>[P1008R1] Timur Doumler, Arthur O’Dwyer, Richard Smith, Howard E. Hinnant, Nicolai Josuttis. 2018. Prohibit aggregates with user-declared constructors. <br />
+<a href="https://wg21.link/p1008r1">https://wg21.link/p1008r1</a></p>
+</div>
+<div id="ref-P1023R0">
+<p>[P1023R0] Tristan Brindle. 2018. constexpr comparison operators for std::array. <br />
+<a href="https://wg21.link/p1023r0">https://wg21.link/p1023r0</a></p>
+</div>
+<div id="ref-P1025R1">
+<p>[P1025R1] Steve Downey, JeanHeyd Meneide, Martinho Fernandes. 2018. Update The Reference To The Unicode Standard. <br />
+<a href="https://wg21.link/p1025r1">https://wg21.link/p1025r1</a></p>
+</div>
+<div id="ref-P1042R1">
+<p>[P1042R1] Hubert S.K. Tong. 2018. <strong>VA_OPT</strong> wording clarifications. <br />
+<a href="https://wg21.link/p1042r1">https://wg21.link/p1042r1</a></p>
+</div>
+<div id="ref-P1064R0">
+<p>[P1064R0] Peter Dimov, Vassil Vassilev. 2018. Allowing Virtual Function Calls in Constant Expressions. <br />
+<a href="https://wg21.link/p1064r0">https://wg21.link/p1064r0</a></p>
+</div>
 <div id="ref-P1065R2">
 <p>[P1065R2] Tomasz Kamiński, Barry Revzin. 2019. constexpr <em><code class="sourceCode cpp">INVOKE</code></em>. <br />
 <a href="https://wg21.link/p1065r2">https://wg21.link/p1065r2</a></p>
+</div>
+<div id="ref-P1120R0">
+<p>[P1120R0] Richard Smith. 2018. Consistency improvements for &lt;=&gt; and other comparison operators. <br />
+<a href="https://wg21.link/p1120r0">https://wg21.link/p1120r0</a></p>
 </div>
 <div id="ref-P1612R1">
 <p>[P1612R1] Arthur O’Dwyer. 2019. Relocate Endian’s Specification. <br />
