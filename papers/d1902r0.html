@@ -633,6 +633,36 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <p><span class="citation" data-cites="P0457R2">[<a href="#ref-P0457R2" role="doc-biblioref">P0457R2</a>]</span> (String Prefix and Suffix Checking): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_starts_ends_with</code></span>.</p>
 <h1 id="section-1" style="border-bottom:1px solid #cccccc"><span class="header-section-number">3</span> 2018<a href="#section-1" class="self-link"></a></h1>
 <h2 id="jacksonville-201803"><span class="header-section-number">3.1</span> Jacksonville (201803)<a href="#jacksonville-201803" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P0840R2">[<a href="#ref-P0840R2" role="doc-biblioref">P0840R2</a>]</span> (Language support for empty objects: already has a macro.</p>
+<p><span class="citation" data-cites="P0962R1">[<a href="#ref-P0962R1" role="doc-biblioref">P0962R1</a>]</span> (Relaxing the range-for loop customization point finding rules): no macro necessary.</p>
+<p><span class="citation" data-cites="P0969R0">[<a href="#ref-P0969R0" role="doc-biblioref">P0969R0</a>]</span> (Allow structured bindings to accessible members): no macro necessary.</p>
+<p><span class="citation" data-cites="P0961R1">[<a href="#ref-P0961R1" role="doc-biblioref">P0961R1</a>]</span> (Relaxing the structured bindings customization point finding rules): no macro necessary.</p>
+<p><span class="citation" data-cites="P0634R3">[<a href="#ref-P0634R3" role="doc-biblioref">P0634R3</a>]</span> (Down with <code class="sourceCode cpp"><span class="kw">typename</span></code>!): no macro necessary.</p>
+<p><span class="citation" data-cites="P0780R2">[<a href="#ref-P0780R2" role="doc-biblioref">P0780R2</a>]</span> (Allow pack expansion in lambda init-capture): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lambda_init_capture_pack</code></span>. Having such a macro would allow you to avoid using <code class="sourceCode cpp">tuple</code> where necessary. The motivating example in that paper could thus conditionally improve compile throughput:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">class</span><span class="op">...</span> Args<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">auto</span> delay_invoke_foo<span class="op">(</span>Args<span class="op">...</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="pp">#if __cpp_lambda_init_capture_pack</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="cf">return</span> <span class="op">[...</span>args<span class="op">=</span>std<span class="op">::</span>move<span class="op">(</span>args<span class="op">)]()</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>        <span class="cf">return</span> foo<span class="op">(</span>args<span class="op">...)</span>;</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="op">}</span>;</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="pp">#else</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>    <span class="cf">return</span> <span class="op">[</span>tup<span class="op">=</span>std<span class="op">::</span>make_tuple<span class="op">(</span>std<span class="op">::</span>move<span class="op">(</span>args<span class="op">)...)]()</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>        <span class="cf">return</span> std<span class="op">::</span>apply<span class="op">([](</span><span class="kw">auto</span> <span class="kw">const</span><span class="op">&amp;...</span> args<span class="op">)</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>            <span class="cf">return</span> foo<span class="op">(</span>args<span class="op">...)</span>;</span>
+<span id="cb3-11"><a href="#cb3-11"></a>        <span class="op">}</span>, tup<span class="op">)</span>;</span>
+<span id="cb3-12"><a href="#cb3-12"></a>    <span class="op">}</span>;</span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="pp">#endif</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="op">}</span></span></code></pre></div>
+<p><span class="citation" data-cites="P0479R5">[<a href="#ref-P0479R5" role="doc-biblioref">P0479R5</a>]</span> (Proposed wording for likely and unlikely attributes (Revision 5)): already have a macro.</p>
+<p><span class="citation" data-cites="P0905R1">[<a href="#ref-P0905R1" role="doc-biblioref">P0905R1</a>]</span> (Symmetry for spaceship): in a vacuum, maybe, but since there isn’t an implementation of <code class="sourceCode cpp"><span class="op">&lt;=&gt;</span></code> that includes just up to this point, it’s probably not worth it.</p>
+<p><span class="citation" data-cites="P0754R2">[<a href="#ref-P0754R2" role="doc-biblioref">P0754R2</a>]</span> (<code class="sourceCode cpp"><span class="op">&lt;</span>version<span class="op">&gt;</span></code>): already checkable with <code class="sourceCode cpp"><span class="ot">__has_include</span></code>.</p>
+<p><span class="citation" data-cites="P0809R0">[<a href="#ref-P0809R0" role="doc-biblioref">P0809R0</a>]</span> (Comparing Unordered Containers): no macro necessary.</p>
+<p><span class="citation" data-cites="P0355R7">[<a href="#ref-P0355R7" role="doc-biblioref">P0355R7</a>]</span> (Extending chrono to Calendars and Time Zones): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_chrono_date</code></span>.</p>
+<p><span class="citation" data-cites="P0966R1">[<a href="#ref-P0966R1" role="doc-biblioref">P0966R1</a>]</span> (<code class="sourceCode cpp">string<span class="op">::</span>reserve</code> Should Not Shrink): no macro necessary.</p>
+<p><span class="citation" data-cites="P0551R3">[<a href="#ref-P0551R3" role="doc-biblioref">P0551R3</a>]</span> (Thou Shalt Not Specialize <code class="sourceCode cpp">std</code> Function Templates!): no macro necessary.</p>
+<p><span class="citation" data-cites="P0753R2">[<a href="#ref-P0753R2" role="doc-biblioref">P0753R2</a>]</span> (Manipulators for C++ Synchronized Buffered Ostream): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_lib_syncbuf</code></span>, which is also added by this paper.</p>
+<p><span class="citation" data-cites="P0122R7">[<a href="#ref-P0122R7" role="doc-biblioref">P0122R7</a>]</span> (<code class="sourceCode cpp"><span class="op">&lt;</span>span<span class="op">&gt;</span></code>): already has a macro by way of <span class="citation" data-cites="LWG3274">[<a href="#ref-LWG3274" role="doc-biblioref">LWG3274</a>]</span>.</p>
+<p><span class="citation" data-cites="P0858R0">[<a href="#ref-P0858R0" role="doc-biblioref">P0858R0</a>]</span> (Constexpr iterator requirements): already has a macro.</p>
 <h1 id="wording" style="border-bottom:1px solid #cccccc"><span class="header-section-number">4</span> Wording<a href="#wording" class="self-link"></a></h1>
 <p>Modify table 17 in 15.10 [cpp.predefined] with the following added:</p>
 <blockquote>
@@ -669,6 +699,14 @@ Value
 <span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
 </td>
 </tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lambda_init_capture_pack</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201803</span><span class="bu">L</span></code></span>
+</td>
+</tr>
 </table>
 </blockquote>
 <p>Modify table 36 in 17.3.1 [support.limits.general] with the following added:</p>
@@ -701,7 +739,7 @@ Header(s)
 <span class="addu"><code class="sourceCode cpp">__cpp_lib_syncbuf</code></span>
 </td>
 <td>
-<span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201803</span><span class="bu">L</span></code></span>
 </td>
 <td>
 <span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>syncstream<span class="op">&gt;</span></code></span>
@@ -762,6 +800,17 @@ Header(s)
 <span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>string<span class="op">&gt;</span> <span class="op">&lt;</span>string_view<span class="op">&gt;</span></code></span>
 </td>
 </tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_chrono_date</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201803</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>chrono<span class="op">&gt;</span></code></span>
+</td>
+</tr>
 </table>
 </blockquote>
 <h1 id="references" style="border-bottom:1px solid #cccccc"><span class="header-section-number">5</span> References<a href="#references" class="self-link"></a></h1>
@@ -771,6 +820,10 @@ Header(s)
 <p>[LWG3137] S. B.Tam. Header for <code class="sourceCode cpp">__cpp_lib_to_chars</code>. <br />
 <a href="https://wg21.link/lwg3137">https://wg21.link/lwg3137</a></p>
 </div>
+<div id="ref-LWG3274">
+<p>[LWG3274] Jonathan Wakely. Missing feature test macro for <code class="sourceCode cpp"><span class="op">&lt;</span>span<span class="op">&gt;</span></code>. <br />
+<a href="https://wg21.link/lwg3274">https://wg21.link/lwg3274</a></p>
+</div>
 <div id="ref-P0020R6">
 <p>[P0020R6] H. Carter Edwards, Hans Boehm, Olivier Giroux, JF Bastien, James Reus. 2017. Floating Point Atomic. <br />
 <a href="https://wg21.link/p0020r6">https://wg21.link/p0020r6</a></p>
@@ -778,6 +831,10 @@ Header(s)
 <div id="ref-P0053R7">
 <p>[P0053R7] Lawrence Crowl, Peter Sommerlad, Nicolai Josuttis, Pablo Halpern. 2017. C++ Synchronized Buffered Ostream. <br />
 <a href="https://wg21.link/p0053r7">https://wg21.link/p0053r7</a></p>
+</div>
+<div id="ref-P0122R7">
+<p>[P0122R7] Neil MacIntosh, Stephan T. Lavavej. 2018. span: bounds-safe views for sequences of objects. <br />
+<a href="https://wg21.link/p0122r7">https://wg21.link/p0122r7</a></p>
 </div>
 <div id="ref-P0202R3">
 <p>[P0202R3] Antony Polukhin. 2017. Add Constexpr Modifiers to Functions in <code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code> and <code class="sourceCode cpp"><span class="op">&lt;</span>utility<span class="op">&gt;</span></code> Headers. <br />
@@ -794,6 +851,10 @@ Header(s)
 <div id="ref-P0329R4">
 <p>[P0329R4] Tim Shen, Richard Smith. 2017. Designated Initialization Wording. <br />
 <a href="https://wg21.link/p0329r4">https://wg21.link/p0329r4</a></p>
+</div>
+<div id="ref-P0355R7">
+<p>[P0355R7] Howard E. Hinnant, Tomasz Kamiński. 2018. Extending <chrono> to Calendars and Time Zones. <br />
+<a href="https://wg21.link/p0355r7">https://wg21.link/p0355r7</a></p>
 </div>
 <div id="ref-P0409R2">
 <p>[P0409R2] Thomas Koeppe. 2017. Allow lambda capture [=, this]. <br />
@@ -819,6 +880,10 @@ Header(s)
 <p>[P0463R1] Howard Hinnant. 2017. endian, Just endian. <br />
 <a href="https://wg21.link/p0463r1">https://wg21.link/p0463r1</a></p>
 </div>
+<div id="ref-P0479R5">
+<p>[P0479R5] Clay Trychta. 2018. Proposed wording for likely and unlikely attributes. <br />
+<a href="https://wg21.link/p0479r5">https://wg21.link/p0479r5</a></p>
+</div>
 <div id="ref-P0515R3">
 <p>[P0515R3] Herb Sutter, Jens Maurer, Walter E. Brown. 2017. Consistent comparison. <br />
 <a href="https://wg21.link/p0515r3">https://wg21.link/p0515r3</a></p>
@@ -826,6 +891,10 @@ Header(s)
 <div id="ref-P0550R2">
 <p>[P0550R2] Walter E. Brown. 2017. Transformation Trait remove_cvref. <br />
 <a href="https://wg21.link/p0550r2">https://wg21.link/p0550r2</a></p>
+</div>
+<div id="ref-P0551R3">
+<p>[P0551R3] Walter E. Brown. 2018. Thou Shalt Not Specialize std Function Templates! <br />
+<a href="https://wg21.link/p0551r3">https://wg21.link/p0551r3</a></p>
 </div>
 <div id="ref-P0588R1">
 <p>[P0588R1] Richard Smith. 2017. Simplifying implicit lambda capture. <br />
@@ -846,6 +915,10 @@ Header(s)
 <div id="ref-P0624R2">
 <p>[P0624R2] Louis Dionne. 2017. Default constructible and assignable stateless lambdas. <br />
 <a href="https://wg21.link/p0624r2">https://wg21.link/p0624r2</a></p>
+</div>
+<div id="ref-P0634R3">
+<p>[P0634R3] Nina Ranns, Daveed Vandevoorde. 2018. Down with typename! <br />
+<a href="https://wg21.link/p0634r3">https://wg21.link/p0634r3</a></p>
 </div>
 <div id="ref-P0641R2">
 <p>[P0641R2] Daniel Krügler, Botond Ballo. 2017. Resolving Core Issue #1331 (const mismatch with defaulted copy constructor). <br />
@@ -887,6 +960,14 @@ Header(s)
 <p>[P0734R0] Andrew Sutton. 2017. Wording Paper, C++ extensions for Concepts. <br />
 <a href="https://wg21.link/p0734r0">https://wg21.link/p0734r0</a></p>
 </div>
+<div id="ref-P0753R2">
+<p>[P0753R2] Peter Sommerlad, Pablo Halpern. 2018. Manipulators for C++ Synchronized Buffered Ostream. <br />
+<a href="https://wg21.link/p0753r2">https://wg21.link/p0753r2</a></p>
+</div>
+<div id="ref-P0754R2">
+<p>[P0754R2] Alan Talbot. 2018. <code class="sourceCode cpp"><span class="op">&lt;</span>version<span class="op">&gt;</span></code>. <br />
+<a href="https://wg21.link/p0754r2">https://wg21.link/p0754r2</a></p>
+</div>
 <div id="ref-P0767R1">
 <p>[P0767R1] Jens Maurer. 2017. Deprecate POD. <br />
 <a href="https://wg21.link/p0767r1">https://wg21.link/p0767r1</a></p>
@@ -899,6 +980,18 @@ Header(s)
 <p>[P0777R1] Walter E. Brown. 2017. Treating Unnecessary decay. <br />
 <a href="https://wg21.link/p0777r1">https://wg21.link/p0777r1</a></p>
 </div>
+<div id="ref-P0780R2">
+<p>[P0780R2] Barry Revzin. 2018. Allow pack expansion in lambda init-capture. <br />
+<a href="https://wg21.link/p0780r2">https://wg21.link/p0780r2</a></p>
+</div>
+<div id="ref-P0809R0">
+<p>[P0809R0] Titus Winters. 2017. Comparing Unordered Containers. <br />
+<a href="https://wg21.link/p0809r0">https://wg21.link/p0809r0</a></p>
+</div>
+<div id="ref-P0840R2">
+<p>[P0840R2] Richard Smith. 2018. Language support for empty objects. <br />
+<a href="https://wg21.link/p0840r2">https://wg21.link/p0840r2</a></p>
+</div>
 <div id="ref-P0846R0">
 <p>[P0846R0] John Spicer. 2017. ADL and Function Templates that are not Visible. <br />
 <a href="https://wg21.link/p0846r0">https://wg21.link/p0846r0</a></p>
@@ -907,13 +1000,37 @@ Header(s)
 <p>[P0857R0] Thomas Köppe. 2017. Wording for “functionality gaps in constraints”. <br />
 <a href="https://wg21.link/p0857r0">https://wg21.link/p0857r0</a></p>
 </div>
+<div id="ref-P0858R0">
+<p>[P0858R0] Antony Polukhin. 2017. Constexpr iterator requirements. <br />
+<a href="https://wg21.link/p0858r0">https://wg21.link/p0858r0</a></p>
+</div>
 <div id="ref-P0859R0">
 <p>[P0859R0] Richard Smith. 2017. Core Issue 1581: When are constexpr member functions defined? <br />
 <a href="https://wg21.link/p0859r0">https://wg21.link/p0859r0</a></p>
 </div>
+<div id="ref-P0905R1">
+<p>[P0905R1] Tomasz Kamiński, Herb Sutter, Richard Smith. 2018. Symmetry for spaceship. <br />
+<a href="https://wg21.link/p0905r1">https://wg21.link/p0905r1</a></p>
+</div>
 <div id="ref-P0941R2">
 <p>[P0941R2] Ville Voutilainen, Jonathan Wakely. 2018. Integrating feature-test macros into the C++ WD. <br />
 <a href="https://wg21.link/p0941r2">https://wg21.link/p0941r2</a></p>
+</div>
+<div id="ref-P0961R1">
+<p>[P0961R1] Ville Voutilainen. 2018. Relaxing the structured bindings customization point finding rules. <br />
+<a href="https://wg21.link/p0961r1">https://wg21.link/p0961r1</a></p>
+</div>
+<div id="ref-P0962R1">
+<p>[P0962R1] Ville Voutilainen. 2018. Relaxing the range-for loop customization point finding rules. <br />
+<a href="https://wg21.link/p0962r1">https://wg21.link/p0962r1</a></p>
+</div>
+<div id="ref-P0966R1">
+<p>[P0966R1] Mark Zeren, Andrew Luo. 2018. string::reserve Should Not Shrink. <br />
+<a href="https://wg21.link/p0966r1">https://wg21.link/p0966r1</a></p>
+</div>
+<div id="ref-P0969R0">
+<p>[P0969R0] Timur Doumler. 2018. Allow structured bindings to accessible members. <br />
+<a href="https://wg21.link/p0969r0">https://wg21.link/p0969r0</a></p>
 </div>
 <div id="ref-P1065R2">
 <p>[P1065R2] Tomasz Kamiński, Barry Revzin. 2019. constexpr <em><code class="sourceCode cpp">INVOKE</code></em>. <br />

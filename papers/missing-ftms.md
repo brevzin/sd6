@@ -156,6 +156,67 @@ macro necessary.
 
 ## Jacksonville (201803)
 
+[@P0840R2] (Language support for empty objects: already has a macro.
+
+[@P0962R1] (Relaxing the range-for loop customization point finding rules): no
+macro necessary.
+
+[@P0969R0] (Allow structured bindings to accessible members): no macro necessary.
+
+[@P0961R1] (Relaxing the structured bindings customization point finding rules):
+no macro necessary.
+
+[@P0634R3] (Down with `typename`!): no macro necessary.
+
+[@P0780R2] (Allow pack expansion in lambda init-capture): [this paper proposes
+the macro `__cpp_lambda_init_capture_pack`]{.addu}. Having such a macro would
+allow you to avoid using `tuple` where necessary. The motivating example
+in that paper could thus conditionally improve compile throughput:
+
+```cpp
+template <class... Args>
+auto delay_invoke_foo(Args... args) {
+#if __cpp_lambda_init_capture_pack
+    return [...args=std::move(args)]() -> decltype(auto) {
+        return foo(args...);
+    };
+#else
+    return [tup=std::make_tuple(std::move(args)...)]() -> decltype(auto) {
+        return std::apply([](auto const&... args) -> decltype(auto) {
+            return foo(args...);
+        }, tup);
+    };
+#endif
+}
+```
+
+[@P0479R5] (Proposed wording for likely and unlikely attributes (Revision 5)):
+already have a macro.
+
+[@P0905R1] (Symmetry for spaceship): in a vacuum, maybe, but since there isn't
+an implementation of `<=>` that includes just up to this point, it's probably not
+worth it.
+
+[@P0754R2] (`<version>`): already checkable with `__has_include`.
+
+[@P0809R0] (Comparing Unordered Containers): no macro necessary.
+
+[@P0355R7] (Extending chrono to Calendars and Time Zones): [this paper proposes
+the macro `__cpp_lib_chrono_date`]{.addu}.
+
+[@P0966R1] (`string::reserve` Should Not Shrink): no macro necessary.
+
+[@P0551R3] (Thou Shalt Not Specialize `std` Function Templates!): no macro
+necessary.
+
+[@P0753R2] (Manipulators for C++ Synchronized Buffered Ostream): [this paper
+proposes to bump the macro `__cpp_lib_syncbuf`]{.addu}, which is also added by
+this paper.
+
+[@P0122R7] (`<span>`): already has a macro by way of [@LWG3274].
+
+[@P0858R0] (Constexpr iterator requirements): already has a macro.
+
 # Wording
 
 Modify table 17 in 15.10 [cpp.predefined] with the following added:
@@ -169,6 +230,7 @@ Modify table 17 in 15.10 [cpp.predefined] with the following added:
 <tr><td>[`__cpp_familiar_template_lambda`]{.addu}</td><td>[`201707L`]{.addu}</td></tr>
 <tr><td>[`__cpp_concepts`]{.addu}</td><td>[`201707L`]{.addu}</td></tr>
 <tr><td>[`__cpp_impl_constexpr_members_defined`]{.addu}</td><td>[`201711L`]{.addu}</td></tr>
+<tr><td>[`__cpp_lambda_init_capture_pack`]{.addu}</td><td>[`201803L`]{.addu}</td></tr>
 </table>
 :::
 
@@ -182,11 +244,12 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <th>Header(s)</th>
 </tr>
 <tr><td>[`__cpp_lib_remove_cvref`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
-<tr><td>[`__cpp_lib_syncbuf`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<syncstream>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_syncbuf`]{.addu}</td><td>[`201803L`]{.addu}</td><td>[`<syncstream>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_to_address`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_constexpr_complex`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<complex>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_atomic_shared_ptr`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_atomic_float`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_starts_ends_with`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<string> <string_view>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_chrono_date`]{.addu}</td><td>[`201803L`]{.addu}</td><td>[`<chrono>`]{.addu}</td></tr>
 </table>
 :::
