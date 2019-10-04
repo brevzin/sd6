@@ -398,12 +398,234 @@ macro necessary.
 [@P1209R0] (Adopt Consistent Container Erasure from Library Fundamentals 2 for C++20):
 already has a macro.
 
-
 # 2019
 
 ## Kona (201902)
 
+[@P1286R2] (Contra CWG DR1778): no macro necessary.
+
+[@P1091R3] (Extending structured bindings to be more like variable declarations):
+no macro necessary.
+
+[@P1381R1] (Reference capture of structured bindings): no macro necessary.
+
+[@P1041R4] (Make `char16_t`/`char32_t` string literals be UTF-16/32): no macro
+necessary.
+
+[@P1139R2] (Address wording issues related to ISO 10646): no macro necessary.
+
+[@P1323R2] (Contract postconditions and return type deduction): contracts were
+removed.
+
+[@P0960R3] (Allow initializing aggregates from a parenthesized list of values):
+already has a macro.
+
+[@P1009R2] (Array size deduction in new-expressions): no macro necessary.
+
+[@P1103R3] (Merging Modules): already has a macro
+
+[@P1185R2] (`<=> != ==`): [this paper proposes to bump
+`__cpp_impl_three_way_comparison`]{.addu}.
+
+[@P0339R6] (`polymorphic_allocator<>` as a vocabulary type): [this paper proposes
+the macro `__cpp_lib_polymorphic_allocator`]{.addu}.
+
+[@P0340R3] (Making `std::underlying_type` SFINAE-friendly): no macro necessary.
+
+[@P0738R2] (I Stream, You Stream, We All Stream for `istream_iterator`): no macro
+necssary.
+
+[@P1458R1] (Mandating the Standard Library: Clause 16 - Language support library):
+no macro necessary.
+
+[@P1459R1] (Mandating the Standard Library: Clause 18 - Diagnostics library): no
+macro necessary.
+
+[@P1462R1] (Mandating the Standard Library: Clause 20 - Strings library): no macro
+necessary.
+
+[@P1463R1] (Mandating the Standard Library: Clause 21 - Containers library): no
+macro necessary.
+
+[@P1464R1] (Mandating the Standard Library: Clause 22 - Iterators library): no
+macro necessary.
+
+[@P1164R1] (Make `create_directory()` Intuitive): no macro necessary.
+
+[@P0811R3] (Well-behaved interpolation for numbers and pointers): already has
+a macro.
+
+[@P1001R2] (Target Vectorization Policies from Parallelism V2 TS to C++20): no
+macro necessary.
+
+[@P1227R2] (Signed `ssize()` functions, unsigned `size()` functions ): [this
+paper proposes the macro `__cpp_lib_ssize`]{.addu}.
+
+[@P1252R2] (Ranges Design Cleanup): no macro necessary.
+
+[@P1024R3] (Usability Enhancements for `std::span`): already has a macro.
+
+[@P0920R2] (Precalculated hash values in lookup): already had a macro, which was
+subsequently removed.
+
+[@P1357R1] (Traits for [Un]bounded Arrays): no macro necessary
+
 ## Cologne (201907)
+
+[@P1161R3] (Deprecate uses of the comma operator in subscripting expressions):
+no macro necessary.
+
+[@P1331R2] (Permitting trivial default initialization in constexpr contexts):
+already has a macro.
+
+[@P0735R1] (Interaction of `memory_order_consume` with release sequences):
+already has a macro.
+
+[@P0848R3] (Conditionally Trivial Special Member Functions): no macro necessary.
+Would people really write both?
+
+[@P1186R3] (When do you actually use `<=>`?): this paper proposed to bump
+`__cpp_impl_three_way_comparison`, but shouldn't have. This paper doesn't need
+a macro.
+
+[@P1301R4] (`[[nodiscard("should have a reason")]]`): already has a macro.
+
+[@P1099R5] (Using Enum): already has a macro
+
+[@P1630R1] (Spaceship needs a tune-up): [this paper proposes that the bump
+of `__cpp_impl_three_way_comparison` is associated with this paper instead of
+P1186R3]{.addu}.
+
+[@P1616R1] (Using unconstrained template template parameters with constrained templates):
+no macro necessary.
+
+[@P1816R0] (Wording for class template argument deduction for aggregates): no
+macro necessary. Would you choose to not provide a deduction guide for an
+aggregate?
+
+[@P1668R1] (Enabling `constexpr` Intrinsics By Permitting Unevaluated
+inline-assembly in `constexpr` Functions): [this paper proposes to bump
+`__cpp_constexpr`]{.addu}.
+
+[@P1766R1] (Mitigating minor modules maladies): already has a macro.
+
+[@P1811R0] (Relaxing redefinition restrictions for re-exportation robustness):
+already has a macro.
+
+[@P1814R0] (Wording for Class Template Argument Deduction for Alias Templates):
+already has a macro.
+
+[@P1825R0] (Merged wording for P0527R1 and P1155R3): no macro needed, just write
+`std::move()`.
+
+[@P1703R1] (Recognizing Header Unit Imports Requires Full Preprocessing): no
+macro needed.
+
+[@P0784R7] (More constexpr containers): already has a macro.
+
+[@P1355R2] (Exposing a narrow contract for ceil2): no macro needed.
+
+[@P0553R4] (Bit operations): already has a macro.
+
+[@P1424R1] (`constexpr` feature macro concerns): already resolved.
+
+[@P0645R10] (Text Formatting): already has a macro.
+
+[@P1361R2] (Integration of chrono with text formatting): already has a macro.
+
+[@P1652R1] (Printf corner cases in `std::format`): already has a macro.
+
+[@P0631R8] (Math Constants): already has a macro.
+
+[@P1135R6] (The C++20 Synchronization Library), [@P1643R1] (Add
+wait/notify to `atomic_ref`), and [@P1644R0] (Add
+wait/notify to `atomic<shared_ptr>`): already have macros.
+
+[@P1466R3] (Miscellaneous minor fixes for chrono): already has a macro.
+
+[@P1754R1] (Rename concepts to standard_case for C++20, while we still can):
+[this paper proposes to bump `__cpp_lib_concepts`]{.addu}, even though nobody
+implements this yet, because otherwise it's confusing.
+
+[@P1614R2] (The Mothership has Landed): [erroneously introduced the
+new macro `__cpp_lib_spaceship`, this paper proposes removing that macro and
+instead bumping `__cpp_lib_three_way_comparison`]{.addu}.
+
+[@P0325R4] (`to_array` from LFTS with updates): already has a macro.
+
+[@P0408R7] (Efficient Access to `basic_stringbuf`’s Buffer): no macro necessary.
+Trying to move out of the buffer will compile even without this feature, it just
+won't be a move.
+
+[@P1423R3] (`char8_t` backward compatibility remediation): already has a macro.
+
+[@P1502R1] (Standard library header units for C++20): no macro necessary.
+
+[@P1612R1] (Relocate Endian’s Specification): already has a macro.
+
+[@P1661R1] (Remove dedicated precalculated hash lookup interface): already
+removes a macro.
+
+[@P1650R0] (Output `std::chrono::days` with 'd' suffix): no macro necessary.
+
+[@P1651R0] (`bind_front` should not unwrap `reference_wrapper`): no macro
+necessary.
+
+[@P1065R2] (Constexpr INVOKE): already has a macro.
+
+[@P1207R4] (Movability of Single-pass Iterators): no macro necessary.
+
+[@P1035R7] (Input Range Adaptors): [this paper proposes to bump the macro
+`__cpp_lib_ranges`]{.addu}.
+
+[@P1638R1] (`basic_istream_view::iterator` should not be copyable): no macro
+necessary.
+
+[@P1522R1] (Iterator Difference Type and Integer Overflow): no macro necessary.
+
+[@P1004R2] (Making `std::vector` constexpr): already has a macro.
+
+[@P0980R1] (Making `std::string` constexpr): already has a macro.
+
+[@P0660R10] (Stop Token and Joining Thread, Rev 10): already has a macro.
+
+[@P1474R1] (Helpful pointers for `ContiguousIterator`): no macro necessary.
+
+[@P1523R1] (Views and Size Types): no macro necessary.
+
+[@P0466R5] (Layout-compatibility and Pointer-interconvertibility Traits):
+already has a macro.
+
+[@P1208R6] (Adopt `source_location` for C++20): already has a macro.
+
+# Other proposed macros
+
+Maybe of the papers over the last few years slowly extend the amount of things
+we can write in `constexpr`. This is a fantastic development. However, all of
+these things are currently checked with the single macro `__cpp_constexpr`. This
+makes it difficult to figure out how to actually conditionally apply `constexpr`
+on functions. Additionally, implementations will be gated on bumping this macro
+themselves only in a prescribed, linear order - which means users will
+not be able to mark functions `constexpr` even when their implementation allows
+it.
+
+As such, this paper proposes the adoption of several new macros (in addition
+to bumping `__cpp_constexpr` as described earlier) that are each dedicated to
+single extensions:
+
+* [@P1064R0]: `__cpp_constexpr_virtual`
+* [@P1002R1]: `__cpp_constexpr_try_catch`
+* [@P1327R1]: `__cpp_constexpr_dynamic_cast`
+* [@P1330R0]: `__cpp_constexpr_change_active_union`
+* [@P1668R1]: `__cpp_constexpr_asm`
+* [@P1331R2]: `__cpp_constexpr_default_init`
+
+For similar reasons, this paper also proposes a specific macro for `nodiscard`
+taking a reason. One vendor has even received user complaints about having
+to write code taking the bump, and it is more readable to not have to rely
+on magic values:
+
+* [@P1301R4]: `__cpp_nodiscard_reason`
 
 # Wording
 
@@ -420,6 +642,13 @@ Modify table 17 in 15.10 [cpp.predefined] with the following added:
 <tr><td>[`__cpp_impl_constexpr_members_defined`]{.addu}</td><td>[`201711L`]{.addu}</td></tr>
 <tr><td>[`__cpp_lambda_init_capture_pack`]{.addu}</td><td>[`201803L`]{.addu}</td></tr>
 <tr><td>[`__cpp_consteval`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
+<tr><td>[`__cpp_constexpr_virtual`]{.addu}</td><td>[`201806L`]{.addu}</td></tr>
+<tr><td>[`__cpp_constexpr_try_catch`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
+<tr><td>[`__cpp_constexpr_dynamic_cast`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
+<tr><td>[`__cpp_constexpr_change_active_union`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
+<tr><td>[`__cpp_constexpr_asm`]{.addu}</td><td>[`201907L`]{.addu}</td></tr>
+<tr><td>[`__cpp_constexpr_default_init`]{.addu}</td><td>[`201907L`]{.addu}</td></tr>
+<tr><td>[`__cpp_nodiscard_reason`]{.addu}</td><td>[`201907L`]{.addu}</td></tr>
 </table>
 :::
 
@@ -451,5 +680,12 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <tr><td>[`__cpp_lib_unwrap_ref `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_assume_aligned `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_smart_ptr_default_init `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_polymorphic_allocator `]{.addu}</td><td>[`201902L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_ssize `]{.addu}</td><td>[`201902L`]{.addu}</td><td>[`<iterator>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_concepts `]{.addu}</td><td>[`201806L`]{.rm} [`201907L`]{.addu}</td><td>[`<concepts>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_spaceship `]{.rm}</td><td>[`201907L`]{.rm}</td><td>[`<compare>`]{.rm}</td></tr>
+<tr><td>`__cpp_lib_three_way_comparison `</td><td>[`201711L`]{.rm} [`201907L`]{.addu}</td><td>`<compare>`</td></tr>
+<tr><td>`__cpp_lib_ranges `</td><td>[`	201811L`]{.rm} [`201907L`]{.addu}</td><td>`<algorithm> <functional>`
+`<iterator> <memory> <ranges>`</td></tr>
 </table>
 :::
