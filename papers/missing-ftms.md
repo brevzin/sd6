@@ -1,6 +1,6 @@
 ---
 title: Missing feature-test macros 2018-2019
-document: D1902R0
+document: P1902R0
 date: today
 audience: CWG, LWG
 author:
@@ -21,6 +21,9 @@ did not need one.
 In the intervening time-frame, several meetings' worth of papers were adopted
 which did not have a feature-test macro. The goal is this paper is to go through
 all of those papers and add the missing ones.
+
+As a general note, [@SD6] has been updated and is current through Cologne and
+through a few LWG issues following that.
 
 # 2017
 
@@ -53,7 +56,7 @@ That does give some benefit, in that if you get the names wrong, you'd get a
 diagnostic. But would anybody actually do that?
 
 [@P0428R2] (Familiar template syntax for generic lambdas): [this paper proposes
-the macro `__cpp_familiar_template_lambda`]{.addu}. One of the things this feature
+to bump the macro `__cpp_generic_lambdas`]{.addu}. One of the things this feature
 allows for is, for instance, defaulting a template parameter on a lambda,
 which is arguably a feature enhancement:
 
@@ -61,7 +64,7 @@ which is arguably a feature enhancement:
 struct X { int i, j; };
 
 auto f = 
-#if __cpp_familiar_template_lambda
+#if __cpp_generic_lambdas >= 201707
     []<class T=X>(T&& var)
 #else
     [](auto&& var)
@@ -138,8 +141,11 @@ the macro `__cpp_lib_to_address`]{.addu}.
 [@P0202R3] (Add `constexpr` modifiers to functions in `<algorithm>` and
 `<utility>` Headers): a macro was already added.
 
-[@P0415R1] (Constexpr for `std::complex`): [this paper proposes the macro
-`__cpp_lib_constexpr_complex`]{.addu}.
+[@P0415R1] (Constexpr for `std::complex`): [this paper proposes to bump the
+macro `__cpp_lib_constexpr`]{.addu}. The current position is [@P1424R1],
+option A, which states that every constexpr addition to the library should
+simply increment the version of `__cpp_lib_constexpr`. User code should then
+check against the number that they expect. 
 
 [@P0718R2] (Atomic `shared_ptr`): [this paper proposes the macro
 `__cpp_lib_atomic_shared_ptr`]{.addu}.
@@ -265,8 +271,7 @@ the old code, then the old code works just as well.
 [@P0759R1] (fpos Requirements): no macro necessary.
 
 [@P1023R0] (constexpr comparison operators for `std::array`): [this paper proposes
-the macro `__cpp_lib_constexpr_array_comparisons`]{.addu} for the same reason as
-earlier: it allows more functions to be marked `constexpr`.
+to bump the macro `__cpp_lib_constexpr`]{.addu}.
 
 [@P0769R2] (Add shift to `<algorithm>`): [this paper proposes the macro
 `__cpp_lib_shift`]{.addu}.
@@ -352,8 +357,8 @@ macro necessary.
 [@P0972R0] (`<chrono>` `zero()`, `min()`, and `max()` should be `noexcept`): no
 macro necessary.
 
-[@P1006R1] (Constexpr in `std::pointer_traits`): [this paper proposes the macro
-`__cpp_lib_constexpr_pointer_traits`]{.addu}.
+[@P1006R1] (Constexpr in `std::pointer_traits`): [this paper proposes to bump 
+the macro `__cpp_lib_constexpr`]{.addu}.
 
 [@P1148R0] (Cleaning up Clause 20): no macro necessary.
 
@@ -521,7 +526,12 @@ already has a macro.
 [@P1703R1] (Recognizing Header Unit Imports Requires Full Preprocessing): no
 macro needed.
 
-[@P0784R7] (More constexpr containers): already has a macro.
+[@P0784R7] (More constexpr containers): already had a macro, but erroneously
+introduced a new one (`__cpp_lib_constexpr_dynamic_alloc`) instead of
+following the established guidance from [@P1424R1]. [This paper proposes to
+remove `__cpp_lib_constexpr_dynamic_alloc` and bump the macro
+`__cpp_lib_constexpr`]{.addu}. This paper proposes no changes for the language
+version of this macro, `__cpp_constexpr_dynamic_alloc`.
 
 [@P1355R2] (Exposing a narrow contract for ceil2): no macro needed.
 
@@ -571,7 +581,7 @@ removes a macro.
 [@P1651R0] (`bind_front` should not unwrap `reference_wrapper`): no macro
 necessary.
 
-[@P1065R2] (Constexpr INVOKE): already has a macro.
+[@P1065R2] (Constexpr INVOKE): as above, [this paper proposes to remove `__cpp_lib_constexpr_invoke` and bump the macro `__cpp_lib_constexpr`]{.addu}.
 
 [@P1207R4] (Movability of Single-pass Iterators): no macro necessary.
 
@@ -583,9 +593,12 @@ necessary.
 
 [@P1522R1] (Iterator Difference Type and Integer Overflow): no macro necessary.
 
-[@P1004R2] (Making `std::vector` constexpr): already has a macro.
+[@P1004R2] (Making `std::vector` constexpr): as above, [this 
+paper proposes to remove `__cpp_lib_constexpr_vector` and bump the macro
+`__cpp_lib_constexpr`]{.addu}.
 
-[@P0980R1] (Making `std::string` constexpr): already has a macro.
+[@P0980R1] (Making `std::string` constexpr): as above, [this paper proposes to
+remove `__cpp_lib_constexpr_string` and bump the macro `__cpp_lib_constexpr`]{.addu}.
 
 [@P0660R10] (Stop Token and Joining Thread, Rev 10): already has a macro.
 
@@ -598,9 +611,9 @@ already has a macro.
 
 [@P1208R6] (Adopt `source_location` for C++20): already has a macro.
 
-# Other proposed macros
+# Fine- or coarse-grained macros for `constexpr`?
 
-Maybe of the papers over the last few years slowly extend the amount of things
+Many of the papers over the last few years slowly extend the amount of things
 we can write in `constexpr`. This is a fantastic development. However, all of
 these things are currently checked with the single macro `__cpp_constexpr`. This
 makes it difficult to figure out how to actually conditionally apply `constexpr`
@@ -609,7 +622,7 @@ themselves only in a prescribed, linear order - which means users will
 not be able to mark functions `constexpr` even when their implementation allows
 it.
 
-As such, this paper proposes the adoption of several new macros (in addition
+As such, we could adopt several new macros (in addition
 to bumping `__cpp_constexpr` as described earlier) that are each dedicated to
 single extensions:
 
@@ -620,41 +633,42 @@ single extensions:
 * [@P1668R1]: `__cpp_constexpr_asm`
 * [@P1331R2]: `__cpp_constexpr_default_init`
 
-For similar reasons, this paper also proposes a specific macro for `nodiscard`
-taking a reason. One vendor has even received user complaints about having
-to write code taking the bump, and it is more readable to not have to rely
-on magic values:
+However, this would contrast sharply with decision in [@P1424R1] to solely
+bump `__cpp_lib_constexpr` and _not_ provide the granular macros. Since the only
+adopted guidance is that paper, and the goal of this paper is to fill in missing
+pieces, I wanted to simply point out that this problem exists.
 
-* [@P1301R4]: `__cpp_nodiscard_reason`
+Note also that on the library side, `__cpp_lib_constexpr` for the value `201907L`
+includes four papers: [@P0784R7], [@P1065R2], [@P0980R1], and [@P1004R2]. These
+papers "just" add `constexpr` to some things, but some of these are much larger
+than others - which might gate a standard library advertising support for a
+`constexpr std::invoke` on the compiler implementing constexpr dynamic allocation.
+
+The same problem exists with `nodiscard`, where in Cologne we adopted both the
+ability to add a reason to `[[nodiscard]]` ([@P1301R4]) and the ability to add
+them to constructors, conceputally the former could merit its own feature-test.
+
+SG-10 welcomes further papers on this issue. 
 
 # Wording
 
 Modify table 17 in 15.10 [cpp.predefined] with the following added:
 
-::: bq
 <table>
 <tr>
 <th>Macro Name</th>
 <th>Value</th>
 </tr>
-<tr><td>[`__cpp_familiar_template_lambda`]{.addu}</td><td>[`201707L`]{.addu}</td></tr>
+<tr><td>`__cpp_generic_lambdas`</td><td>[`201304L`]{.rm} [`201707L`]{.addu}</td></tr>
 <tr><td>[`__cpp_concepts`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
 <tr><td>[`__cpp_impl_constexpr_members_defined`]{.addu}</td><td>[`201711L`]{.addu}</td></tr>
 <tr><td>[`__cpp_lambda_init_capture_pack`]{.addu}</td><td>[`201803L`]{.addu}</td></tr>
 <tr><td>[`__cpp_consteval`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
-<tr><td>[`__cpp_constexpr_virtual`]{.addu}</td><td>[`201806L`]{.addu}</td></tr>
-<tr><td>[`__cpp_constexpr_try_catch`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
-<tr><td>[`__cpp_constexpr_dynamic_cast`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
-<tr><td>[`__cpp_constexpr_change_active_union`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
-<tr><td>[`__cpp_constexpr_asm`]{.addu}</td><td>[`201907L`]{.addu}</td></tr>
-<tr><td>[`__cpp_constexpr_default_init`]{.addu}</td><td>[`201907L`]{.addu}</td></tr>
-<tr><td>[`__cpp_nodiscard_reason`]{.addu}</td><td>[`201907L`]{.addu}</td></tr>
 </table>
-:::
 
 Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 
-::: bq
+
 <table>
 <tr>
 <th>Macro Name</th>
@@ -665,18 +679,15 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <tr><td>[`__cpp_lib_remove_cvref`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_syncbuf`]{.addu}</td><td>[`201803L`]{.addu}</td><td>[`<syncstream>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_to_address`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
-<tr><td>[`__cpp_lib_constexpr_complex`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<complex>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_atomic_shared_ptr`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_atomic_float`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_starts_ends_with`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<string> <string_view>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_chrono_date`]{.addu}</td><td>[`201803L`]{.addu}</td><td>[`<chrono>`]{.addu}</td></tr>
-<tr><td>[`__cpp_lib_constexpr_array_comparisons `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<array>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_shift `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<algorithm>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_type_identity `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_nothrow_convertible `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_int_pow2 `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<bit>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_atomic_ref `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
-<tr><td>[`__cpp_lib_constexpr_pointer_traits `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_unwrap_ref `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_assume_aligned `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_smart_ptr_default_init `]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
@@ -684,8 +695,11 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <tr><td>[`__cpp_lib_ssize `]{.addu}</td><td>[`201902L`]{.addu}</td><td>[`<iterator>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_concepts `]{.addu}</td><td>[`201806L`]{.rm} [`201907L`]{.addu}</td><td>[`<concepts>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_spaceship `]{.rm}</td><td>[`201907L`]{.rm}</td><td>[`<compare>`]{.rm}</td></tr>
-<tr><td>`__cpp_lib_three_way_comparison `</td><td>[`201711L`]{.rm} [`201907L`]{.addu}</td><td>`<compare>`</td></tr>
-<tr><td>`__cpp_lib_ranges `</td><td>[`	201811L`]{.rm} [`201907L`]{.addu}</td><td>`<algorithm> <functional>`
-`<iterator> <memory> <ranges>`</td></tr>
+<tr><td>[`__cpp_lib_constexpr_dynamic_alloc`]{.rm}</td><td>[`201907L`]{.rm}</td><td>[`<compare>`]{.rm}</td></tr>
+<tr><td>[`__cpp_lib_constexpr_vector`]{.rm}</td><td>[`201907L`]{.rm}</td><td>[`<compare>`]{.rm}</td></tr>
+<tr><td>[`__cpp_lib_constexpr_string`]{.rm}</td><td>[`201907L`]{.rm}</td><td>[`<compare>`]{.rm}</td></tr>
+<tr><td>[`__cpp_lib_constexpr_invoke`]{.rm}</td><td>[`201907L`]{.rm}</td><td>[`<compare>`]{.rm}</td></tr>
+<tr><td>`__cpp_lib_three_way_comparison`</td><td>[`201711L`]{.rm} [`201907L`]{.addu}</td><td>`<compare>`</td></tr>
+<tr><td>`__cpp_lib_ranges`</td><td>[`201811L`]{.rm} [`201907L`]{.addu}</td><td>`<algorithm> <functional>`
+<tr><td>`__cpp_lib_constexpr`</td><td>[`201811L`]{.rm} [`201907L`]{.addu}</td><td>any C++ library header ...</td></tr>
 </table>
-:::
