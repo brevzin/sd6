@@ -1,0 +1,2021 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang xml:lang>
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="mpark/wg21" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+  <meta name="dcterms.date" content="2019-11-05" />
+  <title>Missing feature-test macros 2018-2019</title>
+  <style>
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style>
+code.sourceCode > span { display: inline-block; line-height: 1.25; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  background-color: #f6f8fa; }
+@media screen {
+code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span. { } /* Normal */
+code span.al { color: #ff0000; } /* Alert */
+code span.an { } /* Annotation */
+code span.at { } /* Attribute */
+code span.bn { color: #9f6807; } /* BaseN */
+code span.bu { color: #9f6807; } /* BuiltIn */
+code span.cf { color: #00607c; } /* ControlFlow */
+code span.ch { color: #9f6807; } /* Char */
+code span.cn { } /* Constant */
+code span.co { color: #008000; font-style: italic; } /* Comment */
+code span.cv { color: #008000; font-style: italic; } /* CommentVar */
+code span.do { color: #008000; } /* Documentation */
+code span.dt { color: #00607c; } /* DataType */
+code span.dv { color: #9f6807; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #9f6807; } /* Float */
+code span.fu { } /* Function */
+code span.im { } /* Import */
+code span.in { color: #008000; } /* Information */
+code span.kw { color: #00607c; } /* Keyword */
+code span.op { color: #af1915; } /* Operator */
+code span.ot { } /* Other */
+code span.pp { color: #6f4e37; } /* Preprocessor */
+code span.re { } /* RegionMarker */
+code span.sc { color: #9f6807; } /* SpecialChar */
+code span.ss { color: #9f6807; } /* SpecialString */
+code span.st { color: #9f6807; } /* String */
+code span.va { } /* Variable */
+code span.vs { color: #9f6807; } /* VerbatimString */
+code span.wa { color: #008000; font-weight: bold; } /* Warning */
+code.diff {color: #898887}
+code.diff span.va {color: #006e28}
+code.diff span.st {color: #bf0303}
+  </style>
+  <style type="text/css">
+body {
+margin: 5em;
+font-family: serif;
+
+hyphens: auto;
+line-height: 1.35;
+}
+div.wrapper {
+max-width: 60em;
+margin: auto;
+}
+ul {
+list-style-type: none;
+padding-left: 2em;
+margin-top: -0.2em;
+margin-bottom: -0.2em;
+}
+a {
+text-decoration: none;
+color: #4183C4;
+}
+a.hidden_link {
+text-decoration: none;
+color: inherit;
+}
+li {
+margin-top: 0.6em;
+margin-bottom: 0.6em;
+}
+h1, h2, h3, h4 {
+position: relative;
+line-height: 1;
+}
+a.self-link {
+position: absolute;
+top: 0;
+left: calc(-1 * (3.5rem - 26px));
+width: calc(3.5rem - 26px);
+height: 2em;
+text-align: center;
+border: none;
+transition: opacity .2s;
+opacity: .5;
+font-family: sans-serif;
+font-weight: normal;
+font-size: 83%;
+}
+a.self-link:hover { opacity: 1; }
+a.self-link::before { content: "§"; }
+ul > li:before {
+content: "\2014";
+position: absolute;
+margin-left: -1.5em;
+}
+:target { background-color: #C9FBC9; }
+:target .codeblock { background-color: #C9FBC9; }
+:target ul { background-color: #C9FBC9; }
+.abbr_ref { float: right; }
+.folded_abbr_ref { float: right; }
+:target .folded_abbr_ref { display: none; }
+:target .unfolded_abbr_ref { float: right; display: inherit; }
+.unfolded_abbr_ref { display: none; }
+.secnum { display: inline-block; min-width: 35pt; }
+.header-section-number { display: inline-block; min-width: 35pt; }
+.annexnum { display: block; }
+div.sourceLinkParent {
+float: right;
+}
+a.sourceLink {
+position: absolute;
+opacity: 0;
+margin-left: 10pt;
+}
+a.sourceLink:hover {
+opacity: 1;
+}
+a.itemDeclLink {
+position: absolute;
+font-size: 75%;
+text-align: right;
+width: 5em;
+opacity: 0;
+}
+a.itemDeclLink:hover { opacity: 1; }
+span.marginalizedparent {
+position: relative;
+left: -5em;
+}
+li span.marginalizedparent { left: -7em; }
+li ul > li span.marginalizedparent { left: -9em; }
+li ul > li ul > li span.marginalizedparent { left: -11em; }
+li ul > li ul > li ul > li span.marginalizedparent { left: -13em; }
+div.footnoteNumberParent {
+position: relative;
+left: -4.7em;
+}
+a.marginalized {
+position: absolute;
+font-size: 75%;
+text-align: right;
+width: 5em;
+}
+a.enumerated_item_num {
+position: relative;
+left: -3.5em;
+display: inline-block;
+margin-right: -3em;
+text-align: right;
+width: 3em;
+}
+div.para { margin-bottom: 0.6em; margin-top: 0.6em; text-align: justify; }
+div.section { text-align: justify; }
+div.sentence { display: inline; }
+span.indexparent {
+display: inline;
+position: relative;
+float: right;
+right: -1em;
+}
+a.index {
+position: absolute;
+display: none;
+}
+a.index:before { content: "⟵"; }
+
+a.index:target {
+display: inline;
+}
+.indexitems {
+margin-left: 2em;
+text-indent: -2em;
+}
+div.itemdescr {
+margin-left: 3em;
+}
+.bnf {
+font-family: serif;
+margin-left: 40pt;
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+}
+.ncbnf {
+font-family: serif;
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+margin-left: 40pt;
+}
+.ncsimplebnf {
+font-family: serif;
+font-style: italic;
+margin-top: 0.5em;
+margin-bottom: 0.5em;
+margin-left: 40pt;
+background: inherit; 
+}
+span.textnormal {
+font-style: normal;
+font-family: serif;
+white-space: normal;
+display: inline-block;
+}
+span.rlap {
+display: inline-block;
+width: 0px;
+}
+span.descr { font-style: normal; font-family: serif; }
+span.grammarterm { font-style: italic; }
+span.term { font-style: italic; }
+span.terminal { font-family: monospace; font-style: normal; }
+span.nonterminal { font-style: italic; }
+span.tcode { font-family: monospace; font-style: normal; }
+span.textbf { font-weight: bold; }
+span.textsc { font-variant: small-caps; }
+a.nontermdef { font-style: italic; font-family: serif; }
+span.emph { font-style: italic; }
+span.techterm { font-style: italic; }
+span.mathit { font-style: italic; }
+span.mathsf { font-family: sans-serif; }
+span.mathrm { font-family: serif; font-style: normal; }
+span.textrm { font-family: serif; }
+span.textsl { font-style: italic; }
+span.mathtt { font-family: monospace; font-style: normal; }
+span.mbox { font-family: serif; font-style: normal; }
+span.ungap { display: inline-block; width: 2pt; }
+span.textit { font-style: italic; }
+span.texttt { font-family: monospace; }
+span.tcode_in_codeblock { font-family: monospace; font-style: normal; }
+span.phantom { color: white; }
+
+span.math { font-style: normal; }
+span.mathblock {
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-top: 1.2em;
+margin-bottom: 1.2em;
+text-align: center;
+}
+span.mathalpha {
+font-style: italic;
+}
+span.synopsis {
+font-weight: bold;
+margin-top: 0.5em;
+display: block;
+}
+span.definition {
+font-weight: bold;
+display: block;
+}
+.codeblock {
+margin-left: 1.2em;
+line-height: 127%;
+}
+.outputblock {
+margin-left: 1.2em;
+line-height: 127%;
+}
+div.itemdecl {
+margin-top: 2ex;
+}
+code.itemdeclcode {
+white-space: pre;
+display: block;
+}
+span.textsuperscript {
+vertical-align: super;
+font-size: smaller;
+line-height: 0;
+}
+.footnotenum { vertical-align: super; font-size: smaller; line-height: 0; }
+.footnote {
+font-size: small;
+margin-left: 2em;
+margin-right: 2em;
+margin-top: 0.6em;
+margin-bottom: 0.6em;
+}
+div.minipage {
+display: inline-block;
+margin-right: 3em;
+}
+div.numberedTable {
+text-align: center;
+margin: 2em;
+}
+div.figure {
+text-align: center;
+margin: 2em;
+}
+table {
+border: 1px solid black;
+border-collapse: collapse;
+margin-left: auto;
+margin-right: auto;
+margin-top: 0.8em;
+text-align: left;
+hyphens: none; 
+}
+td, th {
+padding-left: 1em;
+padding-right: 1em;
+vertical-align: top;
+}
+td.empty {
+padding: 0px;
+padding-left: 1px;
+}
+td.left {
+text-align: left;
+}
+td.right {
+text-align: right;
+}
+td.center {
+text-align: center;
+}
+td.justify {
+text-align: justify;
+}
+td.border {
+border-left: 1px solid black;
+}
+tr.rowsep, td.cline {
+border-top: 1px solid black;
+}
+tr.even, tr.odd {
+border-bottom: 1px solid black;
+}
+tr.capsep {
+border-top: 3px solid black;
+border-top-style: double;
+}
+tr.header {
+border-bottom: 3px solid black;
+border-bottom-style: double;
+}
+th {
+border-bottom: 1px solid black;
+}
+span.centry {
+font-weight: bold;
+}
+div.table {
+display: block;
+margin-left: auto;
+margin-right: auto;
+text-align: center;
+width: 90%;
+}
+span.indented {
+display: block;
+margin-left: 2em;
+margin-bottom: 1em;
+margin-top: 1em;
+}
+ol.enumeratea { list-style-type: none; background: inherit; }
+ol.enumerate { list-style-type: none; background: inherit; }
+
+code.sourceCode > span { display: inline; }
+
+div#refs p { padding-left: 32px; text-indent: -32px; }
+</style>
+  <style type="text/css">a {
+color : #4183C4;
+text-decoration: underline;
+}
+a.marginalized {
+text-decoration: none;
+}
+a.self-link {
+text-decoration: none;
+}
+h1#toctitle {
+border-bottom: 1px solid #cccccc;
+}
+#TOC li {
+margin-top: 1px;
+margin-bottom: 1px;
+}
+#TOC ul>li:before { display: none; }
+h3.subtitle { margin-top: -15px; }
+h1:target { background-color: transparent; }
+h2:target { background-color: transparent; }
+h3:target { background-color: transparent; }
+h4:target { background-color: transparent; }
+h5:target { background-color: transparent; }
+h6:target { background-color: transparent; }
+code span.co { font-family: monospace; }
+table tr {
+background-color: white;
+}
+table tr:nth-child(2n) {
+background-color: #f6f8fa;
+}
+#title-block-header > table tr:nth-child(2n) {
+background-color: white;
+}
+td > div.sourceCode {
+background-color: inherit;
+}
+table {
+border-collapse: collapse;
+}
+table td, table th {
+border: 1px solid #cccccc;
+}
+table th {
+border-bottom: 1px solid black;
+text-align: center;
+}
+table tr:first-child th {
+border-top: 0;
+}
+table tr:last-child td {
+border-bottom: 0;
+}
+table tr td:first-child,
+table tr th:first-child {
+border-left: 0;
+}
+table tr td:last-child,
+table tr th:last-child {
+border-right: 0;
+}
+table tbody tr:first-child td {
+border-top: 1px solid black;
+}
+#title-block-header td { border: 0; }
+@media all {
+body {
+margin: 2em;
+}
+}
+@media screen and (min-width: 480px) {
+body {
+margin: 5em;
+}
+}
+#refs code{padding-left: 0px; text-indent: 0px;}
+:root {
+--diff-ins: #e6ffed;
+--diff-strongins: #acf2bd;
+--diff-del: #ffdddd;
+--diff-strongdel: #ff8888;
+}
+span.diffins {
+background-color: var(--diff-strongins);
+}
+span.diffdel {
+background-color: var(--diff-strongdel);
+}
+div.rm { text-decoration: line-through; }
+div.rm code.sourceCode { text-decoration: line-through; }
+div.addu, span.addu {
+color: #006e28;
+background-color: var(--diff-ins);
+}
+
+div.rm pre, div.add pre { background-color: #f6f8fa; }
+div.addu pre { background-color: var(--diff-ins); }
+div.add, div.add pre { background-color: var(--diff-ins); }
+div.addu blockquote {
+border-left: 4px solid #00a000;
+padding: 0 15px;
+color: #006e28;
+text-decoration: none;
+}
+div.addu blockquote code.sourceCode { text-decoration: none; }
+div.addu blockquote pre { text-decoration: none; }
+div.addu blockquote pre code { text-decoration: none; }
+code.diff span.va { color: #000000; background-color: var(--diff-ins); }
+code.diff span.st { color: #000000; background-color: var(--diff-del); }
+</style>
+  <link href="data:image/vnd.microsoft.icon;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAVoJEAN6CRADegkQAWIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wCCRAAAgkQAAIJEAACCRAAsgkQAvoJEAP+CRAD/gkQA/4JEAP+CRADAgkQALoJEAACCRAAAgkQAAP///wD///8AgkQAAIJEABSCRACSgkQA/IJEAP99PQD/dzMA/3czAP99PQD/gkQA/4JEAPyCRACUgkQAFIJEAAD///8A////AHw+AFiBQwDqgkQA/4BBAP9/PxP/uZd6/9rJtf/bybX/upd7/39AFP+AQQD/gkQA/4FDAOqAQgBc////AP///wDKklv4jlEa/3o7AP+PWC//8+3o///////////////////////z7un/kFox/35AAP+GRwD/mVYA+v///wD///8A0Zpk+NmibP+0d0T/8evj///////+/fv/1sKz/9bCs//9/fr//////+/m2/+NRwL/nloA/5xYAPj///8A////ANKaZPjRmGH/5cKh////////////k149/3UwAP91MQD/lmQ//86rhv+USg3/m1YA/5hSAP+bVgD4////AP///wDSmmT4zpJY/+/bx///////8+TV/8mLT/+TVx//gkIA/5lVAP+VTAD/x6B//7aEVv/JpH7/s39J+P///wD///8A0ppk+M6SWP/u2sf///////Pj1f/Nj1T/2KFs/8mOUv+eWhD/lEsA/8aee/+0glT/x6F7/7J8Rvj///8A////ANKaZPjRmGH/48Cf///////+/v7/2qt//82PVP/OkFX/37KJ/86siv+USg7/mVQA/5hRAP+bVgD4////AP///wDSmmT40ppk/9CVXP/69O////////7+/v/x4M//8d/P//7+/f//////9u7n/6tnJf+XUgD/nFgA+P///wD///8A0ppk+NKaZP/RmWL/1qNy//r07///////////////////////+vXw/9akdP/Wnmn/y5FY/6JfFvj///8A////ANKaZFTSmmTo0ppk/9GYYv/Ql1//5cWm//Hg0P/x4ND/5cWm/9GXYP/RmGH/0ppk/9KaZOjVnmpY////AP///wDSmmQA0ppkEtKaZI7SmmT60ppk/9CWX//OkVb/zpFW/9CWX//SmmT/0ppk/NKaZJDSmmQS0ppkAP///wD///8A0ppkANKaZADSmmQA0ppkKtKaZLrSmmT/0ppk/9KaZP/SmmT/0ppkvNKaZCrSmmQA0ppkANKaZAD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkUtKaZNzSmmTc0ppkVNKaZADSmmQA0ppkANKaZADSmmQA////AP5/AAD4HwAA4AcAAMADAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA+B8AAP5/AAAoAAAAIAAAAEAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wCCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAAyCRACMgkQA6oJEAOqCRACQgkQAEIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wD///8A////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRABigkQA5oJEAP+CRAD/gkQA/4JEAP+CRADqgkQAZoJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAAD///8A////AP///wD///8AgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAA4gkQAwoJEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQAxIJEADyCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAP///wD///8A////AP///wCCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAWgkQAmIJEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAJyCRAAYgkQAAIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wD///8A////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAdIJEAPCCRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAPSCRAB4gkQAAIJEAACCRAAAgkQAAIJEAAD///8A////AP///wD///8AgkQAAIJEAACCRAAAgkQASoJEANKCRAD/gkQA/4JEAP+CRAD/g0YA/39AAP9zLgD/bSQA/2shAP9rIQD/bSQA/3MuAP9/PwD/g0YA/4JEAP+CRAD/gkQA/4JEAP+CRADUgkQAToJEAACCRAAAgkQAAP///wD///8A////AP///wB+PwAAgkUAIoJEAKiCRAD/gkQA/4JEAP+CRAD/hEcA/4BBAP9sIwD/dTAA/5RfKv+viF7/vp56/76ee/+wiF7/lWAr/3YxAP9sIwD/f0AA/4RHAP+CRAD/gkQA/4JEAP+CRAD/gkQArIJEACaBQwAA////AP///wD///8A////AIBCAEBzNAD6f0EA/4NFAP+CRAD/gkQA/4VIAP92MwD/bSUA/6N1Tv/ezsL/////////////////////////////////38/D/6V3Uv9uJgD/dTEA/4VJAP+CRAD/gkQA/4JEAP+BQwD/fUAA/4FDAEj///8A////AP///wD///8AzJRd5qBlKf91NgD/dDUA/4JEAP+FSQD/cy4A/3YyAP/PuKP//////////////////////////////////////////////////////9K7qP94NQD/ciwA/4VJAP+CRAD/fkEA/35BAP+LSwD/mlYA6v///wD///8A////AP///wDdpnL/4qx3/8KJUv+PUhf/cTMA/3AsAP90LgD/4dK+/////////////////////////////////////////////////////////////////+TYxf91MAD/dTIA/31CAP+GRwD/llQA/6FcAP+gWwD8////AP///wD///8A////ANGZY/LSm2X/4ap3/92mcP+wdT3/byQA/8mwj////////////////////////////////////////////////////////////////////////////+LYxv9zLgP/jUoA/59bAP+hXAD/nFgA/5xYAPL///8A////AP///wD///8A0ppk8tKaZP/RmWL/1p9q/9ubXv/XqXj////////////////////////////7+fD/vZyG/6BxS/+gcUr/vJuE//r37f//////////////////////3MOr/5dQBf+dVQD/nVkA/5xYAP+cWAD/nFgA8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/SmWP/yohJ//jo2P//////////////////////4NTG/4JDFf9lGAD/bSQA/20kAP9kGAD/fz8S/+Xb0f//////5NG9/6txN/+LOgD/m1QA/51aAP+cWAD/m1cA/5xYAP+cWADy////AP///wD///8A////ANKaZPLSmmT/0ppk/8+TWf/Unmv//v37//////////////////////+TWRr/VwsA/35AAP+ERgD/g0UA/4JGAP9lHgD/kFga/8KXX/+TRwD/jT4A/49CAP+VTQD/n10A/5xYAP+OQQD/lk4A/55cAPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/y4tO/92yiP//////////////////////8NnE/8eCQP+rcTT/ez0A/3IyAP98PgD/gEMA/5FSAP+USwD/jj8A/5lUAP+JNwD/yqV2/694Mf+HNQD/jkAA/82rf/+laBj/jT4A8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/LiUr/4byY///////////////////////gupX/0I5P/+Wuev/Lklz/l1sj/308AP+QSwD/ol0A/59aAP+aVQD/k0oA/8yoh///////+fXv/6pwO//Lp3v///////Pr4f+oay7y////AP///wD///8A////ANKaZPLSmmT/0ppk/8uJSv/hvJj//////////////////////+G7l//Jhkb/0ppk/96nc//fqXX/x4xO/6dkFP+QSQD/llEA/5xXAP+USgD/yaOA///////38uv/qG05/8ijdv//////8efb/6ZpLPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/zIxO/9yxh///////////////////////7dbA/8iEQf/Sm2X/0Zlj/9ScZv/eqHf/2KJv/7yAQf+XTgD/iToA/5lSAP+JNgD/yKFv/611LP+HNQD/jT8A/8qmeP+kZRT/jT4A8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/Pk1n/1J5q//78+//////////////////+/fv/1aFv/8iEQv/Tm2b/0ppl/9GZY//Wn2z/1pZc/9eldf/Bl2b/kUcA/4w9AP+OQAD/lUwA/59eAP+cWQD/jT8A/5ZOAP+eXADy////AP///wD///8A////ANKaZPLSmmT/0ppk/9KZY//KiEn/8d/P///////////////////////47+f/05tm/8iCP//KiEj/yohJ/8eCP//RmGH//vfy///////n1sP/rXQ7/4k4AP+TTAD/nVoA/5xYAP+cVwD/nFgA/5xYAPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/0ptl/8uLTf/aq37////////////////////////////+/fz/6c2y/961jv/etY7/6Myx//78+v//////////////////////3MWv/5xXD/+ORAD/mFQA/51ZAP+cWAD/nFgA8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/SmmT/0ppk/8mFRP/s1b//////////////////////////////////////////////////////////////////////////////+PD/0JFU/7NzMv+WUQD/kUsA/5tXAP+dWQDy////AP///wD///8A////ANKaZP/SmmT/0ppk/9KaZP/Sm2X/z5NZ/8yMT//z5NX/////////////////////////////////////////////////////////////////9Ofa/8yNUP/UmGH/36p5/8yTWv+qaSD/kksA/5ROAPz///8A////AP///wD///8A0ppk5NKaZP/SmmT/0ppk/9KaZP/TnGf/zY9T/82OUv/t1sD//////////////////////////////////////////////////////+7Yw//OkFX/zI5R/9OcZ//SmmP/26V0/9ymdf/BhUf/ol8R6P///wD///8A////AP///wDSmmQ80ppk9tKaZP/SmmT/0ppk/9KaZP/TnGj/zpFW/8qJSv/dson/8uHS//////////////////////////////////Lj0//etIv/y4lL/86QVf/TnGj/0ppk/9KaZP/RmWP/05xn/9ymdfjUnWdC////AP///wD///8A////ANKaZADSmmQc0ppkotKaZP/SmmT/0ppk/9KaZP/Tm2b/0Zli/8qJSf/NjlH/16Z3/+G8mP/myKr/5siq/+G8mP/Xp3f/zY5S/8qISf/RmGH/05tm/9KaZP/SmmT/0ppk/9KaZP/SmmSm0pljINWdaQD///8A////AP///wD///8A0ppkANKaZADSmmQA0ppkQtKaZMrSmmT/0ppk/9KaZP/SmmT/0ptl/9GYYf/Nj1P/y4lL/8qISP/KiEj/y4lK/82PU//RmGH/0ptl/9KaZP/SmmT/0ppk/9KaZP/SmmTO0ppkRtKaZADSmmQA0ppkAP///wD///8A////AP///wDSmmQA0ppkANKaZADSmmQA0ppkANKaZGzSmmTu0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmTw0ppkcNKaZADSmmQA0ppkANKaZADSmmQA////AP///wD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZBLSmmSQ0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppklNKaZBTSmmQA0ppkANKaZADSmmQA0ppkANKaZAD///8A////AP///wD///8A0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQy0ppkutKaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppkvtKaZDbSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkAP///wD///8A////AP///wDSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkXNKaZODSmmT/0ppk/9KaZP/SmmT/0ppk5NKaZGDSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA////AP///wD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkBtKaZIbSmmTo0ppk6tKaZIrSmmQK0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZAD///8A////AP/8P///+B///+AH//+AAf//AAD//AAAP/AAAA/gAAAHwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA+AAAAfwAAAP/AAAP/8AAP//gAH//+AH///4H////D//" rel="icon" />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+  
+</head>
+<body>
+<div class="wrapper">
+<header id="title-block-header">
+<h1 class="title" style="text-align:center">Missing feature-test macros 2018-2019</h1>
+
+<table style="border:none;float:right">
+  <tr>
+    <td>Document #: </td>
+    <td>D1902R1</td>
+  </tr>
+  <tr>
+    <td>Date: </td>
+    <td>2019-11-05</td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">Project: </td>
+    <td>Programming Language C++<br>
+      CWG, LWG<br>
+    </td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">Reply-to: </td>
+    <td>
+      Barry Revzin<br>&lt;<a href="mailto:barry.revzin@gmail.com" class="email">barry.revzin@gmail.com</a>&gt;<br>
+    </td>
+  </tr>
+</table>
+
+</header>
+<div style="clear:both">
+<div id="TOC" role="doc-toc">
+<h1 id="toctitle">Contents</h1>
+<ul>
+<li><a href="#revision-history"><span class="toc-section-number">1</span> Revision history<span></span></a></li>
+<li><a href="#introduction"><span class="toc-section-number">2</span> Introduction<span></span></a><ul>
+<li><a href="#nb-comments"><span class="toc-section-number">2.1</span> NB Comments<span></span></a></li>
+</ul></li>
+<li><a href="#constexpr-policy"><span class="toc-section-number">3</span> <code class="sourceCode cpp"><span class="kw">constexpr</span></code> policy<span></span></a></li>
+<li><a href="#section"><span class="toc-section-number">4</span> 2017<span></span></a><ul>
+<li><a href="#toronto-201707"><span class="toc-section-number">4.1</span> Toronto (201707)<span></span></a></li>
+<li><a href="#albuquerque-201711"><span class="toc-section-number">4.2</span> Albuquerque (201711)<span></span></a></li>
+</ul></li>
+<li><a href="#section-1"><span class="toc-section-number">5</span> 2018<span></span></a><ul>
+<li><a href="#jacksonville-201803"><span class="toc-section-number">5.1</span> Jacksonville (201803)<span></span></a></li>
+<li><a href="#rapperswil-201806"><span class="toc-section-number">5.2</span> Rapperswil (201806)<span></span></a></li>
+<li><a href="#san-diego-201811"><span class="toc-section-number">5.3</span> San Diego (201811)<span></span></a></li>
+</ul></li>
+<li><a href="#section-2"><span class="toc-section-number">6</span> 2019<span></span></a><ul>
+<li><a href="#kona-201902"><span class="toc-section-number">6.1</span> Kona (201902)<span></span></a></li>
+<li><a href="#cologne-201907"><span class="toc-section-number">6.2</span> Cologne (201907)<span></span></a></li>
+</ul></li>
+<li><a href="#wording"><span class="toc-section-number">7</span> Wording<span></span></a></li>
+<li><a href="#references"><span class="toc-section-number">8</span> References<span></span></a></li>
+</ul>
+</div>
+<h1 id="revision-history" style="border-bottom:1px solid #cccccc"><span class="header-section-number">1</span> Revision history<a href="#revision-history" class="self-link"></a></h1>
+<p>R0 <span class="citation" data-cites="P1902R0">[<a href="#ref-P1902R0" role="doc-biblioref">P1902R0</a>]</span> of this paper was presented to SG10 in Belfast in November, 2019. Some of the macros were renamed to be more consistent with other design decisions. We also came up with a <a href="#constexpr-policy">constexpr policy</a>.</p>
+<h1 id="introduction" style="border-bottom:1px solid #cccccc"><span class="header-section-number">2</span> Introduction<a href="#introduction" class="self-link"></a></h1>
+<p>When <span class="citation" data-cites="P0941R2">[<a href="#ref-P0941R2" role="doc-biblioref">P0941R2</a>]</span> was adopted both into the standard and as policy, that paper thoroughly went through all the relevant features that existed at the time. At the Cologne meeting in July 2019, we added signs in both the Core and Library Working Group rooms to ensure that papers in flight did not forget - they had to either explicitly adopt a new feature-test macro or explicitly state why they did not need one.</p>
+<p>In the intervening time-frame, several meetings’ worth of papers were adopted which did not have a feature-test macro. The goal is this paper is to go through all of those papers and add the missing ones.</p>
+<p>As a general note, <span class="citation" data-cites="SD6">[<a href="#ref-SD6" role="doc-biblioref">SD6</a>]</span> has been updated and is current through Cologne and through a few LWG issues following that.</p>
+<h2 id="nb-comments"><span class="header-section-number">2.1</span> NB Comments<a href="#nb-comments" class="self-link"></a></h2>
+<p>This paper resolves the following NB comments:</p>
+<ul>
+<li><a href="https://github.com/cplusplus/nbballot/issues/15">FI015</a></li>
+<li><a href="https://github.com/cplusplus/nbballot/issues/145">GB146</a>: add a macro for concepts.</li>
+<li><a href="https://github.com/cplusplus/nbballot/issues/146">GB147</a>: add a macro for <code class="sourceCode cpp"><span class="kw">consteval</span></code>.</li>
+<li><a href="https://github.com/cplusplus/nbballot/issues/149">US150</a>: add a macro for familiar syntax for generic lambdas.</li>
+<li><a href="https://github.com/cplusplus/nbballot/issues/165">US167</a>: add a macro for non-member <code class="sourceCode cpp">ssize<span class="op">()</span></code></li>
+<li><a href="https://github.com/cplusplus/nbballot/issues/166">DE168</a>: providing a consistent policy for <code class="sourceCode cpp"><span class="kw">constexpr</span></code></li>
+</ul>
+<h1 id="constexpr-policy" style="border-bottom:1px solid #cccccc"><span class="header-section-number">3</span> <code class="sourceCode cpp"><span class="kw">constexpr</span></code> policy<a href="#constexpr-policy" class="self-link"></a></h1>
+<p>In the previous draft of this paper, there was a discussion on whether or not we want fine-grained or coarse-grained feature test macros for all the constexpr extensions.</p>
+<p>The issue is: we keep extending both the language and the library functionality for what you can do at constant evaluation time. How do we test for those? If we only have coarse-grained macros, this is hostile to implementers (because it requires a strict, linear adoption of features, some of which may be both large and unrelated) and this is hostile to users (because they check this one huge umbrella macro). If we have overly fine macros, this is harmful to the implementation as it adds more macros that compilers need to synthesize, and just adds more things that we have to check.</p>
+<p>The policy discussed and agreed upon by SG10 in Belfast is as follows:</p>
+<ul>
+<li>For the language, we will have a single <code class="sourceCode cpp">__cpp_constexpr</code> macro. It will be bumped every time we extend constexpr in the language.</li>
+<li>For the library, we will add a specific feature test macros for significant, special features. Otherwise, for those cases where we are just adding <code class="sourceCode cpp"><span class="kw">constexpr</span></code> to more things in the library, we will have a dedicated test macro <em>per header</em> and just bump that header-specific macro on each change. That macro will be named <code class="sourceCode cpp">__cpp_lib_constexpr_HEADER</code> (with the exception of a few preexisting macros for <code class="sourceCode cpp">array</code> and <code class="sourceCode cpp">algorithm</code> which have slightly different names).</li>
+</ul>
+<p>This policy leads to several changes from R0 of this paper.</p>
+<h1 id="section" style="border-bottom:1px solid #cccccc"><span class="header-section-number">4</span> 2017<a href="#section" class="self-link"></a></h1>
+<h2 id="toronto-201707"><span class="header-section-number">4.1</span> Toronto (201707)<a href="#toronto-201707" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P0683R1">[<a href="#ref-P0683R1" role="doc-biblioref">P0683R1</a>]</span> (Default member initializers for bit-fields): no macro necessary.</p>
+<p><span class="citation" data-cites="P0704R1">[<a href="#ref-P0704R1" role="doc-biblioref">P0704R1</a>]</span> (Fixing const-qualified pointers to members): no macro necessary.</p>
+<p><span class="citation" data-cites="P0409R2">[<a href="#ref-P0409R2" role="doc-biblioref">P0409R2</a>]</span> (Allow lambda capture <code class="sourceCode cpp"><span class="op">[=</span>, <span class="kw">this</span><span class="op">]</span></code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P0306R4">[<a href="#ref-P0306R4" role="doc-biblioref">P0306R4</a>]</span> (Comma omission and comma deletion): no macro necessary.</p>
+<p><span class="citation" data-cites="P0329R4">[<a href="#ref-P0329R4" role="doc-biblioref">P0329R4</a>]</span> (Designated Initialization Wording): no macro necessary. It’s possible that you could write something like:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">struct</span> X <span class="op">{</span> <span class="dt">int</span> first, <span class="dt">int</span> second; <span class="op">}</span>;</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="pp">#if __cpp_designated_initializer</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="pp">#define INIT_EQ</span><span class="op">(</span>name<span class="op">)</span><span class="pp"> </span><span class="op">.</span>name<span class="pp"> </span><span class="op">=</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="pp">#else</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="pp">#define INIT_EQ</span><span class="op">(</span>name<span class="op">)</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="pp">#endif</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>X<span class="op">{</span>INIT_EQ<span class="op">(</span>first<span class="op">)</span> <span class="dv">7</span>, INIT_EQ<span class="op">(</span>second<span class="op">)</span> <span class="dv">10</span><span class="op">}</span>;</span></code></pre></div>
+<p>That does give some benefit, in that if you get the names wrong, you’d get a diagnostic. But would anybody actually do that?</p>
+<p><span class="citation" data-cites="P0428R2">[<a href="#ref-P0428R2" role="doc-biblioref">P0428R2</a>]</span> (Familiar template syntax for generic lambdas): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_generic_lambdas</code></span>. One of the things this feature allows for is, for instance, defaulting a template parameter on a lambda, which is arguably a feature enhancement:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">struct</span> X <span class="op">{</span> <span class="dt">int</span> i, j; <span class="op">}</span>;</span>
+<span id="cb2-2"><a href="#cb2-2"></a></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">auto</span> f <span class="op">=</span> </span>
+<span id="cb2-4"><a href="#cb2-4"></a><span class="pp">#if __cpp_generic_lambdas &gt;= 201707</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>    <span class="op">[]&lt;</span><span class="kw">class</span> T<span class="op">=</span>X<span class="op">&gt;(</span>T<span class="op">&amp;&amp;</span> var<span class="op">)</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="pp">#else</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="op">[](</span><span class="kw">auto</span><span class="op">&amp;&amp;</span> var<span class="op">)</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="pp">#endif</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>    <span class="op">{</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>    <span class="op">}</span>;</span>
+<span id="cb2-11"><a href="#cb2-11"></a>    </span>
+<span id="cb2-12"><a href="#cb2-12"></a><span class="co">// having the macro allows this usage</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>f<span class="op">({</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">})</span>;</span></code></pre></div>
+<p><span class="citation" data-cites="P0702R1">[<a href="#ref-P0702R1" role="doc-biblioref">P0702R1</a>]</span> (Language support for Constructor Template Argument Deduction): no macro necessary.</p>
+<p><span class="citation" data-cites="P0734R0">[<a href="#ref-P0734R0" role="doc-biblioref">P0734R0</a>]</span> (Wording Paper, C++ extensions for Concepts): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_concepts</code></span>, which will be bumped later, but for SD-6 purposes will start here with the value 201707.</p>
+<p><span class="citation" data-cites="P0463R1">[<a href="#ref-P0463R1" role="doc-biblioref">P0463R1</a>]</span> (Endian just Endian) to the C++ working paper: Already have a macro from <span class="citation" data-cites="P1612R1">[<a href="#ref-P1612R1" role="doc-biblioref">P1612R1</a>]</span>.</p>
+<p><span class="citation" data-cites="P0682R1">[<a href="#ref-P0682R1" role="doc-biblioref">P0682R1</a>]</span> (Repairing elementary string conversions): Already have a macro from <span class="citation" data-cites="LWG3137">[<a href="#ref-LWG3137" role="doc-biblioref">LWG3137</a>]</span>.</p>
+<p><span class="citation" data-cites="P0674R1">[<a href="#ref-P0674R1" role="doc-biblioref">P0674R1</a>]</span> (Extending make_shared to Support Arrays): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_lib_shared_ptr_arrays</code></span>, since <code class="sourceCode cpp">make_shared</code> can save an allocation.</p>
+<h2 id="albuquerque-201711"><span class="header-section-number">4.2</span> Albuquerque (201711)<a href="#albuquerque-201711" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P0614R1">[<a href="#ref-P0614R1" role="doc-biblioref">P0614R1</a>]</span> (Range-based for statements with initializer): no macro necessary.</p>
+<p><span class="citation" data-cites="P0588R1">[<a href="#ref-P0588R1" role="doc-biblioref">P0588R1</a>]</span> (Simplifying implicit lambda capture): no macro necessary.</p>
+<p><span class="citation" data-cites="P0846R0">[<a href="#ref-P0846R0" role="doc-biblioref">P0846R0</a>]</span> (ADL and Function Templates that are not Visible): no macro necessary.</p>
+<p><span class="citation" data-cites="P0641R2">[<a href="#ref-P0641R2" role="doc-biblioref">P0641R2</a>]</span> (Resolving Core Issue #1331 (const mismatch with defaulted copy constructor)): no macro necessary.</p>
+<p><span class="citation" data-cites="P0859R0">[<a href="#ref-P0859R0" role="doc-biblioref">P0859R0</a>]</span> (Core Issue 1581: When are constexpr member functions defined?): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_constexpr_members_defined</code></span>. This issue is a blocker for library being able to implement <span class="citation" data-cites="P1065R2">[<a href="#ref-P1065R2" role="doc-biblioref">P1065R2</a>]</span>, so the library needs to know when to be able to do that. It’s unclear if users outside of standard library implementers will need this.</p>
+<p><span class="citation" data-cites="P0515R3">[<a href="#ref-P0515R3" role="doc-biblioref">P0515R3</a>]</span> (Consistent comparison) and <span class="citation" data-cites="P0768R1">[<a href="#ref-P0768R1" role="doc-biblioref">P0768R1</a>]</span> (Library Support for the Spaceship (Comparison) Operator): already have a macro.</p>
+<p><span class="citation" data-cites="P0857R0">[<a href="#ref-P0857R0" role="doc-biblioref">P0857R0</a>]</span> (Wording for “functionality gaps in constraints”): no macro necessary.</p>
+<p><span class="citation" data-cites="P0692R1">[<a href="#ref-P0692R1" role="doc-biblioref">P0692R1</a>]</span> (Access Checking on Specializations): no macro necessary.</p>
+<p><span class="citation" data-cites="P0624R2">[<a href="#ref-P0624R2" role="doc-biblioref">P0624R2</a>]</span> (Default constructible and assignable stateless lambdas): no macro necessary.</p>
+<p><span class="citation" data-cites="P0767R1">[<a href="#ref-P0767R1" role="doc-biblioref">P0767R1</a>]</span> (Deprecate POD): no macro necessary.</p>
+<p><span class="citation" data-cites="P0315R4">[<a href="#ref-P0315R4" role="doc-biblioref">P0315R4</a>]</span> (Wording for lambdas in unevaluated contexts): no macro necessary.</p>
+<p><span class="citation" data-cites="P0550R2">[<a href="#ref-P0550R2" role="doc-biblioref">P0550R2</a>]</span> (Transformation Trait remove_cvref): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_remove_cvref</code></span>.</p>
+<p><span class="citation" data-cites="P0777R1">[<a href="#ref-P0777R1" role="doc-biblioref">P0777R1</a>]</span> (Treating Unnecessary decay): no macro necessary.</p>
+<p><span class="citation" data-cites="P0600R1">[<a href="#ref-P0600R1" role="doc-biblioref">P0600R1</a>]</span> (nodiscard in the Library): no macro necessary.</p>
+<p><span class="citation" data-cites="P0439R0">[<a href="#ref-P0439R0" role="doc-biblioref">P0439R0</a>]</span> (Make <code class="sourceCode cpp">std<span class="op">::</span>memory_order</code> a scoped enumeration): no macro necessary</p>
+<p><span class="citation" data-cites="P0053R7">[<a href="#ref-P0053R7" role="doc-biblioref">P0053R7</a>]</span> (C++ Synchronized Buffered Ostream): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_syncbuf</code></span>.</p>
+<p><span class="citation" data-cites="P0653R2">[<a href="#ref-P0653R2" role="doc-biblioref">P0653R2</a>]</span> (Utility to convert a pointer to a raw pointer): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_to_address</code></span>.</p>
+<p><span class="citation" data-cites="P0202R3">[<a href="#ref-P0202R3" role="doc-biblioref">P0202R3</a>]</span> (Add <code class="sourceCode cpp"><span class="kw">constexpr</span></code> modifiers to functions in <code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code> and <code class="sourceCode cpp"><span class="op">&lt;</span>utility<span class="op">&gt;</span></code> Headers): a macro was already added.</p>
+<p><span class="citation" data-cites="P0415R1">[<a href="#ref-P0415R1" role="doc-biblioref">P0415R1</a>]</span> (Constexpr for <code class="sourceCode cpp">std<span class="op">::</span>complex</code>): <span class="addu">this paper proposes to introduce the macro <code class="sourceCode cpp">__cpp_lib_constexpr_complex</code></span>. That is, introducing a new macro for this header.</p>
+<p><span class="citation" data-cites="P0718R2">[<a href="#ref-P0718R2" role="doc-biblioref">P0718R2</a>]</span> (Atomic <code class="sourceCode cpp">shared_ptr</code>): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_atomic_shared_ptr</code></span>.</p>
+<p><span class="citation" data-cites="P0020R6">[<a href="#ref-P0020R6" role="doc-biblioref">P0020R6</a>]</span> (Floating Point Atomic): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_atomic_float</code></span>.</p>
+<p><span class="citation" data-cites="P0616R0">[<a href="#ref-P0616R0" role="doc-biblioref">P0616R0</a>]</span> (de-pessimize legacy <code class="sourceCode cpp"><span class="op">&lt;</span>numeric<span class="op">&gt;</span></code> algorithms with <code class="sourceCode cpp">std<span class="op">::</span>move</code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P0457R2">[<a href="#ref-P0457R2" role="doc-biblioref">P0457R2</a>]</span> (String Prefix and Suffix Checking): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_starts_ends_with</code></span>.</p>
+<h1 id="section-1" style="border-bottom:1px solid #cccccc"><span class="header-section-number">5</span> 2018<a href="#section-1" class="self-link"></a></h1>
+<h2 id="jacksonville-201803"><span class="header-section-number">5.1</span> Jacksonville (201803)<a href="#jacksonville-201803" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P0840R2">[<a href="#ref-P0840R2" role="doc-biblioref">P0840R2</a>]</span> (Language support for empty objects: already has a macro.</p>
+<p><span class="citation" data-cites="P0962R1">[<a href="#ref-P0962R1" role="doc-biblioref">P0962R1</a>]</span> (Relaxing the range-for loop customization point finding rules): no macro necessary.</p>
+<p><span class="citation" data-cites="P0969R0">[<a href="#ref-P0969R0" role="doc-biblioref">P0969R0</a>]</span> (Allow structured bindings to accessible members): no macro necessary.</p>
+<p><span class="citation" data-cites="P0961R1">[<a href="#ref-P0961R1" role="doc-biblioref">P0961R1</a>]</span> (Relaxing the structured bindings customization point finding rules): no macro necessary.</p>
+<p><span class="citation" data-cites="P0634R3">[<a href="#ref-P0634R3" role="doc-biblioref">P0634R3</a>]</span> (Down with <code class="sourceCode cpp"><span class="kw">typename</span></code>!): no macro necessary.</p>
+<p><span class="citation" data-cites="P0780R2">[<a href="#ref-P0780R2" role="doc-biblioref">P0780R2</a>]</span> (Allow pack expansion in lambda init-capture): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_init_captures</code></span>. Having such a macro would allow you to avoid using <code class="sourceCode cpp">tuple</code> where necessary. The motivating example in that paper could thus conditionally improve compile throughput:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">class</span><span class="op">...</span> Args<span class="op">&gt;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">auto</span> delay_invoke_foo<span class="op">(</span>Args<span class="op">...</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="pp">#if __cpp_init_captures &gt;= 201803</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="cf">return</span> <span class="op">[...</span>args<span class="op">=</span>std<span class="op">::</span>move<span class="op">(</span>args<span class="op">)]()</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>        <span class="cf">return</span> foo<span class="op">(</span>args<span class="op">...)</span>;</span>
+<span id="cb3-6"><a href="#cb3-6"></a>    <span class="op">}</span>;</span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="pp">#else</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>    <span class="cf">return</span> <span class="op">[</span>tup<span class="op">=</span>std<span class="op">::</span>make_tuple<span class="op">(</span>std<span class="op">::</span>move<span class="op">(</span>args<span class="op">)...)]()</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>        <span class="cf">return</span> std<span class="op">::</span>apply<span class="op">([](</span><span class="kw">auto</span> <span class="kw">const</span><span class="op">&amp;...</span> args<span class="op">)</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>            <span class="cf">return</span> foo<span class="op">(</span>args<span class="op">...)</span>;</span>
+<span id="cb3-11"><a href="#cb3-11"></a>        <span class="op">}</span>, tup<span class="op">)</span>;</span>
+<span id="cb3-12"><a href="#cb3-12"></a>    <span class="op">}</span>;</span>
+<span id="cb3-13"><a href="#cb3-13"></a><span class="pp">#endif</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="op">}</span></span></code></pre></div>
+<p><span class="citation" data-cites="P0479R5">[<a href="#ref-P0479R5" role="doc-biblioref">P0479R5</a>]</span> (Proposed wording for likely and unlikely attributes (Revision 5)): already have a macro.</p>
+<p><span class="citation" data-cites="P0905R1">[<a href="#ref-P0905R1" role="doc-biblioref">P0905R1</a>]</span> (Symmetry for spaceship): in a vacuum, maybe, but since there isn’t an implementation of <code class="sourceCode cpp"><span class="op">&lt;=&gt;</span></code> that includes just up to this point, it’s probably not worth it.</p>
+<p><span class="citation" data-cites="P0754R2">[<a href="#ref-P0754R2" role="doc-biblioref">P0754R2</a>]</span> (<code class="sourceCode cpp"><span class="op">&lt;</span>version<span class="op">&gt;</span></code>): already checkable with <code class="sourceCode cpp"><span class="ot">__has_include</span></code>.</p>
+<p><span class="citation" data-cites="P0809R0">[<a href="#ref-P0809R0" role="doc-biblioref">P0809R0</a>]</span> (Comparing Unordered Containers): no macro necessary.</p>
+<p><span class="citation" data-cites="P0355R7">[<a href="#ref-P0355R7" role="doc-biblioref">P0355R7</a>]</span> (Extending chrono to Calendars and Time Zones): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_lib_chrono</code></span>.</p>
+<p><span class="citation" data-cites="P0966R1">[<a href="#ref-P0966R1" role="doc-biblioref">P0966R1</a>]</span> (<code class="sourceCode cpp">string<span class="op">::</span>reserve</code> Should Not Shrink): no macro necessary.</p>
+<p><span class="citation" data-cites="P0551R3">[<a href="#ref-P0551R3" role="doc-biblioref">P0551R3</a>]</span> (Thou Shalt Not Specialize <code class="sourceCode cpp">std</code> Function Templates!): no macro necessary.</p>
+<p><span class="citation" data-cites="P0753R2">[<a href="#ref-P0753R2" role="doc-biblioref">P0753R2</a>]</span> (Manipulators for C++ Synchronized Buffered Ostream): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_lib_syncbuf</code></span>, which is also added by this paper.</p>
+<p><span class="citation" data-cites="P0122R7">[<a href="#ref-P0122R7" role="doc-biblioref">P0122R7</a>]</span> (<code class="sourceCode cpp"><span class="op">&lt;</span>span<span class="op">&gt;</span></code>): already has a macro by way of <span class="citation" data-cites="LWG3274">[<a href="#ref-LWG3274" role="doc-biblioref">LWG3274</a>]</span>.</p>
+<p><span class="citation" data-cites="P0858R0">[<a href="#ref-P0858R0" role="doc-biblioref">P0858R0</a>]</span> (Constexpr iterator requirements): already has a macro.</p>
+<h2 id="rapperswil-201806"><span class="header-section-number">5.2</span> Rapperswil (201806)<a href="#rapperswil-201806" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P0806R2">[<a href="#ref-P0806R2" role="doc-biblioref">P0806R2</a>]</span> (Deprecate implicit capture of <code class="sourceCode cpp"><span class="kw">this</span></code> via <code class="sourceCode cpp"><span class="op">[=]</span></code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P1042R1">[<a href="#ref-P1042R1" role="doc-biblioref">P1042R1</a>]</span> (<code class="sourceCode cpp">__VA_OPT__</code> wording clarifications): no macro necessary.</p>
+<p><span class="citation" data-cites="P0929R2">[<a href="#ref-P0929R2" role="doc-biblioref">P0929R2</a>]</span> (Checking for abstract class types): no macro necessary.</p>
+<p><span class="citation" data-cites="P0732R2">[<a href="#ref-P0732R2" role="doc-biblioref">P0732R2</a>]</span> (Class Types in Non-Type Template Parameters): already has a macro.</p>
+<p><span class="citation" data-cites="P1025R1">[<a href="#ref-P1025R1" role="doc-biblioref">P1025R1</a>]</span> (Update The Reference To The Unicode Standard): no macro necessary.</p>
+<p><span class="citation" data-cites="P0528R3">[<a href="#ref-P0528R3" role="doc-biblioref">P0528R3</a>]</span> (The Curious Case of Padding Bits, Featuring Atomic Compare-and-Exchange): no macro necessary.</p>
+<p><span class="citation" data-cites="P0722R3">[<a href="#ref-P0722R3" role="doc-biblioref">P0722R3</a>]</span> (Efficient sized delete for variable sized classes): already has a macro.</p>
+<p><span class="citation" data-cites="P1064R0">[<a href="#ref-P1064R0" role="doc-biblioref">P1064R0</a>]</span> (Allowing Virtual Function Calls in Constant Expressions): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_constexpr</code></span>. There are functions that include <code class="sourceCode cpp"><span class="kw">virtual</span></code> calls that would be able to be made <code class="sourceCode cpp"><span class="kw">constexpr</span></code>. This macro already has a higher value in the standard, so no wording changes necessary - just to track in SD-6.</p>
+<p><span class="citation" data-cites="P1008R1">[<a href="#ref-P1008R1" role="doc-biblioref">P1008R1</a>]</span> (Prohibit aggregates with user-declared constructors): no macro necessary.</p>
+<p><span class="citation" data-cites="P1120R0">[<a href="#ref-P1120R0" role="doc-biblioref">P1120R0</a>]</span> (Consistency improvements for &lt;=&gt; and other comparison operators): no macro necessary.</p>
+<p><span class="citation" data-cites="P0542R5">[<a href="#ref-P0542R5" role="doc-biblioref">P0542R5</a>]</span> (Support for contract based programming in C++): would have been checked by the attribute.</p>
+<p><span class="citation" data-cites="P0941R2">[<a href="#ref-P0941R2" role="doc-biblioref">P0941R2</a>]</span> (Integrating feature-test macros into the C++ WD (rev. 2)): very meta.</p>
+<p><span class="citation" data-cites="P0892R2">[<a href="#ref-P0892R2" role="doc-biblioref">P0892R2</a>]</span> (<code class="sourceCode cpp"><span class="kw">explicit</span><span class="op">(</span><span class="dt">bool</span><span class="op">)</span></code>): already has a macro.</p>
+<p><span class="citation" data-cites="P0476R2">[<a href="#ref-P0476R2" role="doc-biblioref">P0476R2</a>]</span> (Bit-casting object representations): already has a macro.</p>
+<p><span class="citation" data-cites="P0788R3">[<a href="#ref-P0788R3" role="doc-biblioref">P0788R3</a>]</span> (Standard Library Specification in a Concepts and Contracts World): no macro necessary.</p>
+<p><span class="citation" data-cites="P0458R2">[<a href="#ref-P0458R2" role="doc-biblioref">P0458R2</a>]</span> (Checking for Existence of an Element in Associative Containers): no macro necessary. The new algorithms are nicer to use, but if you need to support the old code, then the old code works just as well.</p>
+<p><span class="citation" data-cites="P0759R1">[<a href="#ref-P0759R1" role="doc-biblioref">P0759R1</a>]</span> (fpos Requirements): no macro necessary.</p>
+<p><span class="citation" data-cites="P1023R0">[<a href="#ref-P1023R0" role="doc-biblioref">P1023R0</a>]</span> (constexpr comparison operators for <code class="sourceCode cpp">std<span class="op">::</span>array</code>): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_lib_array_constexpr</code></span>.</p>
+<p><span class="citation" data-cites="P0769R2">[<a href="#ref-P0769R2" role="doc-biblioref">P0769R2</a>]</span> (Add shift to <code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code>): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_shift</code></span>.</p>
+<p><span class="citation" data-cites="P0887R1">[<a href="#ref-P0887R1" role="doc-biblioref">P0887R1</a>]</span> (The identity metafunction): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_type_identity</code></span>.</p>
+<p><span class="citation" data-cites="P0879R0">[<a href="#ref-P0879R0" role="doc-biblioref">P0879R0</a>]</span> (Constexpr for swap and swap related functions): already has a macro.</p>
+<p><span class="citation" data-cites="P0758R1">[<a href="#ref-P0758R1" role="doc-biblioref">P0758R1</a>]</span> (Implicit conversion traits and utility functions). <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_nothrow_convertible</code></span>.</p>
+<p><span class="citation" data-cites="P0556R3">[<a href="#ref-P0556R3" role="doc-biblioref">P0556R3</a>]</span> (Integral power-of-2 operations): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_int_pow2</code></span>. <span class="ednote" style="color: #0000ff">[ Editor&#39;s note: There are NB comments about renaming the features introduced by this paper, which may necessitate renaming this macro ]</span></p>
+<p><span class="citation" data-cites="P0019R8">[<a href="#ref-P0019R8" role="doc-biblioref">P0019R8</a>]</span> (Atomic Ref): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_atomic_ref</code></span>.</p>
+<p><span class="citation" data-cites="P0935R0">[<a href="#ref-P0935R0" role="doc-biblioref">P0935R0</a>]</span> (Eradicating unnecessarily explicit default constructors from the standard library): no macro necessary.</p>
+<p><span class="citation" data-cites="P0646R1">[<a href="#ref-P0646R1" role="doc-biblioref">P0646R1</a>]</span> (Improving the Return Value of Erase-Like Algorithms): already has a macro.</p>
+<p><span class="citation" data-cites="P0619R4">[<a href="#ref-P0619R4" role="doc-biblioref">P0619R4</a>]</span> (Reviewing Deprecated Facilities of C++17 for C++20): no macro necessary.</p>
+<p><span class="citation" data-cites="P0898R3">[<a href="#ref-P0898R3" role="doc-biblioref">P0898R3</a>]</span> (Standard Library Concepts): already has a macro.</p>
+<h2 id="san-diego-201811"><span class="header-section-number">5.3</span> San Diego (201811)<a href="#san-diego-201811" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P0982R1">[<a href="#ref-P0982R1" role="doc-biblioref">P0982R1</a>]</span> (Weaken Release Sequences): no macro necessary.</p>
+<p><span class="citation" data-cites="P1084R2">[<a href="#ref-P1084R2" role="doc-biblioref">P1084R2</a>]</span> (Today’s _return-type-requirement_s Are Insufficient): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_concepts</code></span>, which was also added by this paper.</p>
+<p><span class="citation" data-cites="P1131R2">[<a href="#ref-P1131R2" role="doc-biblioref">P1131R2</a>]</span> (Core Issue 2292: <em>simple-template-id</em> is ambiguous between <em>class-name</em> and <em>type-name</em>): no macro necessary.</p>
+<p><span class="citation" data-cites="P1289R1">[<a href="#ref-P1289R1" role="doc-biblioref">P1289R1</a>]</span> (Access control in contract conditions): no macro necessary</p>
+<p><span class="citation" data-cites="P1002R1">[<a href="#ref-P1002R1" role="doc-biblioref">P1002R1</a>]</span> (Try-catch blocks in constexpr functions): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_constexpr</code></span>, as per previous arguments to allow more functions to be declared <code class="sourceCode cpp"><span class="kw">constexpr</span></code>. This one more important than the rest as actually writing <code class="sourceCode cpp"><span class="cf">try</span></code> in a function already makes <code class="sourceCode cpp"><span class="kw">constexpr</span></code> ill-formed.</p>
+<p><span class="citation" data-cites="P1327R1">[<a href="#ref-P1327R1" role="doc-biblioref">P1327R1</a>]</span> (Allowing <code class="sourceCode cpp"><span class="kw">dynamic_cast</span></code>, polymorphic typeid in Constant Expressions): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_constexpr</code></span>.</p>
+<p><span class="citation" data-cites="P1236R1">[<a href="#ref-P1236R1" role="doc-biblioref">P1236R1</a>]</span> (Alternative Wording for P0907R4 Signed Integers are Two’s Complement): no macro necessary.</p>
+<p><span class="citation" data-cites="P0482R6">[<a href="#ref-P0482R6" role="doc-biblioref">P0482R6</a>]</span> (<code class="sourceCode cpp"><span class="dt">char8_t</span></code>: A type for UTF-8 characters and strings (Revision 6)): already has a macro.</p>
+<p><span class="citation" data-cites="P1353R0">[<a href="#ref-P1353R0" role="doc-biblioref">P1353R0</a>]</span> (Missing Feature Test Macros): already adopted.</p>
+<p><span class="citation" data-cites="P1073R3">[<a href="#ref-P1073R3" role="doc-biblioref">P1073R3</a>]</span> (Immediate functions): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_consteval</code></span>. There are some functions that you really only want to run at compile time. You cannot enforce this in C++17, but having this macro would allow you to conditionally enforce it as it becomes available.</p>
+<p><span class="citation" data-cites="P0595R2">[<a href="#ref-P0595R2" role="doc-biblioref">P0595R2</a>]</span> (<code class="sourceCode cpp">std<span class="op">::</span>is_constant_evaluated<span class="op">()</span></code>): already has a macro.</p>
+<p><span class="citation" data-cites="P1141R2">[<a href="#ref-P1141R2" role="doc-biblioref">P1141R2</a>]</span> (Yet another approach for constrained declarations): no macro necessary.</p>
+<p><span class="citation" data-cites="P1094R2">[<a href="#ref-P1094R2" role="doc-biblioref">P1094R2</a>]</span> (Nested Inline Namespaces): no macro necessary.</p>
+<p><span class="citation" data-cites="P1330R0">[<a href="#ref-P1330R0" role="doc-biblioref">P1330R0</a>]</span> (Changing the active member of a union inside constexpr): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_constexpr</code></span>, as per previous arguments. This would allow making <code class="sourceCode cpp">std<span class="op">::</span>optional</code> fully <code class="sourceCode cpp"><span class="kw">constexpr</span></code>, for instance.</p>
+<p><span class="citation" data-cites="P1123R0">[<a href="#ref-P1123R0" role="doc-biblioref">P1123R0</a>]</span> (Editorial Guidance for merging P0019r8 and P0528r3): no macro necessary.</p>
+<p><span class="citation" data-cites="P0487R1">[<a href="#ref-P0487R1" role="doc-biblioref">P0487R1</a>]</span> (Fixing <code class="sourceCode cpp"><span class="kw">operator</span><span class="op">&gt;&gt;(</span>basic_istream<span class="op">&amp;</span>, CharT<span class="op">*)</span></code> (LWG 2499)): no macro necessary.</p>
+<p><span class="citation" data-cites="P0602R4">[<a href="#ref-P0602R4" role="doc-biblioref">P0602R4</a>]</span> (variant and optional should propagate copy/move triviality): no macro necessary.</p>
+<p><span class="citation" data-cites="P0655R1">[<a href="#ref-P0655R1" role="doc-biblioref">P0655R1</a>]</span> (<code class="sourceCode cpp">visit<span class="op">&lt;</span>R<span class="op">&gt;</span></code>: Explicit Return Type for visit): no macro necessary.</p>
+<p><span class="citation" data-cites="P0972R0">[<a href="#ref-P0972R0" role="doc-biblioref">P0972R0</a>]</span> (<code class="sourceCode cpp"><span class="op">&lt;</span>chrono<span class="op">&gt;</span></code> <code class="sourceCode cpp">zero<span class="op">()</span></code>, <code class="sourceCode cpp">min<span class="op">()</span></code>, and <code class="sourceCode cpp">max<span class="op">()</span></code> should be <code class="sourceCode cpp"><span class="kw">noexcept</span></code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P1006R1">[<a href="#ref-P1006R1" role="doc-biblioref">P1006R1</a>]</span> (Constexpr in <code class="sourceCode cpp">std<span class="op">::</span>pointer_traits</code>): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_lib_constexpr_memory</code></span>.</p>
+<p><span class="citation" data-cites="P1032R1">[<a href="#ref-P1032R1" role="doc-biblioref">P1032R1</a>]</span> (Misc constexpr bits): This paper originally added a single feature test macro, <code class="sourceCode cpp">__cpp_lib_constexpr_misc</code>, that was since renamed by <span class="citation" data-cites="P1424R1">[<a href="#ref-P1424R1" role="doc-biblioref">P1424R1</a>]</span> to <code class="sourceCode cpp">__cpp_lib_constexpr</code>. Per the policy laid out in this paper, <span class="addu">this paper proposes to remove <code class="sourceCode cpp">__cpp_lib_constexpr</code> and instead add separate macros for each header: <code class="sourceCode cpp">__cpp_lib_constexpr_functional</code>, <code class="sourceCode cpp">__cpp_lib_constexpr_iterator</code>, <code class="sourceCode cpp">__cpp_lib_constexpr_string_view</code>, <code class="sourceCode cpp">__cpp_lib_constexpr_tuple</code>, and <code class="sourceCode cpp">__cpp_lib_constexpr_utility</code> and to bump <code class="sourceCode cpp">__cpp_lib_array_constexpr</code></span>.</p>
+<p><span class="citation" data-cites="P1148R0">[<a href="#ref-P1148R0" role="doc-biblioref">P1148R0</a>]</span> (Cleaning up Clause 20): no macro necessary.</p>
+<p><span class="citation" data-cites="P0318R1">[<a href="#ref-P0318R1" role="doc-biblioref">P0318R1</a>]</span> (<code class="sourceCode cpp">unwrap_ref_decay</code> and <code class="sourceCode cpp">unwrap_reference</code>): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_unwrap_ref</code></span>.</p>
+<p><span class="citation" data-cites="P0357R3">[<a href="#ref-P0357R3" role="doc-biblioref">P0357R3</a>]</span> (<code class="sourceCode cpp">reference_wrapper</code> for incomplete types): no macro necessary.</p>
+<p><span class="citation" data-cites="P0608R3">[<a href="#ref-P0608R3" role="doc-biblioref">P0608R3</a>]</span> (A sane variant converting constructor): no macro necessary.</p>
+<p><span class="citation" data-cites="P0771R1">[<a href="#ref-P0771R1" role="doc-biblioref">P0771R1</a>]</span> (<code class="sourceCode cpp">std<span class="op">::</span>function</code> move constructor should be <code class="sourceCode cpp"><span class="kw">noexcept</span></code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P1007R3">[<a href="#ref-P1007R3" role="doc-biblioref">P1007R3</a>]</span> (<code class="sourceCode cpp">std<span class="op">::</span>assume_aligned</code>): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_assume_aligned</code></span>.</p>
+<p><span class="citation" data-cites="P1020R1">[<a href="#ref-P1020R1" role="doc-biblioref">P1020R1</a>]</span> (Smart pointer creation with default initialization): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_smart_ptr_default_init</code></span>.</p>
+<p><span class="citation" data-cites="P1285R0">[<a href="#ref-P1285R0" role="doc-biblioref">P1285R0</a>]</span> (Improving Completeness Requirements for Type Traits): no macro necessary.</p>
+<p><span class="citation" data-cites="P1248R1">[<a href="#ref-P1248R1" role="doc-biblioref">P1248R1</a>]</span> (Remove CommonReference requirement from StrictWeakOrdering (a.k.a Fixing Relations): no macro necessary.</p>
+<p><span class="citation" data-cites="P0591R4">[<a href="#ref-P0591R4" role="doc-biblioref">P0591R4</a>]</span> (Utility functions to implement uses-allocator construction): no macro necessary.</p>
+<p><span class="citation" data-cites="P0899R1">[<a href="#ref-P0899R1" role="doc-biblioref">P0899R1</a>]</span> (LWG 3016 is Not a Defect): no macro necessary.</p>
+<p><span class="citation" data-cites="P1085R2">[<a href="#ref-P1085R2" role="doc-biblioref">P1085R2</a>]</span> (Should Span be Regular?): no macro necessary.</p>
+<p><span class="citation" data-cites="P1165R1">[<a href="#ref-P1165R1" role="doc-biblioref">P1165R1</a>]</span> (Make stateful allocator propagation more consistent for <code class="sourceCode cpp"><span class="kw">operator</span><span class="op">+(</span>basic_string<span class="op">)</span></code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P0896R4">[<a href="#ref-P0896R4" role="doc-biblioref">P0896R4</a>]</span> (The One Ranges Proposal): already has a macro.</p>
+<p><span class="citation" data-cites="P0356R5">[<a href="#ref-P0356R5" role="doc-biblioref">P0356R5</a>]</span> (Simplified partial function application): already has a macro.</p>
+<p><span class="citation" data-cites="P0919R3">[<a href="#ref-P0919R3" role="doc-biblioref">P0919R3</a>]</span> (Heterogeneous lookup for unordered containers): already has a macro.</p>
+<p><span class="citation" data-cites="P1209R0">[<a href="#ref-P1209R0" role="doc-biblioref">P1209R0</a>]</span> (Adopt Consistent Container Erasure from Library Fundamentals 2 for C++20): already has a macro.</p>
+<h1 id="section-2" style="border-bottom:1px solid #cccccc"><span class="header-section-number">6</span> 2019<a href="#section-2" class="self-link"></a></h1>
+<h2 id="kona-201902"><span class="header-section-number">6.1</span> Kona (201902)<a href="#kona-201902" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P1286R2">[<a href="#ref-P1286R2" role="doc-biblioref">P1286R2</a>]</span> (Contra CWG DR1778): no macro necessary.</p>
+<p><span class="citation" data-cites="P1091R3">[<a href="#ref-P1091R3" role="doc-biblioref">P1091R3</a>]</span> (Extending structured bindings to be more like variable declarations): no macro necessary.</p>
+<p><span class="citation" data-cites="P1381R1">[<a href="#ref-P1381R1" role="doc-biblioref">P1381R1</a>]</span> (Reference capture of structured bindings): no macro necessary.</p>
+<p><span class="citation" data-cites="P1041R4">[<a href="#ref-P1041R4" role="doc-biblioref">P1041R4</a>]</span> (Make <code class="sourceCode cpp"><span class="dt">char16_t</span></code>/<code class="sourceCode cpp"><span class="dt">char32_t</span></code> string literals be UTF-16/32): no macro necessary.</p>
+<p><span class="citation" data-cites="P1139R2">[<a href="#ref-P1139R2" role="doc-biblioref">P1139R2</a>]</span> (Address wording issues related to ISO 10646): no macro necessary.</p>
+<p><span class="citation" data-cites="P1323R2">[<a href="#ref-P1323R2" role="doc-biblioref">P1323R2</a>]</span> (Contract postconditions and return type deduction): contracts were removed.</p>
+<p><span class="citation" data-cites="P0960R3">[<a href="#ref-P0960R3" role="doc-biblioref">P0960R3</a>]</span> (Allow initializing aggregates from a parenthesized list of values): already has a macro.</p>
+<p><span class="citation" data-cites="P1009R2">[<a href="#ref-P1009R2" role="doc-biblioref">P1009R2</a>]</span> (Array size deduction in new-expressions): no macro necessary.</p>
+<p><span class="citation" data-cites="P1103R3">[<a href="#ref-P1103R3" role="doc-biblioref">P1103R3</a>]</span> (Merging Modules): already has a macro</p>
+<p><span class="citation" data-cites="P1185R2">[<a href="#ref-P1185R2" role="doc-biblioref">P1185R2</a>]</span> (<code class="sourceCode cpp"><span class="op">&lt;=&gt;</span> <span class="op">!=</span> <span class="op">==</span></code>): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_impl_three_way_comparison</code></span>.</p>
+<p><span class="citation" data-cites="P0339R6">[<a href="#ref-P0339R6" role="doc-biblioref">P0339R6</a>]</span> (<code class="sourceCode cpp">polymorphic_allocator<span class="op">&lt;&gt;</span></code> as a vocabulary type): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_polymorphic_allocator</code></span>.</p>
+<p><span class="citation" data-cites="P0340R3">[<a href="#ref-P0340R3" role="doc-biblioref">P0340R3</a>]</span> (Making <code class="sourceCode cpp">std<span class="op">::</span>underlying_type</code> SFINAE-friendly): no macro necessary.</p>
+<p><span class="citation" data-cites="P0738R2">[<a href="#ref-P0738R2" role="doc-biblioref">P0738R2</a>]</span> (I Stream, You Stream, We All Stream for <code class="sourceCode cpp">istream_iterator</code>): no macro necssary.</p>
+<p><span class="citation" data-cites="P1458R1">[<a href="#ref-P1458R1" role="doc-biblioref">P1458R1</a>]</span> (Mandating the Standard Library: Clause 16 - Language support library): no macro necessary.</p>
+<p><span class="citation" data-cites="P1459R1">[<a href="#ref-P1459R1" role="doc-biblioref">P1459R1</a>]</span> (Mandating the Standard Library: Clause 18 - Diagnostics library): no macro necessary.</p>
+<p><span class="citation" data-cites="P1462R1">[<a href="#ref-P1462R1" role="doc-biblioref">P1462R1</a>]</span> (Mandating the Standard Library: Clause 20 - Strings library): no macro necessary.</p>
+<p><span class="citation" data-cites="P1463R1">[<a href="#ref-P1463R1" role="doc-biblioref">P1463R1</a>]</span> (Mandating the Standard Library: Clause 21 - Containers library): no macro necessary.</p>
+<p><span class="citation" data-cites="P1464R1">[<a href="#ref-P1464R1" role="doc-biblioref">P1464R1</a>]</span> (Mandating the Standard Library: Clause 22 - Iterators library): no macro necessary.</p>
+<p><span class="citation" data-cites="P1164R1">[<a href="#ref-P1164R1" role="doc-biblioref">P1164R1</a>]</span> (Make <code class="sourceCode cpp">create_directory<span class="op">()</span></code> Intuitive): no macro necessary.</p>
+<p><span class="citation" data-cites="P0811R3">[<a href="#ref-P0811R3" role="doc-biblioref">P0811R3</a>]</span> (Well-behaved interpolation for numbers and pointers): already has a macro.</p>
+<p><span class="citation" data-cites="P1001R2">[<a href="#ref-P1001R2" role="doc-biblioref">P1001R2</a>]</span> (Target Vectorization Policies from Parallelism V2 TS to C++20): no macro necessary.</p>
+<p><span class="citation" data-cites="P1227R2">[<a href="#ref-P1227R2" role="doc-biblioref">P1227R2</a>]</span> (Signed <code class="sourceCode cpp">ssize<span class="op">()</span></code> functions, unsigned <code class="sourceCode cpp">size<span class="op">()</span></code> functions ): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_lib_ssize</code></span>.</p>
+<p><span class="citation" data-cites="P1252R2">[<a href="#ref-P1252R2" role="doc-biblioref">P1252R2</a>]</span> (Ranges Design Cleanup): no macro necessary.</p>
+<p><span class="citation" data-cites="P1024R3">[<a href="#ref-P1024R3" role="doc-biblioref">P1024R3</a>]</span> (Usability Enhancements for <code class="sourceCode cpp">std<span class="op">::</span>span</code>): already has a macro.</p>
+<p><span class="citation" data-cites="P0920R2">[<a href="#ref-P0920R2" role="doc-biblioref">P0920R2</a>]</span> (Precalculated hash values in lookup): already had a macro, which was subsequently removed.</p>
+<p><span class="citation" data-cites="P1357R1">[<a href="#ref-P1357R1" role="doc-biblioref">P1357R1</a>]</span> (Traits for [Un]bounded Arrays): no macro necessary</p>
+<h2 id="cologne-201907"><span class="header-section-number">6.2</span> Cologne (201907)<a href="#cologne-201907" class="self-link"></a></h2>
+<p><span class="citation" data-cites="P1161R3">[<a href="#ref-P1161R3" role="doc-biblioref">P1161R3</a>]</span> (Deprecate uses of the comma operator in subscripting expressions): no macro necessary.</p>
+<p><span class="citation" data-cites="P1331R2">[<a href="#ref-P1331R2" role="doc-biblioref">P1331R2</a>]</span> (Permitting trivial default initialization in constexpr contexts): already has a macro.</p>
+<p><span class="citation" data-cites="P0735R1">[<a href="#ref-P0735R1" role="doc-biblioref">P0735R1</a>]</span> (Interaction of <code class="sourceCode cpp">memory_order_consume</code> with release sequences): already has a macro.</p>
+<p><span class="citation" data-cites="P0848R3">[<a href="#ref-P0848R3" role="doc-biblioref">P0848R3</a>]</span> (Conditionally Trivial Special Member Functions): no macro necessary. Would people really write both?</p>
+<p><span class="citation" data-cites="P1186R3">[<a href="#ref-P1186R3" role="doc-biblioref">P1186R3</a>]</span> (When do you actually use <code class="sourceCode cpp"><span class="op">&lt;=&gt;</span></code>?): this paper proposed to bump <code class="sourceCode cpp">__cpp_impl_three_way_comparison</code>, but shouldn’t have. This paper doesn’t need a macro.</p>
+<p><span class="citation" data-cites="P1301R4">[<a href="#ref-P1301R4" role="doc-biblioref">P1301R4</a>]</span> (<code class="sourceCode cpp"><span class="op">[[</span><span class="at">nodiscard</span><span class="op">(</span><span class="st">&quot;should have a reason&quot;</span><span class="op">)]]</span></code>): already has a macro.</p>
+<p><span class="citation" data-cites="P1099R5">[<a href="#ref-P1099R5" role="doc-biblioref">P1099R5</a>]</span> (Using Enum): already has a macro</p>
+<p><span class="citation" data-cites="P1630R1">[<a href="#ref-P1630R1" role="doc-biblioref">P1630R1</a>]</span> (Spaceship needs a tune-up): <span class="addu">this paper proposes that the bump of <code class="sourceCode cpp">__cpp_impl_three_way_comparison</code> is associated with this paper instead of P1186R3</span>.</p>
+<p><span class="citation" data-cites="P1616R1">[<a href="#ref-P1616R1" role="doc-biblioref">P1616R1</a>]</span> (Using unconstrained template template parameters with constrained templates): no macro necessary.</p>
+<p><span class="citation" data-cites="P1816R0">[<a href="#ref-P1816R0" role="doc-biblioref">P1816R0</a>]</span> (Wording for class template argument deduction for aggregates): no macro necessary. Would you choose to not provide a deduction guide for an aggregate?</p>
+<p><span class="citation" data-cites="P1668R1">[<a href="#ref-P1668R1" role="doc-biblioref">P1668R1</a>]</span> (Enabling <code class="sourceCode cpp"><span class="kw">constexpr</span></code> Intrinsics By Permitting Unevaluated inline-assembly in <code class="sourceCode cpp"><span class="kw">constexpr</span></code> Functions): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_constexpr</code></span>.</p>
+<p><span class="citation" data-cites="P1766R1">[<a href="#ref-P1766R1" role="doc-biblioref">P1766R1</a>]</span> (Mitigating minor modules maladies): already has a macro.</p>
+<p><span class="citation" data-cites="P1811R0">[<a href="#ref-P1811R0" role="doc-biblioref">P1811R0</a>]</span> (Relaxing redefinition restrictions for re-exportation robustness): already has a macro.</p>
+<p><span class="citation" data-cites="P1814R0">[<a href="#ref-P1814R0" role="doc-biblioref">P1814R0</a>]</span> (Wording for Class Template Argument Deduction for Alias Templates): already has a macro.</p>
+<p><span class="citation" data-cites="P1825R0">[<a href="#ref-P1825R0" role="doc-biblioref">P1825R0</a>]</span> (Merged wording for P0527R1 and P1155R3): no macro needed, just write <code class="sourceCode cpp">std<span class="op">::</span>move<span class="op">()</span></code>.</p>
+<p><span class="citation" data-cites="P1703R1">[<a href="#ref-P1703R1" role="doc-biblioref">P1703R1</a>]</span> (Recognizing Header Unit Imports Requires Full Preprocessing): no macro needed.</p>
+<p><span class="citation" data-cites="P0784R7">[<a href="#ref-P0784R7" role="doc-biblioref">P0784R7</a>]</span> (More constexpr containers): already has a macro. This is a significant library feature that merits its own macro (<code class="sourceCode cpp">__cpp_lib_constexpr_dynamic_alloc</code>).</p>
+<p><span class="citation" data-cites="P1355R2">[<a href="#ref-P1355R2" role="doc-biblioref">P1355R2</a>]</span> (Exposing a narrow contract for ceil2): no macro needed.</p>
+<p><span class="citation" data-cites="P0553R4">[<a href="#ref-P0553R4" role="doc-biblioref">P0553R4</a>]</span> (Bit operations): already has a macro.</p>
+<p><span class="citation" data-cites="P1424R1">[<a href="#ref-P1424R1" role="doc-biblioref">P1424R1</a>]</span> (<code class="sourceCode cpp"><span class="kw">constexpr</span></code> feature macro concerns): already resolved.</p>
+<p><span class="citation" data-cites="P0645R10">[<a href="#ref-P0645R10" role="doc-biblioref">P0645R10</a>]</span> (Text Formatting): already has a macro.</p>
+<p><span class="citation" data-cites="P1361R2">[<a href="#ref-P1361R2" role="doc-biblioref">P1361R2</a>]</span> (Integration of chrono with text formatting): already has a macro.</p>
+<p><span class="citation" data-cites="P1652R1">[<a href="#ref-P1652R1" role="doc-biblioref">P1652R1</a>]</span> (Printf corner cases in <code class="sourceCode cpp">std<span class="op">::</span>format</code>): already has a macro.</p>
+<p><span class="citation" data-cites="P0631R8">[<a href="#ref-P0631R8" role="doc-biblioref">P0631R8</a>]</span> (Math Constants): already has a macro.</p>
+<p><span class="citation" data-cites="P1135R6">[<a href="#ref-P1135R6" role="doc-biblioref">P1135R6</a>]</span> (The C++20 Synchronization Library), <span class="citation" data-cites="P1643R1">[<a href="#ref-P1643R1" role="doc-biblioref">P1643R1</a>]</span> (Add wait/notify to <code class="sourceCode cpp">atomic_ref</code>), and <span class="citation" data-cites="P1644R0">[<a href="#ref-P1644R0" role="doc-biblioref">P1644R0</a>]</span> (Add wait/notify to <code class="sourceCode cpp">atomic<span class="op">&lt;</span>shared_ptr<span class="op">&gt;</span></code>): already have macros.</p>
+<p><span class="citation" data-cites="P1466R3">[<a href="#ref-P1466R3" role="doc-biblioref">P1466R3</a>]</span> (Miscellaneous minor fixes for chrono): already has a macro.</p>
+<p><span class="citation" data-cites="P1754R1">[<a href="#ref-P1754R1" role="doc-biblioref">P1754R1</a>]</span> (Rename concepts to standard_case for C++20, while we still can): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_lib_concepts</code></span>, even though nobody implements this yet, because otherwise it’s confusing.</p>
+<p><span class="citation" data-cites="P1614R2">[<a href="#ref-P1614R2" role="doc-biblioref">P1614R2</a>]</span> (The Mothership has Landed): <span class="addu">erroneously introduced the new macro <code class="sourceCode cpp">__cpp_lib_spaceship</code>, this paper proposes removing that macro and instead bumping <code class="sourceCode cpp">__cpp_lib_three_way_comparison</code></span>.</p>
+<p><span class="citation" data-cites="P0325R4">[<a href="#ref-P0325R4" role="doc-biblioref">P0325R4</a>]</span> (<code class="sourceCode cpp">to_array</code> from LFTS with updates): already has a macro.</p>
+<p><span class="citation" data-cites="P0408R7">[<a href="#ref-P0408R7" role="doc-biblioref">P0408R7</a>]</span> (Efficient Access to <code class="sourceCode cpp">basic_stringbuf</code>’s Buffer): no macro necessary. Trying to move out of the buffer will compile even without this feature, it just won’t be a move.</p>
+<p><span class="citation" data-cites="P1423R3">[<a href="#ref-P1423R3" role="doc-biblioref">P1423R3</a>]</span> (<code class="sourceCode cpp"><span class="dt">char8_t</span></code> backward compatibility remediation): already has a macro.</p>
+<p><span class="citation" data-cites="P1502R1">[<a href="#ref-P1502R1" role="doc-biblioref">P1502R1</a>]</span> (Standard library header units for C++20): no macro necessary.</p>
+<p><span class="citation" data-cites="P1612R1">[<a href="#ref-P1612R1" role="doc-biblioref">P1612R1</a>]</span> (Relocate Endian’s Specification): already has a macro.</p>
+<p><span class="citation" data-cites="P1661R1">[<a href="#ref-P1661R1" role="doc-biblioref">P1661R1</a>]</span> (Remove dedicated precalculated hash lookup interface): already removes a macro.</p>
+<p><span class="citation" data-cites="P1650R0">[<a href="#ref-P1650R0" role="doc-biblioref">P1650R0</a>]</span> (Output <code class="sourceCode cpp">std<span class="op">::</span>chrono<span class="op">::</span>days</code> with ‘d’ suffix): no macro necessary.</p>
+<p><span class="citation" data-cites="P1651R0">[<a href="#ref-P1651R0" role="doc-biblioref">P1651R0</a>]</span> (<code class="sourceCode cpp">bind_front</code> should not unwrap <code class="sourceCode cpp">reference_wrapper</code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P1065R2">[<a href="#ref-P1065R2" role="doc-biblioref">P1065R2</a>]</span> (Constexpr INVOKE): as above, <span class="addu">this paper proposes to rename <code class="sourceCode cpp">__cpp_lib_constexpr_invoke</code> to <code class="sourceCode cpp">__cpp_lib_constexpr_functional</code></span>.</p>
+<p><span class="citation" data-cites="P1207R4">[<a href="#ref-P1207R4" role="doc-biblioref">P1207R4</a>]</span> (Movability of Single-pass Iterators): no macro necessary.</p>
+<p><span class="citation" data-cites="P1035R7">[<a href="#ref-P1035R7" role="doc-biblioref">P1035R7</a>]</span> (Input Range Adaptors): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_lib_ranges</code></span>.</p>
+<p><span class="citation" data-cites="P1638R1">[<a href="#ref-P1638R1" role="doc-biblioref">P1638R1</a>]</span> (<code class="sourceCode cpp">basic_istream_view<span class="op">::</span>iterator</code> should not be copyable): no macro necessary.</p>
+<p><span class="citation" data-cites="P1522R1">[<a href="#ref-P1522R1" role="doc-biblioref">P1522R1</a>]</span> (Iterator Difference Type and Integer Overflow): no macro necessary.</p>
+<p><span class="citation" data-cites="P1004R2">[<a href="#ref-P1004R2" role="doc-biblioref">P1004R2</a>]</span> (Making <code class="sourceCode cpp">std<span class="op">::</span>vector</code> constexpr): already has a macro.</p>
+<p><span class="citation" data-cites="P0980R1">[<a href="#ref-P0980R1" role="doc-biblioref">P0980R1</a>]</span> (Making <code class="sourceCode cpp">std<span class="op">::</span>string</code> constexpr): already has a mcro.</p>
+<p><span class="citation" data-cites="P0660R10">[<a href="#ref-P0660R10" role="doc-biblioref">P0660R10</a>]</span> (Stop Token and Joining Thread, Rev 10): already has a macro.</p>
+<p><span class="citation" data-cites="P1474R1">[<a href="#ref-P1474R1" role="doc-biblioref">P1474R1</a>]</span> (Helpful pointers for <code class="sourceCode cpp">ContiguousIterator</code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P1523R1">[<a href="#ref-P1523R1" role="doc-biblioref">P1523R1</a>]</span> (Views and Size Types): no macro necessary.</p>
+<p><span class="citation" data-cites="P0466R5">[<a href="#ref-P0466R5" role="doc-biblioref">P0466R5</a>]</span> (Layout-compatibility and Pointer-interconvertibility Traits): already has a macro.</p>
+<p><span class="citation" data-cites="P1208R6">[<a href="#ref-P1208R6" role="doc-biblioref">P1208R6</a>]</span> (Adopt <code class="sourceCode cpp">source_location</code> for C++20): already has a macro.</p>
+<h1 id="wording" style="border-bottom:1px solid #cccccc"><span class="header-section-number">7</span> Wording<a href="#wording" class="self-link"></a></h1>
+<p>Modify table 17 in 15.10 [cpp.predefined] with the following added:</p>
+<table>
+<tr>
+<th>
+Macro Name
+</th>
+<th>
+Value
+</th>
+</tr>
+<tr>
+<td>
+<code class="sourceCode cpp">__cpp_generic_lambdas</code>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201304</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201707</span><span class="bu">L</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<code class="sourceCode cpp">__cpp_init_captures</code>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201304</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201803</span><span class="bu">L</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_concepts</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_constexpr_members_defined</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_consteval</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+</tr>
+</table>
+<p>Modify table 36 in 17.3.1 [support.limits.general] with the following added:</p>
+<table>
+<tr>
+<th>
+Macro Name
+</th>
+<th>
+Value
+</th>
+<th>
+Header(s)
+</th>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_shared_ptr_arrays</code></span>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201611</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201707</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_remove_cvref</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>type_traits<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_syncbuf</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201803</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>syncstream<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_to_address</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_atomic_shared_ptr</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>atomic<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_atomic_float</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>atomic<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_starts_ends_with</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>string<span class="op">&gt;</span> <span class="op">&lt;</span>string_view<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_shift</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_type_identity</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>type_traits<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_nothrow_convertible</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>type_traits<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_int_pow2</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>bit<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_atomic_ref</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>atomic<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_unwrap_ref</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>type_traits<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_assume_aligned</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_smart_ptr_default_init</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_polymorphic_allocator</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201902</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_ssize</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201902</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>iterator<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_concepts</code></span>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201806</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201907</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>concepts<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp">__cpp_lib_spaceship</code></span></del></span>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201907</span><span class="bu">L</span></code></span></del></span>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="op">&lt;</span>compare<span class="op">&gt;</span></code></span></del></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp">__cpp_lib_constexpr</code></span></del></span>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span></del></span>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del>any C++ library header …</del></span>
+</td>
+</tr>
+<tr>
+<td>
+<code class="sourceCode cpp">__cpp_lib_array_constexpr</code>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201803</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="op">&lt;</span>array<span class="op">&gt;</span></code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp">__cpp_lib_constexpr_invoke</code></span></del></span> <span class="addu"><code class="sourceCode cpp">__cpp_lib_constexpr_functional</code></span>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">201907</span><span class="bu">L</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="op">&lt;</span>compare<span class="op">&gt;</span></code>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_constexpr_iterator</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>iterator<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_constexpr_string_view</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>string_view<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_constexpr_tuple</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>tuple<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_lib_constexpr_utility</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>utility<span class="op">&gt;</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<code class="sourceCode cpp">__cpp_lib_chrono</code>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201611</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201803</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="op">&lt;</span>chrono<span class="op">&gt;</span></code>
+</td>
+</tr>
+<tr>
+<td>
+<code class="sourceCode cpp">__cpp_lib_three_way_comparison</code>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201907</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="op">&lt;</span>compare<span class="op">&gt;</span></code>
+</td>
+</tr>
+<tr>
+<td>
+<code class="sourceCode cpp">__cpp_lib_ranges</code>
+</td>
+<td>
+<span class="rm" style="color: #bf0303"><del><span><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span></del></span> <span class="addu"><code class="sourceCode cpp"><span class="dv">201907</span><span class="bu">L</span></code></span>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span> <span class="op">&lt;</span>functional<span class="op">&gt;</span></code>
+</table>
+<h1 id="references" style="border-bottom:1px solid #cccccc"><span class="header-section-number">8</span> References<a href="#references" class="self-link"></a></h1>
+
+<div id="refs" role="doc-bibliography">
+<div id="ref-LWG3137">
+<p>[LWG3137] S. B.Tam. Header for <code class="sourceCode cpp">__cpp_lib_to_chars</code>. <br />
+<a href="https://wg21.link/lwg3137">https://wg21.link/lwg3137</a></p>
+</div>
+<div id="ref-LWG3274">
+<p>[LWG3274] Jonathan Wakely. Missing feature test macro for <code class="sourceCode cpp"><span class="op">&lt;</span>span<span class="op">&gt;</span></code>. <br />
+<a href="https://wg21.link/lwg3274">https://wg21.link/lwg3274</a></p>
+</div>
+<div id="ref-P0019R8">
+<p>[P0019R8] Daniel Sunderland, H. Carter Edwards, Hans Boehm, Olivier Giroux, Mark Hoemmen, David Hollman, Bryce Adelstein Lelbach, Jens Maurer. 2018. Atomic Ref. <br />
+<a href="https://wg21.link/p0019r8">https://wg21.link/p0019r8</a></p>
+</div>
+<div id="ref-P0020R6">
+<p>[P0020R6] H. Carter Edwards, Hans Boehm, Olivier Giroux, JF Bastien, James Reus. 2017. Floating Point Atomic. <br />
+<a href="https://wg21.link/p0020r6">https://wg21.link/p0020r6</a></p>
+</div>
+<div id="ref-P0053R7">
+<p>[P0053R7] Lawrence Crowl, Peter Sommerlad, Nicolai Josuttis, Pablo Halpern. 2017. C++ Synchronized Buffered Ostream. <br />
+<a href="https://wg21.link/p0053r7">https://wg21.link/p0053r7</a></p>
+</div>
+<div id="ref-P0122R7">
+<p>[P0122R7] Neil MacIntosh, Stephan T. Lavavej. 2018. span: bounds-safe views for sequences of objects. <br />
+<a href="https://wg21.link/p0122r7">https://wg21.link/p0122r7</a></p>
+</div>
+<div id="ref-P0202R3">
+<p>[P0202R3] Antony Polukhin. 2017. Add Constexpr Modifiers to Functions in <code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code> and <code class="sourceCode cpp"><span class="op">&lt;</span>utility<span class="op">&gt;</span></code> Headers. <br />
+<a href="https://wg21.link/p0202r3">https://wg21.link/p0202r3</a></p>
+</div>
+<div id="ref-P0306R4">
+<p>[P0306R4] Thomas Köppe. 2017. Comma elision and comma deletion. <br />
+<a href="https://wg21.link/p0306r4">https://wg21.link/p0306r4</a></p>
+</div>
+<div id="ref-P0315R4">
+<p>[P0315R4] Louis Dionne, Hubert Tong. 2017. Wording for lambdas in unevaluated contexts. <br />
+<a href="https://wg21.link/p0315r4">https://wg21.link/p0315r4</a></p>
+</div>
+<div id="ref-P0318R1">
+<p>[P0318R1] Vicente J. Botet Escribá. 2018. unwrap_ref_decay and unwrap_reference. <br />
+<a href="https://wg21.link/p0318r1">https://wg21.link/p0318r1</a></p>
+</div>
+<div id="ref-P0325R4">
+<p>[P0325R4] Zhihao Yuan. 2019. to_array from LFTS with updates. <br />
+<a href="https://wg21.link/p0325r4">https://wg21.link/p0325r4</a></p>
+</div>
+<div id="ref-P0329R4">
+<p>[P0329R4] Tim Shen, Richard Smith. 2017. Designated Initialization Wording. <br />
+<a href="https://wg21.link/p0329r4">https://wg21.link/p0329r4</a></p>
+</div>
+<div id="ref-P0339R6">
+<p>[P0339R6] Pablo Halpern, Dietmar Kühl. 2019. polymorphic_allocator&lt;&gt; as a vocabulary type. <br />
+<a href="https://wg21.link/p0339r6">https://wg21.link/p0339r6</a></p>
+</div>
+<div id="ref-P0340R3">
+<p>[P0340R3] Tim Song. 2019. Making std::underlying_type SFINAE-friendly. <br />
+<a href="https://wg21.link/p0340r3">https://wg21.link/p0340r3</a></p>
+</div>
+<div id="ref-P0355R7">
+<p>[P0355R7] Howard E. Hinnant, Tomasz Kamiński. 2018. Extending <chrono> to Calendars and Time Zones. <br />
+<a href="https://wg21.link/p0355r7">https://wg21.link/p0355r7</a></p>
+</div>
+<div id="ref-P0356R5">
+<p>[P0356R5] Tomasz Kamiński. 2018. Simplified partial function application. <br />
+<a href="https://wg21.link/p0356r5">https://wg21.link/p0356r5</a></p>
+</div>
+<div id="ref-P0357R3">
+<p>[P0357R3] Tomasz Kamiński, Stephan T. Lavavej, Alisdair Meredith. 2018. “reference_wrapper” for incomplete types. <br />
+<a href="https://wg21.link/p0357r3">https://wg21.link/p0357r3</a></p>
+</div>
+<div id="ref-P0408R7">
+<p>[P0408R7] Peter Sommerlad. 2019. Efficient Access to basic_stringbuf’s Buffer. <br />
+<a href="https://wg21.link/p0408r7">https://wg21.link/p0408r7</a></p>
+</div>
+<div id="ref-P0409R2">
+<p>[P0409R2] Thomas Koeppe. 2017. Allow lambda capture [=, this]. <br />
+<a href="https://wg21.link/p0409r2">https://wg21.link/p0409r2</a></p>
+</div>
+<div id="ref-P0415R1">
+<p>[P0415R1] Antony Polukhin. 2016. Constexpr for std::complex. <br />
+<a href="https://wg21.link/p0415r1">https://wg21.link/p0415r1</a></p>
+</div>
+<div id="ref-P0428R2">
+<p>[P0428R2] Louis Dionne. 2017. Familiar template syntax for generic lambdas. <br />
+<a href="https://wg21.link/p0428r2">https://wg21.link/p0428r2</a></p>
+</div>
+<div id="ref-P0439R0">
+<p>[P0439R0] Jonathan Wakely. 2016. Make memory_order a scoped enumeration. <br />
+<a href="https://wg21.link/p0439r0">https://wg21.link/p0439r0</a></p>
+</div>
+<div id="ref-P0457R2">
+<p>[P0457R2] Mikhail Maltsev. 2017. String Prefix and Suffix Checking. <br />
+<a href="https://wg21.link/p0457r2">https://wg21.link/p0457r2</a></p>
+</div>
+<div id="ref-P0458R2">
+<p>[P0458R2] Mikhail Maltsev. 2018. Checking for Existence of an Element in Associative Containers. <br />
+<a href="https://wg21.link/p0458r2">https://wg21.link/p0458r2</a></p>
+</div>
+<div id="ref-P0463R1">
+<p>[P0463R1] Howard Hinnant. 2017. endian, Just endian. <br />
+<a href="https://wg21.link/p0463r1">https://wg21.link/p0463r1</a></p>
+</div>
+<div id="ref-P0466R5">
+<p>[P0466R5] Lisa Lippincott. 2019. Layout-compatibility and Pointer-interconvertibility Traits. <br />
+<a href="https://wg21.link/p0466r5">https://wg21.link/p0466r5</a></p>
+</div>
+<div id="ref-P0476R2">
+<p>[P0476R2] JF Bastien. 2017. Bit-casting object representations. <br />
+<a href="https://wg21.link/p0476r2">https://wg21.link/p0476r2</a></p>
+</div>
+<div id="ref-P0479R5">
+<p>[P0479R5] Clay Trychta. 2018. Proposed wording for likely and unlikely attributes. <br />
+<a href="https://wg21.link/p0479r5">https://wg21.link/p0479r5</a></p>
+</div>
+<div id="ref-P0482R6">
+<p>[P0482R6] Tom Honermann. 2018. <code class="sourceCode cpp"><span class="dt">char8_t</span></code>: A type for UTF-8 characters and strings (Revision 6). <br />
+<a href="https://wg21.link/p0482r6">https://wg21.link/p0482r6</a></p>
+</div>
+<div id="ref-P0487R1">
+<p>[P0487R1] Zhihao Yuan. 2018. Fixing operator&gt;&gt;(basic_istream&amp;, CharT*) (LWG 2499). <br />
+<a href="https://wg21.link/p0487r1">https://wg21.link/p0487r1</a></p>
+</div>
+<div id="ref-P0515R3">
+<p>[P0515R3] Herb Sutter, Jens Maurer, Walter E. Brown. 2017. Consistent comparison. <br />
+<a href="https://wg21.link/p0515r3">https://wg21.link/p0515r3</a></p>
+</div>
+<div id="ref-P0528R3">
+<p>[P0528R3] JF Bastien, Michael Spencer. 2018. The Curious Case of Padding Bits, Featuring Atomic Compare-and-Exchange. <br />
+<a href="https://wg21.link/p0528r3">https://wg21.link/p0528r3</a></p>
+</div>
+<div id="ref-P0542R5">
+<p>[P0542R5] J. Daniel Garcia. 2018. Support for contract based programming in C++. <br />
+<a href="https://wg21.link/p0542r5">https://wg21.link/p0542r5</a></p>
+</div>
+<div id="ref-P0550R2">
+<p>[P0550R2] Walter E. Brown. 2017. Transformation Trait remove_cvref. <br />
+<a href="https://wg21.link/p0550r2">https://wg21.link/p0550r2</a></p>
+</div>
+<div id="ref-P0551R3">
+<p>[P0551R3] Walter E. Brown. 2018. Thou Shalt Not Specialize std Function Templates! <br />
+<a href="https://wg21.link/p0551r3">https://wg21.link/p0551r3</a></p>
+</div>
+<div id="ref-P0553R4">
+<p>[P0553R4] Jens Maurer. 2019. Bit operations. <br />
+<a href="https://wg21.link/p0553r4">https://wg21.link/p0553r4</a></p>
+</div>
+<div id="ref-P0556R3">
+<p>[P0556R3] Jens Maurer. 2018. Integral power-of-2 operations. <br />
+<a href="https://wg21.link/p0556r3">https://wg21.link/p0556r3</a></p>
+</div>
+<div id="ref-P0588R1">
+<p>[P0588R1] Richard Smith. 2017. Simplifying implicit lambda capture. <br />
+<a href="https://wg21.link/p0588r1">https://wg21.link/p0588r1</a></p>
+</div>
+<div id="ref-P0591R4">
+<p>[P0591R4] Pablo Halpern. 2018. Utility functions to implement uses-allocator construction. <br />
+<a href="https://wg21.link/p0591r4">https://wg21.link/p0591r4</a></p>
+</div>
+<div id="ref-P0595R2">
+<p>[P0595R2] Richard Smith, Andrew Sutton, Daveed Vandevoorde. 2018. <code class="sourceCode cpp">std<span class="op">::</span>is_constant_evaluated</code>. <br />
+<a href="https://wg21.link/p0595r2">https://wg21.link/p0595r2</a></p>
+</div>
+<div id="ref-P0600R1">
+<p>[P0600R1] Nicolai Josuttis. 2017. [[nodiscard]] in the Library. <br />
+<a href="https://wg21.link/p0600r1">https://wg21.link/p0600r1</a></p>
+</div>
+<div id="ref-P0602R4">
+<p>[P0602R4] Zhihao Yuan. 2018. variant and optional should propagate copy/move triviality. <br />
+<a href="https://wg21.link/p0602r4">https://wg21.link/p0602r4</a></p>
+</div>
+<div id="ref-P0608R3">
+<p>[P0608R3] Zhihao Yuan. 2018. A sane variant converting constructor. <br />
+<a href="https://wg21.link/p0608r3">https://wg21.link/p0608r3</a></p>
+</div>
+<div id="ref-P0614R1">
+<p>[P0614R1] Thomas Köppe. 2017. Range-based for statements with initializer. <br />
+<a href="https://wg21.link/p0614r1">https://wg21.link/p0614r1</a></p>
+</div>
+<div id="ref-P0616R0">
+<p>[P0616R0] Peter Sommerlad. 2017. de-pessimize legacy <numeric> algorithms with std::move. <br />
+<a href="https://wg21.link/p0616r0">https://wg21.link/p0616r0</a></p>
+</div>
+<div id="ref-P0619R4">
+<p>[P0619R4] Alisdair Meredith, Alisdair Meredith, Tomasz Kamiński. 2018. Reviewing Deprecated Facilities of C++17 for C++20. <br />
+<a href="https://wg21.link/p0619r4">https://wg21.link/p0619r4</a></p>
+</div>
+<div id="ref-P0624R2">
+<p>[P0624R2] Louis Dionne. 2017. Default constructible and assignable stateless lambdas. <br />
+<a href="https://wg21.link/p0624r2">https://wg21.link/p0624r2</a></p>
+</div>
+<div id="ref-P0631R8">
+<p>[P0631R8] Lev Minkovsky, John McFarlane. 2019. Math Constants. <br />
+<a href="https://wg21.link/p0631r8">https://wg21.link/p0631r8</a></p>
+</div>
+<div id="ref-P0634R3">
+<p>[P0634R3] Nina Ranns, Daveed Vandevoorde. 2018. Down with typename! <br />
+<a href="https://wg21.link/p0634r3">https://wg21.link/p0634r3</a></p>
+</div>
+<div id="ref-P0641R2">
+<p>[P0641R2] Daniel Krügler, Botond Ballo. 2017. Resolving Core Issue #1331 (const mismatch with defaulted copy constructor). <br />
+<a href="https://wg21.link/p0641r2">https://wg21.link/p0641r2</a></p>
+</div>
+<div id="ref-P0645R10">
+<p>[P0645R10] Victor Zverovich. 2019. Text Formatting. <br />
+<a href="https://wg21.link/p0645r10">https://wg21.link/p0645r10</a></p>
+</div>
+<div id="ref-P0646R1">
+<p>[P0646R1] Marc Mutz. 2018. Improving the Return Value of Erase-Like Algorithms I: list/forward list. <br />
+<a href="https://wg21.link/p0646r1">https://wg21.link/p0646r1</a></p>
+</div>
+<div id="ref-P0653R2">
+<p>[P0653R2] Glen Joseph Fernandes. 2017. Utility to convert a pointer to a raw pointer. <br />
+<a href="https://wg21.link/p0653r2">https://wg21.link/p0653r2</a></p>
+</div>
+<div id="ref-P0655R1">
+<p>[P0655R1] Michael Park, Agustín Bergé. 2018. visit<R>: Explicit Return Type for visit. <br />
+<a href="https://wg21.link/p0655r1">https://wg21.link/p0655r1</a></p>
+</div>
+<div id="ref-P0660R10">
+<p>[P0660R10] Nicolai Josuttis, Lewis Baker, Billy O’Neal, Herb Sutter, Anthony Williams. 2019. Stop Token and Joining Thread. <br />
+<a href="https://wg21.link/p0660r10">https://wg21.link/p0660r10</a></p>
+</div>
+<div id="ref-P0674R1">
+<p>[P0674R1] Peter Dimov, Glen Fernandes. 2017. Extending make_shared to Support Arrays. <br />
+<a href="https://wg21.link/p0674r1">https://wg21.link/p0674r1</a></p>
+</div>
+<div id="ref-P0682R1">
+<p>[P0682R1] Jens Maurer. 2017. Repairing elementary string conversions. <br />
+<a href="https://wg21.link/p0682r1">https://wg21.link/p0682r1</a></p>
+</div>
+<div id="ref-P0683R1">
+<p>[P0683R1] Jens Maurer. 2017. Default member initializers for bit-fields. <br />
+<a href="https://wg21.link/p0683r1">https://wg21.link/p0683r1</a></p>
+</div>
+<div id="ref-P0692R1">
+<p>[P0692R1] Matt Calabrese. 2017. Access Checking on Specializations. <br />
+<a href="https://wg21.link/p0692r1">https://wg21.link/p0692r1</a></p>
+</div>
+<div id="ref-P0702R1">
+<p>[P0702R1] Mike Spertus, Jason Merrill. 2017. Language support for Constructor Template Argument Deduction. <br />
+<a href="https://wg21.link/p0702r1">https://wg21.link/p0702r1</a></p>
+</div>
+<div id="ref-P0704R1">
+<p>[P0704R1] Barry Revzin. 2017. Fixing const-qualified pointers to members. <br />
+<a href="https://wg21.link/p0704r1">https://wg21.link/p0704r1</a></p>
+</div>
+<div id="ref-P0718R2">
+<p>[P0718R2] Alisdair Meredith. 2017. Revising atomic_shared_ptr for C++20. <br />
+<a href="https://wg21.link/p0718r2">https://wg21.link/p0718r2</a></p>
+</div>
+<div id="ref-P0722R3">
+<p>[P0722R3] Richard Smith, Andrew Hunter. 2018. Efficient sized delete for variable sized classes. <br />
+<a href="https://wg21.link/p0722r3">https://wg21.link/p0722r3</a></p>
+</div>
+<div id="ref-P0732R2">
+<p>[P0732R2] Jeff Snyder, Louis Dionne. 2018. Class Types in Non-Type Template Parameters. <br />
+<a href="https://wg21.link/p0732r2">https://wg21.link/p0732r2</a></p>
+</div>
+<div id="ref-P0734R0">
+<p>[P0734R0] Andrew Sutton. 2017. Wording Paper, C++ extensions for Concepts. <br />
+<a href="https://wg21.link/p0734r0">https://wg21.link/p0734r0</a></p>
+</div>
+<div id="ref-P0735R1">
+<p>[P0735R1] Will Deacon, Jade Alglave. 2019. Interaction of memory_order_consume with release sequences. <br />
+<a href="https://wg21.link/p0735r1">https://wg21.link/p0735r1</a></p>
+</div>
+<div id="ref-P0738R2">
+<p>[P0738R2] Casey Carter. 2019. I Stream, You Stream, We All Stream for istream_iterator. <br />
+<a href="https://wg21.link/p0738r2">https://wg21.link/p0738r2</a></p>
+</div>
+<div id="ref-P0753R2">
+<p>[P0753R2] Peter Sommerlad, Pablo Halpern. 2018. Manipulators for C++ Synchronized Buffered Ostream. <br />
+<a href="https://wg21.link/p0753r2">https://wg21.link/p0753r2</a></p>
+</div>
+<div id="ref-P0754R2">
+<p>[P0754R2] Alan Talbot. 2018. <code class="sourceCode cpp"><span class="op">&lt;</span>version<span class="op">&gt;</span></code>. <br />
+<a href="https://wg21.link/p0754r2">https://wg21.link/p0754r2</a></p>
+</div>
+<div id="ref-P0758R1">
+<p>[P0758R1] Daniel Krügler. 2018. Implicit conversion traits and utility functions. <br />
+<a href="https://wg21.link/p0758r1">https://wg21.link/p0758r1</a></p>
+</div>
+<div id="ref-P0759R1">
+<p>[P0759R1] Daniel Krügler. 2018. fpos requirements. <br />
+<a href="https://wg21.link/p0759r1">https://wg21.link/p0759r1</a></p>
+</div>
+<div id="ref-P0767R1">
+<p>[P0767R1] Jens Maurer. 2017. Deprecate POD. <br />
+<a href="https://wg21.link/p0767r1">https://wg21.link/p0767r1</a></p>
+</div>
+<div id="ref-P0768R1">
+<p>[P0768R1] Walter E. Brown. 2017. Library Support for the Spaceship (Comparison) Operator. <br />
+<a href="https://wg21.link/p0768r1">https://wg21.link/p0768r1</a></p>
+</div>
+<div id="ref-P0769R2">
+<p>[P0769R2] Dan Raviv. 2018. Add shift to . <br />
+<a href="https://wg21.link/p0769r2">https://wg21.link/p0769r2</a></p>
+</div>
+<div id="ref-P0771R1">
+<p>[P0771R1] Nevin Liber, Pablo Halpern. 2018. std::function move constructor should be noexcept. <br />
+<a href="https://wg21.link/p0771r1">https://wg21.link/p0771r1</a></p>
+</div>
+<div id="ref-P0777R1">
+<p>[P0777R1] Walter E. Brown. 2017. Treating Unnecessary decay. <br />
+<a href="https://wg21.link/p0777r1">https://wg21.link/p0777r1</a></p>
+</div>
+<div id="ref-P0780R2">
+<p>[P0780R2] Barry Revzin. 2018. Allow pack expansion in lambda init-capture. <br />
+<a href="https://wg21.link/p0780r2">https://wg21.link/p0780r2</a></p>
+</div>
+<div id="ref-P0784R7">
+<p>[P0784R7] Daveed Vandevoorde, Peter Dimov,Louis Dionne, Nina Ranns, Richard Smith, Daveed Vandevoorde. 2019. More constexpr containers. <br />
+<a href="https://wg21.link/p0784r7">https://wg21.link/p0784r7</a></p>
+</div>
+<div id="ref-P0788R3">
+<p>[P0788R3] Walter E. Brown. 2018. Standard Library Specification in a Concepts and Contracts World. <br />
+<a href="https://wg21.link/p0788r3">https://wg21.link/p0788r3</a></p>
+</div>
+<div id="ref-P0806R2">
+<p>[P0806R2] Thomas Köppe. 2018. Deprecate implicit capture of this via [=]. <br />
+<a href="https://wg21.link/p0806r2">https://wg21.link/p0806r2</a></p>
+</div>
+<div id="ref-P0809R0">
+<p>[P0809R0] Titus Winters. 2017. Comparing Unordered Containers. <br />
+<a href="https://wg21.link/p0809r0">https://wg21.link/p0809r0</a></p>
+</div>
+<div id="ref-P0811R3">
+<p>[P0811R3] S. Davis Herring. 2019. Well-behaved interpolation for numbers and pointers. <br />
+<a href="https://wg21.link/p0811r3">https://wg21.link/p0811r3</a></p>
+</div>
+<div id="ref-P0840R2">
+<p>[P0840R2] Richard Smith. 2018. Language support for empty objects. <br />
+<a href="https://wg21.link/p0840r2">https://wg21.link/p0840r2</a></p>
+</div>
+<div id="ref-P0846R0">
+<p>[P0846R0] John Spicer. 2017. ADL and Function Templates that are not Visible. <br />
+<a href="https://wg21.link/p0846r0">https://wg21.link/p0846r0</a></p>
+</div>
+<div id="ref-P0848R3">
+<p>[P0848R3] Barry Revzin, Casey Carter. 2019. Conditionally Trivial Special Member Functions. <br />
+<a href="https://wg21.link/p0848r3">https://wg21.link/p0848r3</a></p>
+</div>
+<div id="ref-P0857R0">
+<p>[P0857R0] Thomas Köppe. 2017. Wording for “functionality gaps in constraints”. <br />
+<a href="https://wg21.link/p0857r0">https://wg21.link/p0857r0</a></p>
+</div>
+<div id="ref-P0858R0">
+<p>[P0858R0] Antony Polukhin. 2017. Constexpr iterator requirements. <br />
+<a href="https://wg21.link/p0858r0">https://wg21.link/p0858r0</a></p>
+</div>
+<div id="ref-P0859R0">
+<p>[P0859R0] Richard Smith. 2017. Core Issue 1581: When are constexpr member functions defined? <br />
+<a href="https://wg21.link/p0859r0">https://wg21.link/p0859r0</a></p>
+</div>
+<div id="ref-P0879R0">
+<p>[P0879R0] Antony Polukhin. 2017. Constexpr for swap and swap related functions. <br />
+<a href="https://wg21.link/p0879r0">https://wg21.link/p0879r0</a></p>
+</div>
+<div id="ref-P0887R1">
+<p>[P0887R1] Timur Doumler. 2018. The identity metafunction. <br />
+<a href="https://wg21.link/p0887r1">https://wg21.link/p0887r1</a></p>
+</div>
+<div id="ref-P0892R2">
+<p>[P0892R2] Barry Revzin, Stephan T. Lavavej. 2018. <code class="sourceCode cpp"><span class="kw">explicit</span><span class="op">(</span><span class="dt">bool</span><span class="op">)</span></code>. <br />
+<a href="https://wg21.link/p0892r2">https://wg21.link/p0892r2</a></p>
+</div>
+<div id="ref-P0896R4">
+<p>[P0896R4] Eric Niebler, Casey Carter, Christopher Di Bella. 2018. The One Ranges Proposal. <br />
+<a href="https://wg21.link/p0896r4">https://wg21.link/p0896r4</a></p>
+</div>
+<div id="ref-P0898R3">
+<p>[P0898R3] Casey Carter, Eric Niebler. 2018. Standard Library Concepts. <br />
+<a href="https://wg21.link/p0898r3">https://wg21.link/p0898r3</a></p>
+</div>
+<div id="ref-P0899R1">
+<p>[P0899R1] Casey Carter. 2018. LWG 3016 is Not a Defect. <br />
+<a href="https://wg21.link/p0899r1">https://wg21.link/p0899r1</a></p>
+</div>
+<div id="ref-P0905R1">
+<p>[P0905R1] Tomasz Kamiński, Herb Sutter, Richard Smith. 2018. Symmetry for spaceship. <br />
+<a href="https://wg21.link/p0905r1">https://wg21.link/p0905r1</a></p>
+</div>
+<div id="ref-P0919R3">
+<p>[P0919R3] Mateusz Pusz. 2018. Heterogeneous lookup for unordered containers. <br />
+<a href="https://wg21.link/p0919r3">https://wg21.link/p0919r3</a></p>
+</div>
+<div id="ref-P0920R2">
+<p>[P0920R2] Mateusz Pusz. 2019. Precalculated hash values in lookup. <br />
+<a href="https://wg21.link/p0920r2">https://wg21.link/p0920r2</a></p>
+</div>
+<div id="ref-P0929R2">
+<p>[P0929R2] Jens Maurer. 2018. Checking for abstract class types. <br />
+<a href="https://wg21.link/p0929r2">https://wg21.link/p0929r2</a></p>
+</div>
+<div id="ref-P0935R0">
+<p>[P0935R0] Tim Song. 2018. Eradicating unnecessarily explicit default constructors from the standard library. <br />
+<a href="https://wg21.link/p0935r0">https://wg21.link/p0935r0</a></p>
+</div>
+<div id="ref-P0941R2">
+<p>[P0941R2] Ville Voutilainen, Jonathan Wakely. 2018. Integrating feature-test macros into the C++ WD. <br />
+<a href="https://wg21.link/p0941r2">https://wg21.link/p0941r2</a></p>
+</div>
+<div id="ref-P0960R3">
+<p>[P0960R3] Ville Voutilainen, Thomas Köppe. 2019. Allow initializing aggregates from a parenthesized list of values. <br />
+<a href="https://wg21.link/p0960r3">https://wg21.link/p0960r3</a></p>
+</div>
+<div id="ref-P0961R1">
+<p>[P0961R1] Ville Voutilainen. 2018. Relaxing the structured bindings customization point finding rules. <br />
+<a href="https://wg21.link/p0961r1">https://wg21.link/p0961r1</a></p>
+</div>
+<div id="ref-P0962R1">
+<p>[P0962R1] Ville Voutilainen. 2018. Relaxing the range-for loop customization point finding rules. <br />
+<a href="https://wg21.link/p0962r1">https://wg21.link/p0962r1</a></p>
+</div>
+<div id="ref-P0966R1">
+<p>[P0966R1] Mark Zeren, Andrew Luo. 2018. string::reserve Should Not Shrink. <br />
+<a href="https://wg21.link/p0966r1">https://wg21.link/p0966r1</a></p>
+</div>
+<div id="ref-P0969R0">
+<p>[P0969R0] Timur Doumler. 2018. Allow structured bindings to accessible members. <br />
+<a href="https://wg21.link/p0969r0">https://wg21.link/p0969r0</a></p>
+</div>
+<div id="ref-P0972R0">
+<p>[P0972R0] Billy Robert O’Neal III. 2018. <chrono> zero(), min(), and max() should be noexcept. <br />
+<a href="https://wg21.link/p0972r0">https://wg21.link/p0972r0</a></p>
+</div>
+<div id="ref-P0980R1">
+<p>[P0980R1] Louis Dionne. 2019. Making <code class="sourceCode cpp">std<span class="op">::</span>string</code> constexpr. <br />
+<a href="https://wg21.link/p0980r1">https://wg21.link/p0980r1</a></p>
+</div>
+<div id="ref-P0982R1">
+<p>[P0982R1] Hans-J. Boehm, Olivier Giroux, Viktor Vafeiades. 2018. Weaken release sequences. <br />
+<a href="https://wg21.link/p0982r1">https://wg21.link/p0982r1</a></p>
+</div>
+<div id="ref-P1001R2">
+<p>[P1001R2] Alisdair Meredith, Pablo Halpern. 2019. Target Vectorization Policies from Parallelism V2 TS to C++20. <br />
+<a href="https://wg21.link/p1001r2">https://wg21.link/p1001r2</a></p>
+</div>
+<div id="ref-P1002R1">
+<p>[P1002R1] Louis Dionne. 2018. Try-catch blocks in constexpr functions. <br />
+<a href="https://wg21.link/p1002r1">https://wg21.link/p1002r1</a></p>
+</div>
+<div id="ref-P1004R2">
+<p>[P1004R2] Louis Dionne. 2019. Making <code class="sourceCode cpp">std<span class="op">::</span>vector</code> constexpr. <br />
+<a href="https://wg21.link/p1004r2">https://wg21.link/p1004r2</a></p>
+</div>
+<div id="ref-P1006R1">
+<p>[P1006R1] Louis Dionne. 2018. Constexpr in std::pointer_traits. <br />
+<a href="https://wg21.link/p1006r1">https://wg21.link/p1006r1</a></p>
+</div>
+<div id="ref-P1007R3">
+<p>[P1007R3] Timur Doumler, Chandler Carruth. 2018. std::assume_aligned. <br />
+<a href="https://wg21.link/p1007r3">https://wg21.link/p1007r3</a></p>
+</div>
+<div id="ref-P1008R1">
+<p>[P1008R1] Timur Doumler, Arthur O’Dwyer, Richard Smith, Howard E. Hinnant, Nicolai Josuttis. 2018. Prohibit aggregates with user-declared constructors. <br />
+<a href="https://wg21.link/p1008r1">https://wg21.link/p1008r1</a></p>
+</div>
+<div id="ref-P1009R2">
+<p>[P1009R2] Timur Doumler. 2019. Array size deduction in new-expressions. <br />
+<a href="https://wg21.link/p1009r2">https://wg21.link/p1009r2</a></p>
+</div>
+<div id="ref-P1020R1">
+<p>[P1020R1] Glen Joseph Fernandes, Peter Dimov. 2018. Smart pointer creation with default initialization. <br />
+<a href="https://wg21.link/p1020r1">https://wg21.link/p1020r1</a></p>
+</div>
+<div id="ref-P1023R0">
+<p>[P1023R0] Tristan Brindle. 2018. constexpr comparison operators for std::array. <br />
+<a href="https://wg21.link/p1023r0">https://wg21.link/p1023r0</a></p>
+</div>
+<div id="ref-P1024R3">
+<p>[P1024R3] Tristan Brindle. 2019. Usability Enhancements for <code class="sourceCode cpp">std<span class="op">::</span>span</code>. <br />
+<a href="https://wg21.link/p1024r3">https://wg21.link/p1024r3</a></p>
+</div>
+<div id="ref-P1025R1">
+<p>[P1025R1] Steve Downey, JeanHeyd Meneide, Martinho Fernandes. 2018. Update The Reference To The Unicode Standard. <br />
+<a href="https://wg21.link/p1025r1">https://wg21.link/p1025r1</a></p>
+</div>
+<div id="ref-P1032R1">
+<p>[P1032R1] Antony Polukhin. 2018. Misc constexpr bits. <br />
+<a href="https://wg21.link/p1032r1">https://wg21.link/p1032r1</a></p>
+</div>
+<div id="ref-P1035R7">
+<p>[P1035R7] Christopher Di Bella, Casey Carter, Corentin Jabot. 2019. Input Range Adaptors. <br />
+<a href="https://wg21.link/p1035r7">https://wg21.link/p1035r7</a></p>
+</div>
+<div id="ref-P1041R4">
+<p>[P1041R4] R. Martinho Fernandes. 2019. Make char16_t/char32_t string literals be UTF-16/32. <br />
+<a href="https://wg21.link/p1041r4">https://wg21.link/p1041r4</a></p>
+</div>
+<div id="ref-P1042R1">
+<p>[P1042R1] Hubert S.K. Tong. 2018. <strong>VA_OPT</strong> wording clarifications. <br />
+<a href="https://wg21.link/p1042r1">https://wg21.link/p1042r1</a></p>
+</div>
+<div id="ref-P1064R0">
+<p>[P1064R0] Peter Dimov, Vassil Vassilev. 2018. Allowing Virtual Function Calls in Constant Expressions. <br />
+<a href="https://wg21.link/p1064r0">https://wg21.link/p1064r0</a></p>
+</div>
+<div id="ref-P1065R2">
+<p>[P1065R2] Tomasz Kamiński, Barry Revzin. 2019. constexpr <em><code class="sourceCode cpp">INVOKE</code></em>. <br />
+<a href="https://wg21.link/p1065r2">https://wg21.link/p1065r2</a></p>
+</div>
+<div id="ref-P1073R3">
+<p>[P1073R3] Richard Smith, Andrew Sutton, Daveed Vandevoorde. 2018. Immediate functions. <br />
+<a href="https://wg21.link/p1073r3">https://wg21.link/p1073r3</a></p>
+</div>
+<div id="ref-P1084R2">
+<p>[P1084R2] Walter E. Brown, Casey Carter. 2018. Today’s return-type-requirements Are Insufficient. <br />
+<a href="https://wg21.link/p1084r2">https://wg21.link/p1084r2</a></p>
+</div>
+<div id="ref-P1085R2">
+<p>[P1085R2] Tony Van Eerd. 2018. Should Span be Regular? <br />
+<a href="https://wg21.link/p1085r2">https://wg21.link/p1085r2</a></p>
+</div>
+<div id="ref-P1091R3">
+<p>[P1091R3] Nicolas Lesser. 2019. Extending structured bindings to be more like variable declarations. <br />
+<a href="https://wg21.link/p1091r3">https://wg21.link/p1091r3</a></p>
+</div>
+<div id="ref-P1094R2">
+<p>[P1094R2] Alisdair Meredith. 2018. Nested Inline Namespaces. <br />
+<a href="https://wg21.link/p1094r2">https://wg21.link/p1094r2</a></p>
+</div>
+<div id="ref-P1099R5">
+<p>[P1099R5] Gašper Ažman, Jonathan Mueller. 2019. Using Enum. <br />
+<a href="https://wg21.link/p1099r5">https://wg21.link/p1099r5</a></p>
+</div>
+<div id="ref-P1103R3">
+<p>[P1103R3] Richard Smith. 2019. Merging Modules. <br />
+<a href="https://wg21.link/p1103r3">https://wg21.link/p1103r3</a></p>
+</div>
+<div id="ref-P1120R0">
+<p>[P1120R0] Richard Smith. 2018. Consistency improvements for &lt;=&gt; and other comparison operators. <br />
+<a href="https://wg21.link/p1120r0">https://wg21.link/p1120r0</a></p>
+</div>
+<div id="ref-P1123R0">
+<p>[P1123R0] Daniel Sunderland. 2018. Editorial Guidance for merging P0019r8 and P0528r3. <br />
+<a href="https://wg21.link/p1123r0">https://wg21.link/p1123r0</a></p>
+</div>
+<div id="ref-P1131R2">
+<p>[P1131R2] Jens Maurer. 2018. Core Issue 2292: simple-template-id is ambiguous between class-name and type-name. <br />
+<a href="https://wg21.link/p1131r2">https://wg21.link/p1131r2</a></p>
+</div>
+<div id="ref-P1135R6">
+<p>[P1135R6] David Olsen, Olivier Giroux, JF Bastien, Detlef Vollmann, Bryce Lelbach. 2019. The C++20 Synchronization Library. <br />
+<a href="https://wg21.link/p1135r6">https://wg21.link/p1135r6</a></p>
+</div>
+<div id="ref-P1139R2">
+<p>[P1139R2] R. Martinho Fernandes. 2019. Address wording issues related to ISO 10646. <br />
+<a href="https://wg21.link/p1139r2">https://wg21.link/p1139r2</a></p>
+</div>
+<div id="ref-P1141R2">
+<p>[P1141R2] Ville Voutilainen, Thomas Köppe, Andrew Sutton, Herb Sutter, Gabriel Dos Reis, Bjarne Stroustrup, Jason Merrill, Hubert Tong, Eric Niebler, Casey Carter, Tom Honermann, Erich Keane, Walter E. Brown, Michael Spertus, Richard Smith. 2018. Yet another approach for constrained declarations. <br />
+<a href="https://wg21.link/p1141r2">https://wg21.link/p1141r2</a></p>
+</div>
+<div id="ref-P1148R0">
+<p>[P1148R0] Tim Song. 2018. Cleaning up Clause 20. <br />
+<a href="https://wg21.link/p1148r0">https://wg21.link/p1148r0</a></p>
+</div>
+<div id="ref-P1161R3">
+<p>[P1161R3] Corentin Jabot. 2019. Deprecate uses of the comma operator in subscripting expressions. <br />
+<a href="https://wg21.link/p1161r3">https://wg21.link/p1161r3</a></p>
+</div>
+<div id="ref-P1164R1">
+<p>[P1164R1] Nicolai Josuttis. 2019. Make create_directory() intuitive. <br />
+<a href="https://wg21.link/p1164r1">https://wg21.link/p1164r1</a></p>
+</div>
+<div id="ref-P1165R1">
+<p>[P1165R1] Tim Song. 2018. Make stateful allocator propagation more consistent for operator+(basic_string). <br />
+<a href="https://wg21.link/p1165r1">https://wg21.link/p1165r1</a></p>
+</div>
+<div id="ref-P1185R2">
+<p>[P1185R2] Barry Revzin. 2019. <code class="sourceCode cpp"><span class="op">&lt;=&gt;</span> <span class="op">!=</span> <span class="op">==</span></code>. <br />
+<a href="https://wg21.link/p1185r2">https://wg21.link/p1185r2</a></p>
+</div>
+<div id="ref-P1186R3">
+<p>[P1186R3] Barry Revzin. 2019. When do you actually use <code class="sourceCode cpp"><span class="op">&lt;=&gt;</span></code>? <br />
+<a href="https://wg21.link/p1186r3">https://wg21.link/p1186r3</a></p>
+</div>
+<div id="ref-P1207R4">
+<p>[P1207R4] Corentin Jabot. 2019. Movability of Single-pass Iterators. <br />
+<a href="https://wg21.link/p1207r4">https://wg21.link/p1207r4</a></p>
+</div>
+<div id="ref-P1208R6">
+<p>[P1208R6] Corentin Jabot, Robert Douglas, Daniel Krugler, Peter Sommerlad. 2019. Adopt source location from Library Fundamentals V3 for C++20. <br />
+<a href="https://wg21.link/p1208r6">https://wg21.link/p1208r6</a></p>
+</div>
+<div id="ref-P1209R0">
+<p>[P1209R0] Alisdair Meredith, Stephan T. Lavavej. 2018. Adopt Consistent Container Erasure from Library Fundamentals 2 for C++20. <br />
+<a href="https://wg21.link/p1209r0">https://wg21.link/p1209r0</a></p>
+</div>
+<div id="ref-P1227R2">
+<p>[P1227R2] Jorg Brown. 2019. Signed ssize() functions, unsigned size() functions. <br />
+<a href="https://wg21.link/p1227r2">https://wg21.link/p1227r2</a></p>
+</div>
+<div id="ref-P1236R1">
+<p>[P1236R1] Jens Maurer. 2018. Alternative Wording for P0907R4 Signed Integers are Two’s Complement. <br />
+<a href="https://wg21.link/p1236r1">https://wg21.link/p1236r1</a></p>
+</div>
+<div id="ref-P1248R1">
+<p>[P1248R1] Tomasz Kamiński. 2018. Remove CommonReference requirement from StrictWeakOrdering. <br />
+<a href="https://wg21.link/p1248r1">https://wg21.link/p1248r1</a></p>
+</div>
+<div id="ref-P1252R2">
+<p>[P1252R2] Casey Carter. 2019. Ranges Design Cleanup. <br />
+<a href="https://wg21.link/p1252r2">https://wg21.link/p1252r2</a></p>
+</div>
+<div id="ref-P1285R0">
+<p>[P1285R0] Walter E. Brown. 2018. Improving Completeness Requirements for Type Traits. <br />
+<a href="https://wg21.link/p1285r0">https://wg21.link/p1285r0</a></p>
+</div>
+<div id="ref-P1286R2">
+<p>[P1286R2] Richard Smith. 2019. Contra CWG DR1778. <br />
+<a href="https://wg21.link/p1286r2">https://wg21.link/p1286r2</a></p>
+</div>
+<div id="ref-P1289R1">
+<p>[P1289R1] J. Daniel Garcia, Ville Voutilainen. 2018. Access control in contract conditions. <br />
+<a href="https://wg21.link/p1289r1">https://wg21.link/p1289r1</a></p>
+</div>
+<div id="ref-P1301R4">
+<p>[P1301R4] JeanHeyd Meneide, Isabella Muerte. 2019. <code class="sourceCode cpp"><span class="op">[[</span><span class="at">nodiscard</span><span class="op">(</span><span class="st">&quot;should have a reason&quot;</span><span class="op">)]]</span></code>. <br />
+<a href="https://wg21.link/p1301r4">https://wg21.link/p1301r4</a></p>
+</div>
+<div id="ref-P1323R2">
+<p>[P1323R2] Hubert S.K. Tong. 2019. Contract postconditions and return type deduction. <br />
+<a href="https://wg21.link/p1323r2">https://wg21.link/p1323r2</a></p>
+</div>
+<div id="ref-P1327R1">
+<p>[P1327R1] Peter Dimov, Vassil Vassilev, Richard Smith. 2018. Allowing dynamic_cast, polymorphic typeid in Constant Expressions. <br />
+<a href="https://wg21.link/p1327r1">https://wg21.link/p1327r1</a></p>
+</div>
+<div id="ref-P1330R0">
+<p>[P1330R0] Louis Dionne, David Vandevoorde. 2018. Changing the active member of a union inside constexpr. <br />
+<a href="https://wg21.link/p1330r0">https://wg21.link/p1330r0</a></p>
+</div>
+<div id="ref-P1331R2">
+<p>[P1331R2] CJ Johnson. 2019. Permitting trivial default initialization in constexpr contexts. <br />
+<a href="https://wg21.link/p1331r2">https://wg21.link/p1331r2</a></p>
+</div>
+<div id="ref-P1353R0">
+<p>[P1353R0] John Spicer. 2017. Missing Feature Test Macros. <br />
+<a href="https://wg21.link/p1353r0">https://wg21.link/p1353r0</a></p>
+</div>
+<div id="ref-P1355R2">
+<p>[P1355R2] Chris Kennelly. 2019. Exposing a narrow contract for ceil2. <br />
+<a href="https://wg21.link/p1355r2">https://wg21.link/p1355r2</a></p>
+</div>
+<div id="ref-P1357R1">
+<p>[P1357R1] Walter E. Brown, Glen J. Fernandes. 2019. Traits for [Un]bounded Arrays. <br />
+<a href="https://wg21.link/p1357r1">https://wg21.link/p1357r1</a></p>
+</div>
+<div id="ref-P1361R2">
+<p>[P1361R2] Victor Zverovich, Daniela Engert, Howard E. Hinnant. 2019. Integration of chrono with text formatting. <br />
+<a href="https://wg21.link/p1361r2">https://wg21.link/p1361r2</a></p>
+</div>
+<div id="ref-P1381R1">
+<p>[P1381R1] Nicolas Lesser. 2019. Reference capture of structured bindings. <br />
+<a href="https://wg21.link/p1381r1">https://wg21.link/p1381r1</a></p>
+</div>
+<div id="ref-P1423R3">
+<p>[P1423R3] Tom Honermann. 2019. <code class="sourceCode cpp"><span class="dt">char8_t</span></code> backward compatibility remediation. <br />
+<a href="https://wg21.link/p1423r2">https://wg21.link/p1423r2</a></p>
+</div>
+<div id="ref-P1424R1">
+<p>[P1424R1] Antony Polukhin. 2019. “constexpr” feature macro concerns. <br />
+<a href="https://wg21.link/p1424r1">https://wg21.link/p1424r1</a></p>
+</div>
+<div id="ref-P1458R1">
+<p>[P1458R1] Marshall Clow. 2019. Mandating the Standard Library: Clause 16 - Language support library. <br />
+<a href="https://wg21.link/p1458r1">https://wg21.link/p1458r1</a></p>
+</div>
+<div id="ref-P1459R1">
+<p>[P1459R1] Marshall Clow. 2019. Mandating the Standard Library: Clause 18 - Diagnostics library. <br />
+<a href="https://wg21.link/p1459r1">https://wg21.link/p1459r1</a></p>
+</div>
+<div id="ref-P1462R1">
+<p>[P1462R1] Marshall Clow. 2019. Mandating the Standard Library: Clause 20 - Strings library. <br />
+<a href="https://wg21.link/p1462r1">https://wg21.link/p1462r1</a></p>
+</div>
+<div id="ref-P1463R1">
+<p>[P1463R1] Marshall Clow. 2019. Mandating the Standard Library: Clause 21 - Containers library. <br />
+<a href="https://wg21.link/p1463r1">https://wg21.link/p1463r1</a></p>
+</div>
+<div id="ref-P1464R1">
+<p>[P1464R1] Marshall Clow. 2019. Mandating the Standard Library: Clause 22 - Iterators library. <br />
+<a href="https://wg21.link/p1464r1">https://wg21.link/p1464r1</a></p>
+</div>
+<div id="ref-P1466R3">
+<p>[P1466R3] Howard E. Hinnant. 2019. Miscellaneous minor fixes for chrono. <br />
+<a href="https://wg21.link/p1466r3">https://wg21.link/p1466r3</a></p>
+</div>
+<div id="ref-P1474R1">
+<p>[P1474R1] Casey Carter. 2019. Helpful pointers for ContiguousIterator. <br />
+<a href="https://wg21.link/p1474r1">https://wg21.link/p1474r1</a></p>
+</div>
+<div id="ref-P1502R1">
+<p>[P1502R1] Richard Smith. 2019. Standard library header units for C++20. <br />
+<a href="https://wg21.link/p1502r1">https://wg21.link/p1502r1</a></p>
+</div>
+<div id="ref-P1522R1">
+<p>[P1522R1] Eric Niebler. 2019. Iterator Difference Type and Integer Overflow. <br />
+<a href="https://wg21.link/p1522r1">https://wg21.link/p1522r1</a></p>
+</div>
+<div id="ref-P1523R1">
+<p>[P1523R1] Eric Niebler. 2019. Views and Size Types. <br />
+<a href="https://wg21.link/p1523r1">https://wg21.link/p1523r1</a></p>
+</div>
+<div id="ref-P1612R1">
+<p>[P1612R1] Arthur O’Dwyer. 2019. Relocate Endian’s Specification. <br />
+<a href="https://wg21.link/p1612r1">https://wg21.link/p1612r1</a></p>
+</div>
+<div id="ref-P1614R2">
+<p>[P1614R2] Barry Revzin. 2019. The Mothership Has Landed: Adding <code class="sourceCode cpp"><span class="op">&lt;=&gt;</span></code> to the Library. <br />
+<a href="https://wg21.link/p1614r2">https://wg21.link/p1614r2</a></p>
+</div>
+<div id="ref-P1616R1">
+<p>[P1616R1] Mike Spertus, Roland Bock. 2019. Using unconstrained template template parameters with constrained templates. <br />
+<a href="https://wg21.link/p1616r1">https://wg21.link/p1616r1</a></p>
+</div>
+<div id="ref-P1630R1">
+<p>[P1630R1] Barry Revzin. 2019. Spaceship needs a tune-up. <br />
+<a href="https://wg21.link/p1630r1">https://wg21.link/p1630r1</a></p>
+</div>
+<div id="ref-P1638R1">
+<p>[P1638R1] Corentin Jabot, Christopher Di Bella. 2019. basic_istream_view’s iterator should not be copyable. <br />
+<a href="https://wg21.link/p1638r1">https://wg21.link/p1638r1</a></p>
+</div>
+<div id="ref-P1643R1">
+<p>[P1643R1] David Olsen. 2019. Add wait/notify to atomic_ref. <br />
+<a href="https://wg21.link/p1643r1">https://wg21.link/p1643r1</a></p>
+</div>
+<div id="ref-P1644R0">
+<p>[P1644R0] David Olsen. 2019. Add wait/notify to atomic&lt;shared_ptr<T>&gt;. <br />
+<a href="https://wg21.link/p1644r0">https://wg21.link/p1644r0</a></p>
+</div>
+<div id="ref-P1650R0">
+<p>[P1650R0] Tomasz Kamiński. 2019. Output std::chrono::days with “d” suffix. <br />
+<a href="https://wg21.link/p1650r0">https://wg21.link/p1650r0</a></p>
+</div>
+<div id="ref-P1651R0">
+<p>[P1651R0] Tomasz Kamiński. 2019. bind_front should not unwrap reference_wrapper. <br />
+<a href="https://wg21.link/p1651r0">https://wg21.link/p1651r0</a></p>
+</div>
+<div id="ref-P1652R1">
+<p>[P1652R1] Zhihao Yuan, Victor Zverovich. 2019. Printf corner cases in std::format. <br />
+<a href="https://wg21.link/p1652r1">https://wg21.link/p1652r1</a></p>
+</div>
+<div id="ref-P1661R1">
+<p>[P1661R1] Tomasz Kamiński. 2019. Remove dedicated precalculated hash lookup interface. <br />
+<a href="https://wg21.link/p1661r1">https://wg21.link/p1661r1</a></p>
+</div>
+<div id="ref-P1668R1">
+<p>[P1668R1] Erich Keane. 2019. Enabling constexpr Intrinsics By Permitting Unevaluated inline-assembly in constexpr Functions. <br />
+<a href="https://wg21.link/p1668r1">https://wg21.link/p1668r1</a></p>
+</div>
+<div id="ref-P1703R1">
+<p>[P1703R1] Boris Kolpackov. 2019. Recognizing Header Unit Imports Requires Full Preprocessing. <br />
+<a href="https://wg21.link/p1703r1">https://wg21.link/p1703r1</a></p>
+</div>
+<div id="ref-P1754R1">
+<p>[P1754R1] Herb Sutter, Casey Carter, Gabriel Dos Reis, Eric Niebler, Bjarne Stroustrup, Andrew Sutton, Ville Voutilainen. 2019. Rename concepts to standard_case for C++20, while we still can. <br />
+<a href="https://wg21.link/p1754r1">https://wg21.link/p1754r1</a></p>
+</div>
+<div id="ref-P1766R1">
+<p>[P1766R1] Richard Smith. 2019. Mitigating minor modules maladies. <br />
+<a href="https://wg21.link/p1766r1">https://wg21.link/p1766r1</a></p>
+</div>
+<div id="ref-P1811R0">
+<p>[P1811R0] Richard Smith, Gabriel Dos Reis. 2019. Relaxing redefinition restrictions for re-exportation robustness. <br />
+<a href="https://wg21.link/p1811r0">https://wg21.link/p1811r0</a></p>
+</div>
+<div id="ref-P1814R0">
+<p>[P1814R0] Mike Spertus. 2019. Wording for Class Template Argument Deduction for Alias Templates. <br />
+<a href="https://wg21.link/p1814r0">https://wg21.link/p1814r0</a></p>
+</div>
+<div id="ref-P1816R0">
+<p>[P1816R0] Timur Doumler. 2019. Wording for class template argument deduction for aggregates. <br />
+<a href="https://wg21.link/p1816r0">https://wg21.link/p1816r0</a></p>
+</div>
+<div id="ref-P1825R0">
+<p>[P1825R0] David Stone. 2019. Merged wording for P0527R1 and P1155R3. <br />
+<a href="https://wg21.link/p1825r0">https://wg21.link/p1825r0</a></p>
+</div>
+<div id="ref-P1902R0">
+<p>[P1902R0] Barry Revzin. 2019. Missing feature-test macros 2018-2019. <br />
+<a href="https://wg21.link/p1902r0">https://wg21.link/p1902r0</a></p>
+</div>
+<div id="ref-SD6">
+<p>[SD6] SG10 Feature Test Recommendations. <br />
+<a href="https://wg21.link/sd6">https://wg21.link/sd6</a></p>
+</div>
+</div>
+</div>
+</div>
+</body>
+</html>

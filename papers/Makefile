@@ -1,4 +1,4 @@
 include ../md/mpark-wg21.mk
 
-p1902r0.html : missing-ftms.md
+d1902r1.html : missing-ftms.md
 	$(PANDOC)
