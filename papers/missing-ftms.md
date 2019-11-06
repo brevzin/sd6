@@ -711,6 +711,7 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <tr><td>`__cpp_lib_array_constexpr`</td><td>[`201803L`]{.rm} [`201811L`]{.addu}</td><td>`<array>`</td></tr>
 <tr><td>[`__cpp_lib_constexpr_invoke`]{.rm} [`__cpp_lib_constexpr_functional`]{.addu}</td><td>`201907L`</td><td>`<compare>`</td></tr>
 <tr><td>[`__cpp_lib_constexpr_iterator`]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<iterator>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_constexpr_memory`]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_constexpr_string_view`]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<string_view>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_constexpr_tuple`]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<tuple>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_constexpr_utility`]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<utility>`]{.addu}</td></tr>
