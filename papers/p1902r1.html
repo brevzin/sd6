@@ -4,8 +4,8 @@
   <meta charset="utf-8" />
   <meta name="generator" content="mpark/wg21" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="dcterms.date" content="2019-11-06" />
-  <title>Missing feature-test macros 2018-2019</title>
+  <meta name="dcterms.date" content="2019-11-08" />
+  <title>Missing feature-test macros 2017-2019</title>
   <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -526,16 +526,16 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <body>
 <div class="wrapper">
 <header id="title-block-header">
-<h1 class="title" style="text-align:center">Missing feature-test macros 2018-2019</h1>
+<h1 class="title" style="text-align:center">Missing feature-test macros 2017-2019</h1>
 
 <table style="border:none;float:right">
   <tr>
     <td>Document #: </td>
-    <td>D1902R1</td>
+    <td>P1902R1</td>
   </tr>
   <tr>
     <td>Date: </td>
-    <td>2019-11-06</td>
+    <td>2019-11-08</td>
   </tr>
   <tr>
     <td style="vertical-align:top">Project: </td>
@@ -579,7 +579,7 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 </ul>
 </div>
 <h1 id="revision-history" style="border-bottom:1px solid #cccccc"><span class="header-section-number">1</span> Revision history<a href="#revision-history" class="self-link"></a></h1>
-<p>R0 <span class="citation" data-cites="P1902R0">[<a href="#ref-P1902R0" role="doc-biblioref">P1902R0</a>]</span> of this paper was presented to SG10 in Belfast in November, 2019. Some of the macros were renamed to be more consistent with other design decisions. We also came up with a <a href="#constexpr-policy">constexpr policy</a>.</p>
+<p>R0 <span class="citation" data-cites="P1902R0">[<a href="#ref-P1902R0" role="doc-biblioref">P1902R0</a>]</span> of this paper was presented to SG10 in Belfast in November, 2019. Some of the macros were renamed to be more consistent with other design decisions, and a couple more were added for papers that were missed. We also came up with a <a href="#constexpr-policy">constexpr policy</a>.</p>
 <h1 id="introduction" style="border-bottom:1px solid #cccccc"><span class="header-section-number">2</span> Introduction<a href="#introduction" class="self-link"></a></h1>
 <p>When <span class="citation" data-cites="P0941R2">[<a href="#ref-P0941R2" role="doc-biblioref">P0941R2</a>]</span> was adopted both into the standard and as policy, that paper thoroughly went through all the relevant features that existed at the time. At the Cologne meeting in July 2019, we added signs in both the Core and Library Working Group rooms to ensure that papers in flight did not forget - they had to either explicitly adopt a new feature-test macro or explicitly state why they did not need one.</p>
 <p>In the intervening time-frame, several meetings’ worth of papers were adopted which did not have a feature-test macro. The goal is this paper is to go through all of those papers and add the missing ones.</p>
@@ -609,31 +609,47 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <p><span class="citation" data-cites="P0704R1">[<a href="#ref-P0704R1" role="doc-biblioref">P0704R1</a>]</span> (Fixing const-qualified pointers to members): no macro necessary.</p>
 <p><span class="citation" data-cites="P0409R2">[<a href="#ref-P0409R2" role="doc-biblioref">P0409R2</a>]</span> (Allow lambda capture <code class="sourceCode cpp"><span class="op">[=</span>, <span class="kw">this</span><span class="op">]</span></code>): no macro necessary.</p>
 <p><span class="citation" data-cites="P0306R4">[<a href="#ref-P0306R4" role="doc-biblioref">P0306R4</a>]</span> (Comma omission and comma deletion): no macro necessary.</p>
-<p><span class="citation" data-cites="P0329R4">[<a href="#ref-P0329R4" role="doc-biblioref">P0329R4</a>]</span> (Designated Initialization Wording): no macro necessary. It’s possible that you could write something like:</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">struct</span> X <span class="op">{</span> <span class="dt">int</span> first, <span class="dt">int</span> second; <span class="op">}</span>;</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="pp">#if __cpp_designated_initializer</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="pp">#define INIT_EQ</span><span class="op">(</span>name<span class="op">)</span><span class="pp"> </span><span class="op">.</span>name<span class="pp"> </span><span class="op">=</span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="pp">#else</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="pp">#define INIT_EQ</span><span class="op">(</span>name<span class="op">)</span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="pp">#endif</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a>X<span class="op">{</span>INIT_EQ<span class="op">(</span>first<span class="op">)</span> <span class="dv">7</span>, INIT_EQ<span class="op">(</span>second<span class="op">)</span> <span class="dv">10</span><span class="op">}</span>;</span></code></pre></div>
-<p>That does give some benefit, in that if you get the names wrong, you’d get a diagnostic. But would anybody actually do that?</p>
+<p><span class="citation" data-cites="P0329R4">[<a href="#ref-P0329R4" role="doc-biblioref">P0329R4</a>]</span> (Designated Initialization Wording): Marc Mutz suggests a use case where you might only provide a constructor if designated initialization is available (using designated initializers as a proxy for named parameters). The following is slightly reduced from his example:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">class</span> <span class="ex">QSlider</span> <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">public</span><span class="op">:</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="pp">#if __cpp_designated_initializers</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>   <span class="kw">struct</span> Properties <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>       <span class="kw">struct</span> <span class="op">{</span> <span class="dt">int</span> min, max; <span class="op">}</span> range <span class="op">=</span> <span class="op">{}</span>;</span>
+<span id="cb1-6"><a href="#cb1-6"></a>       <span class="dt">bool</span> showTickMarks <span class="op">=</span> <span class="kw">false</span>;</span>
+<span id="cb1-7"><a href="#cb1-7"></a>   <span class="op">}</span>;</span>
+<span id="cb1-8"><a href="#cb1-8"></a>   <span class="kw">explicit</span> <span class="ex">QSlider</span><span class="op">(</span>Properties props<span class="op">)</span>;</span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="pp">#endif</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>   <span class="co">// traditional, pre-existing approach:</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>   <span class="dt">void</span> setShowTickMarks<span class="op">(</span><span class="dt">bool</span><span class="op">)</span>;</span>
+<span id="cb1-12"><a href="#cb1-12"></a>   <span class="dt">bool</span> showTickMarks<span class="op">()</span> <span class="kw">const</span> <span class="kw">noexcept</span>;</span>
+<span id="cb1-13"><a href="#cb1-13"></a></span>
+<span id="cb1-14"><a href="#cb1-14"></a>   <span class="dt">void</span> setRange<span class="op">(</span><span class="dt">int</span> min, <span class="dt">int</span> max<span class="op">)</span>;</span>
+<span id="cb1-15"><a href="#cb1-15"></a>   <span class="dt">int</span> minimum<span class="op">()</span> <span class="kw">const</span> <span class="kw">noexcept</span>;</span>
+<span id="cb1-16"><a href="#cb1-16"></a>   <span class="dt">int</span> maximum<span class="op">()</span> <span class="kw">const</span> <span class="kw">noexcept</span>;</span>
+<span id="cb1-17"><a href="#cb1-17"></a><span class="op">}</span>;</span></code></pre></div>
+<p>Where a C++14 user could then do:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1"></a><span class="pp">#ifdef __cpp_designated_initializers</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a>   <span class="kw">auto</span> sl <span class="op">=</span> <span class="kw">new</span> <span class="ex">QSlider</span><span class="op">({</span> <span class="op">.</span>range <span class="op">=</span> <span class="op">{</span><span class="dv">0</span>, <span class="dv">100</span><span class="op">}</span>, <span class="op">.</span>showTickMarks <span class="op">=</span> <span class="kw">true</span><span class="op">}</span>, <span class="kw">this</span><span class="op">)</span>;</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="pp">#else</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>   <span class="kw">auto</span> sl <span class="op">=</span> <span class="kw">new</span> <span class="ex">QSlider</span><span class="op">(</span><span class="kw">this</span><span class="op">)</span>;</span>
+<span id="cb2-5"><a href="#cb2-5"></a>   sl<span class="op">-&gt;</span>setRange<span class="op">(</span><span class="dv">0</span>, <span class="dv">100</span><span class="op">)</span>;</span>
+<span id="cb2-6"><a href="#cb2-6"></a>   sl<span class="op">-&gt;</span>setShowTickMarks<span class="op">(</span><span class="kw">true</span><span class="op">)</span>;</span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="pp">#endif</span></span></code></pre></div>
+<p><span class="addu">This paper proposes the feature test macro <code class="sourceCode cpp">__cpp_designated_initializers</code></span>.</p>
 <p><span class="citation" data-cites="P0428R2">[<a href="#ref-P0428R2" role="doc-biblioref">P0428R2</a>]</span> (Familiar template syntax for generic lambdas): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_generic_lambdas</code></span>. One of the things this feature allows for is, for instance, defaulting a template parameter on a lambda, which is arguably a feature enhancement:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">struct</span> X <span class="op">{</span> <span class="dt">int</span> i, j; <span class="op">}</span>;</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">auto</span> f <span class="op">=</span> </span>
-<span id="cb2-4"><a href="#cb2-4"></a><span class="pp">#if __cpp_generic_lambdas &gt;= 201707</span></span>
-<span id="cb2-5"><a href="#cb2-5"></a>    <span class="op">[]&lt;</span><span class="kw">class</span> T<span class="op">=</span>X<span class="op">&gt;(</span>T<span class="op">&amp;&amp;</span> var<span class="op">)</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a><span class="pp">#else</span></span>
-<span id="cb2-7"><a href="#cb2-7"></a>    <span class="op">[](</span><span class="kw">auto</span><span class="op">&amp;&amp;</span> var<span class="op">)</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a><span class="pp">#endif</span></span>
-<span id="cb2-9"><a href="#cb2-9"></a>    <span class="op">{</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a>    <span class="op">}</span>;</span>
-<span id="cb2-11"><a href="#cb2-11"></a>    </span>
-<span id="cb2-12"><a href="#cb2-12"></a><span class="co">// having the macro allows this usage</span></span>
-<span id="cb2-13"><a href="#cb2-13"></a>f<span class="op">({</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">})</span>;</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">struct</span> X <span class="op">{</span> <span class="dt">int</span> i, j; <span class="op">}</span>;</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">auto</span> f <span class="op">=</span> </span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="pp">#if __cpp_generic_lambdas &gt;= 201707</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>    <span class="op">[]&lt;</span><span class="kw">class</span> T<span class="op">=</span>X<span class="op">&gt;(</span>T<span class="op">&amp;&amp;</span> var<span class="op">)</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="pp">#else</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="op">[](</span><span class="kw">auto</span><span class="op">&amp;&amp;</span> var<span class="op">)</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="pp">#endif</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>    <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>    <span class="op">}</span>;</span>
+<span id="cb3-11"><a href="#cb3-11"></a>    </span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="co">// having the macro allows this usage</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a>f<span class="op">({</span><span class="dv">1</span>, <span class="dv">2</span><span class="op">})</span>;</span></code></pre></div>
 <p><span class="citation" data-cites="P0702R1">[<a href="#ref-P0702R1" role="doc-biblioref">P0702R1</a>]</span> (Language support for Constructor Template Argument Deduction): no macro necessary.</p>
 <p><span class="citation" data-cites="P0734R0">[<a href="#ref-P0734R0" role="doc-biblioref">P0734R0</a>]</span> (Wording Paper, C++ extensions for Concepts): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_concepts</code></span>, which will be bumped later, but for SD-6 purposes will start here with the value 201707.</p>
 <p><span class="citation" data-cites="P0463R1">[<a href="#ref-P0463R1" role="doc-biblioref">P0463R1</a>]</span> (Endian just Endian) to the C++ working paper: Already have a macro from <span class="citation" data-cites="P1612R1">[<a href="#ref-P1612R1" role="doc-biblioref">P1612R1</a>]</span>.</p>
@@ -644,7 +660,7 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <p><span class="citation" data-cites="P0588R1">[<a href="#ref-P0588R1" role="doc-biblioref">P0588R1</a>]</span> (Simplifying implicit lambda capture): no macro necessary.</p>
 <p><span class="citation" data-cites="P0846R0">[<a href="#ref-P0846R0" role="doc-biblioref">P0846R0</a>]</span> (ADL and Function Templates that are not Visible): no macro necessary.</p>
 <p><span class="citation" data-cites="P0641R2">[<a href="#ref-P0641R2" role="doc-biblioref">P0641R2</a>]</span> (Resolving Core Issue #1331 (const mismatch with defaulted copy constructor)): no macro necessary.</p>
-<p><span class="citation" data-cites="P0859R0">[<a href="#ref-P0859R0" role="doc-biblioref">P0859R0</a>]</span> (Core Issue 1581: When are constexpr member functions defined?): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_constexpr_members_defined</code></span>. This issue is a blocker for library being able to implement <span class="citation" data-cites="P1065R2">[<a href="#ref-P1065R2" role="doc-biblioref">P1065R2</a>]</span>, so the library needs to know when to be able to do that. It’s unclear if users outside of standard library implementers will need this.</p>
+<p><span class="citation" data-cites="P0859R0">[<a href="#ref-P0859R0" role="doc-biblioref">P0859R0</a>]</span> (Core Issue 1581: When are constexpr member functions defined?): <span class="addu">this paper proposes the macro <code class="sourceCode cpp">__cpp_constexpr_in_decltype</code></span>. This issue is a blocker for library being able to implement <span class="citation" data-cites="P1065R2">[<a href="#ref-P1065R2" role="doc-biblioref">P1065R2</a>]</span>, so the library needs to know when to be able to do that. It’s unclear if users outside of standard library implementers will need this.</p>
 <p><span class="citation" data-cites="P0515R3">[<a href="#ref-P0515R3" role="doc-biblioref">P0515R3</a>]</span> (Consistent comparison) and <span class="citation" data-cites="P0768R1">[<a href="#ref-P0768R1" role="doc-biblioref">P0768R1</a>]</span> (Library Support for the Spaceship (Comparison) Operator): already have a macro.</p>
 <p><span class="citation" data-cites="P0857R0">[<a href="#ref-P0857R0" role="doc-biblioref">P0857R0</a>]</span> (Wording for “functionality gaps in constraints”): no macro necessary.</p>
 <p><span class="citation" data-cites="P0692R1">[<a href="#ref-P0692R1" role="doc-biblioref">P0692R1</a>]</span> (Access Checking on Specializations): no macro necessary.</p>
@@ -671,20 +687,20 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <p><span class="citation" data-cites="P0961R1">[<a href="#ref-P0961R1" role="doc-biblioref">P0961R1</a>]</span> (Relaxing the structured bindings customization point finding rules): no macro necessary.</p>
 <p><span class="citation" data-cites="P0634R3">[<a href="#ref-P0634R3" role="doc-biblioref">P0634R3</a>]</span> (Down with <code class="sourceCode cpp"><span class="kw">typename</span></code>!): no macro necessary.</p>
 <p><span class="citation" data-cites="P0780R2">[<a href="#ref-P0780R2" role="doc-biblioref">P0780R2</a>]</span> (Allow pack expansion in lambda init-capture): <span class="addu">this paper proposes to bump the macro <code class="sourceCode cpp">__cpp_init_captures</code></span>. Having such a macro would allow you to avoid using <code class="sourceCode cpp">tuple</code> where necessary. The motivating example in that paper could thus conditionally improve compile throughput:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">class</span><span class="op">...</span> Args<span class="op">&gt;</span></span>
-<span id="cb3-2"><a href="#cb3-2"></a><span class="kw">auto</span> delay_invoke_foo<span class="op">(</span>Args<span class="op">...</span> args<span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="pp">#if __cpp_init_captures &gt;= 201803</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a>    <span class="cf">return</span> <span class="op">[...</span>args<span class="op">=</span>std<span class="op">::</span>move<span class="op">(</span>args<span class="op">)]()</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-5"><a href="#cb3-5"></a>        <span class="cf">return</span> foo<span class="op">(</span>args<span class="op">...)</span>;</span>
-<span id="cb3-6"><a href="#cb3-6"></a>    <span class="op">}</span>;</span>
-<span id="cb3-7"><a href="#cb3-7"></a><span class="pp">#else</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a>    <span class="cf">return</span> <span class="op">[</span>tup<span class="op">=</span>std<span class="op">::</span>make_tuple<span class="op">(</span>std<span class="op">::</span>move<span class="op">(</span>args<span class="op">)...)]()</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-9"><a href="#cb3-9"></a>        <span class="cf">return</span> std<span class="op">::</span>apply<span class="op">([](</span><span class="kw">auto</span> <span class="kw">const</span><span class="op">&amp;...</span> args<span class="op">)</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a>            <span class="cf">return</span> foo<span class="op">(</span>args<span class="op">...)</span>;</span>
-<span id="cb3-11"><a href="#cb3-11"></a>        <span class="op">}</span>, tup<span class="op">)</span>;</span>
-<span id="cb3-12"><a href="#cb3-12"></a>    <span class="op">}</span>;</span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="pp">#endif</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a><span class="op">}</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode cpp"><code class="sourceCode cpp"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">template</span> <span class="op">&lt;</span><span class="kw">class</span><span class="op">...</span> Args<span class="op">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">auto</span> delay_invoke_foo<span class="op">(</span>Args<span class="op">...</span> args<span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="pp">#if __cpp_init_captures &gt;= 201803</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="cf">return</span> <span class="op">[...</span>args<span class="op">=</span>std<span class="op">::</span>move<span class="op">(</span>args<span class="op">)]()</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>        <span class="cf">return</span> foo<span class="op">(</span>args<span class="op">...)</span>;</span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="op">}</span>;</span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="pp">#else</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="cf">return</span> <span class="op">[</span>tup<span class="op">=</span>std<span class="op">::</span>make_tuple<span class="op">(</span>std<span class="op">::</span>move<span class="op">(</span>args<span class="op">)...)]()</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>        <span class="cf">return</span> std<span class="op">::</span>apply<span class="op">([](</span><span class="kw">auto</span> <span class="kw">const</span><span class="op">&amp;...</span> args<span class="op">)</span> <span class="op">-&gt;</span> <span class="kw">decltype</span><span class="op">(</span><span class="kw">auto</span><span class="op">)</span> <span class="op">{</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>            <span class="cf">return</span> foo<span class="op">(</span>args<span class="op">...)</span>;</span>
+<span id="cb4-11"><a href="#cb4-11"></a>        <span class="op">}</span>, tup<span class="op">)</span>;</span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="op">}</span>;</span>
+<span id="cb4-13"><a href="#cb4-13"></a><span class="pp">#endif</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="op">}</span></span></code></pre></div>
 <p><span class="citation" data-cites="P0479R5">[<a href="#ref-P0479R5" role="doc-biblioref">P0479R5</a>]</span> (Proposed wording for likely and unlikely attributes (Revision 5)): already have a macro.</p>
 <p><span class="citation" data-cites="P0905R1">[<a href="#ref-P0905R1" role="doc-biblioref">P0905R1</a>]</span> (Symmetry for spaceship): in a vacuum, maybe, but since there isn’t an implementation of <code class="sourceCode cpp"><span class="op">&lt;=&gt;</span></code> that includes just up to this point, it’s probably not worth it.</p>
 <p><span class="citation" data-cites="P0754R2">[<a href="#ref-P0754R2" role="doc-biblioref">P0754R2</a>]</span> (<code class="sourceCode cpp"><span class="op">&lt;</span>version<span class="op">&gt;</span></code>): already checkable with <code class="sourceCode cpp"><span class="ot">__has_include</span></code>.</p>
@@ -805,6 +821,12 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <p><span class="citation" data-cites="P1668R1">[<a href="#ref-P1668R1" role="doc-biblioref">P1668R1</a>]</span> (Enabling <code class="sourceCode cpp"><span class="kw">constexpr</span></code> Intrinsics By Permitting Unevaluated inline-assembly in <code class="sourceCode cpp"><span class="kw">constexpr</span></code> Functions): <span class="addu">this paper proposes to bump <code class="sourceCode cpp">__cpp_constexpr</code></span>.</p>
 <p><span class="citation" data-cites="P1766R1">[<a href="#ref-P1766R1" role="doc-biblioref">P1766R1</a>]</span> (Mitigating minor modules maladies): already has a macro.</p>
 <p><span class="citation" data-cites="P1811R0">[<a href="#ref-P1811R0" role="doc-biblioref">P1811R0</a>]</span> (Relaxing redefinition restrictions for re-exportation robustness): already has a macro.</p>
+<p><span class="citation" data-cites="P0388R4">[<a href="#ref-P0388R4" role="doc-biblioref">P0388R4</a>]</span> (Permit conversions to arrays of unknown bound): no macro necessary.</p>
+<p><span class="citation" data-cites="P1823R0">[<a href="#ref-P1823R0" role="doc-biblioref">P1823R0</a>]</span>: no macro necessary.</p>
+<p><span class="citation" data-cites="P1143R2">[<a href="#ref-P1143R2" role="doc-biblioref">P1143R2</a>]</span> (Adding the constinit keyword): already has a macro.</p>
+<p><span class="citation" data-cites="P1452R2">[<a href="#ref-P1452R2" role="doc-biblioref">P1452R2</a>]</span> (On the non-uniform semantics of return-type-requirements): <span class="addu">this paper proposes to bump the value of <code class="sourceCode cpp">__cpp_concepts</code></span>.</p>
+<p><span class="citation" data-cites="P1152R4">[<a href="#ref-P1152R4" role="doc-biblioref">P1152R4</a>]</span> (Deprecating <code class="sourceCode cpp"><span class="kw">volatile</span></code>): no macro necessary.</p>
+<p><span class="citation" data-cites="P1771R1">[<a href="#ref-P1771R1" role="doc-biblioref">P1771R1</a>]</span> (<code class="sourceCode cpp"><span class="op">[[</span><span class="at">nodiscard</span><span class="op">]]</span></code> for constructors): already has a macro.</p>
 <p><span class="citation" data-cites="P1814R0">[<a href="#ref-P1814R0" role="doc-biblioref">P1814R0</a>]</span> (Wording for Class Template Argument Deduction for Alias Templates): already has a macro.</p>
 <p><span class="citation" data-cites="P1825R0">[<a href="#ref-P1825R0" role="doc-biblioref">P1825R0</a>]</span> (Merged wording for P0527R1 and P1155R3): no macro needed, just write <code class="sourceCode cpp">std<span class="op">::</span>move<span class="op">()</span></code>.</p>
 <p><span class="citation" data-cites="P1703R1">[<a href="#ref-P1703R1" role="doc-biblioref">P1703R1</a>]</span> (Recognizing Header Unit Imports Requires Full Preprocessing): no macro needed.</p>
@@ -869,15 +891,23 @@ Value
 </tr>
 <tr>
 <td>
-<span class="addu"><code class="sourceCode cpp">__cpp_concepts</code></span>
+<span class="addu"><code class="sourceCode cpp">__cpp_designated_initializers</code></span>
 </td>
 <td>
-<span class="addu"><code class="sourceCode cpp"><span class="dv">201811</span><span class="bu">L</span></code></span>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201707</span><span class="bu">L</span></code></span>
 </td>
 </tr>
 <tr>
 <td>
-<span class="addu"><code class="sourceCode cpp">__cpp_constexpr_members_defined</code></span>
+<span class="addu"><code class="sourceCode cpp">__cpp_concepts</code></span>
+</td>
+<td>
+<span class="addu"><code class="sourceCode cpp"><span class="dv">201907</span><span class="bu">L</span></code></span>
+</td>
+</tr>
+<tr>
+<td>
+<span class="addu"><code class="sourceCode cpp">__cpp_constexpr_in_decltype</code></span>
 </td>
 <td>
 <span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
@@ -957,7 +987,7 @@ Header(s)
 <span class="addu"><code class="sourceCode cpp"><span class="dv">201711</span><span class="bu">L</span></code></span>
 </td>
 <td>
-<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>atomic<span class="op">&gt;</span></code></span>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code></span>
 </td>
 </tr>
 <tr>
@@ -1144,7 +1174,7 @@ Header(s)
 <code class="sourceCode cpp"><span class="dv">201907</span><span class="bu">L</span></code>
 </td>
 <td>
-<code class="sourceCode cpp"><span class="op">&lt;</span>compare<span class="op">&gt;</span></code>
+<span class="addu"><code class="sourceCode cpp"><span class="op">&lt;</span>functional<span class="op">&gt;</span></code></span>
 </td>
 </tr>
 <tr>
@@ -1304,6 +1334,10 @@ Header(s)
 <div id="ref-P0357R3">
 <p>[P0357R3] Tomasz Kamiński, Stephan T. Lavavej, Alisdair Meredith. 2018. “reference_wrapper” for incomplete types. <br />
 <a href="https://wg21.link/p0357r3">https://wg21.link/p0357r3</a></p>
+</div>
+<div id="ref-P0388R4">
+<p>[P0388R4] Robert Haberlach, Richard Smith. 2019. Permit conversions to arrays of unknown bound. <br />
+<a href="https://wg21.link/p0388r4">https://wg21.link/p0388r4</a></p>
 </div>
 <div id="ref-P0408R7">
 <p>[P0408R7] Peter Sommerlad. 2019. Efficient Access to basic_stringbuf’s Buffer. <br />
@@ -1789,9 +1823,17 @@ Header(s)
 <p>[P1141R2] Ville Voutilainen, Thomas Köppe, Andrew Sutton, Herb Sutter, Gabriel Dos Reis, Bjarne Stroustrup, Jason Merrill, Hubert Tong, Eric Niebler, Casey Carter, Tom Honermann, Erich Keane, Walter E. Brown, Michael Spertus, Richard Smith. 2018. Yet another approach for constrained declarations. <br />
 <a href="https://wg21.link/p1141r2">https://wg21.link/p1141r2</a></p>
 </div>
+<div id="ref-P1143R2">
+<p>[P1143R2] Eric Fiselier. 2019. Adding the <code class="sourceCode cpp"><span class="kw">constinit</span></code> keyword. <br />
+<a href="https://wg21.link/p1143r2">https://wg21.link/p1143r2</a></p>
+</div>
 <div id="ref-P1148R0">
 <p>[P1148R0] Tim Song. 2018. Cleaning up Clause 20. <br />
 <a href="https://wg21.link/p1148r0">https://wg21.link/p1148r0</a></p>
+</div>
+<div id="ref-P1152R4">
+<p>[P1152R4] JF Bastien. 2019. Deprecating volatile. <br />
+<a href="https://wg21.link/p1152r4">https://wg21.link/p1152r4</a></p>
 </div>
 <div id="ref-P1161R3">
 <p>[P1161R3] Corentin Jabot. 2019. Deprecate uses of the comma operator in subscripting expressions. <br />
@@ -1901,6 +1943,10 @@ Header(s)
 <p>[P1424R1] Antony Polukhin. 2019. “constexpr” feature macro concerns. <br />
 <a href="https://wg21.link/p1424r1">https://wg21.link/p1424r1</a></p>
 </div>
+<div id="ref-P1452R2">
+<p>[P1452R2] Hubert Tong. 2019. On the non-uniform semantics of return-type-requirements. <br />
+<a href="https://wg21.link/p1452r2">https://wg21.link/p1452r2</a></p>
+</div>
 <div id="ref-P1458R1">
 <p>[P1458R1] Marshall Clow. 2019. Mandating the Standard Library: Clause 16 - Language support library. <br />
 <a href="https://wg21.link/p1458r1">https://wg21.link/p1458r1</a></p>
@@ -2001,6 +2047,10 @@ Header(s)
 <p>[P1766R1] Richard Smith. 2019. Mitigating minor modules maladies. <br />
 <a href="https://wg21.link/p1766r1">https://wg21.link/p1766r1</a></p>
 </div>
+<div id="ref-P1771R1">
+<p>[P1771R1] Peter Sommerlad. 2019. <code class="sourceCode cpp"><span class="op">[[</span><span class="at">nodiscard</span><span class="op">]]</span></code> for constructors. <br />
+<a href="https://wg21.link/p1771r1">https://wg21.link/p1771r1</a></p>
+</div>
 <div id="ref-P1811R0">
 <p>[P1811R0] Richard Smith, Gabriel Dos Reis. 2019. Relaxing redefinition restrictions for re-exportation robustness. <br />
 <a href="https://wg21.link/p1811r0">https://wg21.link/p1811r0</a></p>
@@ -2012,6 +2062,10 @@ Header(s)
 <div id="ref-P1816R0">
 <p>[P1816R0] Timur Doumler. 2019. Wording for class template argument deduction for aggregates. <br />
 <a href="https://wg21.link/p1816r0">https://wg21.link/p1816r0</a></p>
+</div>
+<div id="ref-P1823R0">
+<p>[P1823R0] Nicolai Josuttis, Ville Voutilainen, Roger Orr, Daveed Vandevoorde, John Spicer, Christopher Di Bella. 2019. Remove Contracts from C++20. <br />
+<a href="https://wg21.link/p1823r0">https://wg21.link/p1823r0</a></p>
 </div>
 <div id="ref-P1825R0">
 <p>[P1825R0] David Stone. 2019. Merged wording for P0527R1 and P1155R3. <br />

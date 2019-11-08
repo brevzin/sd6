@@ -1,6 +1,6 @@
 ---
-title: Missing feature-test macros 2018-2019
-document: D1902R1
+title: Missing feature-test macros 2017-2019
+document: P1902R1
 date: today
 audience: CWG, LWG
 author:
@@ -12,7 +12,7 @@ toc: true
 # Revision history
 
 R0 [@P1902R0] of this paper was presented to SG10 in Belfast in November, 2019.
-Some of the macros were renamed to be more consistent with other design decisions.
+Some of the macros were renamed to be more consistent with other design decisions, and a couple more were added for papers that were missed. 
 We also came up with a [constexpr policy](#constexpr-policy).
 
 # Introduction
@@ -87,23 +87,41 @@ This policy leads to several changes from R0 of this paper.
 
 [@P0306R4] (Comma omission and comma deletion): no macro necessary.
 
-[@P0329R4] (Designated Initialization Wording): no macro necessary. It's possible
-that you could write something like:
+[@P0329R4] (Designated Initialization Wording): Marc Mutz suggests a use case where you might only provide a constructor if designated initialization is available (using designated initializers as a proxy for named parameters). The following is slightly reduced from his example:
 
 ```cpp
-struct X { int first, int second; };
-
-#if __cpp_designated_initializer
-#define INIT_EQ(name) .name =
-#else
-#define INIT_EQ(name)
+class QSlider {
+public:
+#if __cpp_designated_initializers
+   struct Properties {
+       struct { int min, max; } range = {};
+       bool showTickMarks = false;
+   };
+   explicit QSlider(Properties props);
 #endif
+   // traditional, pre-existing approach:
+   void setShowTickMarks(bool);
+   bool showTickMarks() const noexcept;
 
-X{INIT_EQ(first) 7, INIT_EQ(second) 10};
+   void setRange(int min, int max);
+   int minimum() const noexcept;
+   int maximum() const noexcept;
+};
 ```
 
-That does give some benefit, in that if you get the names wrong, you'd get a
-diagnostic. But would anybody actually do that?
+Where a C++14 user could then do:
+
+```cpp
+#ifdef __cpp_designated_initializers
+   auto sl = new QSlider({ .range = {0, 100}, .showTickMarks = true}, this);
+#else
+   auto sl = new QSlider(this);
+   sl->setRange(0, 100);
+   sl->setShowTickMarks(true);
+#endif
+```
+
+[This paper proposes the feature test macro `__cpp_designated_initializers`]{.addu}.
 
 [@P0428R2] (Familiar template syntax for generic lambdas): [this paper proposes
 to bump the macro `__cpp_generic_lambdas`]{.addu}. One of the things this feature
@@ -155,7 +173,7 @@ allocation.
 no macro necessary.
 
 [@P0859R0] (Core Issue 1581: When are constexpr member functions defined?): [this
-paper proposes the macro `__cpp_constexpr_members_defined`]{.addu}. This issue
+paper proposes the macro `__cpp_constexpr_in_decltype`]{.addu}. This issue
 is a blocker for library being able to implement [@P1065R2], so the library needs
 to know when to be able to do that. It's unclear if users outside of standard
 library implementers will need this.
@@ -575,6 +593,18 @@ inline-assembly in `constexpr` Functions): [this paper proposes to bump
 [@P1811R0] (Relaxing redefinition restrictions for re-exportation robustness):
 already has a macro.
 
+[@P0388R4] (Permit conversions to arrays of unknown bound): no macro necessary.
+
+[@P1823R0]: no macro necessary.
+
+[@P1143R2] (Adding the constinit keyword): already has a macro.
+
+[@P1452R2] (On the non-uniform semantics of return-type-requirements): [this paper proposes to bump the value of `__cpp_concepts`]{.addu}.
+
+[@P1152R4] (Deprecating `volatile`): no macro necessary.
+
+[@P1771R1] (`[[nodiscard]]` for constructors): already has a macro.
+
 [@P1814R0] (Wording for Class Template Argument Deduction for Alias Templates):
 already has a macro.
 
@@ -674,8 +704,9 @@ Modify table 17 in 15.10 [cpp.predefined] with the following added:
 </tr>
 <tr><td>`__cpp_generic_lambdas`</td><td>[`201304L`]{.rm} [`201707L`]{.addu}</td></tr>
 <tr><td>`__cpp_init_captures`</td><td>[`201304L`]{.rm} [`201803L`]{.addu}</td></tr>
-<tr><td>[`__cpp_concepts`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
-<tr><td>[`__cpp_constexpr_members_defined`]{.addu}</td><td>[`201711L`]{.addu}</td></tr>
+<tr><td>[`__cpp_designated_initializers`]{.addu}</td><td>[`201707L`]{.addu}</td></tr>
+<tr><td>[`__cpp_concepts`]{.addu}</td><td>[`201907L`]{.addu}</td></tr>
+<tr><td>[`__cpp_constexpr_in_decltype`]{.addu}</td><td>[`201711L`]{.addu}</td></tr>
 <tr><td>[`__cpp_consteval`]{.addu}</td><td>[`201811L`]{.addu}</td></tr>
 </table>
 
@@ -692,7 +723,7 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <tr><td>[`__cpp_lib_remove_cvref`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<type_traits>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_syncbuf`]{.addu}</td><td>[`201803L`]{.addu}</td><td>[`<syncstream>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_to_address`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
-<tr><td>[`__cpp_lib_atomic_shared_ptr`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
+<tr><td>[`__cpp_lib_atomic_shared_ptr`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_atomic_float`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<atomic>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_starts_ends_with`]{.addu}</td><td>[`201711L`]{.addu}</td><td>[`<string> <string_view>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_shift `]{.addu}</td><td>[`201806L`]{.addu}</td><td>[`<algorithm>`]{.addu}</td></tr>
@@ -709,7 +740,7 @@ Modify table 36 in 17.3.1 [support.limits.general] with the following added:
 <tr><td>[`__cpp_lib_spaceship `]{.rm}</td><td>[`201907L`]{.rm}</td><td>[`<compare>`]{.rm}</td></tr>
 <tr><td>[`__cpp_lib_constexpr`]{.rm}</td><td>[`201811L`]{.rm}</td><td>[any C++ library header ...]{.rm}</td></tr>
 <tr><td>`__cpp_lib_array_constexpr`</td><td>[`201803L`]{.rm} [`201811L`]{.addu}</td><td>`<array>`</td></tr>
-<tr><td>[`__cpp_lib_constexpr_invoke`]{.rm} [`__cpp_lib_constexpr_functional`]{.addu}</td><td>`201907L`</td><td>`<compare>`</td></tr>
+<tr><td>[`__cpp_lib_constexpr_invoke`]{.rm} [`__cpp_lib_constexpr_functional`]{.addu}</td><td>`201907L`</td><td>[`<functional>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_constexpr_iterator`]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<iterator>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_constexpr_memory`]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<memory>`]{.addu}</td></tr>
 <tr><td>[`__cpp_lib_constexpr_string_view`]{.addu}</td><td>[`201811L`]{.addu}</td><td>[`<string_view>`]{.addu}</td></tr>
