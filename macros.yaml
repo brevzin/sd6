@@ -74,10 +74,22 @@ language:
   rows:
   - value: 201811
     papers: P0482R6
+- name: __cpp_concepts
+  rows:
+  - value: 201707
+    papers: P0734R0
+  - value: 201811
+    papers: P1084R2
+  - value: 201907
+    papers: P1452R2
 - name: __cpp_conditional_explicit
   rows:
   - value: 201806
     papers: P0892R2
+- name: __cpp_consteval
+  rows:
+  - value: 201811
+    papers: P1073R3
 - name: __cpp_constexpr
   rows:
   - value: 200704
@@ -86,12 +98,20 @@ language:
     papers: N3652
   - value: 201603
     papers: P0170R1
+  - value: 201806
+    papers: P1064R0
+  - value: 201811
+    papers: P1002R1 P1327R1 P1330R0
   - value: 201907
-    papers: P1331R2
+    papers: P1331R2 P1668R1
 - name: __cpp_constexpr_dynamic_alloc
   rows:
   - value: 201907
     papers: P0784R7
+- name: __cpp_constexpr_in_decltype
+  rows:
+  - value: 201711
+    papers: P0859R0
 - name: __cpp_constinit
   rows:
   - value: 201907
@@ -122,6 +142,10 @@ language:
   rows:
   - value: 200604
     papers: N1986
+- name: __cpp_designated_initializers
+  rows:
+  - value: 201707
+    papers: P0329R4
 - name: __cpp_enumerator_attributes
   rows:
   - value: 201411
@@ -140,6 +164,8 @@ language:
   rows:
   - value: 201304
     papers: N3649
+  - value: 201707
+    papers: P0428R2
 - name: __cpp_guaranteed_copy_elision
   rows:
   - value: 201606
@@ -160,8 +186,10 @@ language:
   rows:
   - value: 201711
     papers: P0515R3 P0768R1
+  - value: 201902
+    papers: P1185R2
   - value: 201907
-    papers: P1185R2 P1186R3 P1630R1
+    papers: P1630R1
 - name: __cpp_inheriting_constructors
   rows:
   - value: 200802
@@ -172,6 +200,8 @@ language:
   rows:
   - value: 201304
     papers: N3648
+  - value: 201803
+    papers: P0780R2
 - name: __cpp_initializer_lists
   rows:
   - value: 200806
@@ -200,6 +230,8 @@ language:
   rows:
   - value: 201411
     papers: N4268
+  - value: 201911
+    papers: P1907R1
 - name: __cpp_nontype_template_parameter_auto
   rows:
   - value: 201606
@@ -208,6 +240,9 @@ language:
   rows:
   - value: 201806
     papers: P0732R2
+  - value: 201911
+    papers: P1907R1
+    removed: true
 - name: __cpp_nsdmi
   rows:
   - value: 200809
@@ -318,17 +353,31 @@ library:
   - value: 201603
     papers: P0031R0
   - value: 201803
-    papers: P0858R0
+    papers: P0858R0 LWG3257
+  - value: 201806
+    papers: P1023R0
+  - value: 201811
+    papers: P1032R1
 - name: __cpp_lib_as_const
   header_list: utility
   rows:
   - value: 201510
     papers: P0007R1
+- name: __cpp_lib_assume_aligned
+  header_list: memory
+  rows:
+  - value: 201811
+    papers: P1007R3
 - name: __cpp_lib_atomic_flag_test
   header_list: atomic
   rows:
   - value: 201907
     papers: P1135R6
+- name: __cpp_lib_atomic_float
+  header_list: atomic
+  rows:
+  - value: 201711
+    papers: P0020R6
 - name: __cpp_lib_atomic_is_always_lock_free
   header_list: atomic
   rows:
@@ -344,6 +393,16 @@ library:
   rows:
   - value: 201806
     papers: P0019R8
+- name: __cpp_lib_atomic_shared_ptr
+  header_list: memory
+  rows:
+  - value: 201711
+    papers: P0718R2
+- name: __cpp_lib_atomic_value_initialization
+  header_list: atomic memory
+  rows:
+  - value: 201911
+    papers: P0883R2
 - name: __cpp_lib_atomic_wait
   header_list: atomic
   rows:
@@ -405,6 +464,8 @@ library:
     papers: P0092R1
   - value: 201611
     papers: P0505R0
+  - value: 201803
+    papers: P0355R7
   - value: 201907
     papers: P1466R3
 - name: __cpp_lib_chrono_udls
@@ -427,34 +488,81 @@ library:
   rows:
   - value: 201806
     papers: P0898R3
+  - value: 201907
+    papers: P1754R1
 - name: __cpp_lib_constexpr
   header_info: any C++ library header from [Table 19]( http://eel.is/c++draft/headers#tab:headers.cpp)
     or any C++ header for C library facilities from [Table 20]( http://eel.is/c++draft/headers#tab:headers.cpp.c)
   rows:
   - value: 201811
     papers: P1032R1
+  - value: 201911
+    papers: P1902R1
+    removed: true
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm
   rows:
   - value: 201703
     papers: P0202R3
   - value: 201806
-    papers: P0879R0
+    papers: P0879R0 LWG3256
+- name: __cpp_lib_constexpr_complex
+  header_list: complex
+  rows:
+  - value: 201711
+    papers: P0415R1
 - name: __cpp_lib_constexpr_dynamic_alloc
   header_list: memory
   rows:
   - value: 201907
     papers: P0784R7
+- name: __cpp_lib_constexpr_functional
+  header_list: functional
+  rows:
+  - value: 201811
+    papers: P1032R1
+  - value: 201907
+    papers: P1065R2
 - name: __cpp_lib_constexpr_invoke
   header_list: functional
   rows:
   - value: 201907
     papers: P1065R2
+- name: __cpp_lib_constexpr_iterator
+  header_list: iterator
+  rows:
+  - value: 201811
+    papers: P1032R1
+- name: __cpp_lib_constexpr_memory
+  header_list: memory
+  rows:
+  - value: 201811
+    papers: P1006R1
+- name: __cpp_lib_constexpr_numeric
+  header_list: numeric
+  rows:
+  - value: 201911
+    papers: P1645R1
 - name: __cpp_lib_constexpr_string
   header_list: string
   rows:
   - value: 201907
     papers: P0980R1
+- name: __cpp_lib_constexpr_string_view
+  header_list: string_view
+  rows:
+  - value: 201811
+    papers: P1032R1
+- name: __cpp_lib_constexpr_tuple
+  header_list: tuple
+  rows:
+  - value: 201811
+    papers: P1032R1
+- name: __cpp_lib_constexpr_utility
+  header_list: utility
+  rows:
+  - value: 201811
+    papers: P1032R1
 - name: __cpp_lib_constexpr_vector
   header_list: vector
   rows:
@@ -549,6 +657,11 @@ library:
   rows:
   - value: 201505
     papers: N4510
+- name: __cpp_lib_int_pow2
+  header_list: bit
+  rows:
+  - value: 201806
+    papers: P0556R3
 - name: __cpp_lib_integer_sequence
   header_list: utility
   rows:
@@ -614,6 +727,8 @@ library:
   rows:
   - value: 201907
     papers: P0660R10
+  - value: 201911
+    papers: P1869R1
 - name: __cpp_lib_latch
   header_list: latch
   rows:
@@ -685,6 +800,11 @@ library:
   rows:
   - value: 201603
     papers: P0005R4
+- name: __cpp_lib_nothrow_convertible
+  header_list: type_traits
+  rows:
+  - value: 201806
+    papers: P0758R1
 - name: __cpp_lib_null_iterators
   header_list: iterator
   rows:
@@ -702,6 +822,11 @@ library:
   rows:
   - value: 201603
     papers: P0024R2
+- name: __cpp_lib_polymorphic_allocator
+  header_list: memory
+  rows:
+  - value: 201902
+    papers: P0339R6
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
@@ -712,11 +837,20 @@ library:
   rows:
   - value: 201811
     papers: P0896R4
+  - value: 201907
+    papers: P1035R7
+  - value: 201911
+    papers: P1716R3
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
   rows:
   - value: 201606
     papers: P0040R3
+- name: __cpp_lib_remove_cvref
+  header_list: type_traits
+  rows:
+  - value: 201711
+    papers: P0550R2
 - name: __cpp_lib_result_of_sfinae
   header_list: type_traits functional
   rows:
@@ -752,6 +886,8 @@ library:
   rows:
   - value: 201611
     papers: P0497R0
+  - value: 201707
+    papers: P0674R1
 - name: __cpp_lib_shared_ptr_weak_type
   header_list: memory
   rows:
@@ -762,16 +898,21 @@ library:
   rows:
   - value: 201402
     papers: N3891
+- name: __cpp_lib_shift
+  header_list: algorithm
+  rows:
+  - value: 201806
+    papers: P0769R2
+- name: __cpp_lib_smart_ptr_default_init
+  header_list: memory
+  rows:
+  - value: 201811
+    papers: P1020R1
 - name: __cpp_lib_source_location
   header_list: source_location
   rows:
   - value: 201907
     papers: P1208R6
-- name: __cpp_lib_spaceship
-  header_list: compare
-  rows:
-  - value: 201907
-    papers: P1614R2
 - name: __cpp_lib_span
   header_list: span
   rows:
@@ -779,6 +920,16 @@ library:
     papers: P0122R7 LWG3274
   - value: 201902
     papers: P1024R3
+- name: __cpp_lib_ssize
+  header_list: iterator
+  rows:
+  - value: 201902
+    papers: P1227R2
+- name: __cpp_lib_starts_ends_with
+  header_list: string string_view
+  rows:
+  - value: 201711
+    papers: P0457R2
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
@@ -792,12 +943,26 @@ library:
   - value: 201606
     papers: P0254R2
   - value: 201803
-    papers: P0858R0
+    papers: P0858R0 LWG3257
+- name: __cpp_lib_syncbuf
+  header_list: syncstream
+  rows:
+  - value: 201711
+    papers: P0053R7
+  - value: 201803
+    papers: P0753R2
 - name: __cpp_lib_three_way_comparison
   header_list: compare
   rows:
   - value: 201711
     papers: P0768R1
+  - value: 201907
+    papers: P1614R2
+- name: __cpp_lib_to_address
+  header_list: memory
+  rows:
+  - value: 201711
+    papers: P0653R2
 - name: __cpp_lib_to_array
   header_list: array
   rows:
@@ -830,6 +995,11 @@ library:
   rows:
   - value: 201304
     papers: N3670
+- name: __cpp_lib_type_identity
+  header_list: type_traits
+  rows:
+  - value: 201806
+    papers: P0887R1
 - name: __cpp_lib_type_trait_variable_templates
   header_list: type_traits
   rows:
@@ -845,6 +1015,11 @@ library:
   rows:
   - value: 201411
     papers: N4279
+- name: __cpp_lib_unwrap_ref
+  header_list: type_traits
+  rows:
+  - value: 201811
+    papers: P0318R1
 - name: __cpp_lib_variant
   header_list: variant
   rows:
