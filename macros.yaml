@@ -469,7 +469,7 @@ library:
   header_list: memory
   rows:
   - value: 201603
-    papers: P0074R0
+    papers: P0033R1
 - name: __cpp_lib_endian
   header_list: bit
   rows:
