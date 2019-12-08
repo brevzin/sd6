@@ -490,15 +490,6 @@ library:
     papers: P0898R3
   - value: 201907
     papers: P1754R1
-- name: __cpp_lib_constexpr
-  header_info: any C++ library header from [Table 19]( http://eel.is/c++draft/headers#tab:headers.cpp)
-    or any C++ header for C library facilities from [Table 20]( http://eel.is/c++draft/headers#tab:headers.cpp.c)
-  rows:
-  - value: 201811
-    papers: P1032R1
-  - value: 201911
-    papers: P1902R1
-    removed: true
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm
   rows:
@@ -521,11 +512,6 @@ library:
   rows:
   - value: 201811
     papers: P1032R1
-  - value: 201907
-    papers: P1065R2
-- name: __cpp_lib_constexpr_invoke
-  header_list: functional
-  rows:
   - value: 201907
     papers: P1065R2
 - name: __cpp_lib_constexpr_iterator
