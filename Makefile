@@ -17,7 +17,7 @@ sd6.html : sd6.py sd6.tmpl macros.yaml reduced.json
 	   --metadata datadir:$(MPARK_DATA) \
 	   --metadata-file $(MPARK_DATA)/metadata.yaml \
 	   --syntax-definition $(MPARK_DATA)/syntax/isocpp.xml \
-	   --template $(MPARK_DATA)/template/wg21 \
+	   --template wg21 \
 	   --toc-depth 2 \
 	   --output $@
 
