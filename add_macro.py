@@ -26,7 +26,7 @@ def ordered_dump(data, stream=None, Dumper=yaml.Dumper, **kwds):
 parser = argparse.ArgumentParser()
 parser.add_argument('--type', choices=['attributes', 'library', 'language'], required=True)
 parser.add_argument('--name', required=True)
-parser.add_argument('--value', required=True)
+parser.add_argument('--value', required=True, type=int)
 parser.add_argument('--papers', nargs='+')
 parser.add_argument('--headers', nargs='*')
 args = parser.parse_args()
@@ -39,8 +39,17 @@ values = [('value', args.value),
 specific = existing[args.type]
 for row in specific:
     if row['name'] == args.name:
-        # add a new row
-        row['rows'].append(OrderedDict(values))
+        for entry in row['rows']:
+            if entry['value'] == args.value:
+                # just add this paper
+                old_papers = entry['papers'].split()
+                old_papers.extend(args.papers)
+                old_papers.sort()
+                entry['papers'] = ' '.join(old_papers)
+                break
+        else:
+            # add a new row
+            row['rows'].append(OrderedDict(values))
         break
 else:
     # add a new macro
