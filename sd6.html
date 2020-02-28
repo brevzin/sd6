@@ -5,7 +5,7 @@
   <meta name="generator" content="mpark/wg21" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="dcterms.date" content="2020-02-27" />
-  <title>SD-6: SG10 Feature-Test Recommendations</title>
+  <title>Feature-Test Macros and Policies</title>
   <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
@@ -529,12 +529,12 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <body>
 <div class="wrapper">
 <header id="title-block-header">
-<h1 class="title" style="text-align:center">SD-6: SG10 Feature-Test Recommendations</h1>
+<h1 class="title" style="text-align:center">Feature-Test Macros and Policies</h1>
 
 <table style="border:none;float:right">
   <tr>
     <td>Document #: </td>
-    <td>SD-6</td>
+    <td>SD-FeatureTest</td>
   </tr>
   <tr>
     <td>Date: </td>
@@ -572,13 +572,18 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 <li><a href="#testing-for-the-presence-of-a-header-__has_include"><span class="toc-section-number">2.2</span> Testing for the presence of a header: <code class="sourceCode cpp"><span class="ot">__has_include</span></code><span></span></a></li>
 <li><a href="#testing-for-the-presence-of-an-attribute-__has_cpp_attribute"><span class="toc-section-number">2.3</span> Testing for the presence of an attribute: <code class="sourceCode cpp"><span class="ot">__has_cpp_attribute</span></code><span></span></a></li>
 </ul></li>
-<li><a href="#table-of-feature-test-macros"><span class="toc-section-number">3</span> Table of Feature-Test Macros<span></span></a>
+<li><a href="#policies"><span class="toc-section-number">3</span> Policies<span></span></a>
 <ul>
-<li><a href="#language-feature-test-macros"><span class="toc-section-number">3.1</span> Language Feature-Test Macros<span></span></a></li>
-<li><a href="#attribute-feature-test-macros"><span class="toc-section-number">3.2</span> Attribute Feature-Test Macros<span></span></a></li>
-<li><a href="#library-feature-test-macros"><span class="toc-section-number">3.3</span> Library Feature-Test Macros<span></span></a></li>
+<li><a href="#constexpr"><span class="toc-section-number">3.1</span> <code class="sourceCode cpp"><span class="kw">constexpr</span></code><span></span></a></li>
+<li><a href="#language-features-with-library-components"><span class="toc-section-number">3.2</span> Language Features with Library Components<span></span></a></li>
 </ul></li>
-<li><a href="#bibliography"><span class="toc-section-number">4</span> References<span></span></a></li>
+<li><a href="#table-of-feature-test-macros"><span class="toc-section-number">4</span> Table of Feature-Test Macros<span></span></a>
+<ul>
+<li><a href="#language-feature-test-macros"><span class="toc-section-number">4.1</span> Language Feature-Test Macros<span></span></a></li>
+<li><a href="#attribute-feature-test-macros"><span class="toc-section-number">4.2</span> Attribute Feature-Test Macros<span></span></a></li>
+<li><a href="#library-feature-test-macros"><span class="toc-section-number">4.3</span> Library Feature-Test Macros<span></span></a></li>
+</ul></li>
+<li><a href="#bibliography"><span class="toc-section-number">5</span> References<span></span></a></li>
 </ul>
 </div>
 <style>
@@ -802,12 +807,23 @@ code span.er { color: #6f4e37; font-weight: normal; }
 <span id="cb11-6"><a href="#cb11-6"></a><span class="pp">#else</span></span>
 <span id="cb11-7"><a href="#cb11-7"></a><span class="pp"># define ATTR_DEPRECATED</span><span class="op">(</span>msg<span class="op">)</span></span>
 <span id="cb11-8"><a href="#cb11-8"></a><span class="pp">#endif</span></span></code></pre></div>
-<h1 data-number="3" style="border-bottom:1px solid #cccccc" id="table-of-feature-test-macros" data-number="3" style="border-bottom:1px solid #cccccc"><span class="header-section-number">3</span> Table of Feature-Test Macros<a href="#table-of-feature-test-macros" class="self-link"></a></h1>
+<h1 data-number="3" style="border-bottom:1px solid #cccccc" id="policies" data-number="3" style="border-bottom:1px solid #cccccc"><span class="header-section-number">3</span> Policies<a href="#policies" class="self-link"></a></h1>
+<p>SG-10 has adopted a number of policies related to our standard practices for determining and naming macros.</p>
+<h2 data-number="3.1" id="constexpr" data-number="3.1"><span class="header-section-number">3.1</span> <code class="sourceCode cpp"><span class="kw">constexpr</span></code><a href="#constexpr" class="self-link"></a></h2>
+<p>For the language, we will have a single <code class="sourceCode cpp">__cpp_constexpr</code> macro. It will be bumped every time we extend constexpr in the language. For the library, we will add a specific feature-test macros for significant, special features. Otherwise, for those cases where we are just adding constexpr to more things in the library, we will have a dedicated test macro per header and just bump that header-specific macro on each change. That macro will be named <code class="sourceCode cpp">__cpp_lib_constexpr_HEADER</code> (with the exception of a few preexisting macros for array and algorithm which have slightly different names).</p>
+<p>From <span class="citation" data-cites="P1902R1">[<a href="#ref-P1902R1" role="doc-biblioref">P1902R1</a>]</span>.</p>
+<h2 data-number="3.2" id="language-features-with-library-components" data-number="3.2"><span class="header-section-number">3.2</span> Language Features with Library Components<a href="#language-features-with-library-components" class="self-link"></a></h2>
+<p>In some cases a feature requires two macros, one for the language and one for the library. For example, the library does not want to define its three-way comparison operations unless the compiler supports the feature.</p>
+<p>For end-users, it is suggested that they test only the library macro, as that will only be true if the language macro is also true. As a result, the language macros contain “<code class="sourceCode cpp">impl</code>” to distinguish them from the more general version that is expected to be set by the library.</p>
+<p>Note that originally SG10 suggested that the library version of the macro not include the usual <code class="sourceCode cpp">_lib</code> part, but LWG was not comfortable with the inconsistency of having a library macro (which requires a header before it can be used) that does not contain <code class="sourceCode cpp">_lib</code>.</p>
+<p>Also note that SG10 originally proposed that the core feature tests include <code class="sourceCode cpp">_lang</code>, but LWG wanted something that more clearly implied that the the macro was for a core feature and not intended to be used by end-users. They sugggested that <code class="sourceCode cpp">_impl</code> be used instead.</p>
+<p>From <span class="citation" data-cites="P1353R0">[<a href="#ref-P1353R0" role="doc-biblioref">P1353R0</a>]</span>.</p>
+<h1 data-number="4" style="border-bottom:1px solid #cccccc" id="table-of-feature-test-macros" data-number="4" style="border-bottom:1px solid #cccccc"><span class="header-section-number">4</span> Table of Feature-Test Macros<a href="#table-of-feature-test-macros" class="self-link"></a></h1>
 <p>The following are all the feature-test macros in the standard, broken up by language macros, attribute macros, and library macros, then sorted by name. Each macro will contain its list of possible values and the papers necessary to be implemented before an implementation should define that macro with that particular value.</p>
 <p>Note that a given paper may introduce or update multiple feature-test macros. A given value may require multiple papers. A paper may also <em>remove</em> a feature-test macro, in which case its value will be specified as <span class="rm" style="color: #bf0303"><del>deleted</del></span>.</p>
-<h2 data-number="3.1" id="language-feature-test-macros" data-number="3.1"><span class="header-section-number">3.1</span> Language Feature-Test Macros<a href="#language-feature-test-macros" class="self-link"></a></h2>
+<h2 data-number="4.1" id="language-feature-test-macros" data-number="4.1"><span class="header-section-number">4.1</span> Language Feature-Test Macros<a href="#language-feature-test-macros" class="self-link"></a></h2>
 <p>All of the language macros are predefined (i.e. no header needs to be included before doing checks).</p>
-<p>In some cases, a feature requires two macros: one for the language and one for the library. For example, the library does not want to define its three-way comparison operators unless the compiler supports the feature. In these cases, it is suggested for end-users that they only test the library macro. Those core language feature test macros that are intended to be checked by the library are spelled <code class="sourceCode cpp">__cpp_impl_<span class="op">*</span></code>.</p>
+<p>In some cases, a feature requires two macros: one for the language and one for the library. For example, the library does not want to define its three-way comparison operators unless the compiler supports the feature. In these cases, it is suggested for end-users that they only test the library macro. Those core language feature-test macros that are intended to be checked by the library are spelled <code class="sourceCode cpp">__cpp_impl_<span class="op">*</span></code>.</p>
 <table>
 <tr>
 <th>
@@ -1652,7 +1668,7 @@ Run-time type identification
 </td>
 </tr>
 </table>
-<h2 data-number="3.2" id="attribute-feature-test-macros" data-number="3.2"><span class="header-section-number">3.2</span> Attribute Feature-Test Macros<a href="#attribute-feature-test-macros" class="self-link"></a></h2>
+<h2 data-number="4.2" id="attribute-feature-test-macros" data-number="4.2"><span class="header-section-number">4.2</span> Attribute Feature-Test Macros<a href="#attribute-feature-test-macros" class="self-link"></a></h2>
 <p>All of the following macros are predefined.</p>
 <table>
 <tr>
@@ -1774,7 +1790,7 @@ Paper(s)
 </td>
 </tr>
 </table>
-<h2 data-number="3.3" id="library-feature-test-macros" data-number="3.3"><span class="header-section-number">3.3</span> Library Feature-Test Macros<a href="#library-feature-test-macros" class="self-link"></a></h2>
+<h2 data-number="4.3" id="library-feature-test-macros" data-number="4.3"><span class="header-section-number">4.3</span> Library Feature-Test Macros<a href="#library-feature-test-macros" class="self-link"></a></h2>
 <p>All of the following macros are defined after inclusion of the header <code class="sourceCode cpp"><span class="op">&lt;</span>version<span class="op">&gt;</span></code> or one of the corresponding headers specified below.</p>
 <table>
 <tr>
@@ -3846,7 +3862,7 @@ Paper(s)
 </td>
 </tr>
 </table>
-<h1 data-number="4" style="border-bottom:1px solid #cccccc" id="bibliography" data-number="4" style="border-bottom:1px solid #cccccc"><span class="header-section-number">4</span> References<a href="#bibliography" class="self-link"></a></h1>
+<h1 data-number="5" style="border-bottom:1px solid #cccccc" id="bibliography" data-number="5" style="border-bottom:1px solid #cccccc"><span class="header-section-number">5</span> References<a href="#bibliography" class="self-link"></a></h1>
 <div id="refs" class="references hanging-indent" role="doc-bibliography">
 <div id="ref-LWG2112">
 <p>[LWG2112] Daniel Krügler. User-defined classes that cannot be derived from. <br />
@@ -4700,6 +4716,10 @@ Paper(s)
 <p>[P1331R2] CJ Johnson. 2019. Permitting trivial default initialization in constexpr contexts. <br />
 <a href="https://wg21.link/p1331r2">https://wg21.link/p1331r2</a></p>
 </div>
+<div id="ref-P1353R0">
+<p>[P1353R0] John Spicer. 2017. Missing Feature Test Macros. <br />
+<a href="https://wg21.link/p1353r0">https://wg21.link/p1353r0</a></p>
+</div>
 <div id="ref-P1357R1">
 <p>[P1357R1] Walter E. Brown, Glen J. Fernandes. 2019. Traits for [Un]bounded Arrays. <br />
 <a href="https://wg21.link/p1357r1">https://wg21.link/p1357r1</a></p>
@@ -4779,6 +4799,10 @@ Paper(s)
 <div id="ref-P1869R1">
 <p>[P1869R1] Tomasz Kamiński, Michał Dominiak. 2019. Rename “condition_variable_any” interruptible wait methods. <br />
 <a href="https://wg21.link/p1869r1">https://wg21.link/p1869r1</a></p>
+</div>
+<div id="ref-P1902R1">
+<p>[P1902R1] Barry Revzin. 2019. Missing feature-test macros 2017-2019. <br />
+<a href="https://wg21.link/p1902r1">https://wg21.link/p1902r1</a></p>
 </div>
 <div id="ref-P1907R1">
 <p>[P1907R1] Jens Maurer. 2019. Inconsistencies with non-type template parameters. <br />

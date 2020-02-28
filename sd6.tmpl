@@ -65,8 +65,8 @@ style="background-color: white"
 {% endmacro %}
 
 ---
-title: "SD-6: SG10 Feature-Test Recommendations"
-document: SD-6
+title: "Feature-Test Macros and Policies"
+document: SD-FeatureTest
 date: today
 toc: true
 toc-depth: 2
@@ -498,6 +498,47 @@ available.
 #endif
 ```
 
+# Policies
+
+SG-10 has adopted a number of policies related to our standard practices for
+determining and naming macros.
+
+## `constexpr`
+
+For the language, we will have a single `__cpp_constexpr` macro. It will be
+bumped every time we extend constexpr in the language. For the library, we will
+add a specific feature-test macros for significant, special features.
+Otherwise, for those cases where we are just adding constexpr to more things in
+the library, we will have a dedicated test macro per header and just bump that
+header-specific macro on each change. That macro will be named
+`__cpp_lib_constexpr_HEADER` (with the exception of a few preexisting macros for
+array and algorithm which have slightly different names).
+
+From [@P1902R1].
+
+## Language Features with Library Components
+
+In some cases a feature requires two macros, one for the language and one for
+the library. For example, the library does not want to define its three-way
+comparison operations unless the compiler supports the feature.
+
+For end-users, it is suggested that they test only the library macro, as that
+will only be true if the language macro is also true. As a result, the language
+macros contain "`impl`" to distinguish them from the more general version that
+is expected to be set by the library.
+
+Note that originally SG10 suggested that the library version of the macro not
+include the usual `_lib` part, but LWG was not comfortable with the inconsistency
+of having a library macro (which requires a header before it can be used) that
+does not contain `_lib`.
+
+Also note that SG10 originally proposed that the core feature tests include
+`_lang`, but LWG wanted something that more clearly implied that the the macro
+was for a core feature and not intended to be used by end-users. They
+sugggested that `_impl` be used instead. 
+
+From [@P1353R0].
+
 # Table of Feature-Test Macros
 
 The following are all the feature-test macros in the standard, broken up by
@@ -520,7 +561,7 @@ In some cases, a feature requires two macros: one for the language and one
 for the library. For example, the library does not want to define its
 three-way comparison operators unless the compiler supports the feature. In
 these cases, it is suggested for end-users that they only test the library
-macro. Those core language feature test macros that are intended to be
+macro. Those core language feature-test macros that are intended to be
 checked by the library are spelled `__cpp_impl_*`.
 
 {{ make_table(lang_macros, False, False) }}
