@@ -1,8 +1,6 @@
 THIS_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
-MPARK_DATA := $(THIS_DIR)wg21/data
 OUTDIR := .
 DEFAULTS := $(THIS_DIR)md/defaults.yaml
-FILE := 
 include $(THIS_DIR)wg21/Makefile
 
 $(THIS_DIR)md/defaults.yaml : $(THIS_DIR)md/defaults.py
