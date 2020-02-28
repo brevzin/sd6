@@ -17016,5 +17016,10 @@
     "SD4": "Practices and Procedures: The \"How We Work\" Cheat Sheet",
     "SD5": "WG21 and PL22.16 (C++) Joint Mailing and Meeting Information",
     "SD6": "SG10 Feature Test Recommendations",
-    "SD7": "Mailing Procedures and How to Write Papers"
+    "SD7": "Mailing Procedures and How to Write Papers",
+    "P1964R2": "Wording for _`boolean-testable`_",
+    "P1956R1": "On the names of low-level bitmanipulation functions",
+    "P0586R2": "Safe integral comparisons",
+    "P1973R1": "Rename \u201c_default_init\u201d Functions, Rev1",
+    "P1976R2": "Fixed-size `span` construction from dynamic range"
 }

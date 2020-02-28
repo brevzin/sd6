@@ -116,10 +116,6 @@ language:
   rows:
   - value: 201907
     papers: P1143R2
-- name: __cpp_coroutines
-  rows:
-  - value: 201902
-    papers: P0912R5
 - name: __cpp_decltype
   rows:
   - value: 200707
@@ -178,6 +174,10 @@ language:
   rows:
   - value: 201606
     papers: P0292R2
+- name: __cpp_impl_coroutine
+  rows:
+  - value: 201902
+    papers: P0912R5 LWG3393
 - name: __cpp_impl_destroying_delete
   rows:
   - value: 201806
@@ -490,6 +490,8 @@ library:
     papers: P0898R3
   - value: 201907
     papers: P1754R1
+  - value: 202002
+    papers: P1964R2
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm
   rows:
@@ -554,6 +556,11 @@ library:
   rows:
   - value: 201907
     papers: P1004R2
+- name: __cpp_lib_coroutine
+  header_list: coroutine
+  rows:
+  - value: 201902
+    papers: P0912R5 LWG3393
 - name: __cpp_lib_destroying_delete
   header_list: new
   rows:
@@ -574,6 +581,8 @@ library:
   rows:
   - value: 201811
     papers: P1209R0
+  - value: 202002
+    papers: P1115R3
 - name: __cpp_lib_exchange_function
   header_list: utility
   rows:
@@ -648,6 +657,13 @@ library:
   rows:
   - value: 201806
     papers: P0556R3
+  - value: 202002
+    papers: P1956R1
+- name: __cpp_lib_integer_comparison_functions
+  header_list: utility
+  rows:
+  - value: 202002
+    papers: P0586R2
 - name: __cpp_lib_integer_sequence
   header_list: utility
   rows:
@@ -693,6 +709,11 @@ library:
   rows:
   - value: 201907
     papers: P0466R5
+- name: __cpp_lib_is_nothrow_convertible
+  header_list: type_traits
+  rows:
+  - value: 201806
+    papers: P0758R1 LWG3356
 - name: __cpp_lib_is_null_pointer
   header_list: type_traits
   rows:
@@ -786,11 +807,6 @@ library:
   rows:
   - value: 201603
     papers: P0005R4
-- name: __cpp_lib_nothrow_convertible
-  header_list: type_traits
-  rows:
-  - value: 201806
-    papers: P0758R1
 - name: __cpp_lib_null_iterators
   header_list: iterator
   rows:
@@ -889,11 +905,11 @@ library:
   rows:
   - value: 201806
     papers: P0769R2
-- name: __cpp_lib_smart_ptr_default_init
+- name: __cpp_lib_smart_ptr_for_overwrite
   header_list: memory
   rows:
   - value: 201811
-    papers: P1020R1
+    papers: P1020R1 P1973R1
 - name: __cpp_lib_source_location
   header_list: source_location
   rows:
@@ -906,6 +922,8 @@ library:
     papers: P0122R7 LWG3274
   - value: 201902
     papers: P1024R3
+  - value: 202002
+    papers: P1976R2
 - name: __cpp_lib_ssize
   header_list: iterator
   rows:
@@ -1002,10 +1020,10 @@ library:
   - value: 201411
     papers: N4279
 - name: __cpp_lib_unwrap_ref
-  header_list: type_traits
+  header_list: functional
   rows:
   - value: 201811
-    papers: P0318R1
+    papers: P0318R1 LWG3348
 - name: __cpp_lib_variant
   header_list: variant
   rows:

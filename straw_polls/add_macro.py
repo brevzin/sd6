@@ -25,10 +25,27 @@ def ordered_dump(data, stream=None, Dumper=yaml.Dumper, **kwds):
 
 yaml.Dumper.ignore_aliases = lambda *args: True
 
+def sort_papers(papers):
+    def key(paper):
+        grp = {'N': 0, 'P': 1, 'L': 2, 'C': 2}[paper[0]]
+        return (grp, paper)
+    return sorted(set(papers), key=key)
+
 class Document(object):
     def __init__(self, filename):
         self.filename = filename
         self.doc = ordered_load(open(filename))
+
+    def change(self, kind, name, args, issue):
+        specific = self.doc[kind]
+        for row in specific:
+            if row['name'] == name:
+                row.update(args)
+                papers = row['rows'][-1]['papers'].split()
+                papers.append(issue)
+                row['rows'][-1]['papers'] = ' '.join(sort_papers(papers))
+                break
+        specific.sort(key=lambda d: d['name'])
 
     def remove(self, kind, name, value, papers):
         self.add(kind=kind, name=name, value=value, papers=papers, _remove=True)
@@ -43,7 +60,7 @@ class Document(object):
             else:
                 return arg
 
-        papers = fixup(papers)
+        papers = sort_papers(fixup(papers))
         headers = fixup(headers)
             
         values = [('value', value),
@@ -59,10 +76,7 @@ class Document(object):
                         assert (not _remove) or entry.get('removed')
                         old_papers = entry['papers'].split()
                         old_papers.extend(papers)
-                        def key(paper):
-                            grp = {'N': 0, 'P': 1, 'L': 2, 'C': 2}[paper[0]]
-                            return (grp, paper)
-                        old_papers = sorted(set(old_papers), key=key)
+                        old_papers = sort_papers(old_papers)
                         entry['papers'] = ' '.join(old_papers)
                         break
                 else:

@@ -7,5 +7,6 @@ def refs_to_dict(filename):
 
 refs = refs_to_dict('wg21/data/index.yaml')
 refs.update(refs_to_dict('md/wg21_fmt.yaml'))
+refs.update(refs_to_dict('md/early.yaml'))
 
 print(json.dumps(refs, indent=4))

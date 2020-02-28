@@ -1,0 +1,41 @@
+references:
+  - id: P1964R2
+    citation-label: P1964R2
+    title: "Wording for _`boolean-testable`_"
+    author:
+      - family: Tim Song 
+    issued:
+      year: 2020
+    URL: https://wg21.link/P1964R2
+  - id: P1956R1
+    citation-label: P1956R1
+    title: "On the names of low-level bitmanipulation functions"
+    author:
+      - family: Vincent Reverdy
+    issued:
+      year: 2020
+    URL: https://wg21.link/P1956R1
+  - id: P0586R2
+    citation-label: P0586R2
+    title: "Safe integral comparisons"
+    author:
+      - family: Federico Kircheis 
+    issued:
+      year: 2020
+    URL: https://wg21.link/P0586R2
+  - id: P1973R1
+    citation-label: P1973R1
+    title: "Rename “_default_init” Functions, Rev1"
+    author:
+      - family: Nicolai Josuttis 
+    issued:
+      year: 2020
+    URL: https://wg21.link/P1973R1
+  - id: P1976R2
+    citation-label: P1976R2
+    title: "Fixed-size `span` construction from dynamic range"
+    author:
+      - family: Tomasz Kamiński
+    issued:
+      year: 2020
+    URL: https://wg21.link/P1976R2

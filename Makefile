@@ -10,8 +10,10 @@ $(OUTDIR)/sd6.md : sd6.py sd6.tmpl macros.yaml reduced.json
 	python $< > $@
 
 $(OUTDIR)/sd6.html : $(OUTDIR)/sd6.md
-	$(PANDOC) --bibliography $(THIS_DIR)md/wg21_fmt.yaml --bibliography $(DATADIR)/index.yaml
+	$(PANDOC) --bibliography $(THIS_DIR)md/wg21_fmt.yaml --bibliography $(DATADIR)/index.yaml --bibliography $(THIS_DIR)md/early.yaml
 
-reduced.json : md/wg21_fmt.yaml wg21/data/index.yaml reduce_refs.py
+reduced.json : md/wg21_fmt.yaml wg21/data/index.yaml md/early.yaml reduce_refs.py
 	python reduce_refs.py > $@ 
 
+
+.DEFAULT_GOAL := $(OUTDIR)/sd6.html
