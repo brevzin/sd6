@@ -1,25 +1,18 @@
-include md/mpark-wg21.mk
+THIS_DIR := $(dir $(lastword $(MAKEFILE_LIST)))
+MPARK_DATA := $(THIS_DIR)wg21/data
+OUTDIR := .
+DEFAULTS := $(THIS_DIR)md/defaults.yaml
+FILE := 
+include $(THIS_DIR)wg21/Makefile
 
-sd6.html : sd6.py sd6.tmpl macros.yaml reduced.json
-	python sd6.py | pandoc - $(MPARK_DATA)/references.md \
-	   --number-sections \
-	   --self-contained \
-	   --table-of-contents \
-       --bibliography $(THIS_DIR)wg21_fmt.yaml \
-	   --bibliography $(MPARK_DATA)/index.yaml \
-	   --csl $(MPARK_DATA)/cpp.csl \
-	   --css $(MPARK_DATA)/template/14882.css \
-	   --css $(THIS_DIR)/pandoc.css \
-	   --filter pandoc-citeproc \
-	   --filter $(MPARK_DATA)/filter/wg21.py \
-	   --filter $(THIS_DIR)/pandoc.py \
-	   --highlight-style $(MPARK_DATA)/syntax/wg21.theme \
-	   --metadata datadir:$(MPARK_DATA) \
-	   --metadata-file $(MPARK_DATA)/metadata.yaml \
-	   --syntax-definition $(MPARK_DATA)/syntax/isocpp.xml \
-	   --template wg21 \
-	   --toc-depth 2 \
-	   --output $@
+$(THIS_DIR)md/defaults.yaml : $(THIS_DIR)md/defaults.py
+	$< > $@
+
+$(OUTDIR)/sd6.md : sd6.py sd6.tmpl macros.yaml reduced.json
+	python $< > $@
+
+$(OUTDIR)/sd6.html : $(OUTDIR)/sd6.md
+	$(PANDOC) --bibliography $(THIS_DIR)md/wg21_fmt.yaml --bibliography $(DATADIR)/index.yaml
 
 reduced.json : md/wg21_fmt.yaml wg21/data/index.yaml reduce_refs.py
 	python reduce_refs.py > $@ 
