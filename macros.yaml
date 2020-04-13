@@ -2,7 +2,7 @@ attributes:
 - name: carries_dependency
   rows:
   - value: 200809
-    papers: N2761
+    papers: N2782
 - name: deprecated
   rows:
   - value: 201309
