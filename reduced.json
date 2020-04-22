@@ -16091,7 +16091,7 @@
     "P1115R0": "Improving the Return Value of Erase-Like Algorithms II: Free erase/erase if",
     "P1115R1": "Improving the Return Value of Erase-Like Algorithms II: Free erase/erase if",
     "P1115R2": "Improving the Return Value of Erase-Like Algorithms II: Free erase/erase if",
-    "P1115R3": "Improving the Return Value of Erase-Like Algorithms II: Free erase/erase if",
+    "P1115R3": "Improving the Return Value of Erase-Like Algorithms II: Free erase/erase_if",
     "P1116R0": "Re-Gaining Exclusive Ownership from shared_ptrs",
     "P1118R0": "Concat and Split on simd<> objects",
     "P1119R0": "ABI for std::hardware_{constructive,destructive}_interference_size",

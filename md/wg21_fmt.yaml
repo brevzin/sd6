@@ -327,6 +327,14 @@ references:
     issued:
       year: 2019
     URL: https://wg21.link/p1065r2
+  - id: P1115R3
+    citation-label: P1115R3
+    title: "Improving the Return Value of Erase-Like Algorithms II: Free erase/erase_if"
+    author:
+      - family: Marc Mutz
+    issued:
+      year: 2019
+    URL: https://wg21.link/p1115r3
   - id: P1143R2
     citation-label: P1143R2
     title: "Adding the `constinit` keyword"
