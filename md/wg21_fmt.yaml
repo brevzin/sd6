@@ -263,6 +263,14 @@ references:
     issued:
       year: 2018
     URL: https://wg21.link/p0754r2
+  - id: P0769R2
+    citation-label: P0769R2
+    title: "Add shift to `<algorithm>`"
+    author:
+      - family: Dan Raviv
+    issued:
+      year: 2018
+    URL: https://wg21.link/p0769r2
   - id: P0790R0
     citation-label: P0790R0
     title: "Effect of `operator<=>` on the C++ Standard Library"

@@ -15463,7 +15463,7 @@
     "P0768R1": "Library Support for the Spaceship (Comparison) Operator",
     "P0769R0": "Add shift to <algorithm>",
     "P0769R1": "Add shift to <algorithm>",
-    "P0769R2": "Add shift to <algorithm>",
+    "P0769R2": "Add shift to `<algorithm>`",
     "P0770R0": "A Proposal to Specify Behavior in Case of Exception Allocation Failure",
     "P0771R0": "std::function move operations should be noexcept",
     "P0771R1": "std::function move constructor should be noexcept",
