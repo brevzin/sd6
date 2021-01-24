@@ -273,6 +273,10 @@ language:
   rows:
   - value: 200610
     papers: N2118
+- name: __cpp_size_t_suffix
+  rows:
+  - value: 202011
+    papers: P0330R8
 - name: __cpp_sized_deallocation
   rows:
   - value: 201309
@@ -730,6 +734,11 @@ library:
   rows:
   - value: 201907
     papers: P0466R5
+- name: __cpp_lib_is_scoped_enum
+  header_list: type_traits
+  rows:
+  - value: 202011
+    papers: P1048R1
 - name: __cpp_lib_is_swappable
   header_list: type_traits
   rows:
@@ -935,11 +944,26 @@ library:
   rows:
   - value: 201902
     papers: P1227R2
+- name: __cpp_lib_stacktrace
+  header_list: stacktrace
+  rows:
+  - value: 202011
+    papers: P0881R7
 - name: __cpp_lib_starts_ends_with
   header_list: string string_view
   rows:
   - value: 201711
     papers: P0457R2
+- name: __cpp_lib_stdatomic_h
+  header_list: stdatomic.h
+  rows:
+  - value: 202011
+    papers: P0943R6
+- name: __cpp_lib_string_contains
+  header_list: string string_view
+  rows:
+  - value: 202011
+    papers: P1679R3
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
