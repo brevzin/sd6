@@ -840,7 +840,7 @@ library:
   - value: 201603
     papers: P0024R2
 - name: __cpp_lib_polymorphic_allocator
-  header_list: memory
+  header_list: memory_resource
   rows:
   - value: 201902
     papers: P0339R6
