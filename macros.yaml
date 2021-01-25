@@ -843,7 +843,7 @@ library:
   header_list: memory_resource
   rows:
   - value: 201902
-    papers: P0339R6
+    papers: P0339R6 LWG3437
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
