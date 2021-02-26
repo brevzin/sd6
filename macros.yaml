@@ -1050,7 +1050,7 @@ library:
   - value: 201411
     papers: N4279
 - name: __cpp_lib_unwrap_ref
-  header_list: functional
+  header_list: type_traits
   rows:
   - value: 201811
     papers: P0318R1 LWG3348
