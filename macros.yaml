@@ -1007,6 +1007,11 @@ library:
   rows:
   - value: 201611
     papers: P0067R5 P0682R1 LWG3137
+- name: __cpp_lib_to_underlying
+  header_list: utility
+  rows:
+  - value: 202102
+    papers: P1682R2
 - name: __cpp_lib_transformation_trait_aliases
   header_list: type_traits
   rows:
@@ -1059,6 +1064,8 @@ library:
   rows:
   - value: 201606
     papers: P0088R3 P0393R3 P0032R3
+  - value: 202102
+    papers: P2162R2
 - name: __cpp_lib_void_t
   header_list: type_traits
   rows:
