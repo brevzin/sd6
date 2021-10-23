@@ -104,6 +104,8 @@ language:
     papers: P1002R1 P1327R1 P1330R0
   - value: 201907
     papers: P1331R2 P1668R1
+  - value: 202110
+    papers: P2242R3
 - name: __cpp_constexpr_dynamic_alloc
   rows:
   - value: 201907
@@ -150,6 +152,10 @@ language:
   rows:
   - value: 199711
     feature: Exception handling
+- name: __cpp_explicit_this_parameter
+  rows:
+  - value: 202110
+    papers: P0847R7
 - name: __cpp_fold_expressions
   rows:
   - value: 201411
@@ -222,6 +228,10 @@ language:
   rows:
   - value: 201907
     papers: P1103R3 P1811R0
+- name: __cpp_multidimensional_subscript
+  rows:
+  - value: 202110
+    papers: P2128R6
 - name: __cpp_namespace_attributes
   rows:
   - value: 201411
@@ -381,6 +391,11 @@ library:
   rows:
   - value: 201510
     papers: P0007R1
+- name: __cpp_lib_associative_heterogeneous_erasure
+  header_list: map set unordered_map unordered_set
+  rows:
+  - value: 202110
+    papers: P2077R3
 - name: __cpp_lib_assume_aligned
   header_list: memory
   rows:
@@ -468,6 +483,11 @@ library:
   rows:
   - value: 201603
     papers: P0298R3
+- name: __cpp_lib_byteswap
+  header_list: bit
+  rows:
+  - value: 202110
+    papers: P1272R4
 - name: __cpp_lib_char8_t
   header_list: atomic filesystem istream limits locale ostream string string_view
   rows:
@@ -644,6 +664,8 @@ library:
     papers: P0645R10 P1361R2 P1652R1
   - value: 202106
     papers: P2216R3
+  - value: 202110
+    papers: P2372R3 P2418R2
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -836,6 +858,16 @@ library:
   rows:
   - value: 201603
     papers: P0220R1
+- name: __cpp_lib_monadic_optional
+  header_list: optional
+  rows:
+  - value: 202110
+    papers: P0798R8
+- name: __cpp_lib_move_only_function
+  header_list: functional
+  rows:
+  - value: 202110
+    papers: P0288R9
 - name: __cpp_lib_node_extract
   header_list: map set unordered_map unordered_set
   rows:
@@ -897,11 +929,18 @@ library:
     papers: P1716R3
   - value: 202106
     papers: P2325R3
+  - value: 202110
+    papers: P2415R2
 - name: __cpp_lib_ranges_starts_ends_with
   header_list: algorithm
   rows:
   - value: 202106
     papers: P1659R3
+- name: __cpp_lib_ranges_zip
+  header_list: ranges tuple utility
+  rows:
+  - value: 202110
+    papers: P2321R2
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
   rows:
@@ -1013,6 +1052,11 @@ library:
   rows:
   - value: 202011
     papers: P1679R3
+- name: __cpp_lib_string_resize_and_overwrite
+  header_list: string
+  rows:
+  - value: 202110
+    papers: P1072R10
 - name: __cpp_lib_string_udls
   header_list: string
   rows:

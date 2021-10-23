@@ -19336,5 +19336,10 @@
     "SD5": "WG21 and PL22.16 (C++) Joint Mailing and Meeting Information",
     "SD6": "SG10 Feature Test Recommendations",
     "SD7": "Mailing Procedures and How to Write Papers",
-    "SD8": "Standard Library Compatibility"
+    "SD8": "Standard Library Compatibility",
+    "P2077R3": "Heterogeneous erasure overloads for associative containers",
+    "P1272R4": "Byteswapping for fun&&nuf",
+    "P2418R2": "Add support for std::generator-like types to std::format",
+    "P0798R8": "Monadic operations for std::optional",
+    "P2415R2": "What is a view?"
 }

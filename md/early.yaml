@@ -1,2 +1,41 @@
-empty:
-    - yaml
+references:
+  - id: P2077R3
+    citation-label: P2077R3
+    title: "Heterogeneous erasure overloads for associative containers"
+    author:
+      - family: Konstantin Boyarinov, Sergey Vinogradov; Ruslan Arutyunyan
+    issued:
+      year: 2021
+    URL: https://wg21.link/p2077r3
+  - id: P1272R4
+    citation-label: P1272R4
+    title: "Byteswapping for fun&&nuf"
+    author:
+      - family: Isabella Muerte
+    issued:
+      year: 2021
+    URL: https://wg21.link/p1272r4
+  - id: P2418R2
+    citation-label: P2418R2
+    title: "Add support for std::generator-like types to std::format"
+    author:
+      - family: Victor Zverovich
+    issued:
+      year: 2021
+    URL: https://wg21.link/p2418r2
+  - id: P0798R8
+    citation-label: P0798R8
+    title: "Monadic operations for std::optional"
+    author:
+      - family: Sy Brand
+    issued:
+      year: 2021
+    URL: https://wg21.link/p0798r8
+  - id: P2415R2
+    citation-label: P2415R2
+    title: "What is a view?"
+    author:
+      - family: Barry Revzin, Tim Song
+    issued:
+      year: 2021
+
