@@ -571,6 +571,10 @@ library:
   rows:
   - value: 201902
     papers: P0912R5 LWG3393
+- name: __cpp_lib_deduction_guides
+  rows:
+  - value: 201703
+    papers: P0433R2
 - name: __cpp_lib_destroying_delete
   header_list: new
   rows:
