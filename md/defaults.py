@@ -7,8 +7,6 @@ print(
 css: {datadir}/pandoc.css
 filters: [{datadir}/pandoc.py]
 
-template: {datadir}/template
-
 metadata:
   highlighting:
     inline-code: cpp\

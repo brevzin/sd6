@@ -4,82 +4,82 @@
   <meta charset="utf-8" />
   <meta name="generator" content="mpark/wg21" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="dcterms.date" content="2021-03-07" />
+  <meta name="dcterms.date" content="2021-10-23" />
   <title>Feature-Test Macros and Policies</title>
   <style>
       code{white-space: pre-wrap;}
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
-  </style>
-  <style>
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {  background-color: #f6f8fa; }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span. { } /* Normal */
-code span.al { color: #ff0000; } /* Alert */
-code span.an { } /* Annotation */
-code span.at { } /* Attribute */
-code span.bn { color: #9f6807; } /* BaseN */
-code span.bu { color: #9f6807; } /* BuiltIn */
-code span.cf { color: #00607c; } /* ControlFlow */
-code span.ch { color: #9f6807; } /* Char */
-code span.cn { } /* Constant */
-code span.co { color: #008000; font-style: italic; } /* Comment */
-code span.cv { color: #008000; font-style: italic; } /* CommentVar */
-code span.do { color: #008000; } /* Documentation */
-code span.dt { color: #00607c; } /* DataType */
-code span.dv { color: #9f6807; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #9f6807; } /* Float */
-code span.fu { } /* Function */
-code span.im { } /* Import */
-code span.in { color: #008000; } /* Information */
-code span.kw { color: #00607c; } /* Keyword */
-code span.op { color: #af1915; } /* Operator */
-code span.ot { } /* Other */
-code span.pp { color: #6f4e37; } /* Preprocessor */
-code span.re { } /* RegionMarker */
-code span.sc { color: #9f6807; } /* SpecialChar */
-code span.ss { color: #9f6807; } /* SpecialString */
-code span.st { color: #9f6807; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #9f6807; } /* VerbatimString */
-code span.wa { color: #008000; font-weight: bold; } /* Warning */
-code.diff {color: #898887}
-code.diff span.va {color: #006e28}
-code.diff span.st {color: #bf0303}
+      div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+      ul.task-list{list-style: none;}
+      pre > code.sourceCode { white-space: pre; position: relative; }
+      pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+      pre > code.sourceCode > span:empty { height: 1.2em; }
+      code.sourceCode > span { color: inherit; text-decoration: inherit; }
+      div.sourceCode { margin: 1em 0; }
+      pre.sourceCode { margin: 0; }
+      @media screen {
+      div.sourceCode { overflow: auto; }
+      }
+      @media print {
+      pre > code.sourceCode { white-space: pre-wrap; }
+      pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+      }
+      pre.numberSource code
+        { counter-reset: source-line 0; }
+      pre.numberSource code > span
+        { position: relative; left: -4em; counter-increment: source-line; }
+      pre.numberSource code > span > a:first-child::before
+        { content: counter(source-line);
+          position: relative; left: -1em; text-align: right; vertical-align: baseline;
+          border: none; display: inline-block;
+          -webkit-touch-callout: none; -webkit-user-select: none;
+          -khtml-user-select: none; -moz-user-select: none;
+          -ms-user-select: none; user-select: none;
+          padding: 0 4px; width: 4em;
+          color: #aaaaaa;
+        }
+      pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+      div.sourceCode
+        {  background-color: #f6f8fa; }
+      @media screen {
+      pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+      }
+      code span. { } /* Normal */
+      code span.al { color: #ff0000; } /* Alert */
+      code span.an { } /* Annotation */
+      code span.at { } /* Attribute */
+      code span.bn { color: #9f6807; } /* BaseN */
+      code span.bu { color: #9f6807; } /* BuiltIn */
+      code span.cf { color: #00607c; } /* ControlFlow */
+      code span.ch { color: #9f6807; } /* Char */
+      code span.cn { } /* Constant */
+      code span.co { color: #008000; font-style: italic; } /* Comment */
+      code span.cv { color: #008000; font-style: italic; } /* CommentVar */
+      code span.do { color: #008000; } /* Documentation */
+      code span.dt { color: #00607c; } /* DataType */
+      code span.dv { color: #9f6807; } /* DecVal */
+      code span.er { color: #ff0000; font-weight: bold; } /* Error */
+      code span.ex { } /* Extension */
+      code span.fl { color: #9f6807; } /* Float */
+      code span.fu { } /* Function */
+      code span.im { } /* Import */
+      code span.in { color: #008000; } /* Information */
+      code span.kw { color: #00607c; } /* Keyword */
+      code span.op { color: #af1915; } /* Operator */
+      code span.ot { } /* Other */
+      code span.pp { color: #6f4e37; } /* Preprocessor */
+      code span.re { } /* RegionMarker */
+      code span.sc { color: #9f6807; } /* SpecialChar */
+      code span.ss { color: #9f6807; } /* SpecialString */
+      code span.st { color: #9f6807; } /* String */
+      code span.va { } /* Variable */
+      code span.vs { color: #9f6807; } /* VerbatimString */
+      code span.wa { color: #008000; font-weight: bold; } /* Warning */
+      code.diff {color: #898887}
+      code.diff span.va {color: #006e28}
+      code.diff span.st {color: #bf0303}
   </style>
   <style type="text/css">
 body {
@@ -88,6 +88,12 @@ font-family: serif;
 
 hyphens: auto;
 line-height: 1.35;
+text-align: justify;
+}
+@media screen and (max-width: 30em) {
+body {
+margin: 1.5em;
+}
 }
 div.wrapper {
 max-width: 60em;
@@ -520,7 +526,7 @@ padding-left: 20px;
 code.diff span.va { color: #000000; background-color: var(--diff-ins); }
 code.diff span.st { color: #000000; background-color: var(--diff-del); }
 </style>
-  <link href="data:image/vnd.microsoft.icon;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAVoJEAN6CRADegkQAWIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wCCRAAAgkQAAIJEAACCRAAsgkQAvoJEAP+CRAD/gkQA/4JEAP+CRADAgkQALoJEAACCRAAAgkQAAP///wD///8AgkQAAIJEABSCRACSgkQA/IJEAP99PQD/dzMA/3czAP99PQD/gkQA/4JEAPyCRACUgkQAFIJEAAD///8A////AHw+AFiBQwDqgkQA/4BBAP9/PxP/uZd6/9rJtf/bybX/upd7/39AFP+AQQD/gkQA/4FDAOqAQgBc////AP///wDKklv4jlEa/3o7AP+PWC//8+3o///////////////////////z7un/kFox/35AAP+GRwD/mVYA+v///wD///8A0Zpk+NmibP+0d0T/8evj///////+/fv/1sKz/9bCs//9/fr//////+/m2/+NRwL/nloA/5xYAPj///8A////ANKaZPjRmGH/5cKh////////////k149/3UwAP91MQD/lmQ//86rhv+USg3/m1YA/5hSAP+bVgD4////AP///wDSmmT4zpJY/+/bx///////8+TV/8mLT/+TVx//gkIA/5lVAP+VTAD/x6B//7aEVv/JpH7/s39J+P///wD///8A0ppk+M6SWP/u2sf///////Pj1f/Nj1T/2KFs/8mOUv+eWhD/lEsA/8aee/+0glT/x6F7/7J8Rvj///8A////ANKaZPjRmGH/48Cf///////+/v7/2qt//82PVP/OkFX/37KJ/86siv+USg7/mVQA/5hRAP+bVgD4////AP///wDSmmT40ppk/9CVXP/69O////////7+/v/x4M//8d/P//7+/f//////9u7n/6tnJf+XUgD/nFgA+P///wD///8A0ppk+NKaZP/RmWL/1qNy//r07///////////////////////+vXw/9akdP/Wnmn/y5FY/6JfFvj///8A////ANKaZFTSmmTo0ppk/9GYYv/Ql1//5cWm//Hg0P/x4ND/5cWm/9GXYP/RmGH/0ppk/9KaZOjVnmpY////AP///wDSmmQA0ppkEtKaZI7SmmT60ppk/9CWX//OkVb/zpFW/9CWX//SmmT/0ppk/NKaZJDSmmQS0ppkAP///wD///8A0ppkANKaZADSmmQA0ppkKtKaZLrSmmT/0ppk/9KaZP/SmmT/0ppkvNKaZCrSmmQA0ppkANKaZAD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkUtKaZNzSmmTc0ppkVNKaZADSmmQA0ppkANKaZADSmmQA////AP5/AAD4HwAA4AcAAMADAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA+B8AAP5/AAAoAAAAIAAAAEAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wCCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAAyCRACMgkQA6oJEAOqCRACQgkQAEIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wD///8A////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRABigkQA5oJEAP+CRAD/gkQA/4JEAP+CRADqgkQAZoJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAAD///8A////AP///wD///8AgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAA4gkQAwoJEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQAxIJEADyCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAP///wD///8A////AP///wCCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAWgkQAmIJEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAJyCRAAYgkQAAIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wD///8A////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAdIJEAPCCRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAPSCRAB4gkQAAIJEAACCRAAAgkQAAIJEAAD///8A////AP///wD///8AgkQAAIJEAACCRAAAgkQASoJEANKCRAD/gkQA/4JEAP+CRAD/g0YA/39AAP9zLgD/bSQA/2shAP9rIQD/bSQA/3MuAP9/PwD/g0YA/4JEAP+CRAD/gkQA/4JEAP+CRADUgkQAToJEAACCRAAAgkQAAP///wD///8A////AP///wB+PwAAgkUAIoJEAKiCRAD/gkQA/4JEAP+CRAD/hEcA/4BBAP9sIwD/dTAA/5RfKv+viF7/vp56/76ee/+wiF7/lWAr/3YxAP9sIwD/f0AA/4RHAP+CRAD/gkQA/4JEAP+CRAD/gkQArIJEACaBQwAA////AP///wD///8A////AIBCAEBzNAD6f0EA/4NFAP+CRAD/gkQA/4VIAP92MwD/bSUA/6N1Tv/ezsL/////////////////////////////////38/D/6V3Uv9uJgD/dTEA/4VJAP+CRAD/gkQA/4JEAP+BQwD/fUAA/4FDAEj///8A////AP///wD///8AzJRd5qBlKf91NgD/dDUA/4JEAP+FSQD/cy4A/3YyAP/PuKP//////////////////////////////////////////////////////9K7qP94NQD/ciwA/4VJAP+CRAD/fkEA/35BAP+LSwD/mlYA6v///wD///8A////AP///wDdpnL/4qx3/8KJUv+PUhf/cTMA/3AsAP90LgD/4dK+/////////////////////////////////////////////////////////////////+TYxf91MAD/dTIA/31CAP+GRwD/llQA/6FcAP+gWwD8////AP///wD///8A////ANGZY/LSm2X/4ap3/92mcP+wdT3/byQA/8mwj////////////////////////////////////////////////////////////////////////////+LYxv9zLgP/jUoA/59bAP+hXAD/nFgA/5xYAPL///8A////AP///wD///8A0ppk8tKaZP/RmWL/1p9q/9ubXv/XqXj////////////////////////////7+fD/vZyG/6BxS/+gcUr/vJuE//r37f//////////////////////3MOr/5dQBf+dVQD/nVkA/5xYAP+cWAD/nFgA8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/SmWP/yohJ//jo2P//////////////////////4NTG/4JDFf9lGAD/bSQA/20kAP9kGAD/fz8S/+Xb0f//////5NG9/6txN/+LOgD/m1QA/51aAP+cWAD/m1cA/5xYAP+cWADy////AP///wD///8A////ANKaZPLSmmT/0ppk/8+TWf/Unmv//v37//////////////////////+TWRr/VwsA/35AAP+ERgD/g0UA/4JGAP9lHgD/kFga/8KXX/+TRwD/jT4A/49CAP+VTQD/n10A/5xYAP+OQQD/lk4A/55cAPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/y4tO/92yiP//////////////////////8NnE/8eCQP+rcTT/ez0A/3IyAP98PgD/gEMA/5FSAP+USwD/jj8A/5lUAP+JNwD/yqV2/694Mf+HNQD/jkAA/82rf/+laBj/jT4A8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/LiUr/4byY///////////////////////gupX/0I5P/+Wuev/Lklz/l1sj/308AP+QSwD/ol0A/59aAP+aVQD/k0oA/8yoh///////+fXv/6pwO//Lp3v///////Pr4f+oay7y////AP///wD///8A////ANKaZPLSmmT/0ppk/8uJSv/hvJj//////////////////////+G7l//Jhkb/0ppk/96nc//fqXX/x4xO/6dkFP+QSQD/llEA/5xXAP+USgD/yaOA///////38uv/qG05/8ijdv//////8efb/6ZpLPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/zIxO/9yxh///////////////////////7dbA/8iEQf/Sm2X/0Zlj/9ScZv/eqHf/2KJv/7yAQf+XTgD/iToA/5lSAP+JNgD/yKFv/611LP+HNQD/jT8A/8qmeP+kZRT/jT4A8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/Pk1n/1J5q//78+//////////////////+/fv/1aFv/8iEQv/Tm2b/0ppl/9GZY//Wn2z/1pZc/9eldf/Bl2b/kUcA/4w9AP+OQAD/lUwA/59eAP+cWQD/jT8A/5ZOAP+eXADy////AP///wD///8A////ANKaZPLSmmT/0ppk/9KZY//KiEn/8d/P///////////////////////47+f/05tm/8iCP//KiEj/yohJ/8eCP//RmGH//vfy///////n1sP/rXQ7/4k4AP+TTAD/nVoA/5xYAP+cVwD/nFgA/5xYAPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/0ptl/8uLTf/aq37////////////////////////////+/fz/6c2y/961jv/etY7/6Myx//78+v//////////////////////3MWv/5xXD/+ORAD/mFQA/51ZAP+cWAD/nFgA8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/SmmT/0ppk/8mFRP/s1b//////////////////////////////////////////////////////////////////////////////+PD/0JFU/7NzMv+WUQD/kUsA/5tXAP+dWQDy////AP///wD///8A////ANKaZP/SmmT/0ppk/9KaZP/Sm2X/z5NZ/8yMT//z5NX/////////////////////////////////////////////////////////////////9Ofa/8yNUP/UmGH/36p5/8yTWv+qaSD/kksA/5ROAPz///8A////AP///wD///8A0ppk5NKaZP/SmmT/0ppk/9KaZP/TnGf/zY9T/82OUv/t1sD//////////////////////////////////////////////////////+7Yw//OkFX/zI5R/9OcZ//SmmP/26V0/9ymdf/BhUf/ol8R6P///wD///8A////AP///wDSmmQ80ppk9tKaZP/SmmT/0ppk/9KaZP/TnGj/zpFW/8qJSv/dson/8uHS//////////////////////////////////Lj0//etIv/y4lL/86QVf/TnGj/0ppk/9KaZP/RmWP/05xn/9ymdfjUnWdC////AP///wD///8A////ANKaZADSmmQc0ppkotKaZP/SmmT/0ppk/9KaZP/Tm2b/0Zli/8qJSf/NjlH/16Z3/+G8mP/myKr/5siq/+G8mP/Xp3f/zY5S/8qISf/RmGH/05tm/9KaZP/SmmT/0ppk/9KaZP/SmmSm0pljINWdaQD///8A////AP///wD///8A0ppkANKaZADSmmQA0ppkQtKaZMrSmmT/0ppk/9KaZP/SmmT/0ptl/9GYYf/Nj1P/y4lL/8qISP/KiEj/y4lK/82PU//RmGH/0ptl/9KaZP/SmmT/0ppk/9KaZP/SmmTO0ppkRtKaZADSmmQA0ppkAP///wD///8A////AP///wDSmmQA0ppkANKaZADSmmQA0ppkANKaZGzSmmTu0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmTw0ppkcNKaZADSmmQA0ppkANKaZADSmmQA////AP///wD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZBLSmmSQ0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppklNKaZBTSmmQA0ppkANKaZADSmmQA0ppkANKaZAD///8A////AP///wD///8A0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQy0ppkutKaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppkvtKaZDbSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkAP///wD///8A////AP///wDSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkXNKaZODSmmT/0ppk/9KaZP/SmmT/0ppk5NKaZGDSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA////AP///wD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkBtKaZIbSmmTo0ppk6tKaZIrSmmQK0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZAD///8A////AP/8P///+B///+AH//+AAf//AAD//AAAP/AAAA/gAAAHwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA+AAAAfwAAAP/AAAP/8AAP//gAH//+AH///4H////D//" rel="icon" />
+  <link href="data:image/x-icon;base64,AAABAAIAEBAAAAEAIABoBAAAJgAAACAgAAABACAAqBAAAI4EAAAoAAAAEAAAACAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAVoJEAN6CRADegkQAWIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wCCRAAAgkQAAIJEAACCRAAsgkQAvoJEAP+CRAD/gkQA/4JEAP+CRADAgkQALoJEAACCRAAAgkQAAP///wD///8AgkQAAIJEABSCRACSgkQA/IJEAP99PQD/dzMA/3czAP99PQD/gkQA/4JEAPyCRACUgkQAFIJEAAD///8A////AHw+AFiBQwDqgkQA/4BBAP9/PxP/uZd6/9rJtf/bybX/upd7/39AFP+AQQD/gkQA/4FDAOqAQgBc////AP///wDKklv4jlEa/3o7AP+PWC//8+3o///////////////////////z7un/kFox/35AAP+GRwD/mVYA+v///wD///8A0Zpk+NmibP+0d0T/8evj///////+/fv/1sKz/9bCs//9/fr//////+/m2/+NRwL/nloA/5xYAPj///8A////ANKaZPjRmGH/5cKh////////////k149/3UwAP91MQD/lmQ//86rhv+USg3/m1YA/5hSAP+bVgD4////AP///wDSmmT4zpJY/+/bx///////8+TV/8mLT/+TVx//gkIA/5lVAP+VTAD/x6B//7aEVv/JpH7/s39J+P///wD///8A0ppk+M6SWP/u2sf///////Pj1f/Nj1T/2KFs/8mOUv+eWhD/lEsA/8aee/+0glT/x6F7/7J8Rvj///8A////ANKaZPjRmGH/48Cf///////+/v7/2qt//82PVP/OkFX/37KJ/86siv+USg7/mVQA/5hRAP+bVgD4////AP///wDSmmT40ppk/9CVXP/69O////////7+/v/x4M//8d/P//7+/f//////9u7n/6tnJf+XUgD/nFgA+P///wD///8A0ppk+NKaZP/RmWL/1qNy//r07///////////////////////+vXw/9akdP/Wnmn/y5FY/6JfFvj///8A////ANKaZFTSmmTo0ppk/9GYYv/Ql1//5cWm//Hg0P/x4ND/5cWm/9GXYP/RmGH/0ppk/9KaZOjVnmpY////AP///wDSmmQA0ppkEtKaZI7SmmT60ppk/9CWX//OkVb/zpFW/9CWX//SmmT/0ppk/NKaZJDSmmQS0ppkAP///wD///8A0ppkANKaZADSmmQA0ppkKtKaZLrSmmT/0ppk/9KaZP/SmmT/0ppkvNKaZCrSmmQA0ppkANKaZAD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkUtKaZNzSmmTc0ppkVNKaZADSmmQA0ppkANKaZADSmmQA////AP5/AAD4HwAA4AcAAMADAACAAQAAgAEAAIABAACAAQAAgAEAAIABAACAAQAAgAEAAMADAADgBwAA+B8AAP5/AAAoAAAAIAAAAEAAAAABACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA////AP///wCCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAAyCRACMgkQA6oJEAOqCRACQgkQAEIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wD///8A////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRABigkQA5oJEAP+CRAD/gkQA/4JEAP+CRADqgkQAZoJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAAD///8A////AP///wD///8AgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAA4gkQAwoJEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQAxIJEADyCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAAgkQAAP///wD///8A////AP///wCCRAAAgkQAAIJEAACCRAAAgkQAAIJEAACCRAAWgkQAmIJEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAJyCRAAYgkQAAIJEAACCRAAAgkQAAIJEAACCRAAA////AP///wD///8A////AIJEAACCRAAAgkQAAIJEAACCRAAAgkQAdIJEAPCCRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAP+CRAD/gkQA/4JEAPSCRAB4gkQAAIJEAACCRAAAgkQAAIJEAAD///8A////AP///wD///8AgkQAAIJEAACCRAAAgkQASoJEANKCRAD/gkQA/4JEAP+CRAD/g0YA/39AAP9zLgD/bSQA/2shAP9rIQD/bSQA/3MuAP9/PwD/g0YA/4JEAP+CRAD/gkQA/4JEAP+CRADUgkQAToJEAACCRAAAgkQAAP///wD///8A////AP///wB+PwAAgkUAIoJEAKiCRAD/gkQA/4JEAP+CRAD/hEcA/4BBAP9sIwD/dTAA/5RfKv+viF7/vp56/76ee/+wiF7/lWAr/3YxAP9sIwD/f0AA/4RHAP+CRAD/gkQA/4JEAP+CRAD/gkQArIJEACaBQwAA////AP///wD///8A////AIBCAEBzNAD6f0EA/4NFAP+CRAD/gkQA/4VIAP92MwD/bSUA/6N1Tv/ezsL/////////////////////////////////38/D/6V3Uv9uJgD/dTEA/4VJAP+CRAD/gkQA/4JEAP+BQwD/fUAA/4FDAEj///8A////AP///wD///8AzJRd5qBlKf91NgD/dDUA/4JEAP+FSQD/cy4A/3YyAP/PuKP//////////////////////////////////////////////////////9K7qP94NQD/ciwA/4VJAP+CRAD/fkEA/35BAP+LSwD/mlYA6v///wD///8A////AP///wDdpnL/4qx3/8KJUv+PUhf/cTMA/3AsAP90LgD/4dK+/////////////////////////////////////////////////////////////////+TYxf91MAD/dTIA/31CAP+GRwD/llQA/6FcAP+gWwD8////AP///wD///8A////ANGZY/LSm2X/4ap3/92mcP+wdT3/byQA/8mwj////////////////////////////////////////////////////////////////////////////+LYxv9zLgP/jUoA/59bAP+hXAD/nFgA/5xYAPL///8A////AP///wD///8A0ppk8tKaZP/RmWL/1p9q/9ubXv/XqXj////////////////////////////7+fD/vZyG/6BxS/+gcUr/vJuE//r37f//////////////////////3MOr/5dQBf+dVQD/nVkA/5xYAP+cWAD/nFgA8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/SmWP/yohJ//jo2P//////////////////////4NTG/4JDFf9lGAD/bSQA/20kAP9kGAD/fz8S/+Xb0f//////5NG9/6txN/+LOgD/m1QA/51aAP+cWAD/m1cA/5xYAP+cWADy////AP///wD///8A////ANKaZPLSmmT/0ppk/8+TWf/Unmv//v37//////////////////////+TWRr/VwsA/35AAP+ERgD/g0UA/4JGAP9lHgD/kFga/8KXX/+TRwD/jT4A/49CAP+VTQD/n10A/5xYAP+OQQD/lk4A/55cAPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/y4tO/92yiP//////////////////////8NnE/8eCQP+rcTT/ez0A/3IyAP98PgD/gEMA/5FSAP+USwD/jj8A/5lUAP+JNwD/yqV2/694Mf+HNQD/jkAA/82rf/+laBj/jT4A8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/LiUr/4byY///////////////////////gupX/0I5P/+Wuev/Lklz/l1sj/308AP+QSwD/ol0A/59aAP+aVQD/k0oA/8yoh///////+fXv/6pwO//Lp3v///////Pr4f+oay7y////AP///wD///8A////ANKaZPLSmmT/0ppk/8uJSv/hvJj//////////////////////+G7l//Jhkb/0ppk/96nc//fqXX/x4xO/6dkFP+QSQD/llEA/5xXAP+USgD/yaOA///////38uv/qG05/8ijdv//////8efb/6ZpLPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/zIxO/9yxh///////////////////////7dbA/8iEQf/Sm2X/0Zlj/9ScZv/eqHf/2KJv/7yAQf+XTgD/iToA/5lSAP+JNgD/yKFv/611LP+HNQD/jT8A/8qmeP+kZRT/jT4A8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/Pk1n/1J5q//78+//////////////////+/fv/1aFv/8iEQv/Tm2b/0ppl/9GZY//Wn2z/1pZc/9eldf/Bl2b/kUcA/4w9AP+OQAD/lUwA/59eAP+cWQD/jT8A/5ZOAP+eXADy////AP///wD///8A////ANKaZPLSmmT/0ppk/9KZY//KiEn/8d/P///////////////////////47+f/05tm/8iCP//KiEj/yohJ/8eCP//RmGH//vfy///////n1sP/rXQ7/4k4AP+TTAD/nVoA/5xYAP+cVwD/nFgA/5xYAPL///8A////AP///wD///8A0ppk8tKaZP/SmmT/0ptl/8uLTf/aq37////////////////////////////+/fz/6c2y/961jv/etY7/6Myx//78+v//////////////////////3MWv/5xXD/+ORAD/mFQA/51ZAP+cWAD/nFgA8v///wD///8A////AP///wDSmmTy0ppk/9KaZP/SmmT/0ppk/8mFRP/s1b//////////////////////////////////////////////////////////////////////////////+PD/0JFU/7NzMv+WUQD/kUsA/5tXAP+dWQDy////AP///wD///8A////ANKaZP/SmmT/0ppk/9KaZP/Sm2X/z5NZ/8yMT//z5NX/////////////////////////////////////////////////////////////////9Ofa/8yNUP/UmGH/36p5/8yTWv+qaSD/kksA/5ROAPz///8A////AP///wD///8A0ppk5NKaZP/SmmT/0ppk/9KaZP/TnGf/zY9T/82OUv/t1sD//////////////////////////////////////////////////////+7Yw//OkFX/zI5R/9OcZ//SmmP/26V0/9ymdf/BhUf/ol8R6P///wD///8A////AP///wDSmmQ80ppk9tKaZP/SmmT/0ppk/9KaZP/TnGj/zpFW/8qJSv/dson/8uHS//////////////////////////////////Lj0//etIv/y4lL/86QVf/TnGj/0ppk/9KaZP/RmWP/05xn/9ymdfjUnWdC////AP///wD///8A////ANKaZADSmmQc0ppkotKaZP/SmmT/0ppk/9KaZP/Tm2b/0Zli/8qJSf/NjlH/16Z3/+G8mP/myKr/5siq/+G8mP/Xp3f/zY5S/8qISf/RmGH/05tm/9KaZP/SmmT/0ppk/9KaZP/SmmSm0pljINWdaQD///8A////AP///wD///8A0ppkANKaZADSmmQA0ppkQtKaZMrSmmT/0ppk/9KaZP/SmmT/0ptl/9GYYf/Nj1P/y4lL/8qISP/KiEj/y4lK/82PU//RmGH/0ptl/9KaZP/SmmT/0ppk/9KaZP/SmmTO0ppkRtKaZADSmmQA0ppkAP///wD///8A////AP///wDSmmQA0ppkANKaZADSmmQA0ppkANKaZGzSmmTu0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmTw0ppkcNKaZADSmmQA0ppkANKaZADSmmQA////AP///wD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZBLSmmSQ0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppklNKaZBTSmmQA0ppkANKaZADSmmQA0ppkANKaZAD///8A////AP///wD///8A0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQy0ppkutKaZP/SmmT/0ppk/9KaZP/SmmT/0ppk/9KaZP/SmmT/0ppkvtKaZDbSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkAP///wD///8A////AP///wDSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkXNKaZODSmmT/0ppk/9KaZP/SmmT/0ppk5NKaZGDSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA////AP///wD///8A////ANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkBtKaZIbSmmTo0ppk6tKaZIrSmmQK0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZADSmmQA0ppkANKaZAD///8A////AP/8P///+B///+AH//+AAf//AAD//AAAP/AAAA/gAAAHwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA8AAAAPAAAADwAAAA+AAAAfwAAAP/AAAP/8AAP//gAH//+AH///4H////D//" rel="icon" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
@@ -533,25 +539,26 @@ code.diff span.st { color: #000000; background-color: var(--diff-del); }
 
 <table style="border:none;float:right">
   <tr>
-    <td>Document #: </td>
+    <td>Document #:</td>
     <td>SD-FeatureTest</td>
   </tr>
   <tr>
-    <td>Date: </td>
-    <td>2021-03-07</td>
+    <td>Date:</td>
+    <td>2021-10-23</td>
   </tr>
   <tr>
-    <td style="vertical-align:top">Project: </td>
-    <td>Programming Language C++<br>
+    <td style="vertical-align:top">Project:</td>
+    <td>Programming Language C++</td>
+  </tr>
+  <tr>
+    <td style="vertical-align:top">Audience:</td>
+    <td>
     </td>
   </tr>
   <tr>
-    <td style="vertical-align:top">Mailing List: </td>
-    <td><a href="https://lists.isocpp.org/sg10/">https://lists.isocpp.org/sg10/</a></td>
-  </tr>
-  <tr>
-    <td style="vertical-align:top">GitHub: </td>
-    <td><a href="https://github.com/BRevzin/sd6/">https://github.com/BRevzin/sd6/</a></td>
+    <td style="vertical-align:top">Reply-to:</td>
+    <td>
+    </td>
   </tr>
 </table>
 
@@ -4030,35 +4037,35 @@ Paper(s)
 <a href="https://wg21.link/lwg3437">https://wg21.link/lwg3437</a></p>
 </div>
 <div id="ref-N1720">
-<p>[N1720] R. Klarer, J. Maddock, B. Dawes, H. Hinnant. 2004. Proposal to Add Static Assertions to the Core Language (Revision 3). <br />
+<p>[N1720] R. Klarer, J. Maddock, B. Dawes, H. Hinnant. 2004-10-20. Proposal to Add Static Assertions to the Core Language (Revision 3). <br />
 <a href="https://wg21.link/n1720">https://wg21.link/n1720</a></p>
 </div>
 <div id="ref-N1986">
-<p>[N1986] H. Sutter, F. Glassborow. 2006. Delegating Constructors (revision 3). <br />
+<p>[N1986] H. Sutter, F. Glassborow. 2006-04-06. Delegating Constructors (revision 3). <br />
 <a href="https://wg21.link/n1986">https://wg21.link/n1986</a></p>
 </div>
 <div id="ref-N2118">
-<p>[N2118] Howard E. Hinnant. 2006. A Proposal to Add an Rvalue Reference to the C++ Language: Proposed Wording: Revision 3. <br />
+<p>[N2118] Howard E. Hinnant. 2006-10-19. A Proposal to Add an Rvalue Reference to the C++ Language: Proposed Wording: Revision 3. <br />
 <a href="https://wg21.link/n2118">https://wg21.link/n2118</a></p>
 </div>
 <div id="ref-N2235">
-<p>[N2235] G. Dos Reis, B. Stroustrup, J. Maurer. 2007. Generalized Constant Expressions—Revision 5. <br />
+<p>[N2235] G. Dos Reis, B. Stroustrup, J. Maurer. 2007-04-17. Generalized Constant Expressions—Revision 5. <br />
 <a href="https://wg21.link/n2235">https://wg21.link/n2235</a></p>
 </div>
 <div id="ref-N2242">
-<p>[N2242] D. Gregor, J. Järvi, J. Maurer, J. Merrill. 2007. Proposed Wording for Variadic Templates (Revision 2). <br />
+<p>[N2242] D. Gregor, J. Järvi, J. Maurer, J. Merrill. 2007-04-19. Proposed Wording for Variadic Templates (Revision 2). <br />
 <a href="https://wg21.link/n2242">https://wg21.link/n2242</a></p>
 </div>
 <div id="ref-N2249">
-<p>[N2249] Lawrence Crowl. 2007. New Character Types in C++. <br />
+<p>[N2249] Lawrence Crowl. 2007-04-19. New Character Types in C++. <br />
 <a href="https://wg21.link/n2249">https://wg21.link/n2249</a></p>
 </div>
 <div id="ref-N2258">
-<p>[N2258] G. Dos Reis, B. Stroustrup. 2007. Templates Aliases. <br />
+<p>[N2258] G. Dos Reis, B. Stroustrup. 2007-04-19. Templates Aliases. <br />
 <a href="https://wg21.link/n2258">https://wg21.link/n2258</a></p>
 </div>
 <div id="ref-N2343">
-<p>[N2343] J. Järvi, B. Stroustrup, G. Dos Reis. 2007. Decltype (revision 7): proposed wording. <br />
+<p>[N2343] J. Järvi, B. Stroustrup, G. Dos Reis. 2007-07-18. Decltype (revision 7): proposed wording. <br />
 <a href="https://wg21.link/n2343">https://wg21.link/n2343</a></p>
 </div>
 <div id="ref-N2439">
@@ -4066,43 +4073,43 @@ Paper(s)
 <a href="https://wg21.link/n2439">https://wg21.link/n2439</a></p>
 </div>
 <div id="ref-N2442">
-<p>[N2442] L. Crowl, B. Dawes. 2007. Raw and Unicode String Literals; Unified Proposal (Rev. 2). <br />
+<p>[N2442] L. Crowl, B. Dawes. 2007-10-05. Raw and Unicode String Literals; Unified Proposal (Rev. 2). <br />
 <a href="https://wg21.link/n2442">https://wg21.link/n2442</a></p>
 </div>
 <div id="ref-N2540">
-<p>[N2540] A. Meredith, M. Wong, J. Maurer. 2008. Inheriting Constructors (revision 5). <br />
+<p>[N2540] A. Meredith, M. Wong, J. Maurer. 2008-02-29. Inheriting Constructors (revision 5). <br />
 <a href="https://wg21.link/n2540">https://wg21.link/n2540</a></p>
 </div>
 <div id="ref-N2660">
-<p>[N2660] Lawrence Crowl. 2008. Dynamic Initialization and Destruction with Concurrency. <br />
+<p>[N2660] Lawrence Crowl. 2008-06-13. Dynamic Initialization and Destruction with Concurrency. <br />
 <a href="https://wg21.link/n2660">https://wg21.link/n2660</a></p>
 </div>
 <div id="ref-N2672">
-<p>[N2672] J. Merrill, D. Vandevoorde. 2008. Initializer List proposed wording. <br />
+<p>[N2672] J. Merrill, D. Vandevoorde. 2008-06-12. Initializer List proposed wording. <br />
 <a href="https://wg21.link/n2672">https://wg21.link/n2672</a></p>
 </div>
 <div id="ref-N2756">
-<p>[N2756] M. Spertus, B. Seymour. 2008. Non-static data member initializers. <br />
+<p>[N2756] M. Spertus, B. Seymour. 2008-09-16. Non-static data member initializers. <br />
 <a href="https://wg21.link/n2756">https://wg21.link/n2756</a></p>
 </div>
 <div id="ref-N2761">
-<p>[N2761] J. Maurer, M. Wong. 2008. Towards support for attributes in C++ (Revision 6). <br />
+<p>[N2761] J. Maurer, M. Wong. 2008-09-18. Towards support for attributes in C++ (Revision 6). <br />
 <a href="https://wg21.link/n2761">https://wg21.link/n2761</a></p>
 </div>
 <div id="ref-N2765">
-<p>[N2765] I. McIntosh, M. Wong, R. Mak, R. Klarer, et al. 2008. User-defined Literals (aka. Extensible Literals (revision 5)). <br />
+<p>[N2765] I. McIntosh, M. Wong, R. Mak, R. Klarer, et al. 2008-09-18. User-defined Literals (aka. Extensible Literals (revision 5)). <br />
 <a href="https://wg21.link/n2765">https://wg21.link/n2765</a></p>
 </div>
 <div id="ref-N2782">
-<p>[N2782] P. McKenney, L. Crowl. 2008. C++ Data-Dependency Ordering: Function Annotation. <br />
+<p>[N2782] P. McKenney, L. Crowl. 2008-09-18. C++ Data-Dependency Ordering: Function Annotation. <br />
 <a href="https://wg21.link/n2782">https://wg21.link/n2782</a></p>
 </div>
 <div id="ref-N2927">
-<p>[N2927] Daveed Vandevoorde. 2009. New wording for C++0x Lambdas (rev. 2). <br />
+<p>[N2927] Daveed Vandevoorde. 2009-07-15. New wording for C++0x Lambdas (rev. 2). <br />
 <a href="https://wg21.link/n2927">https://wg21.link/n2927</a></p>
 </div>
 <div id="ref-N2930">
-<p>[N2930] D. Gregor, B. Dawes. 2009. Range-Based For Loop Wording (Without Concepts). <br />
+<p>[N2930] D. Gregor, B. Dawes. 2009-07-16. Range-Based For Loop Wording (Without Concepts). <br />
 <a href="https://wg21.link/n2930">https://wg21.link/n2930</a></p>
 </div>
 <div id="ref-N3421">
@@ -4114,7 +4121,7 @@ Paper(s)
 <a href="https://wg21.link/n3462">https://wg21.link/n3462</a></p>
 </div>
 <div id="ref-N3472">
-<p>[N3472] James Dennett. 2012. Binary Literals in the C++ Core Language. <br />
+<p>[N3472] James Dennett. 2012-10-19. Binary Literals in the C++ Core Language. <br />
 <a href="https://wg21.link/n3472">https://wg21.link/n3472</a></p>
 </div>
 <div id="ref-N3545">
@@ -4122,43 +4129,43 @@ Paper(s)
 <a href="https://wg21.link/n3545">https://wg21.link/n3545</a></p>
 </div>
 <div id="ref-N3638">
-<p>[N3638] Jason Merrill. 2013. Return type deduction for normal functions. <br />
+<p>[N3638] Jason Merrill. 2013-04-17. Return type deduction for normal functions. <br />
 <a href="https://wg21.link/n3638">https://wg21.link/n3638</a></p>
 </div>
 <div id="ref-N3642">
-<p>[N3642] Peter Sommerlad. 2013. User-defined Literals for Standard Library Types (part 1 - version 4). <br />
+<p>[N3642] Peter Sommerlad. 2013-04-18. User-defined Literals for Standard Library Types (part 1 - version 4). <br />
 <a href="https://wg21.link/n3642">https://wg21.link/n3642</a></p>
 </div>
 <div id="ref-N3644">
-<p>[N3644] Alan Talbot. 2013. Null Forward Iterators. <br />
+<p>[N3644] Alan Talbot. 2013-04-18. Null Forward Iterators. <br />
 <a href="https://wg21.link/n3644">https://wg21.link/n3644</a></p>
 </div>
 <div id="ref-N3648">
-<p>[N3648] D. Vandevoorde, V. Voutilainen. 2013. Wording Changes for Generalized Lambda-capture. <br />
+<p>[N3648] D. Vandevoorde, V. Voutilainen. 2013-04-17. Wording Changes for Generalized Lambda-capture. <br />
 <a href="https://wg21.link/n3648">https://wg21.link/n3648</a></p>
 </div>
 <div id="ref-N3649">
-<p>[N3649] F. Vali, H. Sutter, D. Abrahams. 2013. Generic (Polymorphic) Lambda Expressions (Revision 3). <br />
+<p>[N3649] F. Vali, H. Sutter, D. Abrahams. 2013-04-19. Generic (Polymorphic) Lambda Expressions (Revision 3). <br />
 <a href="https://wg21.link/n3649">https://wg21.link/n3649</a></p>
 </div>
 <div id="ref-N3651">
-<p>[N3651] Gabriel Dos Reis. 2013. Variable Templates (Revision 1). <br />
+<p>[N3651] Gabriel Dos Reis. 2013-04-19. Variable Templates (Revision 1). <br />
 <a href="https://wg21.link/n3651">https://wg21.link/n3651</a></p>
 </div>
 <div id="ref-N3652">
-<p>[N3652] Richard Smith. 2013. Relaxing constraints on constexpr functions / constexpr member functions and implicit const. <br />
+<p>[N3652] Richard Smith. 2013-04-18. Relaxing constraints on constexpr functions / constexpr member functions and implicit const. <br />
 <a href="https://wg21.link/n3652">https://wg21.link/n3652</a></p>
 </div>
 <div id="ref-N3653">
-<p>[N3653] V. Voutilainen, R. Smith. 2013. Member initializers and aggregates. <br />
+<p>[N3653] V. Voutilainen, R. Smith. 2013-04-17. Member initializers and aggregates. <br />
 <a href="https://wg21.link/n3653">https://wg21.link/n3653</a></p>
 </div>
 <div id="ref-N3654">
-<p>[N3654] Beman Dawes. 2013. Quoted Strings Library Proposal (Revision 2). <br />
+<p>[N3654] Beman Dawes. 2013-04-19. Quoted Strings Library Proposal (Revision 2). <br />
 <a href="https://wg21.link/n3654">https://wg21.link/n3654</a></p>
 </div>
 <div id="ref-N3655">
-<p>[N3655] Walter E. Brown. 2013. TransformationTraits Redux, v2. <br />
+<p>[N3655] Walter E. Brown. 2013-04-18. TransformationTraits Redux, v2. <br />
 <a href="https://wg21.link/n3655">https://wg21.link/n3655</a></p>
 </div>
 <div id="ref-N3656">
@@ -4166,11 +4173,11 @@ Paper(s)
 <a href="https://wg21.link/n3656">https://wg21.link/n3656</a></p>
 </div>
 <div id="ref-N3657">
-<p>[N3657] J. Wakely, S. Lavavej, J. Muñoz. 2013. Adding heterogeneous comparison lookup to associative containers (rev 4). <br />
+<p>[N3657] J. Wakely, S. Lavavej, J. Muñoz. 2013-03-19. Adding heterogeneous comparison lookup to associative containers (rev 4). <br />
 <a href="https://wg21.link/n3657">https://wg21.link/n3657</a></p>
 </div>
 <div id="ref-N3658">
-<p>[N3658] Jonathan Wakely. 2013. Compile-time integer sequences. <br />
+<p>[N3658] Jonathan Wakely. 2013-04-18. Compile-time integer sequences. <br />
 <a href="https://wg21.link/n3658">https://wg21.link/n3658</a></p>
 </div>
 <div id="ref-N3668">
@@ -4178,11 +4185,11 @@ Paper(s)
 <a href="https://wg21.link/n3668">https://wg21.link/n3668</a></p>
 </div>
 <div id="ref-N3670">
-<p>[N3670] Mike Spertus. 2013. Wording for Addressing Tuples by Type: Revision 2. <br />
+<p>[N3670] Mike Spertus. 2013-04-19. Wording for Addressing Tuples by Type: Revision 2. <br />
 <a href="https://wg21.link/n3670">https://wg21.link/n3670</a></p>
 </div>
 <div id="ref-N3671">
-<p>[N3671] M. Spertus, A. Pall. 2013. Making non-modifying sequence operations more robust: Revision 2. <br />
+<p>[N3671] M. Spertus, A. Pall. 2013-04-19. Making non-modifying sequence operations more robust: Revision 2. <br />
 <a href="https://wg21.link/n3671">https://wg21.link/n3671</a></p>
 </div>
 <div id="ref-N3760">
@@ -4190,7 +4197,7 @@ Paper(s)
 <a href="https://wg21.link/n3760">https://wg21.link/n3760</a></p>
 </div>
 <div id="ref-N3778">
-<p>[N3778] Lawrence Crowl. 2013. C++ Sized Deallocation. <br />
+<p>[N3778] Lawrence Crowl. 2013-09-27. C++ Sized Deallocation. <br />
 <a href="https://wg21.link/n3778">https://wg21.link/n3778</a></p>
 </div>
 <div id="ref-N3779">
@@ -4198,7 +4205,7 @@ Paper(s)
 <a href="https://wg21.link/n3779">https://wg21.link/n3779</a></p>
 </div>
 <div id="ref-N3887">
-<p>[N3887] Michael Park. 2013. Consistent Metafunction Aliases. <br />
+<p>[N3887] Michael Park. 2013-12-26. Consistent Metafunction Aliases. <br />
 <a href="https://wg21.link/n3887">https://wg21.link/n3887</a></p>
 </div>
 <div id="ref-N3891">
@@ -4210,7 +4217,7 @@ Paper(s)
 <a href="https://wg21.link/n3911">https://wg21.link/n3911</a></p>
 </div>
 <div id="ref-N3928">
-<p>[N3928] Walter E. Brown. 2014. Extending static_assert, v2. <br />
+<p>[N3928] Walter E. Brown. 2014-02-14. Extending static_assert, v2. <br />
 <a href="https://wg21.link/n3928">https://wg21.link/n3928</a></p>
 </div>
 <div id="ref-N4169">
@@ -4226,23 +4233,23 @@ Paper(s)
 <a href="https://wg21.link/n4259">https://wg21.link/n4259</a></p>
 </div>
 <div id="ref-N4266">
-<p>[N4266] Richard Smith. 2014. Attributes for namespaces and enumerators. <br />
+<p>[N4266] Richard Smith. 2014-11-05. Attributes for namespaces and enumerators. <br />
 <a href="https://wg21.link/n4266">https://wg21.link/n4266</a></p>
 </div>
 <div id="ref-N4268">
-<p>[N4268] Richard Smith. 2014. Allow constant evaluation for all non-type template arguments. <br />
+<p>[N4268] Richard Smith. 2014-11-05. Allow constant evaluation for all non-type template arguments. <br />
 <a href="https://wg21.link/n4268">https://wg21.link/n4268</a></p>
 </div>
 <div id="ref-N4279">
-<p>[N4279] Thomas Köpp. 2014. Improved insertion interface for unique-key maps (Revision 2.3). <br />
+<p>[N4279] Thomas Köpp. 2014-11-07. Improved insertion interface for unique-key maps (Revision 2.3). <br />
 <a href="https://wg21.link/n4279">https://wg21.link/n4279</a></p>
 </div>
 <div id="ref-N4280">
-<p>[N4280] Riccardo Marcangelo. 2014. Non-member size() and more (Revison 2). <br />
+<p>[N4280] Riccardo Marcangelo. 2014-11-06. Non-member size() and more (Revison 2). <br />
 <a href="https://wg21.link/n4280">https://wg21.link/n4280</a></p>
 </div>
 <div id="ref-N4295">
-<p>[N4295] Andrew Sutton, Richard Smith. 2014. Folding Expressions. <br />
+<p>[N4295] Andrew Sutton, Richard Smith. 2014-11-07. Folding Expressions. <br />
 <a href="https://wg21.link/n4295">https://wg21.link/n4295</a></p>
 </div>
 <div id="ref-N4389">
@@ -4250,11 +4257,11 @@ Paper(s)
 <a href="https://wg21.link/n4389">https://wg21.link/n4389</a></p>
 </div>
 <div id="ref-N4508">
-<p>[N4508] Gor Nishanov. 2015. A proposal to add shared_mutex (untimed) (Revision 4). <br />
+<p>[N4508] Gor Nishanov. 2015-05-05. A proposal to add shared_mutex (untimed) (Revision 4). <br />
 <a href="https://wg21.link/n4508">https://wg21.link/n4508</a></p>
 </div>
 <div id="ref-N4510">
-<p>[N4510] Zhihao Yuan. 2015. Minimal incomplete type support for standard containers, revision 4. <br />
+<p>[N4510] Zhihao Yuan. 2015-05-05. Minimal incomplete type support for standard containers, revision 4. <br />
 <a href="https://wg21.link/n4510">https://wg21.link/n4510</a></p>
 </div>
 <div id="ref-P0005R4">
@@ -4262,7 +4269,7 @@ Paper(s)
 <a href="https://wg21.link/p0005r4">https://wg21.link/p0005r4</a></p>
 </div>
 <div id="ref-P0006R0">
-<p>[P0006R0] Alisdair Meredith. 2015. Adopt Type Traits Variable Templates from Library Fundamentals TS for C++17. <br />
+<p>[P0006R0] Alisdair Meredith. 2015-09-28. Adopt Type Traits Variable Templates from Library Fundamentals TS for C++17. <br />
 <a href="https://wg21.link/p0006r0">https://wg21.link/p0006r0</a></p>
 </div>
 <div id="ref-P0007R1">
@@ -4270,15 +4277,15 @@ Paper(s)
 <a href="https://wg21.link/p0007r1">https://wg21.link/p0007r1</a></p>
 </div>
 <div id="ref-P0012R1">
-<p>[P0012R1] Jens Maurer. 2015. Make exception specifications be part of the type system, version 5. <br />
+<p>[P0012R1] Jens Maurer. 2015-10-22. Make exception specifications be part of the type system, version 5. <br />
 <a href="https://wg21.link/p0012r1">https://wg21.link/p0012r1</a></p>
 </div>
 <div id="ref-P0013R1">
-<p>[P0013R1] Jonathan Wakely. 2015. Logical Operator Type Traits (revison 1). <br />
+<p>[P0013R1] Jonathan Wakely. 2015-10-23. Logical Operator Type Traits (revison 1). <br />
 <a href="https://wg21.link/p0013r1">https://wg21.link/p0013r1</a></p>
 </div>
 <div id="ref-P0017R1">
-<p>[P0017R1] Oleg Smolsky. 2015. Extension to aggregate initialization. <br />
+<p>[P0017R1] Oleg Smolsky. 2015-10-24. Extension to aggregate initialization. <br />
 <a href="https://wg21.link/p0017r1">https://wg21.link/p0017r1</a></p>
 </div>
 <div id="ref-P0018R3">
@@ -4286,55 +4293,55 @@ Paper(s)
 <a href="https://wg21.link/p0018r3">https://wg21.link/p0018r3</a></p>
 </div>
 <div id="ref-P0019R8">
-<p>[P0019R8] Daniel Sunderland, H. Carter Edwards, Hans Boehm, Olivier Giroux, Mark Hoemmen, D. S. Hollman, Bryce Adelstein Lelbach, Jens Maurer. 2018. Atomic Ref. <br />
+<p>[P0019R8] Daniel Sunderland, H. Carter Edwards, Hans Boehm, Olivier Giroux, Mark Hoemmen, D. S. Hollman, Bryce Adelstein Lelbach, Jens Maurer. 2018-06-07. Atomic Ref. <br />
 <a href="https://wg21.link/p0019r8">https://wg21.link/p0019r8</a></p>
 </div>
 <div id="ref-P0020R6">
-<p>[P0020R6] H. Carter Edwards, Hans Boehm, Olivier Giroux, JF Bastien, James Reus. 2017. Floating Point Atomic. <br />
+<p>[P0020R6] H. Carter Edwards, Hans Boehm, Olivier Giroux, JF Bastien, James Reus. 2017-11-10. Floating Point Atomic. <br />
 <a href="https://wg21.link/p0020r6">https://wg21.link/p0020r6</a></p>
 </div>
 <div id="ref-P0024R2">
-<p>[P0024R2] Jared Hoberock. 2016. The Parallelism TS Should be Standardized. <br />
+<p>[P0024R2] Jared Hoberock. 2016-03-04. The Parallelism TS Should be Standardized. <br />
 <a href="https://wg21.link/p0024r2">https://wg21.link/p0024r2</a></p>
 </div>
 <div id="ref-P0025R0">
-<p>[P0025R0] Martin Moene, Niels Dekker. 2015. An algorithm to “clamp” a value between a pair of boundary values. <br />
+<p>[P0025R0] Martin Moene, Niels Dekker. 2015-09-18. An algorithm to “clamp” a value between a pair of boundary values. <br />
 <a href="https://wg21.link/p0025r0">https://wg21.link/p0025r0</a></p>
 </div>
 <div id="ref-P0030R1">
-<p>[P0030R1] Benson Ma. 2015. Proposal to Introduce a 3-Argument Overload to std::hypot. <br />
+<p>[P0030R1] Benson Ma. 2015-11-06. Proposal to Introduce a 3-Argument Overload to std::hypot. <br />
 <a href="https://wg21.link/p0030r1">https://wg21.link/p0030r1</a></p>
 </div>
 <div id="ref-P0031R0">
-<p>[P0031R0] Antony Polukhin. 2015. A Proposal to Add Constexpr Modifiers to reverse_iterator, move_iterator, array and Range Access. <br />
+<p>[P0031R0] Antony Polukhin. 2015-09-09. A Proposal to Add Constexpr Modifiers to reverse_iterator, move_iterator, array and Range Access. <br />
 <a href="https://wg21.link/p0031r0">https://wg21.link/p0031r0</a></p>
 </div>
 <div id="ref-P0032R3">
-<p>[P0032R3] Vicente J. Botet Escriba. 2016. Homogeneous interface for variant, any and optional (Revision 3). <br />
+<p>[P0032R3] Vicente J. Botet Escriba. 2016-05-24. Homogeneous interface for variant, any and optional (Revision 3). <br />
 <a href="https://wg21.link/p0032r3">https://wg21.link/p0032r3</a></p>
 </div>
 <div id="ref-P0033R1">
-<p>[P0033R1] Jonathan Wakely, Peter Dimov. 2015. Re-enabling shared_from_this (revision 1). <br />
+<p>[P0033R1] Jonathan Wakely, Peter Dimov. 2015-10-24. Re-enabling shared_from_this (revision 1). <br />
 <a href="https://wg21.link/p0033r1">https://wg21.link/p0033r1</a></p>
 </div>
 <div id="ref-P0035R4">
-<p>[P0035R4] Clark Nelson. 2016. Dynamic memory allocation for over-aligned data. <br />
+<p>[P0035R4] Clark Nelson. 2016-06-21. Dynamic memory allocation for over-aligned data. <br />
 <a href="https://wg21.link/p0035r4">https://wg21.link/p0035r4</a></p>
 </div>
 <div id="ref-P0036R0">
-<p>[P0036R0] Thibaut Le Jehan. 2015. Unary Folds and Empty Parameter Packs (Revision 1). <br />
+<p>[P0036R0] Thibaut Le Jehan. 2015-09-10. Unary Folds and Empty Parameter Packs (Revision 1). <br />
 <a href="https://wg21.link/p0036r0">https://wg21.link/p0036r0</a></p>
 </div>
 <div id="ref-P0040R3">
-<p>[P0040R3] Brent Friedman. 2016. Extending memory management tools. <br />
+<p>[P0040R3] Brent Friedman. 2016-06-24. Extending memory management tools. <br />
 <a href="https://wg21.link/p0040r3">https://wg21.link/p0040r3</a></p>
 </div>
 <div id="ref-P0053R7">
-<p>[P0053R7] Lawrence Crowl, Peter Sommerlad, Nicolai Josuttis, Pablo Halpern. 2017. C++ Synchronized Buffered Ostream. <br />
+<p>[P0053R7] Lawrence Crowl, Peter Sommerlad, Nicolai Josuttis, Pablo Halpern. 2017-11-07. C++ Synchronized Buffered Ostream. <br />
 <a href="https://wg21.link/p0053r7">https://wg21.link/p0053r7</a></p>
 </div>
 <div id="ref-P0067R5">
-<p>[P0067R5] Jens Maurer. 2016. Elementary string conversions, revision 5. <br />
+<p>[P0067R5] Jens Maurer. 2016-11-11. Elementary string conversions, revision 5. <br />
 <a href="https://wg21.link/p0067r5">https://wg21.link/p0067r5</a></p>
 </div>
 <div id="ref-P0074R0">
@@ -4342,15 +4349,15 @@ Paper(s)
 <a href="https://wg21.link/p0074r0">https://wg21.link/p0074r0</a></p>
 </div>
 <div id="ref-P0083R3">
-<p>[P0083R3] Alan Talbot, Jonathan Wakely, Howard Hinnant, James Dennett. 2016. Splicing Maps and Sets (Revision 5). <br />
+<p>[P0083R3] Alan Talbot, Jonathan Wakely, Howard Hinnant, James Dennett. 2016-06-24. Splicing Maps and Sets (Revision 5). <br />
 <a href="https://wg21.link/p0083r3">https://wg21.link/p0083r3</a></p>
 </div>
 <div id="ref-P0088R3">
-<p>[P0088R3] Axel Naumann. 2016. Variant: a type-safe union for C++17 (v8). <br />
+<p>[P0088R3] Axel Naumann. 2016-06-23. Variant: a type-safe union for C++17 (v8). <br />
 <a href="https://wg21.link/p0088r3">https://wg21.link/p0088r3</a></p>
 </div>
 <div id="ref-P0091R3">
-<p>[P0091R3] Mike Spertus, Faisal Vali, Richard Smith. 2016. Template argument deduction for class templates (Rev. 6). <br />
+<p>[P0091R3] Mike Spertus, Faisal Vali, Richard Smith. 2016-06-24. Template argument deduction for class templates (Rev. 6). <br />
 <a href="https://wg21.link/p0091r3">https://wg21.link/p0091r3</a></p>
 </div>
 <div id="ref-P0092R1">
@@ -4358,23 +4365,23 @@ Paper(s)
 <a href="https://wg21.link/p0092r1">https://wg21.link/p0092r1</a></p>
 </div>
 <div id="ref-P0122R7">
-<p>[P0122R7] Neil MacIntosh, Stephan T. Lavavej. 2018. span: bounds-safe views for sequences of objects. <br />
+<p>[P0122R7] Neil MacIntosh, Stephan T. Lavavej. 2018-03-16. span: bounds-safe views for sequences of objects. <br />
 <a href="https://wg21.link/p0122r7">https://wg21.link/p0122r7</a></p>
 </div>
 <div id="ref-P0127R2">
-<p>[P0127R2] James Touton, Mike Spertus. 2016. Declaring non-type template arguments with auto. <br />
+<p>[P0127R2] James Touton, Mike Spertus. 2016-06-23. Declaring non-type template arguments with auto. <br />
 <a href="https://wg21.link/p0127r2">https://wg21.link/p0127r2</a></p>
 </div>
 <div id="ref-P0135R1">
-<p>[P0135R1] Richard Smith. 2016. Wording for guaranteed copy elision through simplified value categories. <br />
+<p>[P0135R1] Richard Smith. 2016-06-20. Wording for guaranteed copy elision through simplified value categories. <br />
 <a href="https://wg21.link/p0135r1">https://wg21.link/p0135r1</a></p>
 </div>
 <div id="ref-P0136R1">
-<p>[P0136R1] Richard Smith. 2015. Rewording inheriting constructors (core issue 1941 et al). <br />
+<p>[P0136R1] Richard Smith. 2015-10-19. Rewording inheriting constructors (core issue 1941 et al). <br />
 <a href="https://wg21.link/p0136r1">https://wg21.link/p0136r1</a></p>
 </div>
 <div id="ref-P0137R1">
-<p>[P0137R1] Richard Smith. 2016. Core Issue 1776: Replacement of class objects containing reference members. <br />
+<p>[P0137R1] Richard Smith. 2016-06-23. Core Issue 1776: Replacement of class objects containing reference members. <br />
 <a href="https://wg21.link/p0137r1">https://wg21.link/p0137r1</a></p>
 </div>
 <div id="ref-P0152R1">
@@ -4394,15 +4401,15 @@ Paper(s)
 <a href="https://wg21.link/p0163r0">https://wg21.link/p0163r0</a></p>
 </div>
 <div id="ref-P0170R1">
-<p>[P0170R1] Faisal Vali. 2016. Wording for Constexpr Lambda. <br />
+<p>[P0170R1] Faisal Vali. 2016-03-01. Wording for Constexpr Lambda. <br />
 <a href="https://wg21.link/p0170r1">https://wg21.link/p0170r1</a></p>
 </div>
 <div id="ref-P0184R0">
-<p>[P0184R0] Eric Niebler. 2016. Generalizing the Range-Based For Loop. <br />
+<p>[P0184R0] Eric Niebler. 2016-02-11. Generalizing the Range-Based For Loop. <br />
 <a href="https://wg21.link/p0184r0">https://wg21.link/p0184r0</a></p>
 </div>
 <div id="ref-P0185R1">
-<p>[P0185R1] Daniel Krugler. 2016. Adding [nothrow-]swappable traits, revision 3. <br />
+<p>[P0185R1] Daniel Krugler. 2016-03-01. Adding [nothrow-]swappable traits, revision 3. <br />
 <a href="https://wg21.link/p0185r1">https://wg21.link/p0185r1</a></p>
 </div>
 <div id="ref-P0188R1">
@@ -4430,27 +4437,27 @@ Paper(s)
 <a href="https://wg21.link/p0212r1">https://wg21.link/p0212r1</a></p>
 </div>
 <div id="ref-P0217R3">
-<p>[P0217R3] Jens Maurer. 2016. Proposed wording for structured bindings. <br />
+<p>[P0217R3] Jens Maurer. 2016-06-24. Proposed wording for structured bindings. <br />
 <a href="https://wg21.link/p0217r3">https://wg21.link/p0217r3</a></p>
 </div>
 <div id="ref-P0218R1">
-<p>[P0218R1] Beman Dawes. 2016. Adopt File System TS for C++17. <br />
+<p>[P0218R1] Beman Dawes. 2016-03-05. Adopt File System TS for C++17. <br />
 <a href="https://wg21.link/p0218r1">https://wg21.link/p0218r1</a></p>
 </div>
 <div id="ref-P0219R1">
-<p>[P0219R1] Beman Dawes. 2016. Relative Paths for Filesystem. <br />
+<p>[P0219R1] Beman Dawes. 2016-06-24. Relative Paths for Filesystem. <br />
 <a href="https://wg21.link/p0219r1">https://wg21.link/p0219r1</a></p>
 </div>
 <div id="ref-P0220R1">
-<p>[P0220R1] Beman Dawes. 2016. Adopt Library Fundamentals V1 TS Components for C++17 (R1). <br />
+<p>[P0220R1] Beman Dawes. 2016-03-03. Adopt Library Fundamentals V1 TS Components for C++17 (R1). <br />
 <a href="https://wg21.link/p0220r1">https://wg21.link/p0220r1</a></p>
 </div>
 <div id="ref-P0226R1">
-<p>[P0226R1] Walter E. Brown, Axel Naumann, Edward Smith-Rowland. 2016. Mathematical Special Functions for C++17, v5. <br />
+<p>[P0226R1] Walter E. Brown, Axel Naumann, Edward Smith-Rowland. 2016-02-29. Mathematical Special Functions for C++17, v5. <br />
 <a href="https://wg21.link/p0226r1">https://wg21.link/p0226r1</a></p>
 </div>
 <div id="ref-P0245R1">
-<p>[P0245R1] Thomas Koeppe. 2016. Hexadecimal float literals for C++. <br />
+<p>[P0245R1] Thomas Koeppe. 2016-03-04. Hexadecimal float literals for C++. <br />
 <a href="https://wg21.link/p0245r1">https://wg21.link/p0245r1</a></p>
 </div>
 <div id="ref-P0254R2">
@@ -4458,99 +4465,99 @@ Paper(s)
 <a href="https://wg21.link/p0254r2">https://wg21.link/p0254r2</a></p>
 </div>
 <div id="ref-P0258R2">
-<p>[P0258R2] Michael Spencer. 2016. has_unique_object_representations - wording. <br />
+<p>[P0258R2] Michael Spencer. 2016-06-24. has_unique_object_representations - wording. <br />
 <a href="https://wg21.link/p0258r2">https://wg21.link/p0258r2</a></p>
 </div>
 <div id="ref-P0292R2">
-<p>[P0292R2] Jens Maurer. 2016. constexpr if: A slightly different syntax. <br />
+<p>[P0292R2] Jens Maurer. 2016-06-20. constexpr if: A slightly different syntax. <br />
 <a href="https://wg21.link/p0292r2">https://wg21.link/p0292r2</a></p>
 </div>
 <div id="ref-P0295R0">
-<p>[P0295R0] Walter E. Brown. 2016. Adopt Selected Library Fundamentals V2 Components for C++17. <br />
+<p>[P0295R0] Walter E. Brown. 2016-03-01. Adopt Selected Library Fundamentals V2 Components for C++17. <br />
 <a href="https://wg21.link/p0295r0">https://wg21.link/p0295r0</a></p>
 </div>
 <div id="ref-P0298R3">
-<p>[P0298R3] Neil MacIntosh. 2017. A byte type definition. <br />
+<p>[P0298R3] Neil MacIntosh. 2017-03-03. A byte type definition. <br />
 <a href="https://wg21.link/p0298r3">https://wg21.link/p0298r3</a></p>
 </div>
 <div id="ref-P0307R2">
-<p>[P0307R2] Tony Van Eerd. 2016. Making Optional Greater Equal Again. <br />
+<p>[P0307R2] Tony Van Eerd. 2016-03-15. Making Optional Greater Equal Again. <br />
 <a href="https://wg21.link/p0307r2">https://wg21.link/p0307r2</a></p>
 </div>
 <div id="ref-P0317R1">
-<p>[P0317R1] Beman Dawes. 2016. Directory Entry Caching for Filesystem. <br />
+<p>[P0317R1] Beman Dawes. 2016-10-15. Directory Entry Caching for Filesystem. <br />
 <a href="https://wg21.link/p0317r1">https://wg21.link/p0317r1</a></p>
 </div>
 <div id="ref-P0318R1">
-<p>[P0318R1] Vicente J. Botet Escribá. 2018. unwrap_ref_decay and unwrap_reference. <br />
+<p>[P0318R1] Vicente J. Botet Escribá. 2018-03-30. unwrap_ref_decay and unwrap_reference. <br />
 <a href="https://wg21.link/p0318r1">https://wg21.link/p0318r1</a></p>
 </div>
 <div id="ref-P0325R4">
-<p>[P0325R4] Zhihao Yuan. 2019. to_array from LFTS with updates. <br />
+<p>[P0325R4] Zhihao Yuan. 2019-07-29. to_array from LFTS with updates. <br />
 <a href="https://wg21.link/p0325r4">https://wg21.link/p0325r4</a></p>
 </div>
 <div id="ref-P0329R4">
-<p>[P0329R4] Tim Shen, Richard Smith. 2017. Designated Initialization Wording. <br />
+<p>[P0329R4] Tim Shen, Richard Smith. 2017-07-12. Designated Initialization Wording. <br />
 <a href="https://wg21.link/p0329r4">https://wg21.link/p0329r4</a></p>
 </div>
 <div id="ref-P0330R8">
-<p>[P0330R8] JeanHeyd Meneide, Rein Halbersma. 2020. Literal Suffixes for (signed) size_t. <br />
+<p>[P0330R8] JeanHeyd Meneide, Rein Halbersma. 2020-01-11. Literal Suffixes for (signed) size_t. <br />
 <a href="https://wg21.link/p0330r8">https://wg21.link/p0330r8</a></p>
 </div>
 <div id="ref-P0339R6">
-<p>[P0339R6] Pablo Halpern, Dietmar Kühl. 2019. polymorphic_allocator&lt;&gt; as a vocabulary type. <br />
+<p>[P0339R6] Pablo Halpern, Dietmar Kühl. 2019-02-22. polymorphic_allocator&lt;&gt; as a vocabulary type. <br />
 <a href="https://wg21.link/p0339r6">https://wg21.link/p0339r6</a></p>
 </div>
 <div id="ref-P0355R7">
-<p>[P0355R7] Howard E. Hinnant, Tomasz Kamiński. 2018. Extending <chrono> to Calendars and Time Zones. <br />
+<p>[P0355R7] Howard E. Hinnant, Tomasz Kamiński. 2018-03-16. Extending <chrono> to Calendars and Time Zones. <br />
 <a href="https://wg21.link/p0355r7">https://wg21.link/p0355r7</a></p>
 </div>
 <div id="ref-P0356R5">
-<p>[P0356R5] Tomasz Kamiński. 2018. Simplified partial function application. <br />
+<p>[P0356R5] Tomasz Kamiński. 2018-11-09. Simplified partial function application. <br />
 <a href="https://wg21.link/p0356r5">https://wg21.link/p0356r5</a></p>
 </div>
 <div id="ref-P0386R2">
-<p>[P0386R2] Hal Finkel, Richard Smith. 2016. Inline Variables. <br />
+<p>[P0386R2] Hal Finkel, Richard Smith. 2016-06-24. Inline Variables. <br />
 <a href="https://wg21.link/p0386r2">https://wg21.link/p0386r2</a></p>
 </div>
 <div id="ref-P0392R0">
-<p>[P0392R0] Nicolai Josuttis. 2016. Adapting string_view by filesystem paths. <br />
+<p>[P0392R0] Nicolai Josuttis. 2016-06-23. Adapting string_view by filesystem paths. <br />
 <a href="https://wg21.link/p0392r0">https://wg21.link/p0392r0</a></p>
 </div>
 <div id="ref-P0393R3">
-<p>[P0393R3] Tony Van Eerd. 2016. Making Variant Greater Equal. <br />
+<p>[P0393R3] Tony Van Eerd. 2016-06-21. Making Variant Greater Equal. <br />
 <a href="https://wg21.link/p0393r3">https://wg21.link/p0393r3</a></p>
 </div>
 <div id="ref-P0415R1">
-<p>[P0415R1] Antony Polukhin. 2016. Constexpr for std::complex. <br />
+<p>[P0415R1] Antony Polukhin. 2016-11-10. Constexpr for std::complex. <br />
 <a href="https://wg21.link/p0415r1">https://wg21.link/p0415r1</a></p>
 </div>
 <div id="ref-P0426R1">
-<p>[P0426R1] Antony Polukhin. 2016. Constexpr for std::char_traits. <br />
+<p>[P0426R1] Antony Polukhin. 2016-11-08. Constexpr for std::char_traits. <br />
 <a href="https://wg21.link/p0426r1">https://wg21.link/p0426r1</a></p>
 </div>
 <div id="ref-P0428R2">
-<p>[P0428R2] Louis Dionne. 2017. Familiar template syntax for generic lambdas. <br />
+<p>[P0428R2] Louis Dionne. 2017-07-13. Familiar template syntax for generic lambdas. <br />
 <a href="https://wg21.link/p0428r2">https://wg21.link/p0428r2</a></p>
 </div>
 <div id="ref-P0457R2">
-<p>[P0457R2] Mikhail Maltsev. 2017. String Prefix and Suffix Checking. <br />
+<p>[P0457R2] Mikhail Maltsev. 2017-11-11. String Prefix and Suffix Checking. <br />
 <a href="https://wg21.link/p0457r2">https://wg21.link/p0457r2</a></p>
 </div>
 <div id="ref-P0463R1">
-<p>[P0463R1] Howard Hinnant. 2017. endian, Just endian. <br />
+<p>[P0463R1] Howard Hinnant. 2017-07-13. endian, Just endian. <br />
 <a href="https://wg21.link/p0463r1">https://wg21.link/p0463r1</a></p>
 </div>
 <div id="ref-P0466R5">
-<p>[P0466R5] Lisa Lippincott. 2019. Layout-compatibility and Pointer-interconvertibility Traits. <br />
+<p>[P0466R5] Lisa Lippincott. 2019-07-26. Layout-compatibility and Pointer-interconvertibility Traits. <br />
 <a href="https://wg21.link/p0466r5">https://wg21.link/p0466r5</a></p>
 </div>
 <div id="ref-P0476R2">
-<p>[P0476R2] JF Bastien. 2017. Bit-casting object representations. <br />
+<p>[P0476R2] JF Bastien. 2017-11-10. Bit-casting object representations. <br />
 <a href="https://wg21.link/p0476r2">https://wg21.link/p0476r2</a></p>
 </div>
 <div id="ref-P0479R5">
-<p>[P0479R5] Clay Trychta. 2018. Proposed wording for likely and unlikely attributes. <br />
+<p>[P0479R5] Clay Trychta. 2018-03-16. Proposed wording for likely and unlikely attributes. <br />
 <a href="https://wg21.link/p0479r5">https://wg21.link/p0479r5</a></p>
 </div>
 <div id="ref-P0482R6">
@@ -4558,39 +4565,39 @@ Paper(s)
 <a href="https://wg21.link/p0482r6">https://wg21.link/p0482r6</a></p>
 </div>
 <div id="ref-P0497R0">
-<p>[P0497R0] Jonathan Wakely. 2016. Fixes to shared_ptr support for arrays. <br />
+<p>[P0497R0] Jonathan Wakely. 2016-11-10. Fixes to shared_ptr support for arrays. <br />
 <a href="https://wg21.link/p0497r0">https://wg21.link/p0497r0</a></p>
 </div>
 <div id="ref-P0505R0">
-<p>[P0505R0] Howard Hinnant. 2016. Wording for GB 50. <br />
+<p>[P0505R0] Howard Hinnant. 2016-11-09. Wording for GB 50. <br />
 <a href="https://wg21.link/p0505r0">https://wg21.link/p0505r0</a></p>
 </div>
 <div id="ref-P0512R0">
-<p>[P0512R0] Mike Spertus, Richard Smith, Faisal Vali. 2016. Class Template Argument Deduction Assorted NB resolution and issues. <br />
+<p>[P0512R0] Mike Spertus, Richard Smith, Faisal Vali. 2016-11-10. Class Template Argument Deduction Assorted NB resolution and issues. <br />
 <a href="https://wg21.link/p0512r0">https://wg21.link/p0512r0</a></p>
 </div>
 <div id="ref-P0515R3">
-<p>[P0515R3] Herb Sutter, Jens Maurer, Walter E. Brown. 2017. Consistent comparison. <br />
+<p>[P0515R3] Herb Sutter, Jens Maurer, Walter E. Brown. 2017-11-10. Consistent comparison. <br />
 <a href="https://wg21.link/p0515r3">https://wg21.link/p0515r3</a></p>
 </div>
 <div id="ref-P0522R0">
-<p>[P0522R0] James Touton, Hubert Tong. 2016. DR: Matching of template template-arguments excludes compatible templates. <br />
+<p>[P0522R0] James Touton, Hubert Tong. 2016-11-11. DR: Matching of template template-arguments excludes compatible templates. <br />
 <a href="https://wg21.link/p0522r0">https://wg21.link/p0522r0</a></p>
 </div>
 <div id="ref-P0550R2">
-<p>[P0550R2] Walter E. Brown. 2017. Transformation Trait remove_cvref. <br />
+<p>[P0550R2] Walter E. Brown. 2017-07-17. Transformation Trait remove_cvref. <br />
 <a href="https://wg21.link/p0550r2">https://wg21.link/p0550r2</a></p>
 </div>
 <div id="ref-P0553R4">
-<p>[P0553R4] Jens Maurer. 2019. Bit operations. <br />
+<p>[P0553R4] Jens Maurer. 2019-03-01. Bit operations. <br />
 <a href="https://wg21.link/p0553r4">https://wg21.link/p0553r4</a></p>
 </div>
 <div id="ref-P0556R3">
-<p>[P0556R3] Jens Maurer. 2018. Integral power-of-2 operations. <br />
+<p>[P0556R3] Jens Maurer. 2018-06-06. Integral power-of-2 operations. <br />
 <a href="https://wg21.link/p0556r3">https://wg21.link/p0556r3</a></p>
 </div>
 <div id="ref-P0586R2">
-<p>[P0586R2] Federico Kircheis. 2020. Safe integral comparisons. <br />
+<p>[P0586R2] Federico Kircheis. 2020-02-12. Safe integral comparisons. <br />
 <a href="https://wg21.link/p0586r2">https://wg21.link/p0586r2</a></p>
 </div>
 <div id="ref-P0595R2">
@@ -4598,59 +4605,59 @@ Paper(s)
 <a href="https://wg21.link/p0595r2">https://wg21.link/p0595r2</a></p>
 </div>
 <div id="ref-P0604R0">
-<p>[P0604R0] Daniel Krugler, Pablo Halpern, Jonathan Wakely. 2017. Resolving GB 55, US 84, US 85, US 86. <br />
+<p>[P0604R0] Daniel Krugler, Pablo Halpern, Jonathan Wakely. 2017-03-03. Resolving GB 55, US 84, US 85, US 86. <br />
 <a href="https://wg21.link/p0604r0">https://wg21.link/p0604r0</a></p>
 </div>
 <div id="ref-P0620R0">
-<p>[P0620R0] Jason Merrill. 2017. Drafting for class template argument deduction issues. <br />
+<p>[P0620R0] Jason Merrill. 2017-03-02. Drafting for class template argument deduction issues. <br />
 <a href="https://wg21.link/p0620r0">https://wg21.link/p0620r0</a></p>
 </div>
 <div id="ref-P0631R8">
-<p>[P0631R8] Lev Minkovsky, John McFarlane. 2019. Math Constants. <br />
+<p>[P0631R8] Lev Minkovsky, John McFarlane. 2019-07-28. Math Constants. <br />
 <a href="https://wg21.link/p0631r8">https://wg21.link/p0631r8</a></p>
 </div>
 <div id="ref-P0645R10">
-<p>[P0645R10] Victor Zverovich. 2019. Text Formatting. <br />
+<p>[P0645R10] Victor Zverovich. 2019-07-18. Text Formatting. <br />
 <a href="https://wg21.link/p0645r10">https://wg21.link/p0645r10</a></p>
 </div>
 <div id="ref-P0646R1">
-<p>[P0646R1] Marc Mutz. 2018. Improving the Return Value of Erase-Like Algorithms I: list/forward list. <br />
+<p>[P0646R1] Marc Mutz. 2018-06-08. Improving the Return Value of Erase-Like Algorithms I: list/forward list. <br />
 <a href="https://wg21.link/p0646r1">https://wg21.link/p0646r1</a></p>
 </div>
 <div id="ref-P0653R2">
-<p>[P0653R2] Glen Joseph Fernandes. 2017. Utility to convert a pointer to a raw pointer. <br />
+<p>[P0653R2] Glen Joseph Fernandes. 2017-11-09. Utility to convert a pointer to a raw pointer. <br />
 <a href="https://wg21.link/p0653r2">https://wg21.link/p0653r2</a></p>
 </div>
 <div id="ref-P0660R10">
-<p>[P0660R10] Nicolai Josuttis, Lewis Baker, Billy O’Neal, Herb Sutter, Anthony Williams. 2019. Stop Token and Joining Thread. <br />
+<p>[P0660R10] Nicolai Josuttis, Lewis Baker, Billy O’Neal, Herb Sutter, Anthony Williams. 2019-07-21. Stop Token and Joining Thread. <br />
 <a href="https://wg21.link/p0660r10">https://wg21.link/p0660r10</a></p>
 </div>
 <div id="ref-P0674R1">
-<p>[P0674R1] Peter Dimov, Glen Fernandes. 2017. Extending make_shared to Support Arrays. <br />
+<p>[P0674R1] Peter Dimov, Glen Fernandes. 2017-07-12. Extending make_shared to Support Arrays. <br />
 <a href="https://wg21.link/p0674r1">https://wg21.link/p0674r1</a></p>
 </div>
 <div id="ref-P0682R1">
-<p>[P0682R1] Jens Maurer. 2017. Repairing elementary string conversions. <br />
+<p>[P0682R1] Jens Maurer. 2017-07-12. Repairing elementary string conversions. <br />
 <a href="https://wg21.link/p0682r1">https://wg21.link/p0682r1</a></p>
 </div>
 <div id="ref-P0718R2">
-<p>[P0718R2] Alisdair Meredith. 2017. Revising atomic_shared_ptr for C++20. <br />
+<p>[P0718R2] Alisdair Meredith. 2017-11-10. Revising atomic_shared_ptr for C++20. <br />
 <a href="https://wg21.link/p0718r2">https://wg21.link/p0718r2</a></p>
 </div>
 <div id="ref-P0722R3">
-<p>[P0722R3] Richard Smith, Andrew Hunter. 2018. Efficient sized delete for variable sized classes. <br />
+<p>[P0722R3] Richard Smith, Andrew Hunter. 2018-03-17. Efficient sized delete for variable sized classes. <br />
 <a href="https://wg21.link/p0722r3">https://wg21.link/p0722r3</a></p>
 </div>
 <div id="ref-P0732R2">
-<p>[P0732R2] Jeff Snyder, Louis Dionne. 2018. Class Types in Non-Type Template Parameters. <br />
+<p>[P0732R2] Jeff Snyder, Louis Dionne. 2018-06-06. Class Types in Non-Type Template Parameters. <br />
 <a href="https://wg21.link/p0732r2">https://wg21.link/p0732r2</a></p>
 </div>
 <div id="ref-P0734R0">
-<p>[P0734R0] Andrew Sutton. 2017. Wording Paper, C++ extensions for Concepts. <br />
+<p>[P0734R0] Andrew Sutton. 2017-07-14. Wording Paper, C++ extensions for Concepts. <br />
 <a href="https://wg21.link/p0734r0">https://wg21.link/p0734r0</a></p>
 </div>
 <div id="ref-P0753R2">
-<p>[P0753R2] Peter Sommerlad, Pablo Halpern. 2018. Manipulators for C++ Synchronized Buffered Ostream. <br />
+<p>[P0753R2] Peter Sommerlad, Pablo Halpern. 2018-03-16. Manipulators for C++ Synchronized Buffered Ostream. <br />
 <a href="https://wg21.link/p0753r2">https://wg21.link/p0753r2</a></p>
 </div>
 <div id="ref-P0754R2">
@@ -4658,11 +4665,11 @@ Paper(s)
 <a href="https://wg21.link/p0754r2">https://wg21.link/p0754r2</a></p>
 </div>
 <div id="ref-P0758R1">
-<p>[P0758R1] Daniel Krügler. 2018. Implicit conversion traits and utility functions. <br />
+<p>[P0758R1] Daniel Krügler. 2018-06-06. Implicit conversion traits and utility functions. <br />
 <a href="https://wg21.link/p0758r1">https://wg21.link/p0758r1</a></p>
 </div>
 <div id="ref-P0768R1">
-<p>[P0768R1] Walter E. Brown. 2017. Library Support for the Spaceship (Comparison) Operator. <br />
+<p>[P0768R1] Walter E. Brown. 2017-11-10. Library Support for the Spaceship (Comparison) Operator. <br />
 <a href="https://wg21.link/p0768r1">https://wg21.link/p0768r1</a></p>
 </div>
 <div id="ref-P0769R2">
@@ -4670,43 +4677,43 @@ Paper(s)
 <a href="https://wg21.link/p0769r2">https://wg21.link/p0769r2</a></p>
 </div>
 <div id="ref-P0780R2">
-<p>[P0780R2] Barry Revzin. 2018. Allow pack expansion in lambda init-capture. <br />
+<p>[P0780R2] Barry Revzin. 2018-03-14. Allow pack expansion in lambda init-capture. <br />
 <a href="https://wg21.link/p0780r2">https://wg21.link/p0780r2</a></p>
 </div>
 <div id="ref-P0784R7">
-<p>[P0784R7] Daveed Vandevoorde, Peter Dimov,Louis Dionne, Nina Ranns, Richard Smith, Daveed Vandevoorde. 2019. More constexpr containers. <br />
+<p>[P0784R7] Daveed Vandevoorde, Peter Dimov,Louis Dionne, Nina Ranns, Richard Smith, Daveed Vandevoorde. 2019-07-22. More constexpr containers. <br />
 <a href="https://wg21.link/p0784r7">https://wg21.link/p0784r7</a></p>
 </div>
 <div id="ref-P0811R3">
-<p>[P0811R3] S. Davis Herring. 2019. Well-behaved interpolation for numbers and pointers. <br />
+<p>[P0811R3] S. Davis Herring. 2019-02-22. Well-behaved interpolation for numbers and pointers. <br />
 <a href="https://wg21.link/p0811r3">https://wg21.link/p0811r3</a></p>
 </div>
 <div id="ref-P0840R2">
-<p>[P0840R2] Richard Smith. 2018. Language support for empty objects. <br />
+<p>[P0840R2] Richard Smith. 2018-03-12. Language support for empty objects. <br />
 <a href="https://wg21.link/p0840r2">https://wg21.link/p0840r2</a></p>
 </div>
 <div id="ref-P0858R0">
-<p>[P0858R0] Antony Polukhin. 2017. Constexpr iterator requirements. <br />
+<p>[P0858R0] Antony Polukhin. 2017-11-11. Constexpr iterator requirements. <br />
 <a href="https://wg21.link/p0858r0">https://wg21.link/p0858r0</a></p>
 </div>
 <div id="ref-P0859R0">
-<p>[P0859R0] Richard Smith. 2017. Core Issue 1581: When are constexpr member functions defined? <br />
+<p>[P0859R0] Richard Smith. 2017-11-09. Core Issue 1581: When are constexpr member functions defined? <br />
 <a href="https://wg21.link/p0859r0">https://wg21.link/p0859r0</a></p>
 </div>
 <div id="ref-P0879R0">
-<p>[P0879R0] Antony Polukhin. 2017. Constexpr for swap and swap related functions. <br />
+<p>[P0879R0] Antony Polukhin. 2017-12-29. Constexpr for swap and swap related functions. <br />
 <a href="https://wg21.link/p0879r0">https://wg21.link/p0879r0</a></p>
 </div>
 <div id="ref-P0881R7">
-<p>[P0881R7] Antony Polukhin, Alexey Gorgurov. 2020. A Proposal to add stacktrace library. <br />
+<p>[P0881R7] Antony Polukhin, Alexey Gorgurov. 2020-09-16. A Proposal to add stacktrace library. <br />
 <a href="https://wg21.link/p0881r7">https://wg21.link/p0881r7</a></p>
 </div>
 <div id="ref-P0883R2">
-<p>[P0883R2] Nicolai Josuttis. 2019. Fixing Atomic Initialization. <br />
+<p>[P0883R2] Nicolai Josuttis. 2019-11-08. Fixing Atomic Initialization. <br />
 <a href="https://wg21.link/p0883r2">https://wg21.link/p0883r2</a></p>
 </div>
 <div id="ref-P0887R1">
-<p>[P0887R1] Timur Doumler. 2018. The identity metafunction. <br />
+<p>[P0887R1] Timur Doumler. 2018-03-18. The identity metafunction. <br />
 <a href="https://wg21.link/p0887r1">https://wg21.link/p0887r1</a></p>
 </div>
 <div id="ref-P0892R2">
@@ -4714,31 +4721,31 @@ Paper(s)
 <a href="https://wg21.link/p0892r2">https://wg21.link/p0892r2</a></p>
 </div>
 <div id="ref-P0896R4">
-<p>[P0896R4] Eric Niebler, Casey Carter, Christopher Di Bella. 2018. The One Ranges Proposal. <br />
+<p>[P0896R4] Eric Niebler, Casey Carter, Christopher Di Bella. 2018-11-09. The One Ranges Proposal. <br />
 <a href="https://wg21.link/p0896r4">https://wg21.link/p0896r4</a></p>
 </div>
 <div id="ref-P0898R3">
-<p>[P0898R3] Casey Carter, Eric Niebler. 2018. Standard Library Concepts. <br />
+<p>[P0898R3] Casey Carter, Eric Niebler. 2018-06-08. Standard Library Concepts. <br />
 <a href="https://wg21.link/p0898r3">https://wg21.link/p0898r3</a></p>
 </div>
 <div id="ref-P0912R5">
-<p>[P0912R5] Gor Nishanov. 2019. Merge Coroutines TS into C++20 working draft. <br />
+<p>[P0912R5] Gor Nishanov. 2019-02-22. Merge Coroutines TS into C++20 working draft. <br />
 <a href="https://wg21.link/p0912r5">https://wg21.link/p0912r5</a></p>
 </div>
 <div id="ref-P0919R3">
-<p>[P0919R3] Mateusz Pusz. 2018. Heterogeneous lookup for unordered containers. <br />
+<p>[P0919R3] Mateusz Pusz. 2018-11-09. Heterogeneous lookup for unordered containers. <br />
 <a href="https://wg21.link/p0919r3">https://wg21.link/p0919r3</a></p>
 </div>
 <div id="ref-P0920R2">
-<p>[P0920R2] Mateusz Pusz. 2019. Precalculated hash values in lookup. <br />
+<p>[P0920R2] Mateusz Pusz. 2019-02-22. Precalculated hash values in lookup. <br />
 <a href="https://wg21.link/p0920r2">https://wg21.link/p0920r2</a></p>
 </div>
 <div id="ref-P0943R6">
-<p>[P0943R6] Hans Boehm. 2020. Support C atomics in C++. <br />
+<p>[P0943R6] Hans Boehm. 2020-11-15. Support C atomics in C++. <br />
 <a href="https://wg21.link/p0943r6">https://wg21.link/p0943r6</a></p>
 </div>
 <div id="ref-P0960R3">
-<p>[P0960R3] Ville Voutilainen, Thomas Köppe. 2019. Allow initializing aggregates from a parenthesized list of values. <br />
+<p>[P0960R3] Ville Voutilainen, Thomas Köppe. 2019-02-22. Allow initializing aggregates from a parenthesized list of values. <br />
 <a href="https://wg21.link/p0960r3">https://wg21.link/p0960r3</a></p>
 </div>
 <div id="ref-P0980R1">
@@ -4746,11 +4753,11 @@ Paper(s)
 <a href="https://wg21.link/p0980r1">https://wg21.link/p0980r1</a></p>
 </div>
 <div id="ref-P1001R2">
-<p>[P1001R2] Alisdair Meredith, Pablo Halpern. 2019. Target Vectorization Policies from Parallelism V2 TS to C++20. <br />
+<p>[P1001R2] Alisdair Meredith, Pablo Halpern. 2019-02-22. Target Vectorization Policies from Parallelism V2 TS to C++20. <br />
 <a href="https://wg21.link/p1001r2">https://wg21.link/p1001r2</a></p>
 </div>
 <div id="ref-P1002R1">
-<p>[P1002R1] Louis Dionne. 2018. Try-catch blocks in constexpr functions. <br />
+<p>[P1002R1] Louis Dionne. 2018-11-10. Try-catch blocks in constexpr functions. <br />
 <a href="https://wg21.link/p1002r1">https://wg21.link/p1002r1</a></p>
 </div>
 <div id="ref-P1004R2">
@@ -4758,19 +4765,19 @@ Paper(s)
 <a href="https://wg21.link/p1004r2">https://wg21.link/p1004r2</a></p>
 </div>
 <div id="ref-P1006R1">
-<p>[P1006R1] Louis Dionne. 2018. Constexpr in std::pointer_traits. <br />
+<p>[P1006R1] Louis Dionne. 2018-10-07. Constexpr in std::pointer_traits. <br />
 <a href="https://wg21.link/p1006r1">https://wg21.link/p1006r1</a></p>
 </div>
 <div id="ref-P1007R3">
-<p>[P1007R3] Timur Doumler, Chandler Carruth. 2018. std::assume_aligned. <br />
+<p>[P1007R3] Timur Doumler, Chandler Carruth. 2018-11-07. std::assume_aligned. <br />
 <a href="https://wg21.link/p1007r3">https://wg21.link/p1007r3</a></p>
 </div>
 <div id="ref-P1020R1">
-<p>[P1020R1] Glen Joseph Fernandes, Peter Dimov. 2018. Smart pointer creation with default initialization. <br />
+<p>[P1020R1] Glen Joseph Fernandes, Peter Dimov. 2018-11-06. Smart pointer creation with default initialization. <br />
 <a href="https://wg21.link/p1020r1">https://wg21.link/p1020r1</a></p>
 </div>
 <div id="ref-P1023R0">
-<p>[P1023R0] Tristan Brindle. 2018. constexpr comparison operators for std::array. <br />
+<p>[P1023R0] Tristan Brindle. 2018-05-06. constexpr comparison operators for std::array. <br />
 <a href="https://wg21.link/p1023r0">https://wg21.link/p1023r0</a></p>
 </div>
 <div id="ref-P1024R3">
@@ -4778,19 +4785,19 @@ Paper(s)
 <a href="https://wg21.link/p1024r3">https://wg21.link/p1024r3</a></p>
 </div>
 <div id="ref-P1032R1">
-<p>[P1032R1] Antony Polukhin. 2018. Misc constexpr bits. <br />
+<p>[P1032R1] Antony Polukhin. 2018-10-01. Misc constexpr bits. <br />
 <a href="https://wg21.link/p1032r1">https://wg21.link/p1032r1</a></p>
 </div>
 <div id="ref-P1035R7">
-<p>[P1035R7] Christopher Di Bella, Casey Carter, Corentin Jabot. 2019. Input Range Adaptors. <br />
+<p>[P1035R7] Christopher Di Bella, Casey Carter, Corentin Jabot. 2019-08-02. Input Range Adaptors. <br />
 <a href="https://wg21.link/p1035r7">https://wg21.link/p1035r7</a></p>
 </div>
 <div id="ref-P1048R1">
-<p>[P1048R1] Juan Alday. 2020. A proposal for a type trait to detect scoped enumerations. <br />
+<p>[P1048R1] Juan Alday. 2020-10-16. A proposal for a type trait to detect scoped enumerations. <br />
 <a href="https://wg21.link/p1048r1">https://wg21.link/p1048r1</a></p>
 </div>
 <div id="ref-P1064R0">
-<p>[P1064R0] Peter Dimov, Vassil Vassilev. 2018. Allowing Virtual Function Calls in Constant Expressions. <br />
+<p>[P1064R0] Peter Dimov, Vassil Vassilev. 2018-05-04. Allowing Virtual Function Calls in Constant Expressions. <br />
 <a href="https://wg21.link/p1064r0">https://wg21.link/p1064r0</a></p>
 </div>
 <div id="ref-P1065R2">
@@ -4798,19 +4805,19 @@ Paper(s)
 <a href="https://wg21.link/p1065r2">https://wg21.link/p1065r2</a></p>
 </div>
 <div id="ref-P1073R3">
-<p>[P1073R3] Richard Smith, Andrew Sutton, Daveed Vandevoorde. 2018. Immediate functions. <br />
+<p>[P1073R3] Richard Smith, Andrew Sutton, Daveed Vandevoorde. 2018-11-06. Immediate functions. <br />
 <a href="https://wg21.link/p1073r3">https://wg21.link/p1073r3</a></p>
 </div>
 <div id="ref-P1084R2">
-<p>[P1084R2] Walter E. Brown, Casey Carter. 2018. Today’s return-type-requirements Are Insufficient. <br />
+<p>[P1084R2] Walter E. Brown, Casey Carter. 2018-11-06. Today’s return-type-requirements Are Insufficient. <br />
 <a href="https://wg21.link/p1084r2">https://wg21.link/p1084r2</a></p>
 </div>
 <div id="ref-P1099R5">
-<p>[P1099R5] Gašper Ažman, Jonathan Mueller. 2019. Using Enum. <br />
+<p>[P1099R5] Gašper Ažman, Jonathan Mueller. 2019-07-20. Using Enum. <br />
 <a href="https://wg21.link/p1099r5">https://wg21.link/p1099r5</a></p>
 </div>
 <div id="ref-P1103R3">
-<p>[P1103R3] Richard Smith. 2019. Merging Modules. <br />
+<p>[P1103R3] Richard Smith. 2019-02-22. Merging Modules. <br />
 <a href="https://wg21.link/p1103r3">https://wg21.link/p1103r3</a></p>
 </div>
 <div id="ref-P1115R3">
@@ -4818,7 +4825,7 @@ Paper(s)
 <a href="https://wg21.link/p1115r3">https://wg21.link/p1115r3</a></p>
 </div>
 <div id="ref-P1135R6">
-<p>[P1135R6] David Olsen, Olivier Giroux, JF Bastien, Detlef Vollmann, Bryce Lelbach. 2019. The C++20 Synchronization Library. <br />
+<p>[P1135R6] David Olsen, Olivier Giroux, JF Bastien, Detlef Vollmann, Bryce Lelbach. 2019-07-20. The C++20 Synchronization Library. <br />
 <a href="https://wg21.link/p1135r6">https://wg21.link/p1135r6</a></p>
 </div>
 <div id="ref-P1143R2">
@@ -4830,15 +4837,15 @@ Paper(s)
 <a href="https://wg21.link/p1185r2">https://wg21.link/p1185r2</a></p>
 </div>
 <div id="ref-P1208R6">
-<p>[P1208R6] Corentin Jabot, Robert Douglas, Daniel Krugler, Peter Sommerlad. 2019. Adopt source location from Library Fundamentals V3 for C++20. <br />
+<p>[P1208R6] Corentin Jabot, Robert Douglas, Daniel Krugler, Peter Sommerlad. 2019-08-02. Adopt source location from Library Fundamentals V3 for C++20. <br />
 <a href="https://wg21.link/p1208r6">https://wg21.link/p1208r6</a></p>
 </div>
 <div id="ref-P1209R0">
-<p>[P1209R0] Alisdair Meredith, Stephan T. Lavavej. 2018. Adopt Consistent Container Erasure from Library Fundamentals 2 for C++20. <br />
+<p>[P1209R0] Alisdair Meredith, Stephan T. Lavavej. 2018-10-04. Adopt Consistent Container Erasure from Library Fundamentals 2 for C++20. <br />
 <a href="https://wg21.link/p1209r0">https://wg21.link/p1209r0</a></p>
 </div>
 <div id="ref-P1227R2">
-<p>[P1227R2] Jorg Brown. 2019. Signed ssize() functions, unsigned size() functions. <br />
+<p>[P1227R2] Jorg Brown. 2019-02-22. Signed ssize() functions, unsigned size() functions. <br />
 <a href="https://wg21.link/p1227r2">https://wg21.link/p1227r2</a></p>
 </div>
 <div id="ref-P1301R4">
@@ -4846,27 +4853,27 @@ Paper(s)
 <a href="https://wg21.link/p1301r4">https://wg21.link/p1301r4</a></p>
 </div>
 <div id="ref-P1327R1">
-<p>[P1327R1] Peter Dimov, Vassil Vassilev, Richard Smith. 2018. Allowing dynamic_cast, polymorphic typeid in Constant Expressions. <br />
+<p>[P1327R1] Peter Dimov, Vassil Vassilev, Richard Smith. 2018-11-08. Allowing dynamic_cast, polymorphic typeid in Constant Expressions. <br />
 <a href="https://wg21.link/p1327r1">https://wg21.link/p1327r1</a></p>
 </div>
 <div id="ref-P1330R0">
-<p>[P1330R0] Louis Dionne, David Vandevoorde. 2018. Changing the active member of a union inside constexpr. <br />
+<p>[P1330R0] Louis Dionne, David Vandevoorde. 2018-11-10. Changing the active member of a union inside constexpr. <br />
 <a href="https://wg21.link/p1330r0">https://wg21.link/p1330r0</a></p>
 </div>
 <div id="ref-P1331R2">
-<p>[P1331R2] CJ Johnson. 2019. Permitting trivial default initialization in constexpr contexts. <br />
+<p>[P1331R2] CJ Johnson. 2019-07-26. Permitting trivial default initialization in constexpr contexts. <br />
 <a href="https://wg21.link/p1331r2">https://wg21.link/p1331r2</a></p>
 </div>
 <div id="ref-P1353R0">
-<p>[P1353R0] John Spicer. 2017. Missing Feature Test Macros. <br />
+<p>[P1353R0] John Spicer. 2017-11-09. Missing Feature Test Macros. <br />
 <a href="https://wg21.link/p1353r0">https://wg21.link/p1353r0</a></p>
 </div>
 <div id="ref-P1357R1">
-<p>[P1357R1] Walter E. Brown, Glen J. Fernandes. 2019. Traits for [Un]bounded Arrays. <br />
+<p>[P1357R1] Walter E. Brown, Glen J. Fernandes. 2019-02-22. Traits for [Un]bounded Arrays. <br />
 <a href="https://wg21.link/p1357r1">https://wg21.link/p1357r1</a></p>
 </div>
 <div id="ref-P1361R2">
-<p>[P1361R2] Victor Zverovich, Daniela Engert, Howard E. Hinnant. 2019. Integration of chrono with text formatting. <br />
+<p>[P1361R2] Victor Zverovich, Daniela Engert, Howard E. Hinnant. 2019-07-19. Integration of chrono with text formatting. <br />
 <a href="https://wg21.link/p1361r2">https://wg21.link/p1361r2</a></p>
 </div>
 <div id="ref-P1423R3">
@@ -4874,15 +4881,15 @@ Paper(s)
 <a href="https://wg21.link/p1423r2">https://wg21.link/p1423r2</a></p>
 </div>
 <div id="ref-P1452R2">
-<p>[P1452R2] Hubert Tong. 2019. On the non-uniform semantics of return-type-requirements. <br />
+<p>[P1452R2] Hubert Tong. 2019-07-18. On the non-uniform semantics of return-type-requirements. <br />
 <a href="https://wg21.link/p1452r2">https://wg21.link/p1452r2</a></p>
 </div>
 <div id="ref-P1466R3">
-<p>[P1466R3] Howard E. Hinnant. 2019. Miscellaneous minor fixes for chrono. <br />
+<p>[P1466R3] Howard E. Hinnant. 2019-07-17. Miscellaneous minor fixes for chrono. <br />
 <a href="https://wg21.link/p1466r3">https://wg21.link/p1466r3</a></p>
 </div>
 <div id="ref-P1612R1">
-<p>[P1612R1] Arthur O’Dwyer. 2019. Relocate Endian’s Specification. <br />
+<p>[P1612R1] Arthur O’Dwyer. 2019-07-20. Relocate Endian’s Specification. <br />
 <a href="https://wg21.link/p1612r1">https://wg21.link/p1612r1</a></p>
 </div>
 <div id="ref-P1614R2">
@@ -4890,43 +4897,43 @@ Paper(s)
 <a href="https://wg21.link/p1614r2">https://wg21.link/p1614r2</a></p>
 </div>
 <div id="ref-P1630R1">
-<p>[P1630R1] Barry Revzin. 2019. Spaceship needs a tune-up. <br />
+<p>[P1630R1] Barry Revzin. 2019-07-17. Spaceship needs a tune-up. <br />
 <a href="https://wg21.link/p1630r1">https://wg21.link/p1630r1</a></p>
 </div>
 <div id="ref-P1645R1">
-<p>[P1645R1] Ben Deane. 2019. constexpr for numeric algorithms. <br />
+<p>[P1645R1] Ben Deane. 2019-05-14. constexpr for numeric algorithms. <br />
 <a href="https://wg21.link/p1645r1">https://wg21.link/p1645r1</a></p>
 </div>
 <div id="ref-P1651R0">
-<p>[P1651R0] Tomasz Kamiński. 2019. bind_front should not unwrap reference_wrapper. <br />
+<p>[P1651R0] Tomasz Kamiński. 2019-06-07. bind_front should not unwrap reference_wrapper. <br />
 <a href="https://wg21.link/p1651r0">https://wg21.link/p1651r0</a></p>
 </div>
 <div id="ref-P1652R1">
-<p>[P1652R1] Zhihao Yuan, Victor Zverovich. 2019. Printf corner cases in std::format. <br />
+<p>[P1652R1] Zhihao Yuan, Victor Zverovich. 2019-07-18. Printf corner cases in std::format. <br />
 <a href="https://wg21.link/p1652r1">https://wg21.link/p1652r1</a></p>
 </div>
 <div id="ref-P1661R1">
-<p>[P1661R1] Tomasz Kamiński. 2019. Remove dedicated precalculated hash lookup interface. <br />
+<p>[P1661R1] Tomasz Kamiński. 2019-07-18. Remove dedicated precalculated hash lookup interface. <br />
 <a href="https://wg21.link/p1661r1">https://wg21.link/p1661r1</a></p>
 </div>
 <div id="ref-P1668R1">
-<p>[P1668R1] Erich Keane. 2019. Enabling constexpr Intrinsics By Permitting Unevaluated inline-assembly in constexpr Functions. <br />
+<p>[P1668R1] Erich Keane. 2019-07-17. Enabling constexpr Intrinsics By Permitting Unevaluated inline-assembly in constexpr Functions. <br />
 <a href="https://wg21.link/p1668r1">https://wg21.link/p1668r1</a></p>
 </div>
 <div id="ref-P1679R3">
-<p>[P1679R3] Wim Leflere, Paul Fee. 2020. String Contains function. <br />
+<p>[P1679R3] Wim Leflere, Paul Fee. 2020-07-22. String Contains function. <br />
 <a href="https://wg21.link/p1679r3">https://wg21.link/p1679r3</a></p>
 </div>
 <div id="ref-P1682R2">
-<p>[P1682R2] JeanHeyd Meneide. 2021. std::to_underlying. <br />
+<p>[P1682R2] JeanHeyd Meneide. 2021-01-16. std::to_underlying. <br />
 <a href="https://wg21.link/p1682r2">https://wg21.link/p1682r2</a></p>
 </div>
 <div id="ref-P1716R3">
-<p>[P1716R3] Tomasz Kamiński. 2019. ranges compare algorithm are over-constrained. <br />
+<p>[P1716R3] Tomasz Kamiński. 2019-11-07. ranges compare algorithm are over-constrained. <br />
 <a href="https://wg21.link/p1716r3">https://wg21.link/p1716r3</a></p>
 </div>
 <div id="ref-P1754R1">
-<p>[P1754R1] Herb Sutter, Casey Carter, Gabriel Dos Reis, Eric Niebler, Bjarne Stroustrup, Andrew Sutton, Ville Voutilainen. 2019. Rename concepts to standard_case for C++20, while we still can. <br />
+<p>[P1754R1] Herb Sutter, Casey Carter, Gabriel Dos Reis, Eric Niebler, Bjarne Stroustrup, Andrew Sutton, Ville Voutilainen. 2019-07-18. Rename concepts to standard_case for C++20, while we still can. <br />
 <a href="https://wg21.link/p1754r1">https://wg21.link/p1754r1</a></p>
 </div>
 <div id="ref-P1771R1">
@@ -4934,31 +4941,31 @@ Paper(s)
 <a href="https://wg21.link/p1771r1">https://wg21.link/p1771r1</a></p>
 </div>
 <div id="ref-P1811R0">
-<p>[P1811R0] Richard Smith, Gabriel Dos Reis. 2019. Relaxing redefinition restrictions for re-exportation robustness. <br />
+<p>[P1811R0] Richard Smith, Gabriel Dos Reis. 2019-08-07. Relaxing redefinition restrictions for re-exportation robustness. <br />
 <a href="https://wg21.link/p1811r0">https://wg21.link/p1811r0</a></p>
 </div>
 <div id="ref-P1814R0">
-<p>[P1814R0] Mike Spertus. 2019. Wording for Class Template Argument Deduction for Alias Templates. <br />
+<p>[P1814R0] Mike Spertus. 2019-07-28. Wording for Class Template Argument Deduction for Alias Templates. <br />
 <a href="https://wg21.link/p1814r0">https://wg21.link/p1814r0</a></p>
 </div>
 <div id="ref-P1816R0">
-<p>[P1816R0] Timur Doumler. 2019. Wording for class template argument deduction for aggregates. <br />
+<p>[P1816R0] Timur Doumler. 2019-07-18. Wording for class template argument deduction for aggregates. <br />
 <a href="https://wg21.link/p1816r0">https://wg21.link/p1816r0</a></p>
 </div>
 <div id="ref-P1869R1">
-<p>[P1869R1] Tomasz Kamiński, Michał Dominiak. 2019. Rename “condition_variable_any” interruptible wait methods. <br />
+<p>[P1869R1] Tomasz Kamiński, Michał Dominiak. 2019-11-06. Rename “condition_variable_any” interruptible wait methods. <br />
 <a href="https://wg21.link/p1869r1">https://wg21.link/p1869r1</a></p>
 </div>
 <div id="ref-P1902R1">
-<p>[P1902R1] Barry Revzin. 2019. Missing feature-test macros 2017-2019. <br />
+<p>[P1902R1] Barry Revzin. 2019-11-25. Missing feature-test macros 2017-2019. <br />
 <a href="https://wg21.link/p1902r1">https://wg21.link/p1902r1</a></p>
 </div>
 <div id="ref-P1907R1">
-<p>[P1907R1] Jens Maurer. 2019. Inconsistencies with non-type template parameters. <br />
+<p>[P1907R1] Jens Maurer. 2019-11-08. Inconsistencies with non-type template parameters. <br />
 <a href="https://wg21.link/p1907r1">https://wg21.link/p1907r1</a></p>
 </div>
 <div id="ref-P1956R1">
-<p>[P1956R1] Vincent Reverdy. 2020. On the naming of low-level bit manipulation functions. <br />
+<p>[P1956R1] Vincent Reverdy. 2020-02-27. On the naming of low-level bit manipulation functions. <br />
 <a href="https://wg21.link/p1956r1">https://wg21.link/p1956r1</a></p>
 </div>
 <div id="ref-P1964R2">
@@ -4966,7 +4973,7 @@ Paper(s)
 <a href="https://wg21.link/P1964R2">https://wg21.link/P1964R2</a></p>
 </div>
 <div id="ref-P1973R1">
-<p>[P1973R1] Nicolai Josuttis. 2020. Rename _default_init functions (NB Comment DE002). <br />
+<p>[P1973R1] Nicolai Josuttis. 2020-02-12. Rename _default_init functions (NB Comment DE002). <br />
 <a href="https://wg21.link/p1973r1">https://wg21.link/p1973r1</a></p>
 </div>
 <div id="ref-P1976R2">
@@ -4974,7 +4981,7 @@ Paper(s)
 <a href="https://wg21.link/P1976R2">https://wg21.link/P1976R2</a></p>
 </div>
 <div id="ref-P2162R2">
-<p>[P2162R2] Barry Revzin. 2021. Inheriting from std::variant (resolving LWG3052). <br />
+<p>[P2162R2] Barry Revzin. 2021-02-18. Inheriting from std::variant (resolving LWG3052). <br />
 <a href="https://wg21.link/p2162r2">https://wg21.link/p2162r2</a></p>
 </div>
 </div>
