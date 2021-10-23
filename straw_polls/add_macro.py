@@ -32,8 +32,9 @@ def sort_papers(papers):
     return sorted(set(papers), key=key)
 
 class Document(object):
-    def __init__(self, filename):
+    def __init__(self, filename, value=None):
         self.filename = filename
+        self.value = value
         self.doc = ordered_load(open(filename))
 
     def change(self, kind, name, args, issue):
@@ -47,13 +48,21 @@ class Document(object):
                 break
         specific.sort(key=lambda d: d['name'])
 
-    def remove(self, kind, name, value, papers):
-        self.add(kind=kind, name=name, value=value, papers=papers, _remove=True)
+    def remove(self, kind, name, papers, value=None):
+        self.add(kind=kind, name=name, value=(value or self.value), papers=papers, _remove=True)
 
-    def update(self, kind, name, value, papers):
-        self.add(kind=kind, name=name, value=value, papers=papers, _update=True)
+    def update(self, kind, name, papers, value=None):
+        self.add(kind=kind, name=name, value=(value or self.value), papers=papers, _update=True)
 
-    def add(self, kind, name, value, papers, headers=None, _remove=False, _update=False):
+    def update_library(self, **kwargs): self.update(kind='library', **kwargs)
+    def update_language(self, **kwargs): self.update(kind='language', **kwargs)
+
+    def add_library(self, **kwargs): self.add(kind='library', **kwargs)
+    def add_language(self, **kwargs): self.add(kind='language', **kwargs)
+
+    def add(self, kind, name, papers, value=None, headers=None, _remove=False, _update=False):
+        value = value or self.value
+
         def fixup(arg):
             if isinstance(arg, str):
                 return sorted(arg.split())
@@ -62,7 +71,7 @@ class Document(object):
 
         papers = sort_papers(fixup(papers))
         headers = fixup(headers)
-            
+
         values = [('value', value),
                   ('papers', ' '.join(papers))]
         if _remove:

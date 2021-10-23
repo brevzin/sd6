@@ -170,6 +170,10 @@ language:
   rows:
   - value: 201603
     papers: P0245R1
+- name: __cpp_if_consteval
+  rows:
+  - value: 202106
+    papers: P1938R3
 - name: __cpp_if_constexpr
   rows:
   - value: 201606
@@ -328,11 +332,21 @@ language:
   - value: 201611
     papers: P0195R2
 library:
+- name: __cpp_lib_adaptor_iterator_pair_constructor
+  header_list: queue stack
+  rows:
+  - value: 202106
+    papers: P1425R4
 - name: __cpp_lib_addressof_constexpr
   header_list: memory
   rows:
   - value: 201603
     papers: LWG2296
+- name: __cpp_lib_allocate_at_least
+  header_list: memory
+  rows:
+  - value: 202106
+    papers: P0401R6
 - name: __cpp_lib_allocator_traits_is_always_equal
   header_list: memory scoped_allocator string deque forward_list list vector map set
     unordered_map unordered_set
@@ -556,6 +570,11 @@ library:
   rows:
   - value: 201811
     papers: P1032R1
+- name: __cpp_lib_constexpr_typeinfo
+  header_list: typeinfo
+  rows:
+  - value: 202106
+    papers: P1328R1
 - name: __cpp_lib_constexpr_utility
   header_list: utility
   rows:
@@ -623,6 +642,8 @@ library:
   rows:
   - value: 201907
     papers: P0645R10 P1361R2 P1652R1
+  - value: 202106
+    papers: P2216R3
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -698,6 +719,11 @@ library:
   rows:
   - value: 201411
     papers: N4169
+- name: __cpp_lib_invoke_r
+  header_list: functional
+  rows:
+  - value: 202106
+    papers: P2136R3
 - name: __cpp_lib_is_aggregate
   header_list: type_traits
   rows:
@@ -838,6 +864,13 @@ library:
     papers: P0220R1
   - value: 201606
     papers: P0032R3 P0307R2
+  - value: 202106
+    papers: P2231R1
+- name: __cpp_lib_out_ptr
+  header_list: memory
+  rows:
+  - value: 202106
+    papers: P1132R7
 - name: __cpp_lib_parallel_algorithm
   header_list: algorithm numeric
   rows:
@@ -862,6 +895,13 @@ library:
     papers: P1035R7
   - value: 201911
     papers: P1716R3
+  - value: 202106
+    papers: P2325R3
+- name: __cpp_lib_ranges_starts_ends_with
+  header_list: algorithm
+  rows:
+  - value: 202106
+    papers: P1659R3
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
   rows:
@@ -943,6 +983,11 @@ library:
     papers: P1024R3
   - value: 202002
     papers: P1976R2
+- name: __cpp_lib_spanstream
+  header_list: spanstream
+  rows:
+  - value: 202106
+    papers: P0448R4
 - name: __cpp_lib_ssize
   header_list: iterator
   rows:
@@ -1070,6 +1115,8 @@ library:
     papers: P0088R3 P0393R3 P0032R3
   - value: 202102
     papers: P2162R2
+  - value: 202106
+    papers: P2231R1
 - name: __cpp_lib_void_t
   header_list: type_traits
   rows:
