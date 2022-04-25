@@ -82,6 +82,8 @@ language:
     papers: P1084R2
   - value: 201907
     papers: P1452R2
+  - value: 202002
+    papers: P0848R3
 - name: __cpp_conditional_explicit
   rows:
   - value: 201806
@@ -104,6 +106,8 @@ language:
     papers: P1002R1 P1327R1 P1330R0
   - value: 201907
     papers: P1331R2 P1668R1
+  - value: 202002
+    papers: P1330R0
   - value: 202110
     papers: P2242R3
 - name: __cpp_constexpr_dynamic_alloc
@@ -446,6 +450,11 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
+- name: __cpp_lib_bind_back
+  header_list: functional
+  rows:
+  - value: 202202
+    papers: P2387R3
 - name: __cpp_lib_bind_front
   header_list: functional
   rows:
@@ -564,6 +573,8 @@ library:
   rows:
   - value: 201811
     papers: P1006R1
+  - value: 202202
+    papers: P2273R3
 - name: __cpp_lib_constexpr_numeric
   header_list: numeric
   rows:
@@ -605,6 +616,12 @@ library:
   rows:
   - value: 201907
     papers: P1004R2
+- name: __cpp_lib_containers_ranges
+  header_list: vector list forward_list map set unordered_map unordered_set deque
+    queue priority_queue stack string
+  rows:
+  - value: 202202
+    papers: P1206R7
 - name: __cpp_lib_coroutine
   header_list: coroutine
   rows:
@@ -648,6 +665,11 @@ library:
     papers: P0024R2
   - value: 201902
     papers: P1001R2
+- name: __cpp_lib_expected
+  header_list: expected
+  rows:
+  - value: 202202
+    papers: P0323R12
 - name: __cpp_lib_filesystem
   header_list: filesystem
   rows:
@@ -863,6 +885,9 @@ library:
   rows:
   - value: 202110
     papers: P0798R8
+  - value: 202202
+    papers: LWG3621
+    removed: true
 - name: __cpp_lib_move_only_function
   header_list: functional
   rows:
@@ -898,6 +923,8 @@ library:
     papers: P0032R3 P0307R2
   - value: 202106
     papers: P2231R1
+  - value: 202202
+    papers: P0798R8 LWG3621
 - name: __cpp_lib_out_ptr
   header_list: memory
   rows:
@@ -931,11 +958,43 @@ library:
     papers: P2325R3
   - value: 202110
     papers: P2415R2
+  - value: 202202
+    papers: P2387R3
+- name: __cpp_lib_ranges_chunk
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P2442R1
+- name: __cpp_lib_ranges_chunk_by
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P2443R1
+- name: __cpp_lib_ranges_iota
+  header_list: numeric
+  rows:
+  - value: 202202
+    papers: P2440R1
+- name: __cpp_lib_ranges_join_with
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P2441R2
+- name: __cpp_lib_ranges_slide
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P2442R1
 - name: __cpp_lib_ranges_starts_ends_with
   header_list: algorithm
   rows:
   - value: 202106
     papers: P1659R3
+- name: __cpp_lib_ranges_to_container
+  header_list: ranges
+  rows:
+  - value: 202202
+    papers: P1206R7
 - name: __cpp_lib_ranges_zip
   header_list: ranges tuple utility
   rows:
@@ -946,6 +1005,11 @@ library:
   rows:
   - value: 201606
     papers: P0040R3
+- name: __cpp_lib_reference_from_temporary
+  header_list: type_traits
+  rows:
+  - value: 202202
+    papers: P2255R2
 - name: __cpp_lib_remove_cvref
   header_list: type_traits
   rows:
@@ -1147,6 +1211,11 @@ library:
   rows:
   - value: 201411
     papers: N4279
+- name: __cpp_lib_unreachable
+  header_list: utility
+  rows:
+  - value: 202202
+    papers: P0627R6
 - name: __cpp_lib_unwrap_ref
   header_list: type_traits
   rows:
