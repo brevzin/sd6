@@ -546,6 +546,11 @@ library:
     papers: P0202R3
   - value: 201806
     papers: P0879R0 LWG3256
+- name: __cpp_lib_constexpr_cmath
+  header_list: cmath cstdlib
+  rows:
+  - value: 202202
+    papers: P0533R9
 - name: __cpp_lib_constexpr_complex
   header_list: complex
   rows:
@@ -618,7 +623,7 @@ library:
     papers: P1004R2
 - name: __cpp_lib_containers_ranges
   header_list: vector list forward_list map set unordered_map unordered_set deque
-    queue priority_queue stack string
+    queue stack string
   rows:
   - value: 202202
     papers: P1206R7
@@ -923,7 +928,7 @@ library:
     papers: P0032R3 P0307R2
   - value: 202106
     papers: P2231R1
-  - value: 202202
+  - value: 202110
     papers: P0798R8 LWG3621
 - name: __cpp_lib_out_ptr
   header_list: memory
@@ -1067,6 +1072,8 @@ library:
   rows:
   - value: 201806
     papers: P0769R2
+  - value: 202202
+    papers: P2440R1
 - name: __cpp_lib_smart_ptr_for_overwrite
   header_list: memory
   rows:
