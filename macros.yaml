@@ -1,4 +1,8 @@
 attributes:
+- name: assume
+  rows:
+  - value: 202207
+    papers: P1774R8 CWG2615
 - name: carries_dependency
   rows:
   - value: 200809
@@ -74,6 +78,8 @@ language:
   rows:
   - value: 201811
     papers: P0482R6
+  - value: 202207
+    papers: P2513R3
 - name: __cpp_concepts
   rows:
   - value: 201707
@@ -110,6 +116,8 @@ language:
     papers: P1330R0
   - value: 202110
     papers: P2242R3
+  - value: 202207
+    papers: P2448R2
 - name: __cpp_constexpr_dynamic_alloc
   rows:
   - value: 201907
@@ -204,6 +212,10 @@ language:
     papers: P1185R2
   - value: 201907
     papers: P1630R1
+- name: __cpp_implicit_move
+  rows:
+  - value: 202207
+    papers: P2266R3
 - name: __cpp_inheriting_constructors
   rows:
   - value: 200802
@@ -236,6 +248,10 @@ language:
   rows:
   - value: 202110
     papers: P2128R6
+- name: __cpp_named_character_escapes
+  rows:
+  - value: 202207
+    papers: P2071R2
 - name: __cpp_namespace_attributes
   rows:
   - value: 201411
@@ -305,6 +321,10 @@ language:
     papers: N1720
   - value: 201411
     papers: N3928
+- name: __cpp_static_call_operator
+  rows:
+  - value: 202207
+    papers: P1169R4
 - name: __cpp_structured_bindings
   rows:
   - value: 201606
@@ -356,6 +376,11 @@ library:
   rows:
   - value: 201603
     papers: LWG2296
+- name: __cpp_lib_algorithm_iterator_requirements
+  header_list: algorithm memory numeric
+  rows:
+  - value: 202207
+    papers: P2408R5
 - name: __cpp_lib_allocate_at_least
   header_list: memory
   rows:
@@ -531,7 +556,7 @@ library:
   - value: 201309
     papers: N3779
 - name: __cpp_lib_concepts
-  header_list: concepts
+  header_list: compare concepts
   rows:
   - value: 201806
     papers: P0898R3
@@ -539,6 +564,8 @@ library:
     papers: P1754R1
   - value: 202002
     papers: P1964R2
+  - value: 202207
+    papers: P2404R3
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm
   rows:
@@ -546,6 +573,16 @@ library:
     papers: P0202R3
   - value: 201806
     papers: P0879R0 LWG3256
+- name: __cpp_lib_constexpr_bitset
+  header_list: bitset
+  rows:
+  - value: 202207
+    papers: P2417R2
+- name: __cpp_lib_constexpr_charconv
+  header_list: charconv
+  rows:
+  - value: 202207
+    papers: P2291R3
 - name: __cpp_lib_constexpr_cmath
   header_list: cmath cstdlib
   rows:
@@ -684,6 +721,21 @@ library:
     papers: P0219R1 P0392R0
   - value: 201703
     papers: P0317R1
+- name: __cpp_lib_find_last
+  header_list: algorithm
+  rows:
+  - value: 202207
+    papers: P1223R5
+- name: __cpp_lib_flat_map
+  header_list: flat_map
+  rows:
+  - value: 202207
+    papers: P0429R9
+- name: __cpp_lib_flat_set
+  header_list: flat_set
+  rows:
+  - value: 202207
+    papers: P1222R4 LWG3751
 - name: __cpp_lib_format
   header_list: format
   rows:
@@ -693,11 +745,28 @@ library:
     papers: P2216R3
   - value: 202110
     papers: P2372R3 P2418R2
+  - value: 202207
+    papers: P2419R2 P2508R1
+- name: __cpp_lib_format_ranges
+  header_list: format
+  rows:
+  - value: 202207
+    papers: P2286R8 P2585R1 LWG3750
+- name: __cpp_lib_forward_like
+  header_list: utility
+  rows:
+  - value: 202207
+    papers: P2445R1
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
   - value: 201606
     papers: P0295R0
+- name: __cpp_lib_generator
+  header_list: generator
+  rows:
+  - value: 202207
+    papers: P2502R2
 - name: __cpp_lib_generic_associative_lookup
   header_list: map set
   rows:
@@ -773,6 +842,11 @@ library:
   rows:
   - value: 202106
     papers: P2136R3
+- name: __cpp_lib_ios_noreplace
+  header_list: ios
+  rows:
+  - value: 202207
+    papers: P2467R1
 - name: __cpp_lib_is_aggregate
   header_list: type_traits
   rows:
@@ -880,11 +954,20 @@ library:
   rows:
   - value: 201603
     papers: P0226R1
+- name: __cpp_lib_mdspan
+  header_list: mdspan
+  rows:
+  - value: 202207
+    papers: P0009R18 P2599R2 P2604R0 P2613R1
 - name: __cpp_lib_memory_resource
   header_list: memory_resource
   rows:
   - value: 201603
     papers: P0220R1
+- name: __cpp_lib_modules
+  rows:
+    papers: P2465R3
+    value: 202207
 - name: __cpp_lib_monadic_optional
   header_list: optional
   rows:
@@ -893,6 +976,11 @@ library:
   - value: 202202
     papers: LWG3621
     removed: true
+- name: __cpp_lib_move_iterator_concept
+  header_list: iterator
+  rows:
+  - value: 202207
+    papers: P2520R0
 - name: __cpp_lib_move_only_function
   header_list: functional
   rows:
@@ -945,6 +1033,11 @@ library:
   rows:
   - value: 201902
     papers: P0339R6 LWG3437
+- name: __cpp_lib_print
+  header_list: ostream print
+  rows:
+  - value: 202207
+    papers: P2093R14
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
@@ -965,6 +1058,23 @@ library:
     papers: P2415R2
   - value: 202202
     papers: P2387R3
+  - value: 202207
+    papers: P2494R2
+- name: __cpp_lib_ranges_as_const
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P2278R4
+- name: __cpp_lib_ranges_as_rvalue
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P2446R2
+- name: __cpp_lib_ranges_cartesian_product
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P2374R4 P2540R1
 - name: __cpp_lib_ranges_chunk
   header_list: ranges
   rows:
@@ -975,6 +1085,16 @@ library:
   rows:
   - value: 202202
     papers: P2443R1
+- name: __cpp_lib_ranges_contains
+  header_list: algorithm
+  rows:
+  - value: 202207
+    papers: P2302R4
+- name: __cpp_lib_ranges_fold
+  header_list: algorithm
+  rows:
+  - value: 202207
+    papers: P2322R6
 - name: __cpp_lib_ranges_iota
   header_list: numeric
   rows:
@@ -985,6 +1105,11 @@ library:
   rows:
   - value: 202202
     papers: P2441R2
+- name: __cpp_lib_ranges_repeat
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P2474R2
 - name: __cpp_lib_ranges_slide
   header_list: ranges
   rows:
@@ -995,6 +1120,11 @@ library:
   rows:
   - value: 202106
     papers: P1659R3
+- name: __cpp_lib_ranges_stride
+  header_list: ranges
+  rows:
+  - value: 202207
+    papers: P1899R3
 - name: __cpp_lib_ranges_to_container
   header_list: ranges
   rows:
@@ -1108,6 +1238,11 @@ library:
   rows:
   - value: 202011
     papers: P0881R7
+- name: __cpp_lib_start_lifetime_as
+  header_list: memory
+  rows:
+  - value: 202207
+    papers: P2590R2
 - name: __cpp_lib_starts_ends_with
   header_list: string string_view
   rows:
@@ -1193,6 +1328,11 @@ library:
   rows:
   - value: 201402
     papers: N3887
+- name: __cpp_lib_tuple_like
+  header_list: map tuple unordered_map utility
+  rows:
+  - value: 202207
+    papers: P2165R4
 - name: __cpp_lib_tuples_by_type
   header_list: tuple utility
   rows:
