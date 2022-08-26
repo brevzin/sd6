@@ -129,7 +129,7 @@ doc.update_library(name='__cpp_lib_format', papers='P2419R2')
 doc.add_library(name='__cpp_lib_ranges_as_rvalue', papers='P2446R2', headers='ranges')
 
 # lwg motion 26: P2465R3 (Standard Library Modules std and std.compat)
-doc.doc['library'].append({'name': '__cpp_lib_modules', 'rows': {'value': 202207, 'papers': 'P2465R3'}})
+doc.doc['library'].append({'name': '__cpp_lib_modules', 'rows': [{'value': 202207, 'papers': 'P2465R3'}]})
 
 # lwg motion 27: P2445R1 (std::forward_like)
 doc.add_library(name='__cpp_lib_forward_like', papers='P2445R1', headers='utility')
