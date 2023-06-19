@@ -98,6 +98,8 @@ language:
   rows:
   - value: 201811
     papers: P1073R3
+  - value: 202211
+    papers: P2564R3
 - name: __cpp_constexpr
   rows:
   - value: 200704
@@ -118,6 +120,8 @@ language:
     papers: P2242R3
   - value: 202207
     papers: P2448R2
+  - value: 202211
+    papers: P2647R1
 - name: __cpp_constexpr_dynamic_alloc
   rows:
   - value: 201907
@@ -248,6 +252,8 @@ language:
   rows:
   - value: 202110
     papers: P2128R6
+  - value: 202211
+    papers: P2589R1
 - name: __cpp_named_character_escapes
   rows:
   - value: 202207
@@ -567,12 +573,12 @@ library:
   - value: 202207
     papers: P2404R3
 - name: __cpp_lib_constexpr_algorithms
-  header_list: algorithm
+  header_list: algorithm utility
   rows:
   - value: 201703
     papers: P0202R3
   - value: 201806
-    papers: P0879R0 LWG3256
+    papers: P0879R0 LWG3256 LWG3792
 - name: __cpp_lib_constexpr_bitset
   header_list: bitset
   rows:
@@ -712,6 +718,8 @@ library:
   rows:
   - value: 202202
     papers: P0323R12
+  - value: 202211
+    papers: P2505R5
 - name: __cpp_lib_filesystem
   header_list: filesystem
   rows:
@@ -1060,6 +1068,8 @@ library:
     papers: P2387R3
   - value: 202207
     papers: P2494R2
+  - value: 202211
+    papers: P2602R2
 - name: __cpp_lib_ranges_as_const
   header_list: ranges
   rows:

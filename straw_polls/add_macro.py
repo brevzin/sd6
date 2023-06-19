@@ -1,6 +1,7 @@
 import argparse
 import yaml
 from collections import *
+from contextlib import contextmanager
 
 def ordered_load(stream, Loader=yaml.Loader, object_pairs_hook=OrderedDict):
     class OrderedLoader(Loader):
@@ -36,6 +37,14 @@ class Document(object):
         self.filename = filename
         self.value = value
         self.doc = ordered_load(open(filename))
+
+    @contextmanager
+    def row_for(self, kind, name):
+        specific = self.doc[kind]
+        for row in specific:
+            if row['name'] == name:
+                yield row
+        specific.sort(key=lambda d: d['name'])
 
     def change(self, kind, name, args, issue):
         specific = self.doc[kind]
