@@ -293,6 +293,8 @@ language:
     papers: N2930
   - value: 201603
     papers: P0184R0
+  - value: 202302
+    papers: P2644R1 P2718R0 CWG2569
 - name: __cpp_raw_strings
   rows:
   - value: 200710
@@ -481,6 +483,8 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
+  - value: 202302
+    papers: P2588R3
 - name: __cpp_lib_bind_back
   header_list: functional
   rows:
@@ -556,6 +560,16 @@ library:
   rows:
   - value: 201603
     papers: P0025R0
+- name: __cpp_lib_common_reference
+  header_list: type_traits
+  rows:
+  - value: 202302
+    papers: P2655R3
+- name: __cpp_lib_common_reference_wrapper
+  header_list: functional
+  rows:
+  - value: 202302
+    papers: P2655R3
 - name: __cpp_lib_complex_udls
   header_list: complex
   rows:
@@ -729,11 +743,6 @@ library:
     papers: P0219R1 P0392R0
   - value: 201703
     papers: P0317R1
-- name: __cpp_lib_find_last
-  header_list: algorithm
-  rows:
-  - value: 202207
-    papers: P1223R5
 - name: __cpp_lib_flat_map
   header_list: flat_map
   rows:
@@ -870,6 +879,11 @@ library:
   rows:
   - value: 201402
     papers: LWG2112
+- name: __cpp_lib_is_implicit_lifetime
+  header_list: type_traits
+  rows:
+  - value: 202302
+    papers: P2674R1
 - name: __cpp_lib_is_invocable
   header_list: type_traits
   rows:
@@ -1070,6 +1084,8 @@ library:
     papers: P2494R2
   - value: 202211
     papers: P2602R2
+  - value: 202302
+    papers: P2609R3
 - name: __cpp_lib_ranges_as_const
   header_list: ranges
   rows:
@@ -1100,6 +1116,16 @@ library:
   rows:
   - value: 202207
     papers: P2302R4
+- name: __cpp_lib_ranges_enumerate
+  header_list: ranges
+  rows:
+  - value: 202302
+    papers: P2164R9
+- name: __cpp_lib_ranges_find_last
+  header_list: algorithm
+  rows:
+  - value: 202207
+    papers: P1223R5 LWG3807
 - name: __cpp_lib_ranges_fold
   header_list: algorithm
   rows:
