@@ -44,6 +44,7 @@ class Document(object):
         for row in specific:
             if row['name'] == name:
                 yield row
+                break
         specific.sort(key=lambda d: d['name'])
 
     def change(self, kind, name, args, issue):

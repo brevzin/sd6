@@ -122,6 +122,8 @@ language:
     papers: P2448R2
   - value: 202211
     papers: P2647R1
+  - value: 202306
+    papers: P2738R1
 - name: __cpp_constexpr_dynamic_alloc
   rows:
   - value: 201907
@@ -287,6 +289,10 @@ language:
   rows:
   - value: 200809
     papers: N2756
+- name: __cpp_placeholder_variables
+  rows:
+  - value: 202306
+    papers: P2169R4
 - name: __cpp_range_based_for
   rows:
   - value: 200907
@@ -329,6 +335,8 @@ language:
     papers: N1720
   - value: 201411
     papers: N3928
+  - value: 202306
+    papers: P2741R3
 - name: __cpp_static_call_operator
   rows:
   - value: 202207
@@ -394,6 +402,8 @@ library:
   rows:
   - value: 202106
     papers: P0401R6
+  - value: 202306
+    papers: LWG3887
 - name: __cpp_lib_allocator_traits_is_always_equal
   header_list: memory scoped_allocator string deque forward_list list vector map set
     unordered_map unordered_set
@@ -433,6 +443,11 @@ library:
   rows:
   - value: 202110
     papers: P2077R3
+- name: __cpp_lib_associative_heterogeneous_insertion
+  header_list: map set unordered_map unordered_set
+  rows:
+  - value: 202306
+    papers: P2363R5
 - name: __cpp_lib_assume_aligned
   header_list: memory
   rows:
@@ -490,6 +505,8 @@ library:
   rows:
   - value: 202202
     papers: P2387R3
+  - value: 202306
+    papers: P2714R1
 - name: __cpp_lib_bind_front
   header_list: functional
   rows:
@@ -497,6 +514,8 @@ library:
     papers: P0356R5
   - value: 201907
     papers: P1651R0
+  - value: 202306
+    papers: P2714R1
 - name: __cpp_lib_bit_cast
   header_list: bit
   rows:
@@ -507,6 +526,11 @@ library:
   rows:
   - value: 201907
     papers: P0553R4
+- name: __cpp_lib_bitset
+  header_list: bitset
+  rows:
+  - value: 202306
+    papers: P2697R1
 - name: __cpp_lib_bool_constant
   header_list: type_traits
   rows:
@@ -550,6 +574,8 @@ library:
     papers: P0355R7
   - value: 201907
     papers: P1466R3
+  - value: 202306
+    papers: P2592R3
 - name: __cpp_lib_chrono_udls
   header_list: chrono
   rows:
@@ -593,6 +619,8 @@ library:
     papers: P0202R3
   - value: 201806
     papers: P0879R0 LWG3256 LWG3792
+  - value: 202306
+    papers: P2562R1
 - name: __cpp_lib_constexpr_bitset
   header_list: bitset
   rows:
@@ -608,11 +636,15 @@ library:
   rows:
   - value: 202202
     papers: P0533R9
+  - value: 202306
+    papers: P1383R2
 - name: __cpp_lib_constexpr_complex
   header_list: complex
   rows:
   - value: 201711
     papers: P0415R1
+  - value: 202306
+    papers: P1383R2
 - name: __cpp_lib_constexpr_dynamic_alloc
   header_list: memory
   rows:
@@ -684,6 +716,11 @@ library:
   rows:
   - value: 202202
     papers: P1206R7
+- name: __cpp_lib_copyable_function
+  header_list: functional
+  rows:
+  - value: 202306
+    papers: P2548R6
 - name: __cpp_lib_coroutine
   header_list: coroutine
   rows:
@@ -764,6 +801,12 @@ library:
     papers: P2372R3 P2418R2
   - value: 202207
     papers: P2419R2 P2508R1
+  - value: 202304
+    papers: P2510R3
+  - value: 202305
+    papers: P2757R3
+  - value: 202306
+    papers: P2637R3
 - name: __cpp_lib_format_ranges
   header_list: format
   rows:
@@ -774,6 +817,91 @@ library:
   rows:
   - value: 202207
     papers: P2445R1
+- name: __cpp_lib_freestanding_char_traits
+  header_list: string
+  rows:
+  - value: 202306
+    papers: P2338R4
+- name: __cpp_lib_freestanding_charconv
+  header_list: charconv
+  rows:
+  - value: 202306
+    papers: P2338R4
+- name: __cpp_lib_freestanding_cstdlib
+  header_list: cmath cstdlib
+  rows:
+  - value: 202306
+    papers: P2338R4
+- name: __cpp_lib_freestanding_cstring
+  header_list: cstring
+  rows:
+  - value: 202306
+    papers: P2338R4
+- name: __cpp_lib_freestanding_cwchar
+  header_list: cwchar
+  rows:
+  - value: 202306
+    papers: P2338R4
+- name: __cpp_lib_freestanding_errc
+  header_list: cerrno system_error
+  rows:
+  - value: 202306
+    papers: P2338R4
+- name: __cpp_lib_freestanding_feature_test_macros
+  header_list: ''
+  rows:
+    value: 202306
+    papers: P2198R7
+- name: __cpp_lib_freestanding_functional
+  header_list: functional
+  rows:
+  - value: 202306
+    papers: P2198R7
+- name: __cpp_lib_freestanding_iterator
+  header_list: iterator
+  rows:
+  - value: 202306
+    papers: P2198R7
+- name: __cpp_lib_freestanding_memory
+  header_list: memory
+  rows:
+  - value: 202306
+    papers: P2198R7
+- name: __cpp_lib_freestanding_operator_new
+  header_list: operator_new
+  rows:
+  - value: 202306
+    papers: P2198R7
+- name: __cpp_lib_freestanding_ranges
+  header_list: ranges
+  rows:
+  - value: 202306
+    papers: P2198R7
+- name: __cpp_lib_freestanding_ratio
+  header_list: ratio
+  rows:
+  - value: 202306
+    papers: P2198R7
+- name: __cpp_lib_freestanding_tuple
+  header_list: tuple
+  rows:
+  - value: 202306
+    papers: P2198R7
+- name: __cpp_lib_freestanding_utility
+  header_list: utility
+  rows:
+  - value: 202306
+    papers: P2198R7
+- name: __cpp_lib_fstream_native_handle
+  header_list: fstream
+  rows:
+  - value: 202306
+    papers: P1759R6
+- name: __cpp_lib_function_ref
+  header_list: functional
+  rows:
+  - value: 202306
+    papers: P0792R14
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -812,6 +940,11 @@ library:
   rows:
   - value: 201606
     papers: P0258R2
+- name: __cpp_lib_hazard_pointer
+  header_list: hazard_pointer
+  rows:
+  - value: 202306
+    papers: P2545R4
 - name: __cpp_lib_hypot
   header_list: cmath
   rows:
@@ -1024,6 +1157,8 @@ library:
   rows:
   - value: 201603
     papers: P0005R4
+  - value: 202306
+    papers: P2714R1
 - name: __cpp_lib_null_iterators
   header_list: iterator
   rows:
@@ -1171,11 +1306,21 @@ library:
   rows:
   - value: 202110
     papers: P2321R2
+- name: __cpp_lib_ratio
+  header_list: ratio
+  rows:
+  - value: 202306
+    papers: P2734R0
 - name: __cpp_lib_raw_memory_algorithms
   header_list: memory
   rows:
   - value: 201606
     papers: P0040R3
+- name: __cpp_lib_rcu
+  header_list: rcu
+  rows:
+  - value: 202306
+    papers: P2545R4
 - name: __cpp_lib_reference_from_temporary
   header_list: type_traits
   rows:
@@ -1240,6 +1385,11 @@ library:
     papers: P0769R2
   - value: 202202
     papers: P2440R1
+- name: __cpp_lib_smart_pointer_owner_equality
+  header_list: memory
+  rows:
+  - value: 202306
+    papers: P1901R2
 - name: __cpp_lib_smart_ptr_for_overwrite
   header_list: memory
   rows:
@@ -1269,6 +1419,11 @@ library:
   rows:
   - value: 201902
     papers: P1227R2
+- name: __cpp_lib_sstream_from_string_view
+  header_list: sstream
+  rows:
+  - value: 202306
+    papers: P2495R3
 - name: __cpp_lib_stacktrace
   header_list: stacktrace
   rows:
@@ -1313,6 +1468,11 @@ library:
     papers: P0254R2
   - value: 201803
     papers: P0858R0 LWG3257
+- name: __cpp_lib_submdspan
+  header_list: mdspan
+  rows:
+  - value: 202306
+    papers: P2630R4
 - name: __cpp_lib_syncbuf
   header_list: syncstream
   rows:
@@ -1320,6 +1480,11 @@ library:
     papers: P0053R7
   - value: 201803
     papers: P0753R2
+- name: __cpp_lib_text_encoding
+  header_list: text_encoding
+  rows:
+  - value: 202306
+    papers: P1885R12
 - name: __cpp_lib_three_way_comparison
   header_list: compare
   rows:
@@ -1342,6 +1507,13 @@ library:
   rows:
   - value: 201611
     papers: P0067R5 P0682R1 LWG3137
+  - value: 202306
+    papers: P2497R0
+- name: __cpp_lib_to_string
+  header_list: string
+  rows:
+  - value: 202306
+    papers: P2587R3
 - name: __cpp_lib_to_underlying
   header_list: utility
   rows:
@@ -1413,8 +1585,15 @@ library:
     papers: P2162R2
   - value: 202106
     papers: P2231R1
+  - value: 202306
+    papers: P2637R3
 - name: __cpp_lib_void_t
   header_list: type_traits
   rows:
   - value: 201411
     papers: N3911
+- name: __cpp_lib_within_lifetime
+  header_list: type_traits
+  rows:
+  - value: 202306
+    papers: P2641R4
