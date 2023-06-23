@@ -109,7 +109,7 @@ language:
   - value: 201806
     papers: P1064R0
   - value: 201811
-    papers: P1002R1 P1327R1 P1330R0
+    papers: P1002R1 P1327R1
   - value: 201907
     papers: P1331R2 P1668R1
   - value: 202002
