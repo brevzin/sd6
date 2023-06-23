@@ -850,7 +850,7 @@ library:
 - name: __cpp_lib_freestanding_feature_test_macros
   header_list: ''
   rows:
-    value: 202306
+  - value: 202306
     papers: P2198R7
 - name: __cpp_lib_freestanding_functional
   header_list: functional
