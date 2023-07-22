@@ -1052,6 +1052,11 @@ library:
   rows:
   - value: 201603
     papers: P0185R1
+- name: __cpp_lib_is_within_lifetime
+  header_list: type_traits
+  rows:
+  - value: 202306
+    papers: P2641R4
 - name: __cpp_lib_jthread
   header_list: stop_token thread
   rows:
@@ -1592,8 +1597,3 @@ library:
   rows:
   - value: 201411
     papers: N3911
-- name: __cpp_lib_within_lifetime
-  header_list: type_traits
-  rows:
-  - value: 202306
-    papers: P2641R4

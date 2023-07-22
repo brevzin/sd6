@@ -93,7 +93,7 @@ doc.update_library(name='__cpp_lib_variant', papers='P2637R3')
 doc.update_library(name='__cpp_lib_format', papers='P2637R3', value=202306)
 
 # lwg motion 22: P2641R4 (Checking if a union alternative is active)
-doc.add_library(name='__cpp_lib_within_lifetime', papers='P2641R4', headers='type_traits')
+doc.add_library(name='__cpp_lib_is_within_lifetime', papers='P2641R4', headers='type_traits')
 
 # lwg motion 23: P1759R6 (Native handles and file streams)
 doc.add_library(name='__cpp_lib_fstream_native_handle', papers='P1759R6', headers='fstream')
