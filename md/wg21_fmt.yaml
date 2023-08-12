@@ -239,6 +239,13 @@ references:
     issued:
       year: 2016
     URL: https://wg21.link/p0254r2
+  - id: P0355R7
+    citation-label: P0355R7
+    title: "Extending `<chrono>` to Calendars and Time Zones"
+    author:
+      - family: Howard E. Hinnant, Tomasz Kamiński
+    issued:
+      year: 2018
   - id: P0482R6
     citation-label: P0482R6
     title: "`char8_t`: A type for UTF-8 characters and strings (Revision 6)"
