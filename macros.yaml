@@ -70,6 +70,10 @@ language:
   rows:
   - value: 200809
     papers: N2761
+- name: __cpp_auto_cast
+  rows:
+  - value: 202110
+    papers: P0849R8
 - name: __cpp_binary_literals
   rows:
   - value: 201304
@@ -1018,6 +1022,11 @@ library:
   rows:
   - value: 202311
     papers: P2909R4
+- name: __cpp_lib_formatters
+  header_list: stacktrace thread
+  rows:
+  - value: 202302
+    papers: P2693R1
 - name: __cpp_lib_forward_like
   header_list: utility
   rows:
@@ -1905,6 +1914,11 @@ library:
   rows:
   - value: 202002
     papers: P1020R1 P1973R1
+- name: __cpp_lib_smart_ptr_owner_equality
+  header_list: memory
+  rows:
+  - value: 202306
+    papers: P1901R2
 - name: __cpp_lib_source_location
   header_list: source_location
   rows:
