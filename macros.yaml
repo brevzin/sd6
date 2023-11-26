@@ -1119,7 +1119,7 @@ library:
   - value: 202502
     papers: P2976R1
 - name: __cpp_lib_freestanding_operator_new
-  header_list: operator_new
+  header_list: new
   rows:
   - value: 202306
     papers: P2198R7
