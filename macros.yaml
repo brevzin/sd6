@@ -461,8 +461,8 @@ library:
   rows:
   - value: 202106
     papers: P0401R6
-  - value: 202306
-    papers: LWG3887
+  - value: 202302
+    papers: P2652R2 LWG3887
 - name: __cpp_lib_allocator_traits_is_always_equal
   header_list: memory scoped_allocator string deque forward_list list vector map set
     unordered_map unordered_set
