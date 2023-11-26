@@ -868,7 +868,7 @@ library:
   - value: 202306
     papers: P2198R7
 - name: __cpp_lib_freestanding_operator_new
-  header_list: operator_new
+  header_list: new
   rows:
   - value: 202306
     papers: P2198R7
