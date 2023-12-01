@@ -944,7 +944,7 @@ library:
   header_list: hazard_pointer
   rows:
   - value: 202306
-    papers: P2545R4
+    papers: P2530R3
 - name: __cpp_lib_hypot
   header_list: cmath
   rows:
