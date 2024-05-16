@@ -9,7 +9,7 @@ $(THIS_DIR)md/defaults.yaml : $(THIS_DIR)md/defaults.py
 $(OUTDIR)/sd6.md : sd6.py sd6.tmpl macros.yaml reduced.json $(THIS_DIR)md/defaults.yaml
 	python $< > $@
 
-$(OUTDIR)/sd6.html : $(OUTDIR)/sd6.md
+$(OUTDIR)/sd6.html : $(OUTDIR)/sd6.md $(DEPS)
 	$(PANDOC) --bibliography $(THIS_DIR)md/wg21_fmt.yaml --bibliography $(DATADIR)/csl.json --bibliography $(THIS_DIR)md/early.yaml
 
 reduced.json : md/wg21_fmt.yaml wg21/data/csl.json md/early.yaml reduce_refs.py
