@@ -104,7 +104,9 @@ class Document(object):
                     row['rows'].sort(key=lambda d: d['value'])
                 break
         else:
-            assert not _remove and not _update
+            if _remove or _update:
+                raise AssertionError(f"Unexpected remove/add for {name=} {papers=}")
+            # assert not _remove and not _update
             # add a new macro
             items = [('name', name)]
             if kind == 'library':

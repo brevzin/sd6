@@ -289,6 +289,10 @@ language:
   rows:
   - value: 200809
     papers: N2756
+- name: __cpp_pack_indexing
+  rows:
+  - value: 202311
+    papers: P2662R3
 - name: __cpp_placeholder_variables
   rows:
   - value: 202306
@@ -726,6 +730,11 @@ library:
   rows:
   - value: 201902
     papers: P0912R5 LWG3393
+- name: __cpp_lib_debugging
+  header_list: debugging
+  rows:
+  - value: 202311
+    papers: P2546R5
 - name: __cpp_lib_deduction_guides
   rows:
   - value: 201703
@@ -807,16 +816,33 @@ library:
     papers: P2757R3
   - value: 202306
     papers: P2637R3
+  - value: 202311
+    papers: P2918R2
 - name: __cpp_lib_format_ranges
   header_list: format
   rows:
   - value: 202207
     papers: P2286R8 P2585R1 LWG3750
+- name: __cpp_lib_format_uchar
+  header_list: format
+  rows:
+  - value: 202311
+    papers: P2909R4
 - name: __cpp_lib_forward_like
   header_list: utility
   rows:
   - value: 202207
     papers: P2445R1
+- name: __cpp_lib_freestanding_algorithm
+  header_list: algorithm
+  rows:
+  - value: 202311
+    papers: P2407R5
+- name: __cpp_lib_freestanding_array
+  header_list: array
+  rows:
+  - value: 202311
+    papers: P2407R5
 - name: __cpp_lib_freestanding_char_traits
   header_list: string
   rows:
@@ -837,6 +863,8 @@ library:
   rows:
   - value: 202306
     papers: P2338R4
+  - value: 202311
+    papers: P2937R0
 - name: __cpp_lib_freestanding_cwchar
   header_list: cwchar
   rows:
@@ -847,6 +875,11 @@ library:
   rows:
   - value: 202306
     papers: P2338R4
+- name: __cpp_lib_freestanding_expected
+  header_list: expected
+  rows:
+  - value: 202311
+    papers: P2833R2
 - name: __cpp_lib_freestanding_feature_test_macros
   header_list: ''
   rows:
@@ -862,6 +895,11 @@ library:
   rows:
   - value: 202306
     papers: P2198R7
+- name: __cpp_lib_freestanding_mdspan
+  header_list: mdspan
+  rows:
+  - value: 202311
+    papers: P2833R2
 - name: __cpp_lib_freestanding_memory
   header_list: memory
   rows:
@@ -872,6 +910,11 @@ library:
   rows:
   - value: 202306
     papers: P2198R7
+- name: __cpp_lib_freestanding_optional
+  header_list: optional
+  rows:
+  - value: 202311
+    papers: P2407R5
 - name: __cpp_lib_freestanding_ranges
   header_list: ranges
   rows:
@@ -882,6 +925,11 @@ library:
   rows:
   - value: 202306
     papers: P2198R7
+- name: __cpp_lib_freestanding_string_view
+  header_list: string_view
+  rows:
+  - value: 202311
+    papers: P2407R5
 - name: __cpp_lib_freestanding_tuple
   header_list: tuple
   rows:
@@ -892,6 +940,11 @@ library:
   rows:
   - value: 202306
     papers: P2198R7
+- name: __cpp_lib_freestanding_variant
+  header_list: variant
+  rows:
+  - value: 202311
+    papers: P2407R5
 - name: __cpp_lib_fstream_native_handle
   header_list: fstream
   rows:
@@ -1074,6 +1127,11 @@ library:
   rows:
   - value: 201606
     papers: P0137R1
+- name: __cpp_lib_linalg
+  header_list: linalg
+  rows:
+  - value: 202311
+    papers: P1673R13
 - name: __cpp_lib_list_remove_return_type
   header_list: forward_list list
   rows:
@@ -1185,6 +1243,8 @@ library:
   rows:
   - value: 202106
     papers: P1132R7
+  - value: 202311
+    papers: P2833R2
 - name: __cpp_lib_parallel_algorithm
   header_list: algorithm numeric
   rows:
@@ -1231,6 +1291,8 @@ library:
   rows:
   - value: 202207
     papers: P2278R4
+  - value: 202311
+    papers: P2836R1
 - name: __cpp_lib_ranges_as_rvalue
   header_list: ranges
   rows:
@@ -1351,6 +1413,11 @@ library:
   rows:
   - value: 201603
     papers: P0220R1
+- name: __cpp_lib_saturation_arithmetic
+  header_list: numeric
+  rows:
+  - value: 202311
+    papers: P0543R3
 - name: __cpp_lib_scoped_lock
   header_list: mutex
   rows:
@@ -1414,6 +1481,13 @@ library:
     papers: P1024R3
   - value: 202002
     papers: P1976R2
+  - value: 202311
+    papers: P2821R5 P2833R2
+- name: __cpp_lib_span_initializer_list
+  header_list: span
+  rows:
+  - value: 202311
+    papers: P2447R6
 - name: __cpp_lib_spanstream
   header_list: spanstream
   rows:
@@ -1546,6 +1620,8 @@ library:
   rows:
   - value: 202207
     papers: P2165R4
+  - value: 202311
+    papers: P2819R2
 - name: __cpp_lib_tuples_by_type
   header_list: tuple utility
   rows:
