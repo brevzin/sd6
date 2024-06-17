@@ -42,6 +42,10 @@ attributes:
   - value: 201803
     papers: P0479R5
 language:
+- name: ' __cpp_deleted_function'
+  rows:
+  - value: 202403
+    papers: P2573R2
 - name: __cpp_aggregate_bases
   rows:
   - value: 201603
@@ -349,6 +353,8 @@ language:
   rows:
   - value: 201606
     papers: P0217R3
+  - value: 202403
+    papers: P0609R3
 - name: __cpp_template_template_args
   rows:
   - value: 201611
@@ -377,6 +383,10 @@ language:
   rows:
   - value: 201304
     papers: N3651
+- name: __cpp_variadic_friend
+  rows:
+  - value: 202403
+    papers: P2893R3
 - name: __cpp_variadic_templates
   rows:
   - value: 200704
@@ -477,6 +487,11 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
+- name: __cpp_lib_atomic_min_max
+  header_list: atomic
+  rows:
+  - value: 202403
+    papers: P0493R5
 - name: __cpp_lib_atomic_ref
   header_list: atomic
   rows:
@@ -714,6 +729,11 @@ library:
   rows:
   - value: 201907
     papers: P1004R2
+- name: __cpp_lib_constrained_equality
+  header_list: utility tuple optional variant
+  rows:
+  - value: 202403
+    papers: P2944R3
 - name: __cpp_lib_containers_ranges
   header_list: vector list forward_list map set unordered_map unordered_set deque
     queue stack string
@@ -735,10 +755,17 @@ library:
   rows:
   - value: 202311
     papers: P2546R5
+  - value: 202403
+    papers: P2810R4
 - name: __cpp_lib_deduction_guides
   rows:
   - value: 201703
     papers: P0433R2
+- name: __cpp_lib_default_template_type_for_algorithm_values
+  header_list: algorithm ranges string deque list forward_list vector
+  rows:
+  - value: 202403
+    papers: P2248R8
 - name: __cpp_lib_destroying_delete
   header_list: new
   rows:
@@ -818,6 +845,11 @@ library:
     papers: P2637R3
   - value: 202311
     papers: P2918R2
+- name: __cpp_lib_format_path
+  header_list: filesystem
+  rows:
+  - value: 202403
+    papers: P2845R8
 - name: __cpp_lib_format_ranges
   header_list: format
   rows:
@@ -960,6 +992,11 @@ library:
   rows:
   - value: 201606
     papers: P0295R0
+- name: __cpp_lib_generate_random
+  header_list: random
+  rows:
+  - value: 202403
+    papers: P1068R11
 - name: __cpp_lib_generator
   header_list: generator
   rows:
@@ -1260,6 +1297,8 @@ library:
   rows:
   - value: 202207
     papers: P2093R14
+  - value: 202403
+    papers: P3107R5
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
@@ -1313,6 +1352,11 @@ library:
   rows:
   - value: 202202
     papers: P2443R1
+- name: __cpp_lib_ranges_concat
+  header_list: ranges
+  rows:
+  - value: 202403
+    papers: P2542R8
 - name: __cpp_lib_ranges_contains
   header_list: algorithm
   rows:
@@ -1393,6 +1437,11 @@ library:
   rows:
   - value: 202202
     papers: P2255R2
+- name: __cpp_lib_reference_wrapper
+  header_list: functional
+  rows:
+  - value: 202403
+    papers: P2944R3
 - name: __cpp_lib_remove_cvref
   header_list: type_traits
   rows:
@@ -1547,11 +1596,15 @@ library:
     papers: P0254R2
   - value: 201803
     papers: P0858R0 LWG3257
+  - value: 202403
+    papers: P2591R5
 - name: __cpp_lib_submdspan
   header_list: mdspan
   rows:
   - value: 202306
     papers: P2630R4
+  - value: 202403
+    papers: P2642R6
 - name: __cpp_lib_syncbuf
   header_list: syncstream
   rows:
