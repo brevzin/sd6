@@ -24053,5 +24053,6 @@
     "SD6": "SG10 Feature Test Recommendations",
     "SD7": "Mailing Procedures and How to Write Papers",
     "SD8": "Standard Library Compatibility",
-    "SD9": "Library Evolution Policies"
+    "SD9": "Library Evolution Policies",
+    "P2642R6": "Padded mdspan layouts"
 }
