@@ -307,8 +307,8 @@ language:
     papers: N2930
   - value: 201603
     papers: P0184R0
-  - value: 202302
-    papers: P2644R1 P2718R0 CWG2569
+  - value: 202211
+    papers: P2644R1 P2718R0 CWG2659
 - name: __cpp_raw_strings
   rows:
   - value: 200710
