@@ -864,7 +864,7 @@ library:
   - value: 201907
     papers: P1004R2
 - name: __cpp_lib_constrained_equality
-  header_list: utility tuple optional variant
+  header_list: utility tuple optional variant expected
   rows:
   - value: 202403
     papers: P2944R3
