@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="generator" content="mpark/wg21" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
-  <meta name="dcterms.date" content="2024-09-24" />
+  <meta name="dcterms.date" content="2025-04-27" />
   <title>Feature-Test Macros and Policies</title>
   <style>
       code{white-space: pre-wrap;}
@@ -545,7 +545,7 @@ Policies</h1>
   </tr>
   <tr>
     <td>Date:</td>
-    <td>2024-09-24</td>
+    <td>2025-04-27</td>
   </tr>
   <tr>
     <td style="vertical-align:top">Project:</td>
@@ -1278,7 +1278,7 @@ Member Functions
 </td>
 </tr>
 <tr style="background-color: white">
-<td rowspan="11">
+<td rowspan="12">
 <span id="__cpp_constexpr"><a href="#__cpp_constexpr" style="text-decoration:none"><code class="sourceCode cpp">__cpp_constexpr</code></a></span>
 </td>
 <td>
@@ -1381,6 +1381,14 @@ variables in constexpr functions
 towards constexpr type-erasure
 </td>
 </tr>
+<tr style="background-color: white">
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2747R2">[<a href="https://wg21.link/p2747r2" role="doc-biblioref">P2747R2</a>]</span> constexpr placement new
+</td>
+</tr>
 <tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_constexpr_dynamic_alloc"><a href="#__cpp_constexpr_dynamic_alloc" style="text-decoration:none"><code class="sourceCode cpp">__cpp_constexpr_dynamic_alloc</code></a></span>
@@ -1394,6 +1402,18 @@ towards constexpr type-erasure
 </tr>
 <tr style="background-color: white">
 <td rowspan="1">
+<span id="__cpp_constexpr_exceptions"><a href="#__cpp_constexpr_exceptions" style="text-decoration:none"><code class="sourceCode cpp">__cpp_constexpr_exceptions</code></a></span>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3068R6">[<a href="https://wg21.link/p3068r6" role="doc-biblioref">P3068R6</a>]</span> Allowing exception throwing in
+constant-evaluation
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
+<td rowspan="1">
 <span id="__cpp_constexpr_in_decltype"><a href="#__cpp_constexpr_in_decltype" style="text-decoration:none"><code class="sourceCode cpp">__cpp_constexpr_in_decltype</code></a></span>
 </td>
 <td>
@@ -1404,7 +1424,7 @@ towards constexpr type-erasure
 constexpr member functions defined?
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_constinit"><a href="#__cpp_constinit" style="text-decoration:none"><code class="sourceCode cpp">__cpp_constinit</code></a></span>
 </td>
@@ -1417,7 +1437,7 @@ constexpr member functions defined?
 keyword
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_decltype"><a href="#__cpp_decltype" style="text-decoration:none"><code class="sourceCode cpp">__cpp_decltype</code></a></span>
 </td>
@@ -1429,7 +1449,7 @@ keyword
 Decltype (revision 7): proposed wording
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_decltype_auto"><a href="#__cpp_decltype_auto" style="text-decoration:none"><code class="sourceCode cpp">__cpp_decltype_auto</code></a></span>
 </td>
@@ -1441,7 +1461,7 @@ Decltype (revision 7): proposed wording
 Return type deduction for normal functions
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="4">
 <span id="__cpp_deduction_guides"><a href="#__cpp_deduction_guides" style="text-decoration:none"><code class="sourceCode cpp">__cpp_deduction_guides</code></a></span>
 </td>
@@ -1453,7 +1473,7 @@ Return type deduction for normal functions
 class templates (Rev. 6)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201611</span></code>
 </td>
@@ -1462,7 +1482,7 @@ class templates (Rev. 6)
 Deduction Assorted NB resolution and issues
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201703</span></code>
 </td>
@@ -1471,7 +1491,7 @@ Deduction Assorted NB resolution and issues
 argument deduction issues
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201907</span></code>
 </td>
@@ -1481,7 +1501,7 @@ Argument Deduction for Alias Templates <br /><span class="citation" data-cites="
 argument deduction for aggregates
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_delegating_constructors"><a href="#__cpp_delegating_constructors" style="text-decoration:none"><code class="sourceCode cpp">__cpp_delegating_constructors</code></a></span>
 </td>
@@ -1493,7 +1513,7 @@ argument deduction for aggregates
 Delegating Constructors (revision 3)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_designated_initializers"><a href="#__cpp_designated_initializers" style="text-decoration:none"><code class="sourceCode cpp">__cpp_designated_initializers</code></a></span>
 </td>
@@ -1505,7 +1525,7 @@ Delegating Constructors (revision 3)
 Wording
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_enumerator_attributes"><a href="#__cpp_enumerator_attributes" style="text-decoration:none"><code class="sourceCode cpp">__cpp_enumerator_attributes</code></a></span>
 </td>
@@ -1517,7 +1537,7 @@ Wording
 Attributes for namespaces and enumerators
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_exceptions"><a href="#__cpp_exceptions" style="text-decoration:none"><code class="sourceCode cpp">__cpp_exceptions</code></a></span>
 </td>
@@ -1528,7 +1548,7 @@ Attributes for namespaces and enumerators
 Exception handling
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_explicit_this_parameter"><a href="#__cpp_explicit_this_parameter" style="text-decoration:none"><code class="sourceCode cpp">__cpp_explicit_this_parameter</code></a></span>
 </td>
@@ -1539,7 +1559,7 @@ Exception handling
 <span class="citation" data-cites="P0847R7">[<a href="https://wg21.link/p0847r7" role="doc-biblioref">P0847R7</a>]</span> Deducing this
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_fold_expressions"><a href="#__cpp_fold_expressions" style="text-decoration:none"><code class="sourceCode cpp">__cpp_fold_expressions</code></a></span>
 </td>
@@ -1551,7 +1571,7 @@ Exception handling
 Folding Expressions
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201603</span></code>
 </td>
@@ -1560,7 +1580,7 @@ Folding Expressions
 Packs (Revision 1)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_generic_lambdas"><a href="#__cpp_generic_lambdas" style="text-decoration:none"><code class="sourceCode cpp">__cpp_generic_lambdas</code></a></span>
 </td>
@@ -1572,7 +1592,7 @@ Packs (Revision 1)
 Generic (Polymorphic) Lambda Expressions (Revision 3)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">201707</span></code>
 </td>
@@ -1581,7 +1601,7 @@ Generic (Polymorphic) Lambda Expressions (Revision 3)
 generic lambdas
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_guaranteed_copy_elision"><a href="#__cpp_guaranteed_copy_elision" style="text-decoration:none"><code class="sourceCode cpp">__cpp_guaranteed_copy_elision</code></a></span>
 </td>
@@ -1593,7 +1613,7 @@ generic lambdas
 elision through simplified value categories
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_hex_float"><a href="#__cpp_hex_float" style="text-decoration:none"><code class="sourceCode cpp">__cpp_hex_float</code></a></span>
 </td>
@@ -1605,7 +1625,7 @@ elision through simplified value categories
 C++
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_if_consteval"><a href="#__cpp_if_consteval" style="text-decoration:none"><code class="sourceCode cpp">__cpp_if_consteval</code></a></span>
 </td>
@@ -1616,7 +1636,7 @@ C++
 <span class="citation" data-cites="P1938R3">[<a href="https://wg21.link/p1938r3" role="doc-biblioref">P1938R3</a>]</span> if consteval
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_if_constexpr"><a href="#__cpp_if_constexpr" style="text-decoration:none"><code class="sourceCode cpp">__cpp_if_constexpr</code></a></span>
 </td>
@@ -1628,7 +1648,7 @@ C++
 different syntax
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_impl_coroutine"><a href="#__cpp_impl_coroutine" style="text-decoration:none"><code class="sourceCode cpp">__cpp_impl_coroutine</code></a></span>
 </td>
@@ -1641,7 +1661,7 @@ working draft <br /><span class="citation" data-cites="LWG3393">[<a href="https:
 macro for coroutines
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_impl_destroying_delete"><a href="#__cpp_impl_destroying_delete" style="text-decoration:none"><code class="sourceCode cpp">__cpp_impl_destroying_delete</code></a></span>
 </td>
@@ -1653,7 +1673,7 @@ macro for coroutines
 variable sized classes
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="3">
 <span id="__cpp_impl_three_way_comparison"><a href="#__cpp_impl_three_way_comparison" style="text-decoration:none"><code class="sourceCode cpp">__cpp_impl_three_way_comparison</code></a></span>
 </td>
@@ -1666,7 +1686,7 @@ variable sized classes
 Spaceship (Comparison) Operator
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201902</span></code>
 </td>
@@ -1674,7 +1694,7 @@ Spaceship (Comparison) Operator
 <span class="citation" data-cites="P1185R2">[<a href="https://wg21.link/p1185r2" role="doc-biblioref">P1185R2</a>]</span> <code class="sourceCode cpp"><span class="op">&lt;=&gt;</span> <span class="op">!=</span> <span class="op">==</span></code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201907</span></code>
 </td>
@@ -1682,7 +1702,7 @@ Spaceship (Comparison) Operator
 <span class="citation" data-cites="P1630R1">[<a href="https://wg21.link/p1630r1" role="doc-biblioref">P1630R1</a>]</span> Spaceship needs a tune-up
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_implicit_move"><a href="#__cpp_implicit_move" style="text-decoration:none"><code class="sourceCode cpp">__cpp_implicit_move</code></a></span>
 </td>
@@ -1693,7 +1713,7 @@ Spaceship (Comparison) Operator
 <span class="citation" data-cites="P2266R3">[<a href="https://wg21.link/p2266r3" role="doc-biblioref">P2266R3</a>]</span> Simpler implicit move
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_inheriting_constructors"><a href="#__cpp_inheriting_constructors" style="text-decoration:none"><code class="sourceCode cpp">__cpp_inheriting_constructors</code></a></span>
 </td>
@@ -1705,7 +1725,7 @@ Spaceship (Comparison) Operator
 Inheriting Constructors (revision 5)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201511</span></code>
 </td>
@@ -1714,7 +1734,7 @@ Inheriting Constructors (revision 5)
 constructors (core issue 1941 et al)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_init_captures"><a href="#__cpp_init_captures" style="text-decoration:none"><code class="sourceCode cpp">__cpp_init_captures</code></a></span>
 </td>
@@ -1726,7 +1746,7 @@ constructors (core issue 1941 et al)
 Wording Changes for Generalized Lambda-capture
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">201803</span></code>
 </td>
@@ -1735,7 +1755,7 @@ Wording Changes for Generalized Lambda-capture
 init-capture
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_initializer_lists"><a href="#__cpp_initializer_lists" style="text-decoration:none"><code class="sourceCode cpp">__cpp_initializer_lists</code></a></span>
 </td>
@@ -1747,7 +1767,7 @@ init-capture
 Initializer List proposed wording
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_inline_variables"><a href="#__cpp_inline_variables" style="text-decoration:none"><code class="sourceCode cpp">__cpp_inline_variables</code></a></span>
 </td>
@@ -1758,7 +1778,7 @@ Initializer List proposed wording
 <span class="citation" data-cites="P0386R2">[<a href="https://wg21.link/p0386r2" role="doc-biblioref">P0386R2</a>]</span> Inline Variables
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lambdas"><a href="#__cpp_lambdas" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lambdas</code></a></span>
 </td>
@@ -1770,7 +1790,7 @@ Initializer List proposed wording
 New wording for C++0x Lambdas (rev. 2)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_modules"><a href="#__cpp_modules" style="text-decoration:none"><code class="sourceCode cpp">__cpp_modules</code></a></span>
 </td>
@@ -1782,7 +1802,7 @@ New wording for C++0x Lambdas (rev. 2)
 restrictions for re-exportation robustness
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_multidimensional_subscript"><a href="#__cpp_multidimensional_subscript" style="text-decoration:none"><code class="sourceCode cpp">__cpp_multidimensional_subscript</code></a></span>
 </td>
@@ -1794,7 +1814,7 @@ restrictions for re-exportation robustness
 operator
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202211</span></code>
 </td>
@@ -1802,7 +1822,7 @@ operator
 <span class="citation" data-cites="P2589R1">[<a href="https://wg21.link/p2589r1" role="doc-biblioref">P2589R1</a>]</span> static operator[]
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_named_character_escapes"><a href="#__cpp_named_character_escapes" style="text-decoration:none"><code class="sourceCode cpp">__cpp_named_character_escapes</code></a></span>
 </td>
@@ -1814,7 +1834,7 @@ operator
 escapes
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_namespace_attributes"><a href="#__cpp_namespace_attributes" style="text-decoration:none"><code class="sourceCode cpp">__cpp_namespace_attributes</code></a></span>
 </td>
@@ -1826,7 +1846,7 @@ escapes
 Attributes for namespaces and enumerators
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_noexcept_function_type"><a href="#__cpp_noexcept_function_type" style="text-decoration:none"><code class="sourceCode cpp">__cpp_noexcept_function_type</code></a></span>
 </td>
@@ -1838,7 +1858,7 @@ Attributes for namespaces and enumerators
 be part of the type system, version 5
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_nontype_template_args"><a href="#__cpp_nontype_template_args" style="text-decoration:none"><code class="sourceCode cpp">__cpp_nontype_template_args</code></a></span>
 </td>
@@ -1850,7 +1870,7 @@ be part of the type system, version 5
 Allow constant evaluation for all non-type template arguments
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201911</span></code>
 </td>
@@ -1859,7 +1879,7 @@ Allow constant evaluation for all non-type template arguments
 template parameters
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_nontype_template_parameter_auto"><a href="#__cpp_nontype_template_parameter_auto" style="text-decoration:none"><code class="sourceCode cpp">__cpp_nontype_template_parameter_auto</code></a></span>
 </td>
@@ -1871,7 +1891,7 @@ template parameters
 arguments with auto
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_nontype_template_parameter_class"><a href="#__cpp_nontype_template_parameter_class" style="text-decoration:none"><code class="sourceCode cpp">__cpp_nontype_template_parameter_class</code></a></span>
 </td>
@@ -1883,7 +1903,7 @@ arguments with auto
 Template Parameters
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <span class="rm" style="color: #bf0303"><del>deleted</del></span>
 </td>
@@ -1892,7 +1912,7 @@ Template Parameters
 template parameters
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_nsdmi"><a href="#__cpp_nsdmi" style="text-decoration:none"><code class="sourceCode cpp">__cpp_nsdmi</code></a></span>
 </td>
@@ -1904,7 +1924,7 @@ template parameters
 Non-static data member initializers
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_pack_indexing"><a href="#__cpp_pack_indexing" style="text-decoration:none"><code class="sourceCode cpp">__cpp_pack_indexing</code></a></span>
 </td>
@@ -1915,7 +1935,7 @@ Non-static data member initializers
 <span class="citation" data-cites="P2662R3">[<a href="https://wg21.link/p2662r3" role="doc-biblioref">P2662R3</a>]</span> Pack Indexing
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_placeholder_variables"><a href="#__cpp_placeholder_variables" style="text-decoration:none"><code class="sourceCode cpp">__cpp_placeholder_variables</code></a></span>
 </td>
@@ -1926,7 +1946,7 @@ Non-static data member initializers
 <span class="citation" data-cites="P2169R4">[<a href="https://wg21.link/p2169r4" role="doc-biblioref">P2169R4</a>]</span> A Nice Placeholder With No Name
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="3">
 <span id="__cpp_range_based_for"><a href="#__cpp_range_based_for" style="text-decoration:none"><code class="sourceCode cpp">__cpp_range_based_for</code></a></span>
 </td>
@@ -1938,7 +1958,7 @@ Non-static data member initializers
 Range-Based For Loop Wording (Without Concepts)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201603</span></code>
 </td>
@@ -1947,7 +1967,7 @@ Range-Based For Loop Wording (Without Concepts)
 For Loop
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202211</span></code>
 </td>
@@ -1958,7 +1978,7 @@ Range-based for Loop <br /><span class="citation" data-cites="CWG2659">[<a href=
 lifetime extension in range-for loop
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_raw_strings"><a href="#__cpp_raw_strings" style="text-decoration:none"><code class="sourceCode cpp">__cpp_raw_strings</code></a></span>
 </td>
@@ -1970,7 +1990,7 @@ lifetime extension in range-for loop
 Raw and Unicode String Literals; Unified Proposal (Rev. 2)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_ref_qualifiers"><a href="#__cpp_ref_qualifiers" style="text-decoration:none"><code class="sourceCode cpp">__cpp_ref_qualifiers</code></a></span>
 </td>
@@ -1983,7 +2003,7 @@ Extending move semantics to <code class="sourceCode cpp"><span class="op">*</spa
 (revised wording)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_return_type_deduction"><a href="#__cpp_return_type_deduction" style="text-decoration:none"><code class="sourceCode cpp">__cpp_return_type_deduction</code></a></span>
 </td>
@@ -1995,7 +2015,7 @@ Extending move semantics to <code class="sourceCode cpp"><span class="op">*</spa
 Return type deduction for normal functions
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_rtti"><a href="#__cpp_rtti" style="text-decoration:none"><code class="sourceCode cpp">__cpp_rtti</code></a></span>
 </td>
@@ -2006,7 +2026,7 @@ Return type deduction for normal functions
 Run-time type identification
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_rvalue_references"><a href="#__cpp_rvalue_references" style="text-decoration:none"><code class="sourceCode cpp">__cpp_rvalue_references</code></a></span>
 </td>
@@ -2019,7 +2039,7 @@ Proposal to Add an Rvalue Reference to the C++ Language: Proposed
 Wording: Revision 3
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_size_t_suffix"><a href="#__cpp_size_t_suffix" style="text-decoration:none"><code class="sourceCode cpp">__cpp_size_t_suffix</code></a></span>
 </td>
@@ -2031,7 +2051,7 @@ Wording: Revision 3
 size_t
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_sized_deallocation"><a href="#__cpp_sized_deallocation" style="text-decoration:none"><code class="sourceCode cpp">__cpp_sized_deallocation</code></a></span>
 </td>
@@ -2043,7 +2063,7 @@ size_t
 C++ Sized Deallocation
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="3">
 <span id="__cpp_static_assert"><a href="#__cpp_static_assert" style="text-decoration:none"><code class="sourceCode cpp">__cpp_static_assert</code></a></span>
 </td>
@@ -2055,7 +2075,7 @@ C++ Sized Deallocation
 Proposal to Add Static Assertions to the Core Language (Revision 3)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201411</span></code>
 </td>
@@ -2064,7 +2084,7 @@ Proposal to Add Static Assertions to the Core Language (Revision 3)
 Extending static_assert, v2
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202306</span></code>
 </td>
@@ -2073,7 +2093,7 @@ Extending static_assert, v2
 messages
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_static_call_operator"><a href="#__cpp_static_call_operator" style="text-decoration:none"><code class="sourceCode cpp">__cpp_static_call_operator</code></a></span>
 </td>
@@ -2084,8 +2104,8 @@ messages
 <span class="citation" data-cites="P1169R4">[<a href="https://wg21.link/p1169r4" role="doc-biblioref">P1169R4</a>]</span> static operator()
 </td>
 </tr>
-<tr style="background-color: white">
-<td rowspan="2">
+<tr style="background-color: #f6f8fa">
+<td rowspan="3">
 <span id="__cpp_structured_bindings"><a href="#__cpp_structured_bindings" style="text-decoration:none"><code class="sourceCode cpp">__cpp_structured_bindings</code></a></span>
 </td>
 <td>
@@ -2096,7 +2116,7 @@ messages
 bindings
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202403</span></code>
 </td>
@@ -2106,6 +2126,15 @@ Bindings
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P1061R10">[<a href="https://wg21.link/p1061r10" role="doc-biblioref">P1061R10</a>]</span> Structured Bindings can
+introduce a Pack
+</td>
+</tr>
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_template_template_args"><a href="#__cpp_template_template_args" style="text-decoration:none"><code class="sourceCode cpp">__cpp_template_template_args</code></a></span>
 </td>
@@ -2117,7 +2146,7 @@ Bindings
 template-arguments excludes compatible templates
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_threadsafe_static_init"><a href="#__cpp_threadsafe_static_init" style="text-decoration:none"><code class="sourceCode cpp">__cpp_threadsafe_static_init</code></a></span>
 </td>
@@ -2129,7 +2158,7 @@ template-arguments excludes compatible templates
 Dynamic Initialization and Destruction with Concurrency
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_unicode_characters"><a href="#__cpp_unicode_characters" style="text-decoration:none"><code class="sourceCode cpp">__cpp_unicode_characters</code></a></span>
 </td>
@@ -2141,7 +2170,7 @@ Dynamic Initialization and Destruction with Concurrency
 New Character Types in C++
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_unicode_literals"><a href="#__cpp_unicode_literals" style="text-decoration:none"><code class="sourceCode cpp">__cpp_unicode_literals</code></a></span>
 </td>
@@ -2153,7 +2182,7 @@ New Character Types in C++
 Raw and Unicode String Literals; Unified Proposal (Rev. 2)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_user_defined_literals"><a href="#__cpp_user_defined_literals" style="text-decoration:none"><code class="sourceCode cpp">__cpp_user_defined_literals</code></a></span>
 </td>
@@ -2165,7 +2194,7 @@ Raw and Unicode String Literals; Unified Proposal (Rev. 2)
 User-defined Literals (aka. Extensible Literals (revision 5))
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_using_enum"><a href="#__cpp_using_enum" style="text-decoration:none"><code class="sourceCode cpp">__cpp_using_enum</code></a></span>
 </td>
@@ -2176,7 +2205,7 @@ User-defined Literals (aka. Extensible Literals (revision 5))
 <span class="citation" data-cites="P1099R5">[<a href="https://wg21.link/p1099r5" role="doc-biblioref">P1099R5</a>]</span> Using Enum
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_variable_templates"><a href="#__cpp_variable_templates" style="text-decoration:none"><code class="sourceCode cpp">__cpp_variable_templates</code></a></span>
 </td>
@@ -2188,7 +2217,7 @@ User-defined Literals (aka. Extensible Literals (revision 5))
 Variable Templates (Revision 1)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_variadic_friend"><a href="#__cpp_variadic_friend" style="text-decoration:none"><code class="sourceCode cpp">__cpp_variadic_friend</code></a></span>
 </td>
@@ -2199,7 +2228,7 @@ Variable Templates (Revision 1)
 <span class="citation" data-cites="P2893R3">[<a href="https://wg21.link/p2893r3" role="doc-biblioref">P2893R3</a>]</span> Variadic Friends
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_variadic_templates"><a href="#__cpp_variadic_templates" style="text-decoration:none"><code class="sourceCode cpp">__cpp_variadic_templates</code></a></span>
 </td>
@@ -2211,7 +2240,7 @@ Variable Templates (Revision 1)
 Proposed Wording for Variadic Templates (Revision 2)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_variadic_using"><a href="#__cpp_variadic_using" style="text-decoration:none"><code class="sourceCode cpp">__cpp_variadic_using</code></a></span>
 </td>
@@ -2440,6 +2469,21 @@ non-Ranges algorithms
 </td>
 </tr>
 <tr style="background-color: white">
+<td rowspan="1">
+<span id="__cpp_lib_aligned_accessor"><a href="#__cpp_lib_aligned_accessor" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_aligned_accessor</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>mdspan<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2897R7">[<a href="https://wg21.link/p2897r7" role="doc-biblioref">P2897R7</a>]</span> aligned_accessor: An mdspan
+accessor expressing pointer overalignment
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_lib_allocate_at_least"><a href="#__cpp_lib_allocate_at_least" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_allocate_at_least</code></a></span>
 </td>
@@ -2454,7 +2498,7 @@ non-Ranges algorithms
 Allocator interface
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202306</span></code>
 </td>
@@ -2463,7 +2507,7 @@ Allocator interface
 allocate_at_least
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_allocator_traits_is_always_equal"><a href="#__cpp_lib_allocator_traits_is_always_equal" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_allocator_traits_is_always_equal</code></a></span>
 </td>
@@ -2490,7 +2534,7 @@ Cleaning up
 the Library (Rev 3)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_lib_any"><a href="#__cpp_lib_any" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_any</code></a></span>
 </td>
@@ -2505,7 +2549,7 @@ the Library (Rev 3)
 TS Components for C++17 (R1)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201606</span></code>
 </td>
@@ -2514,7 +2558,7 @@ TS Components for C++17 (R1)
 variant, any and optional (Revision 3)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_apply"><a href="#__cpp_lib_apply" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_apply</code></a></span>
 </td>
@@ -2529,7 +2573,7 @@ variant, any and optional (Revision 3)
 TS Components for C++17 (R1)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="4">
 <span id="__cpp_lib_array_constexpr"><a href="#__cpp_lib_array_constexpr" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_array_constexpr</code></a></span>
 </td>
@@ -2545,7 +2589,7 @@ TS Components for C++17 (R1)
 Modifiers to reverse_iterator, move_iterator, array and Range Access
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201803</span></code>
 </td>
@@ -2555,7 +2599,7 @@ Modifiers to reverse_iterator, move_iterator, array and Range Access
 update from P0858
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201806</span></code>
 </td>
@@ -2564,7 +2608,7 @@ update from P0858
 for std::array
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201811</span></code>
 </td>
@@ -2572,7 +2616,7 @@ for std::array
 <span class="citation" data-cites="P1032R1">[<a href="https://wg21.link/p1032r1" role="doc-biblioref">P1032R1</a>]</span> Misc constexpr bits
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_as_const"><a href="#__cpp_lib_as_const" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_as_const</code></a></span>
 </td>
@@ -2588,7 +2632,7 @@ for std::array
 helper function template
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_associative_heterogeneous_erasure"><a href="#__cpp_lib_associative_heterogeneous_erasure" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_associative_heterogeneous_erasure</code></a></span>
 </td>
@@ -2606,7 +2650,7 @@ helper function template
 for associative containers
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_associative_heterogeneous_insertion"><a href="#__cpp_lib_associative_heterogeneous_insertion" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_associative_heterogeneous_insertion</code></a></span>
 </td>
@@ -2624,7 +2668,7 @@ for associative containers
 containers with the remaining heterogeneous overloads
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_assume_aligned"><a href="#__cpp_lib_assume_aligned" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_assume_aligned</code></a></span>
 </td>
@@ -2638,7 +2682,7 @@ containers with the remaining heterogeneous overloads
 <span class="citation" data-cites="P1007R3">[<a href="https://wg21.link/p1007r3" role="doc-biblioref">P1007R3</a>]</span> std::assume_aligned
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_atomic_flag_test"><a href="#__cpp_lib_atomic_flag_test" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_flag_test</code></a></span>
 </td>
@@ -2653,7 +2697,7 @@ containers with the remaining heterogeneous overloads
 Library
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_atomic_float"><a href="#__cpp_lib_atomic_float" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_float</code></a></span>
 </td>
@@ -2667,7 +2711,7 @@ Library
 <span class="citation" data-cites="P0020R6">[<a href="https://wg21.link/p0020r6" role="doc-biblioref">P0020R6</a>]</span> Floating Point Atomic
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_atomic_is_always_lock_free"><a href="#__cpp_lib_atomic_is_always_lock_free" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_is_always_lock_free</code></a></span>
 </td>
@@ -2681,7 +2725,7 @@ Library
 <span class="citation" data-cites="P0152R1">[<a href="https://wg21.link/p0152r1" role="doc-biblioref">P0152R1</a>]</span> <code class="sourceCode cpp"><span class="kw">constexpr</span> atomic<span class="op">&lt;</span>T<span class="op">&gt;::</span>is_always_lock_free</code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_atomic_lock_free_type_aliases"><a href="#__cpp_lib_atomic_lock_free_type_aliases" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_lock_free_type_aliases</code></a></span>
 </td>
@@ -2696,7 +2740,7 @@ Library
 Library
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_atomic_min_max"><a href="#__cpp_lib_atomic_min_max" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_min_max</code></a></span>
 </td>
@@ -2710,11 +2754,11 @@ Library
 <span class="citation" data-cites="P0493R5">[<a href="https://wg21.link/p0493r5" role="doc-biblioref">P0493R5</a>]</span> Atomic maximum/minimum
 </td>
 </tr>
-<tr style="background-color: white">
-<td rowspan="1">
+<tr style="background-color: #f6f8fa">
+<td rowspan="2">
 <span id="__cpp_lib_atomic_ref"><a href="#__cpp_lib_atomic_ref" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_ref</code></a></span>
 </td>
-<td rowspan="1">
+<td rowspan="2">
 <code class="sourceCode cpp"><span class="op">&lt;</span>atomic<span class="op">&gt;</span></code>
 </td>
 <td>
@@ -2725,6 +2769,15 @@ Library
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2835R7">[<a href="https://wg21.link/p2835r7" role="doc-biblioref">P2835R7</a>]</span> Expose std::atomic_ref’s object
+address
+</td>
+</tr>
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_atomic_shared_ptr"><a href="#__cpp_lib_atomic_shared_ptr" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_shared_ptr</code></a></span>
 </td>
@@ -2739,7 +2792,7 @@ Library
 C++20
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_atomic_value_initialization"><a href="#__cpp_lib_atomic_value_initialization" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_value_initialization</code></a></span>
 </td>
@@ -2754,7 +2807,7 @@ C++20
 <span class="citation" data-cites="P0883R2">[<a href="https://wg21.link/p0883r2" role="doc-biblioref">P0883R2</a>]</span> Fixing Atomic Initialization
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_atomic_wait"><a href="#__cpp_lib_atomic_wait" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_atomic_wait</code></a></span>
 </td>
@@ -2769,7 +2822,7 @@ C++20
 Library
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_lib_barrier"><a href="#__cpp_lib_barrier" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_barrier</code></a></span>
 </td>
@@ -2784,7 +2837,7 @@ Library
 Library
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202302</span></code>
 </td>
@@ -2793,7 +2846,7 @@ Library
 completion step guarantees
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_lib_bind_back"><a href="#__cpp_lib_bind_back" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_bind_back</code></a></span>
 </td>
@@ -2808,7 +2861,7 @@ completion step guarantees
 range adaptors
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">202306</span></code>
 </td>
@@ -2817,7 +2870,7 @@ range adaptors
 callables
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="3">
 <span id="__cpp_lib_bind_front"><a href="#__cpp_lib_bind_front" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_bind_front</code></a></span>
 </td>
@@ -2832,7 +2885,7 @@ callables
 application
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201907</span></code>
 </td>
@@ -2841,7 +2894,7 @@ application
 reference_wrapper
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202306</span></code>
 </td>
@@ -2850,7 +2903,7 @@ reference_wrapper
 callables
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_bit_cast"><a href="#__cpp_lib_bit_cast" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_bit_cast</code></a></span>
 </td>
@@ -2865,7 +2918,7 @@ callables
 representations
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_bitops"><a href="#__cpp_lib_bitops" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_bitops</code></a></span>
 </td>
@@ -2879,7 +2932,7 @@ representations
 <span class="citation" data-cites="P0553R4">[<a href="https://wg21.link/p0553r4" role="doc-biblioref">P0553R4</a>]</span> Bit operations
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_bitset"><a href="#__cpp_lib_bitset" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_bitset</code></a></span>
 </td>
@@ -2894,7 +2947,7 @@ representations
 string_view
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_bool_constant"><a href="#__cpp_lib_bool_constant" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_bool_constant</code></a></span>
 </td>
@@ -2910,7 +2963,7 @@ Wording for <code class="sourceCode cpp">bool_constant</code>, revision
 1
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_bounded_array_traits"><a href="#__cpp_lib_bounded_array_traits" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_bounded_array_traits</code></a></span>
 </td>
@@ -2924,7 +2977,7 @@ Wording for <code class="sourceCode cpp">bool_constant</code>, revision
 <span class="citation" data-cites="P1357R1">[<a href="https://wg21.link/p1357r1" role="doc-biblioref">P1357R1</a>]</span> Traits for [Un]bounded Arrays
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_boyer_moore_searcher"><a href="#__cpp_lib_boyer_moore_searcher" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_boyer_moore_searcher</code></a></span>
 </td>
@@ -2939,7 +2992,7 @@ Wording for <code class="sourceCode cpp">bool_constant</code>, revision
 TS Components for C++17 (R1)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_byte"><a href="#__cpp_lib_byte" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_byte</code></a></span>
 </td>
@@ -2953,7 +3006,7 @@ TS Components for C++17 (R1)
 <span class="citation" data-cites="P0298R3">[<a href="https://wg21.link/p0298r3" role="doc-biblioref">P0298R3</a>]</span> A byte type definition
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_byteswap"><a href="#__cpp_lib_byteswap" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_byteswap</code></a></span>
 </td>
@@ -2968,7 +3021,7 @@ TS Components for C++17 (R1)
 fun&amp;&amp;nuf
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_lib_char8_t"><a href="#__cpp_lib_char8_t" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_char8_t</code></a></span>
 </td>
@@ -2991,7 +3044,7 @@ fun&amp;&amp;nuf
 type for UTF-8 characters and strings (Revision 6)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">201907</span></code>
 </td>
@@ -3001,7 +3054,7 @@ type for UTF-8 characters and strings (Revision 6)
 backward compatibility remediation
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="5">
 <span id="__cpp_lib_chrono"><a href="#__cpp_lib_chrono" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_chrono</code></a></span>
 </td>
@@ -3015,7 +3068,7 @@ backward compatibility remediation
 <span class="citation" data-cites="P0092R1">[<a href="https://wg21.link/p0092r1" role="doc-biblioref">P0092R1</a>]</span> Polishing <code class="sourceCode cpp"><span class="op">&lt;</span>chrono<span class="op">&gt;</span></code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201611</span></code>
 </td>
@@ -3023,7 +3076,7 @@ backward compatibility remediation
 <span class="citation" data-cites="P0505R0">[<a href="https://wg21.link/p0505r0" role="doc-biblioref">P0505R0</a>]</span> Wording for GB 50
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201803</span></code>
 </td>
@@ -3032,7 +3085,7 @@ backward compatibility remediation
 to Calendars and Time Zones
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201907</span></code>
 </td>
@@ -3041,7 +3094,7 @@ to Calendars and Time Zones
 chrono
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202306</span></code>
 </td>
@@ -3050,7 +3103,7 @@ chrono
 value classes
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_chrono_udls"><a href="#__cpp_lib_chrono_udls" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_chrono_udls</code></a></span>
 </td>
@@ -3065,7 +3118,7 @@ value classes
 User-defined Literals for Standard Library Types (part 1 - version 4)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_clamp"><a href="#__cpp_lib_clamp" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_clamp</code></a></span>
 </td>
@@ -3080,7 +3133,7 @@ User-defined Literals for Standard Library Types (part 1 - version 4)
 between a pair of boundary values
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_common_reference"><a href="#__cpp_lib_common_reference" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_common_reference</code></a></span>
 </td>
@@ -3095,7 +3148,7 @@ between a pair of boundary values
 reference_wrapper Should Be a Reference Type
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_common_reference_wrapper"><a href="#__cpp_lib_common_reference_wrapper" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_common_reference_wrapper</code></a></span>
 </td>
@@ -3110,7 +3163,7 @@ reference_wrapper Should Be a Reference Type
 reference_wrapper Should Be a Reference Type
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_complex_udls"><a href="#__cpp_lib_complex_udls" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_complex_udls</code></a></span>
 </td>
@@ -3126,7 +3179,7 @@ User-defined Literals for
 <code class="sourceCode cpp">std<span class="op">::</span>complex</code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="4">
 <span id="__cpp_lib_concepts"><a href="#__cpp_lib_concepts" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_concepts</code></a></span>
 </td>
@@ -3141,7 +3194,7 @@ User-defined Literals for
 <span class="citation" data-cites="P0898R3">[<a href="https://wg21.link/p0898r3" role="doc-biblioref">P0898R3</a>]</span> Standard Library Concepts
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201907</span></code>
 </td>
@@ -3150,7 +3203,7 @@ User-defined Literals for
 standard_case for C++20, while we still can
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202002</span></code>
 </td>
@@ -3158,7 +3211,7 @@ standard_case for C++20, while we still can
 <span class="citation" data-cites="P1964R2">[<a href="https://wg21.link/p1964r2" role="doc-biblioref">P1964R2</a>]</span> Wording for <em><code class="sourceCode cpp">boolean<span class="op">-</span>testable</code></em>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202207</span></code>
 </td>
@@ -3168,7 +3221,7 @@ equality_comparable_with, totally_ordered_with, and
 three_way_comparable_with
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="3">
 <span id="__cpp_lib_constexpr_algorithms"><a href="#__cpp_lib_constexpr_algorithms" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_constexpr_algorithms</code></a></span>
 </td>
@@ -3186,7 +3239,7 @@ and <code class="sourceCode cpp"><span class="op">&lt;</span>utility<span class=
 Headers
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">201806</span></code>
 </td>
@@ -3197,12 +3250,26 @@ constexpr algorithms <br /><span class="citation" data-cites="LWG3792">[<a href=
 should also be defined in <utility>
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">202306</span></code>
 </td>
 <td>
 <span class="citation" data-cites="P2562R1">[<a href="https://wg21.link/p2562r1" role="doc-biblioref">P2562R1</a>]</span> constexpr Stable Sorting
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
+<td rowspan="1">
+<span id="__cpp_lib_constexpr_atomic"><a href="#__cpp_lib_constexpr_atomic" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_constexpr_atomic</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>atomic<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3309R3">[<a href="https://wg21.link/p3309r3" role="doc-biblioref">P3309R3</a>]</span> constexpr atomic and atomic_ref
 </td>
 </tr>
 <tr style="background-color: white">
@@ -3296,6 +3363,21 @@ complex
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
+<td rowspan="1">
+<span id="__cpp_lib_constexpr_exceptions"><a href="#__cpp_lib_constexpr_exceptions" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_constexpr_exceptions</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>exception<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3068R6">[<a href="https://wg21.link/p3068r6" role="doc-biblioref">P3068R6</a>]</span> Allowing exception throwing in
+constant-evaluation
+</td>
+</tr>
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_lib_constexpr_functional"><a href="#__cpp_lib_constexpr_functional" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_constexpr_functional</code></a></span>
 </td>
@@ -3309,7 +3391,7 @@ complex
 <span class="citation" data-cites="P1032R1">[<a href="https://wg21.link/p1032r1" role="doc-biblioref">P1032R1</a>]</span> Misc constexpr bits
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">201907</span></code>
 </td>
@@ -3318,7 +3400,7 @@ complex
 <em><code class="sourceCode cpp">INVOKE</code></em>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_constexpr_iterator"><a href="#__cpp_lib_constexpr_iterator" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_constexpr_iterator</code></a></span>
 </td>
@@ -3332,7 +3414,7 @@ complex
 <span class="citation" data-cites="P1032R1">[<a href="https://wg21.link/p1032r1" role="doc-biblioref">P1032R1</a>]</span> Misc constexpr bits
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_lib_constexpr_memory"><a href="#__cpp_lib_constexpr_memory" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_constexpr_memory</code></a></span>
 </td>
@@ -3347,13 +3429,27 @@ complex
 std::pointer_traits
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">202202</span></code>
 </td>
 <td>
 <span class="citation" data-cites="P2273R3">[<a href="https://wg21.link/p2273r3" role="doc-biblioref">P2273R3</a>]</span> Making std::unique_ptr
 constexpr
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
+<td rowspan="1">
+<span id="__cpp_lib_constexpr_new"><a href="#__cpp_lib_constexpr_new" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_constexpr_new</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span><span class="kw">new</span><span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2747R2">[<a href="https://wg21.link/p2747r2" role="doc-biblioref">P2747R2</a>]</span> constexpr placement new
 </td>
 </tr>
 <tr style="background-color: white">
@@ -3485,10 +3581,10 @@ constexpr
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
-<td rowspan="1">
+<td rowspan="2">
 <span id="__cpp_lib_constrained_equality"><a href="#__cpp_lib_constrained_equality" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_constrained_equality</code></a></span>
 </td>
-<td rowspan="1">
+<td rowspan="2">
 <code class="sourceCode cpp"><span class="op">&lt;</span>optional<span class="op">&gt;</span></code>
 <code class="sourceCode cpp"><span class="op">&lt;</span>tuple<span class="op">&gt;</span></code>
 <code class="sourceCode cpp"><span class="op">&lt;</span>utility<span class="op">&gt;</span></code>
@@ -3500,6 +3596,15 @@ constexpr
 <td>
 <span class="citation" data-cites="P2944R3">[<a href="https://wg21.link/p2944r3" role="doc-biblioref">P2944R3</a>]</span> Comparisons for
 reference_wrapper
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3379R0">[<a href="https://wg21.link/p3379r0" role="doc-biblioref">P3379R0</a>]</span> Constrain std::expected
+equality operators
 </td>
 </tr>
 <tr style="background-color: white">
@@ -4499,6 +4604,20 @@ Minimal incomplete type support for standard containers, revision 4
 </td>
 </tr>
 <tr style="background-color: white">
+<td rowspan="1">
+<span id="__cpp_lib_inplace_vector"><a href="#__cpp_lib_inplace_vector" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_inplace_vector</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>inplace_vector<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P0843R14">[<a href="https://wg21.link/p0843r14" role="doc-biblioref">P0843R14</a>]</span> inplace_vector
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_lib_int_pow2"><a href="#__cpp_lib_int_pow2" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_int_pow2</code></a></span>
 </td>
@@ -4512,7 +4631,7 @@ Minimal incomplete type support for standard containers, revision 4
 <span class="citation" data-cites="P0556R3">[<a href="https://wg21.link/p0556r3" role="doc-biblioref">P0556R3</a>]</span> Integral power-of-2 operations
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202002</span></code>
 </td>
@@ -4521,7 +4640,7 @@ Minimal incomplete type support for standard containers, revision 4
 manipulation functions
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_integer_comparison_functions"><a href="#__cpp_lib_integer_comparison_functions" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_integer_comparison_functions</code></a></span>
 </td>
@@ -4535,7 +4654,7 @@ manipulation functions
 <span class="citation" data-cites="P0586R2">[<a href="https://wg21.link/p0586r2" role="doc-biblioref">P0586R2</a>]</span> Safe integral comparisons
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_integer_sequence"><a href="#__cpp_lib_integer_sequence" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_integer_sequence</code></a></span>
 </td>
@@ -4550,7 +4669,7 @@ manipulation functions
 Compile-time integer sequences
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_integral_constant_callable"><a href="#__cpp_lib_integral_constant_callable" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_integral_constant_callable</code></a></span>
 </td>
@@ -4566,7 +4685,7 @@ Incremental Improvement to
 <code class="sourceCode cpp">integral_constant</code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_interpolate"><a href="#__cpp_lib_interpolate" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_interpolate</code></a></span>
 </td>
@@ -4582,7 +4701,7 @@ Incremental Improvement to
 numbers and pointers
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_invoke"><a href="#__cpp_lib_invoke" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_invoke</code></a></span>
 </td>
@@ -4598,7 +4717,7 @@ proposal to add <code class="sourceCode cpp">invoke</code> function
 template (Revision 1)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_invoke_r"><a href="#__cpp_lib_invoke_r" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_invoke_r</code></a></span>
 </td>
@@ -4612,7 +4731,7 @@ template (Revision 1)
 <span class="citation" data-cites="P2136R3">[<a href="https://wg21.link/p2136r3" role="doc-biblioref">P2136R3</a>]</span> invoke_r
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_ios_noreplace"><a href="#__cpp_lib_ios_noreplace" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_ios_noreplace</code></a></span>
 </td>
@@ -4627,7 +4746,7 @@ template (Revision 1)
 fstreams
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_is_aggregate"><a href="#__cpp_lib_is_aggregate" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_aggregate</code></a></span>
 </td>
@@ -4642,7 +4761,7 @@ fstreams
 <code class="sourceCode cpp">is_aggregate</code> type trait is needed
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_is_constant_evaluated"><a href="#__cpp_lib_is_constant_evaluated" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_constant_evaluated</code></a></span>
 </td>
@@ -4656,7 +4775,7 @@ fstreams
 <span class="citation" data-cites="P0595R2">[<a href="https://wg21.link/p0595r2" role="doc-biblioref">P0595R2</a>]</span> <code class="sourceCode cpp">std<span class="op">::</span>is_constant_evaluated</code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_is_final"><a href="#__cpp_lib_is_final" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_final</code></a></span>
 </td>
@@ -4671,7 +4790,7 @@ fstreams
 cannot be derived from
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_is_implicit_lifetime"><a href="#__cpp_lib_is_implicit_lifetime" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_implicit_lifetime</code></a></span>
 </td>
@@ -4686,7 +4805,7 @@ cannot be derived from
 types
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_is_invocable"><a href="#__cpp_lib_is_invocable" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_invocable</code></a></span>
 </td>
@@ -4701,7 +4820,7 @@ types
 US 86
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_is_layout_compatible"><a href="#__cpp_lib_is_layout_compatible" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_layout_compatible</code></a></span>
 </td>
@@ -4716,7 +4835,7 @@ US 86
 Pointer-interconvertibility Traits
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_is_nothrow_convertible"><a href="#__cpp_lib_is_nothrow_convertible" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_nothrow_convertible</code></a></span>
 </td>
@@ -4732,7 +4851,7 @@ utility functions <br /><span class="citation" data-cites="LWG3356">[<a href="ht
 should be __cpp_lib_is_nothrow_convertible
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_is_null_pointer"><a href="#__cpp_lib_is_null_pointer" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_null_pointer</code></a></span>
 </td>
@@ -4746,7 +4865,7 @@ should be __cpp_lib_is_nothrow_convertible
 <span class="citation" data-cites="LWG2247">[<a href="https://wg21.link/lwg2247" role="doc-biblioref">LWG2247</a>]</span> Type traits and <code class="sourceCode cpp">std<span class="op">::</span>nullptr_t</code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_is_pointer_interconvertible"><a href="#__cpp_lib_is_pointer_interconvertible" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_pointer_interconvertible</code></a></span>
 </td>
@@ -4761,7 +4880,7 @@ should be __cpp_lib_is_nothrow_convertible
 Pointer-interconvertibility Traits
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_is_scoped_enum"><a href="#__cpp_lib_is_scoped_enum" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_scoped_enum</code></a></span>
 </td>
@@ -4774,6 +4893,21 @@ Pointer-interconvertibility Traits
 <td>
 <span class="citation" data-cites="P1048R1">[<a href="https://wg21.link/p1048r1" role="doc-biblioref">P1048R1</a>]</span> A proposal for a type trait to
 detect scoped enumerations
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
+<td rowspan="1">
+<span id="__cpp_lib_is_sufficiently_aligned"><a href="#__cpp_lib_is_sufficiently_aligned" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_sufficiently_aligned</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2897R7">[<a href="https://wg21.link/p2897r7" role="doc-biblioref">P2897R7</a>]</span> aligned_accessor: An mdspan
+accessor expressing pointer overalignment
 </td>
 </tr>
 <tr style="background-color: white">
@@ -4793,6 +4927,21 @@ traits, revision 3
 </tr>
 <tr style="background-color: #f6f8fa">
 <td rowspan="1">
+<span id="__cpp_lib_is_virtual_base_of"><a href="#__cpp_lib_is_virtual_base_of" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_virtual_base_of</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>type_traits<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2985R0">[<a href="https://wg21.link/p2985r0" role="doc-biblioref">P2985R0</a>]</span> A type trait for detecting
+virtual base classes
+</td>
+</tr>
+<tr style="background-color: white">
+<td rowspan="1">
 <span id="__cpp_lib_is_within_lifetime"><a href="#__cpp_lib_is_within_lifetime" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_is_within_lifetime</code></a></span>
 </td>
 <td rowspan="1">
@@ -4806,7 +4955,7 @@ traits, revision 3
 is active
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_lib_jthread"><a href="#__cpp_lib_jthread" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_jthread</code></a></span>
 </td>
@@ -4821,7 +4970,7 @@ is active
 <span class="citation" data-cites="P0660R10">[<a href="https://wg21.link/p0660r10" role="doc-biblioref">P0660R10</a>]</span> Stop Token and Joining Thread
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201911</span></code>
 </td>
@@ -4830,7 +4979,7 @@ is active
 interruptible wait methods
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_latch"><a href="#__cpp_lib_latch" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_latch</code></a></span>
 </td>
@@ -4845,7 +4994,7 @@ interruptible wait methods
 Library
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_launder"><a href="#__cpp_lib_launder" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_launder</code></a></span>
 </td>
@@ -4860,11 +5009,11 @@ Library
 class objects containing reference members
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
-<td rowspan="1">
+<tr style="background-color: white">
+<td rowspan="2">
 <span id="__cpp_lib_linalg"><a href="#__cpp_lib_linalg" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_linalg</code></a></span>
 </td>
-<td rowspan="1">
+<td rowspan="2">
 <code class="sourceCode cpp"><span class="op">&lt;</span>linalg<span class="op">&gt;</span></code>
 </td>
 <td>
@@ -4876,6 +5025,16 @@ interface based on the BLAS
 </td>
 </tr>
 <tr style="background-color: white">
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3050R2">[<a href="https://wg21.link/p3050r2" role="doc-biblioref">P3050R2</a>]</span> Fix C++26 by optimizing
+linalg::conjugated for noncomplex value types <br /><span class="citation" data-cites="P3222R0">[<a href="https://wg21.link/p3222r0" role="doc-biblioref">P3222R0</a>]</span> Fix C++26 by adding transposed
+special cases for P2642 layouts
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_list_remove_return_type"><a href="#__cpp_lib_list_remove_return_type" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_list_remove_return_type</code></a></span>
 </td>
@@ -4891,7 +5050,7 @@ interface based on the BLAS
 Erase-Like Algorithms I: list/forward list
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_logical_traits"><a href="#__cpp_lib_logical_traits" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_logical_traits</code></a></span>
 </td>
@@ -4906,7 +5065,7 @@ Erase-Like Algorithms I: list/forward list
 (revison 1)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_make_from_tuple"><a href="#__cpp_lib_make_from_tuple" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_make_from_tuple</code></a></span>
 </td>
@@ -4922,7 +5081,7 @@ Erase-Like Algorithms I: list/forward list
 construction
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_make_reverse_iterator"><a href="#__cpp_lib_make_reverse_iterator" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_make_reverse_iterator</code></a></span>
 </td>
@@ -4937,7 +5096,7 @@ construction
 <code class="sourceCode cpp">make_reverse_iterator</code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_make_unique"><a href="#__cpp_lib_make_unique" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_make_unique</code></a></span>
 </td>
@@ -4952,7 +5111,7 @@ construction
 <code class="sourceCode cpp">make_unique</code> (Revision 1)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_map_try_emplace"><a href="#__cpp_lib_map_try_emplace" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_map_try_emplace</code></a></span>
 </td>
@@ -4967,7 +5126,7 @@ construction
 Improved insertion interface for unique-key maps (Revision 2.3)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_math_constants"><a href="#__cpp_lib_math_constants" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_math_constants</code></a></span>
 </td>
@@ -4981,7 +5140,7 @@ Improved insertion interface for unique-key maps (Revision 2.3)
 <span class="citation" data-cites="P0631R8">[<a href="https://wg21.link/p0631r8" role="doc-biblioref">P0631R8</a>]</span> Math Constants
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_math_special_functions"><a href="#__cpp_lib_math_special_functions" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_math_special_functions</code></a></span>
 </td>
@@ -4996,11 +5155,11 @@ Improved insertion interface for unique-key maps (Revision 2.3)
 for C++17, v5
 </td>
 </tr>
-<tr style="background-color: white">
-<td rowspan="1">
+<tr style="background-color: #f6f8fa">
+<td rowspan="2">
 <span id="__cpp_lib_mdspan"><a href="#__cpp_lib_mdspan" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_mdspan</code></a></span>
 </td>
-<td rowspan="1">
+<td rowspan="2">
 <code class="sourceCode cpp"><span class="op">&lt;</span>mdspan<span class="op">&gt;</span></code>
 </td>
 <td>
@@ -5015,6 +5174,15 @@ contiguous <br /><span class="citation" data-cites="P2613R1">[<a href="https://w
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2389R2">[<a href="https://wg21.link/p2389r2" role="doc-biblioref">P2389R2</a>]</span>
+<code class="sourceCode cpp">dextents</code> Index Type Parameter
+</td>
+</tr>
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_memory_resource"><a href="#__cpp_lib_memory_resource" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_memory_resource</code></a></span>
 </td>
@@ -5029,7 +5197,7 @@ contiguous <br /><span class="citation" data-cites="P2613R1">[<a href="https://w
 TS Components for C++17 (R1)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_modules"><a href="#__cpp_lib_modules" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_modules</code></a></span>
 </td>
@@ -5043,7 +5211,7 @@ TS Components for C++17 (R1)
 and std.compat
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_lib_monadic_optional"><a href="#__cpp_lib_monadic_optional" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_monadic_optional</code></a></span>
 </td>
@@ -5058,7 +5226,7 @@ and std.compat
 std::optional
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <span class="rm" style="color: #bf0303"><del>deleted</del></span>
 </td>
@@ -5067,7 +5235,7 @@ std::optional
 __cpp_lib_monadic_optional
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_move_iterator_concept"><a href="#__cpp_lib_move_iterator_concept" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_move_iterator_concept</code></a></span>
 </td>
@@ -5082,7 +5250,7 @@ __cpp_lib_monadic_optional
 random access iterator
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_move_only_function"><a href="#__cpp_lib_move_only_function" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_move_only_function</code></a></span>
 </td>
@@ -5097,7 +5265,7 @@ random access iterator
 any_invocable)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_node_extract"><a href="#__cpp_lib_node_extract" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_node_extract</code></a></span>
 </td>
@@ -5115,7 +5283,7 @@ any_invocable)
 (Revision 5)
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_nonmember_container_access"><a href="#__cpp_lib_nonmember_container_access" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_nonmember_container_access</code></a></span>
 </td>
@@ -5141,7 +5309,7 @@ any_invocable)
 Non-member size() and more (Revison 2)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_lib_not_fn"><a href="#__cpp_lib_not_fn" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_not_fn</code></a></span>
 </td>
@@ -5157,7 +5325,7 @@ Non-member size() and more (Revison 2)
 for C++17
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202306</span></code>
 </td>
@@ -5166,7 +5334,7 @@ for C++17
 callables
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_null_iterators"><a href="#__cpp_lib_null_iterators" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_null_iterators</code></a></span>
 </td>
@@ -5181,7 +5349,7 @@ callables
 Null Forward Iterators
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="4">
 <span id="__cpp_lib_optional"><a href="#__cpp_lib_optional" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_optional</code></a></span>
 </td>
@@ -5196,7 +5364,7 @@ Null Forward Iterators
 TS Components for C++17 (R1)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201606</span></code>
 </td>
@@ -5206,7 +5374,7 @@ variant, any and optional (Revision 3) <br /><span class="citation" data-cites="
 Again
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202106</span></code>
 </td>
@@ -5215,7 +5383,7 @@ Again
 for optional/variant
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202110</span></code>
 </td>
@@ -5223,6 +5391,21 @@ for optional/variant
 <span class="citation" data-cites="P0798R8">[<a href="https://wg21.link/p0798r8" role="doc-biblioref">P0798R8</a>]</span> Monadic operations for
 std::optional <br /><span class="citation" data-cites="LWG3621">[<a href="https://wg21.link/lwg3621" role="doc-biblioref">LWG3621</a>]</span> Remove feature-test macro
 __cpp_lib_monadic_optional
+</td>
+</tr>
+<tr style="background-color: white">
+<td rowspan="1">
+<span id="__cpp_lib_optional_range_support"><a href="#__cpp_lib_optional_range_support" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_optional_range_support</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>optional<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3168R2">[<a href="https://wg21.link/p3168r2" role="doc-biblioref">P3168R2</a>]</span> Give std::optional Range
+Support
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
@@ -5267,6 +5450,21 @@ Standardized
 </tr>
 <tr style="background-color: #f6f8fa">
 <td rowspan="1">
+<span id="__cpp_lib_philox_engine"><a href="#__cpp_lib_philox_engine" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_philox_engine</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>random<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2075R6">[<a href="https://wg21.link/p2075r6" role="doc-biblioref">P2075R6</a>]</span> Philox as an extension of the
+C++ RNG engines
+</td>
+</tr>
+<tr style="background-color: white">
+<td rowspan="1">
 <span id="__cpp_lib_polymorphic_allocator"><a href="#__cpp_lib_polymorphic_allocator" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_polymorphic_allocator</code></a></span>
 </td>
 <td rowspan="1">
@@ -5281,11 +5479,11 @@ as a vocabulary type <br /><span class="citation" data-cites="LWG3437">[<a href=
 is in the wrong header
 </td>
 </tr>
-<tr style="background-color: white">
-<td rowspan="2">
+<tr style="background-color: #f6f8fa">
+<td rowspan="3">
 <span id="__cpp_lib_print"><a href="#__cpp_lib_print" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_print</code></a></span>
 </td>
-<td rowspan="2">
+<td rowspan="3">
 <code class="sourceCode cpp"><span class="op">&lt;</span>ostream<span class="op">&gt;</span></code>
 <code class="sourceCode cpp"><span class="op">&lt;</span>print<span class="op">&gt;</span></code>
 </td>
@@ -5296,7 +5494,7 @@ is in the wrong header
 <span class="citation" data-cites="P2093R14">[<a href="https://wg21.link/p2093r14" role="doc-biblioref">P2093R14</a>]</span> Formatted output
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202403</span></code>
 </td>
@@ -5306,6 +5504,15 @@ implementation of std::print
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3235R3">[<a href="https://wg21.link/p3235r3" role="doc-biblioref">P3235R3</a>]</span> std::print more types faster
+with less memory
+</td>
+</tr>
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_quoted_string_io"><a href="#__cpp_lib_quoted_string_io" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_quoted_string_io</code></a></span>
 </td>
@@ -5320,11 +5527,11 @@ implementation of std::print
 Quoted Strings Library Proposal (Revision 2)
 </td>
 </tr>
-<tr style="background-color: white">
-<td rowspan="9">
+<tr style="background-color: #f6f8fa">
+<td rowspan="10">
 <span id="__cpp_lib_ranges"><a href="#__cpp_lib_ranges" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_ranges</code></a></span>
 </td>
-<td rowspan="9">
+<td rowspan="10">
 <code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code>
 <code class="sourceCode cpp"><span class="op">&lt;</span>functional<span class="op">&gt;</span></code>
 <code class="sourceCode cpp"><span class="op">&lt;</span>iterator<span class="op">&gt;</span></code>
@@ -5338,7 +5545,7 @@ Quoted Strings Library Proposal (Revision 2)
 <span class="citation" data-cites="P0896R4">[<a href="https://wg21.link/p0896r4" role="doc-biblioref">P0896R4</a>]</span> The One Ranges Proposal
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201907</span></code>
 </td>
@@ -5346,7 +5553,7 @@ Quoted Strings Library Proposal (Revision 2)
 <span class="citation" data-cites="P1035R7">[<a href="https://wg21.link/p1035r7" role="doc-biblioref">P1035R7</a>]</span> Input Range Adaptors
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201911</span></code>
 </td>
@@ -5355,7 +5562,7 @@ Quoted Strings Library Proposal (Revision 2)
 over-constrained
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202106</span></code>
 </td>
@@ -5364,7 +5571,7 @@ over-constrained
 be default constructible
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202110</span></code>
 </td>
@@ -5372,7 +5579,7 @@ be default constructible
 <span class="citation" data-cites="P2415R2">[<a href="https://wg21.link/p2415r2" role="doc-biblioref">P2415R2</a>]</span> What is a view?
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202202</span></code>
 </td>
@@ -5381,7 +5588,7 @@ be default constructible
 range adaptors
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202207</span></code>
 </td>
@@ -5390,7 +5597,7 @@ range adaptors
 allow for move only types
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202211</span></code>
 </td>
@@ -5398,7 +5605,7 @@ allow for move only types
 <span class="citation" data-cites="P2602R2">[<a href="https://wg21.link/p2602r2" role="doc-biblioref">P2602R2</a>]</span> Poison Pills are Too Toxic
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">202302</span></code>
 </td>
@@ -5407,6 +5614,15 @@ allow for move only types
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2997R1">[<a href="https://wg21.link/p2997r1" role="doc-biblioref">P2997R1</a>]</span> Removing the common reference
+requirement from the indirectly invocable concepts
+</td>
+</tr>
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_lib_ranges_as_const"><a href="#__cpp_lib_ranges_as_const" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_ranges_as_const</code></a></span>
 </td>
@@ -5421,7 +5637,7 @@ allow for move only types
 constant iterator
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">202311</span></code>
 </td>
@@ -5430,7 +5646,7 @@ constant iterator
 should follow its underlying type’s convertibility
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_ranges_as_rvalue"><a href="#__cpp_lib_ranges_as_rvalue" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_ranges_as_rvalue</code></a></span>
 </td>
@@ -5442,6 +5658,20 @@ should follow its underlying type’s convertibility
 </td>
 <td>
 <span class="citation" data-cites="P2446R2">[<a href="https://wg21.link/p2446r2" role="doc-biblioref">P2446R2</a>]</span> views::as_rvalue
+</td>
+</tr>
+<tr style="background-color: white">
+<td rowspan="1">
+<span id="__cpp_lib_ranges_cache_latest"><a href="#__cpp_lib_ranges_cache_latest" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_ranges_cache_latest</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>ranges<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3138R5">[<a href="https://wg21.link/p3138r5" role="doc-biblioref">P3138R5</a>]</span> views::cache_latest
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
@@ -5691,10 +5921,10 @@ containers
 </td>
 </tr>
 <tr style="background-color: white">
-<td rowspan="1">
+<td rowspan="2">
 <span id="__cpp_lib_raw_memory_algorithms"><a href="#__cpp_lib_raw_memory_algorithms" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_raw_memory_algorithms</code></a></span>
 </td>
-<td rowspan="1">
+<td rowspan="2">
 <code class="sourceCode cpp"><span class="op">&lt;</span>memory<span class="op">&gt;</span></code>
 </td>
 <td>
@@ -5703,6 +5933,16 @@ containers
 <td>
 <span class="citation" data-cites="P0040R3">[<a href="https://wg21.link/p0040r3" role="doc-biblioref">P0040R3</a>]</span> Extending memory management
 tools
+</td>
+</tr>
+<tr style="background-color: white">
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3369R0">[<a href="https://wg21.link/p3369r0" role="doc-biblioref">P3369R0</a>]</span> constexpr for
+uninitialized_default_construct <br /><span class="citation" data-cites="P3508R0">[<a href="https://wg21.link/p3508r0" role="doc-biblioref">P3508R0</a>]</span> Wording for constexpr for
+specialized memory algorithms
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
@@ -5857,6 +6097,20 @@ Library
 </tr>
 <tr style="background-color: #f6f8fa">
 <td rowspan="1">
+<span id="__cpp_lib_senders"><a href="#__cpp_lib_senders" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_senders</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>execution<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202406</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P2300R10">[<a href="https://wg21.link/p2300r10" role="doc-biblioref">P2300R10</a>]</span> <code class="sourceCode cpp">std<span class="op">::</span>execution</code>
+</td>
+</tr>
+<tr style="background-color: white">
+<td rowspan="1">
 <span id="__cpp_lib_shared_mutex"><a href="#__cpp_lib_shared_mutex" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_shared_mutex</code></a></span>
 </td>
 <td rowspan="1">
@@ -5870,7 +6124,7 @@ Library
 proposal to add shared_mutex (untimed) (Revision 4)
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="2">
 <span id="__cpp_lib_shared_ptr_arrays"><a href="#__cpp_lib_shared_ptr_arrays" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_shared_ptr_arrays</code></a></span>
 </td>
@@ -5885,7 +6139,7 @@ proposal to add shared_mutex (untimed) (Revision 4)
 arrays
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td>
 <code class="sourceCode cpp"><span class="dv">201707</span></code>
 </td>
@@ -5894,7 +6148,7 @@ arrays
 Support Arrays
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="1">
 <span id="__cpp_lib_shared_ptr_weak_type"><a href="#__cpp_lib_shared_ptr_weak_type" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_shared_ptr_weak_type</code></a></span>
 </td>
@@ -5908,7 +6162,7 @@ Support Arrays
 <span class="citation" data-cites="P0163R0">[<a href="https://wg21.link/p0163r0" role="doc-biblioref">P0163R0</a>]</span> <code class="sourceCode cpp">shared_ptr<span class="op">::</span>weak_type</code>
 </td>
 </tr>
-<tr style="background-color: white">
+<tr style="background-color: #f6f8fa">
 <td rowspan="1">
 <span id="__cpp_lib_shared_timed_mutex"><a href="#__cpp_lib_shared_timed_mutex" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_shared_timed_mutex</code></a></span>
 </td>
@@ -5924,7 +6178,7 @@ proposal to rename <code class="sourceCode cpp">shared_mutex</code> to
 <code class="sourceCode cpp">shared_timed_mutex</code>
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td rowspan="2">
 <span id="__cpp_lib_shift"><a href="#__cpp_lib_shift" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_shift</code></a></span>
 </td>
@@ -5938,13 +6192,28 @@ proposal to rename <code class="sourceCode cpp">shared_mutex</code> to
 <span class="citation" data-cites="P0769R2">[<a href="https://wg21.link/p0769r2" role="doc-biblioref">P0769R2</a>]</span> Add shift to <code class="sourceCode cpp"><span class="op">&lt;</span>algorithm<span class="op">&gt;</span></code>
 </td>
 </tr>
-<tr style="background-color: #f6f8fa">
+<tr style="background-color: white">
 <td>
 <code class="sourceCode cpp"><span class="dv">202202</span></code>
 </td>
 <td>
 <span class="citation" data-cites="P2440R1">[<a href="https://wg21.link/p2440r1" role="doc-biblioref">P2440R1</a>]</span> ranges::iota,
 ranges::shift_left, and ranges::shift_right
+</td>
+</tr>
+<tr style="background-color: #f6f8fa">
+<td rowspan="1">
+<span id="__cpp_lib_simd"><a href="#__cpp_lib_simd" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_simd</code></a></span>
+</td>
+<td rowspan="1">
+<code class="sourceCode cpp"><span class="op">&lt;</span>simd<span class="op">&gt;</span></code>
+</td>
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P1928R15">[<a href="https://wg21.link/p1928r15" role="doc-biblioref">P1928R15</a>]</span> std::simd - Merge
+data-parallel types from the Parallelism TS 2
 </td>
 </tr>
 <tr style="background-color: white">
@@ -6246,10 +6515,10 @@ string views
 </td>
 </tr>
 <tr style="background-color: white">
-<td rowspan="2">
+<td rowspan="3">
 <span id="__cpp_lib_submdspan"><a href="#__cpp_lib_submdspan" style="text-decoration:none"><code class="sourceCode cpp">__cpp_lib_submdspan</code></a></span>
 </td>
-<td rowspan="2">
+<td rowspan="3">
 <code class="sourceCode cpp"><span class="op">&lt;</span>mdspan<span class="op">&gt;</span></code>
 </td>
 <td>
@@ -6265,6 +6534,14 @@ string views
 </td>
 <td>
 <span class="citation" data-cites="P2642R6">[<a href="https://wg21.link/p2642r6" role="doc-biblioref">P2642R6</a>]</span> Padded mdspan layouts
+</td>
+</tr>
+<tr style="background-color: white">
+<td>
+<code class="sourceCode cpp"><span class="dv">202411</span></code>
+</td>
+<td>
+<span class="citation" data-cites="P3355R1">[<a href="https://wg21.link/p3355r1" role="doc-biblioref">P3355R1</a>]</span> Fix submdspan for C++26
 </td>
 </tr>
 <tr style="background-color: #f6f8fa">
@@ -7422,6 +7699,10 @@ numbers and pointers. <a href="https://wg21.link/p0811r3"><div class="csl-block"
 [P0840R2] Richard Smith. 2018-03-12. Language support for empty objects.
 <a href="https://wg21.link/p0840r2"><div class="csl-block">https://wg21.link/p0840r2</div></a>
 </div>
+<div id="ref-P0843R14" class="csl-entry" role="doc-biblioentry">
+[P0843R14] Gonzalo Brito Gadeschi, Timur Doumler, Nevin Liber, David
+Sankel. 2024-06-26. inplace_vector. <a href="https://wg21.link/p0843r14"><div class="csl-block">https://wg21.link/p0843r14</div></a>
+</div>
 <div id="ref-P0847R7" class="csl-entry" role="doc-biblioentry">
 [P0847R7] Barry Revzin, Gašper Ažman, Sy Brand, Ben Deane. 2021-07-14.
 Deducing this. <a href="https://wg21.link/p0847r7"><div class="csl-block">https://wg21.link/p0847r7</div></a>
@@ -7526,6 +7807,10 @@ std::span. <a href="https://wg21.link/p1024r3"><div class="csl-block">https://wg
 <div id="ref-P1048R1" class="csl-entry" role="doc-biblioentry">
 [P1048R1] Juan Alday. 2020-10-16. A proposal for a type trait to detect
 scoped enumerations. <a href="https://wg21.link/p1048r1"><div class="csl-block">https://wg21.link/p1048r1</div></a>
+</div>
+<div id="ref-P1061R10" class="csl-entry" role="doc-biblioentry">
+[P1061R10] Barry Revzin, Jonathan Wakely. 2024-11-24. Structured
+Bindings can introduce a Pack. <a href="https://wg21.link/p1061r10"><div class="csl-block">https://wg21.link/p1061r10</div></a>
 </div>
 <div id="ref-P1064R0" class="csl-entry" role="doc-biblioentry">
 [P1064R0] Peter Dimov, Vassil Vassilev. 2018-05-04. Allowing Virtual
@@ -7759,6 +8044,10 @@ Keys in Unordered Associative Containers. <a href="https://wg21.link/p1901r2"><d
 [P1907R1] Jens Maurer. 2019-11-08. Inconsistencies with non-type
 template parameters. <a href="https://wg21.link/p1907r1"><div class="csl-block">https://wg21.link/p1907r1</div></a>
 </div>
+<div id="ref-P1928R15" class="csl-entry" role="doc-biblioentry">
+[P1928R15] Matthias Kretz. 2024-11-22. std::simd - Merge data-parallel
+types from the Parallelism TS 2. <a href="https://wg21.link/p1928r15"><div class="csl-block">https://wg21.link/p1928r15</div></a>
+</div>
 <div id="ref-P1938R3" class="csl-entry" role="doc-biblioentry">
 [P1938R3] Barry Revzin, Daveed Vandevoorde, Richard Smith, Andrew
 Sutton. 2021-03-22. if consteval. <a href="https://wg21.link/p1938r3"><div class="csl-block">https://wg21.link/p1938r3</div></a>
@@ -7781,6 +8070,11 @@ construction from dynamic-size range. <a href="https://wg21.link/p1976r2"><div c
 <div id="ref-P2071R2" class="csl-entry" role="doc-biblioentry">
 [P2071R2] Tom Honermann, Steve Downey, Peter Bindels, Corentin Jabot, R.
 Martinho Fernandes. 2022-03-27. Named universal character escapes. <a href="https://wg21.link/p2071r2"><div class="csl-block">https://wg21.link/p2071r2</div></a>
+</div>
+<div id="ref-P2075R6" class="csl-entry" role="doc-biblioentry">
+[P2075R6] Ilya Burylov, Ruslan Arutyunyan; Andrey Nikolaev; Alina
+Elizarova; Pavel Dyakov; John Salmon. 2024-06-28. Philox as an extension
+of the C++ RNG engines. <a href="https://wg21.link/p2075r6"><div class="csl-block">https://wg21.link/p2075r6</div></a>
 </div>
 <div id="ref-P2077R3" class="csl-entry" role="doc-biblioentry">
 [P2077R3] Konstantin Boyarinov, Sergey Vinogradov; Ruslan Arutyunyan.
@@ -7854,6 +8148,11 @@ constant iterator. <a href="https://wg21.link/p2278r4"><div class="csl-block">ht
 Modifiers to Functions to_chars and from_chars for Integral Types in
 Header. <a href="https://wg21.link/p2291r3"><div class="csl-block">https://wg21.link/p2291r3</div></a>
 </div>
+<div id="ref-P2300R10" class="csl-entry" role="doc-biblioentry">
+[P2300R10] Eric Niebler, Michał Dominiak, Georgy Evtushenko, Lewis
+Baker, Lucian Radu Teodorescu, Lee Howes, Kirk Shoop, Michael Garland,
+Bryce Adelstein Lelbach. 2024-06-28. `std::execution`. <a href="https://wg21.link/p2300r10"><div class="csl-block">https://wg21.link/p2300r10</div></a>
+</div>
 <div id="ref-P2302R4" class="csl-entry" role="doc-biblioentry">
 [P2302R4] Christopher Di Bella. 2022-04-17. std::ranges::contains. <a href="https://wg21.link/p2302r4"><div class="csl-block">https://wg21.link/p2302r4</div></a>
 </div>
@@ -7887,6 +8186,10 @@ views::cartesian_product. <a href="https://wg21.link/p2374r4"><div class="csl-bl
 <div id="ref-P2387R3" class="csl-entry" role="doc-biblioentry">
 [P2387R3] Barry Revzin. 2021-12-17. Pipe support for user-defined range
 adaptors. <a href="https://wg21.link/p2387r3"><div class="csl-block">https://wg21.link/p2387r3</div></a>
+</div>
+<div id="ref-P2389R2" class="csl-entry" role="doc-biblioentry">
+[P2389R2] Bryce Adelstein Lelbach, Mark Hoemmen. 2024-06-24. `dextents`
+Index Type Parameter. <a href="https://wg21.link/p2389r2"><div class="csl-block">https://wg21.link/p2389r2</div></a>
 </div>
 <div id="ref-P2404R3" class="csl-entry" role="doc-biblioentry">
 [P2404R3] Justin Bassett. 2022-07-08. Move-only types for
@@ -8124,6 +8427,9 @@ void*: towards constexpr type-erasure. <a href="https://wg21.link/p2738r1"><div 
 [P2741R3] Corentin Jabot. 2023-06-16. user-generated static_assert
 messages. <a href="https://wg21.link/p2741r3"><div class="csl-block">https://wg21.link/p2741r3</div></a>
 </div>
+<div id="ref-P2747R2" class="csl-entry" role="doc-biblioentry">
+[P2747R2] Barry Revzin. 2024-03-19. constexpr placement new. <a href="https://wg21.link/p2747r2"><div class="csl-block">https://wg21.link/p2747r2</div></a>
+</div>
 <div id="ref-P2757R3" class="csl-entry" role="doc-biblioentry">
 [P2757R3] Barry Revzin. 2023-06-15. Type checking format args. <a href="https://wg21.link/p2757r3"><div class="csl-block">https://wg21.link/p2757r3</div></a>
 </div>
@@ -8142,6 +8448,11 @@ protocol to complex. <a href="https://wg21.link/p2819r2"><div class="csl-block">
 [P2833R2] Ben Craig. 2023-09-14. Freestanding Library: inout expected
 span. <a href="https://wg21.link/p2833r2"><div class="csl-block">https://wg21.link/p2833r2</div></a>
 </div>
+<div id="ref-P2835R7" class="csl-entry" role="doc-biblioentry">
+[P2835R7] Gonzalo Brito Gadeschi, Mark Hoemmen, Carter H. Edwards, Bryce
+Adelstein Lelbach. 2024-11-18. Expose std::atomic_ref’s object address.
+<a href="https://wg21.link/p2835r7"><div class="csl-block">https://wg21.link/p2835r7</div></a>
+</div>
 <div id="ref-P2836R1" class="csl-entry" role="doc-biblioentry">
 [P2836R1] Christopher Di Bella. 2023-07-11. std::basic_const_iterator
 should follow its underlying type’s convertibility. <a href="https://wg21.link/p2836r1"><div class="csl-block">https://wg21.link/p2836r1</div></a>
@@ -8152,6 +8463,11 @@ std::filesystem::path. <a href="https://wg21.link/p2845r8"><div class="csl-block
 </div>
 <div id="ref-P2893R3" class="csl-entry" role="doc-biblioentry">
 [P2893R3] Jody Hagins, Arthur O’Dwyer. 2024-03-22. Variadic Friends. <a href="https://wg21.link/p2893r3"><div class="csl-block">https://wg21.link/p2893r3</div></a>
+</div>
+<div id="ref-P2897R7" class="csl-entry" role="doc-biblioentry">
+[P2897R7] Mark Hoemmen, Damien Lebrun-Grandie, Nicolas Manual Morales,
+Christian Trott. 2024-11-22. aligned_accessor: An mdspan accessor
+expressing pointer overalignment. <a href="https://wg21.link/p2897r7"><div class="csl-block">https://wg21.link/p2897r7</div></a>
 </div>
 <div id="ref-P2909R4" class="csl-entry" role="doc-biblioentry">
 [P2909R4] Victor Zverovich. 2023-12-18. Fix formatting of code units as
@@ -8167,9 +8483,58 @@ integers (Dude, where’s my char?). <a href="https://wg21.link/p2909r4"><div cl
 [P2944R3] Barry Revzin. 2024-03-21. Comparisons for reference_wrapper.
 <a href="https://wg21.link/p2944r3"><div class="csl-block">https://wg21.link/p2944r3</div></a>
 </div>
+<div id="ref-P2985R0" class="csl-entry" role="doc-biblioentry">
+[P2985R0] Giuseppe D’Angelo. 2023-10-09. A type trait for detecting
+virtual base classes. <a href="https://wg21.link/p2985r0"><div class="csl-block">https://wg21.link/p2985r0</div></a>
+</div>
+<div id="ref-P2997R1" class="csl-entry" role="doc-biblioentry">
+[P2997R1] Barry Revzin, Tim Song. 2024-03-22. Removing the common
+reference requirement from the indirectly invocable concepts. <a href="https://wg21.link/p2997r1"><div class="csl-block">https://wg21.link/p2997r1</div></a>
+</div>
+<div id="ref-P3050R2" class="csl-entry" role="doc-biblioentry">
+[P3050R2] Mark Hoemmen. 2024-08-13. Fix C++26 by optimizing
+linalg::conjugated for noncomplex value types. <a href="https://wg21.link/p3050r2"><div class="csl-block">https://wg21.link/p3050r2</div></a>
+</div>
+<div id="ref-P3068R6" class="csl-entry" role="doc-biblioentry">
+[P3068R6] Hana Dusíková. 2024-11-19. Allowing exception throwing in
+constant-evaluation. <a href="https://wg21.link/p3068r6"><div class="csl-block">https://wg21.link/p3068r6</div></a>
+</div>
 <div id="ref-P3107R5" class="csl-entry" role="doc-biblioentry">
 [P3107R5] Victor Zverovich. 2024-03-21. Permit an efficient
 implementation of std::print. <a href="https://wg21.link/p3107r5"><div class="csl-block">https://wg21.link/p3107r5</div></a>
+</div>
+<div id="ref-P3138R5" class="csl-entry" role="doc-biblioentry">
+[P3138R5] Tim Song. 2024-11-18. views::cache_latest. <a href="https://wg21.link/p3138r5"><div class="csl-block">https://wg21.link/p3138r5</div></a>
+</div>
+<div id="ref-P3168R2" class="csl-entry" role="doc-biblioentry">
+[P3168R2] David Sankel, Marco Foco, Darius Neațu, Barry Revzin.
+2024-06-25. Give std::optional Range Support. <a href="https://wg21.link/p3168r2"><div class="csl-block">https://wg21.link/p3168r2</div></a>
+</div>
+<div id="ref-P3222R0" class="csl-entry" role="doc-biblioentry">
+[P3222R0] Mark Hoemmen. 2024-04-08. Fix C++26 by adding transposed
+special cases for P2642 layouts. <a href="https://wg21.link/p3222r0"><div class="csl-block">https://wg21.link/p3222r0</div></a>
+</div>
+<div id="ref-P3235R3" class="csl-entry" role="doc-biblioentry">
+[P3235R3] Victor Zverovich. 2024-06-26. std::print more types faster
+with less memory. <a href="https://wg21.link/p3235r3"><div class="csl-block">https://wg21.link/p3235r3</div></a>
+</div>
+<div id="ref-P3309R3" class="csl-entry" role="doc-biblioentry">
+[P3309R3] Hana Dusíková. 2024-12-16. constexpr atomic and atomic_ref. <a href="https://wg21.link/p3309r3"><div class="csl-block">https://wg21.link/p3309r3</div></a>
+</div>
+<div id="ref-P3355R1" class="csl-entry" role="doc-biblioentry">
+[P3355R1] Mark Hoemmen. 2024-10-15. Fix submdspan for C++26. <a href="https://wg21.link/p3355r1"><div class="csl-block">https://wg21.link/p3355r1</div></a>
+</div>
+<div id="ref-P3369R0" class="csl-entry" role="doc-biblioentry">
+[P3369R0] Giuseppe D’Angelo. 2024-07-28. constexpr for
+uninitialized_default_construct. <a href="https://wg21.link/p3369r0"><div class="csl-block">https://wg21.link/p3369r0</div></a>
+</div>
+<div id="ref-P3379R0" class="csl-entry" role="doc-biblioentry">
+[P3379R0] Jonathan Wakely. 2024-08-27. Constrain std::expected equality
+operators. <a href="https://wg21.link/p3379r0"><div class="csl-block">https://wg21.link/p3379r0</div></a>
+</div>
+<div id="ref-P3508R0" class="csl-entry" role="doc-biblioentry">
+[P3508R0] Giuseppe D’Angelo, Michael Schellenberger Costa. 2024-11-20.
+Wording for constexpr for specialized memory algorithms. <a href="https://wg21.link/p3508r0"><div class="csl-block">https://wg21.link/p3508r0</div></a>
 </div>
 </div>
 </div>
