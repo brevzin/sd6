@@ -128,6 +128,8 @@ language:
     papers: P2647R1
   - value: 202306
     papers: P2738R1
+  - value: 202406
+    papers: P2747R2
 - name: __cpp_constexpr_dynamic_alloc
   rows:
   - value: 201907
@@ -688,6 +690,11 @@ library:
     papers: P1006R1
   - value: 202202
     papers: P2273R3
+- name: __cpp_lib_constexpr_new
+  header_list: new
+  rows:
+  - value: 202406
+    papers: P2747R2
 - name: __cpp_lib_constexpr_numeric
   header_list: numeric
   rows:
@@ -1045,6 +1052,11 @@ library:
   rows:
   - value: 201505
     papers: N4510
+- name: __cpp_lib_inplace_vector
+  header_list: inplace_vector
+  rows:
+  - value: 202406
+    papers: P0843R14
 - name: __cpp_lib_int_pow2
   header_list: bit
   rows:
@@ -1142,6 +1154,11 @@ library:
   rows:
   - value: 201603
     papers: P0185R1
+- name: __cpp_lib_is_virtual_base_of
+  header_list: type_traits
+  rows:
+  - value: 202406
+    papers: P2985R0
 - name: __cpp_lib_is_within_lifetime
   header_list: type_traits
   rows:
@@ -1214,6 +1231,8 @@ library:
   rows:
   - value: 202207
     papers: P0009R18 P2599R2 P2604R0 P2613R1
+  - value: 202406
+    papers: P2389R2
 - name: __cpp_lib_memory_resource
   header_list: memory_resource
   rows:
@@ -1275,6 +1294,11 @@ library:
     papers: P2231R1
   - value: 202110
     papers: P0798R8 LWG3621
+- name: __cpp_lib_optional_range_support
+  header_list: optional
+  rows:
+  - value: 202406
+    papers: P3168R2
 - name: __cpp_lib_out_ptr
   header_list: memory
   rows:
@@ -1287,6 +1311,11 @@ library:
   rows:
   - value: 201603
     papers: P0024R2
+- name: __cpp_lib_philox_engine
+  header_list: random
+  rows:
+  - value: 202406
+    papers: P2075R6
 - name: __cpp_lib_polymorphic_allocator
   header_list: memory_resource
   rows:
@@ -1299,6 +1328,8 @@ library:
     papers: P2093R14
   - value: 202403
     papers: P3107R5
+  - value: 202406
+    papers: P3235R3
 - name: __cpp_lib_quoted_string_io
   header_list: iomanip
   rows:
@@ -1325,6 +1356,8 @@ library:
     papers: P2602R2
   - value: 202302
     papers: P2609R3
+  - value: 202406
+    papers: P2997R1
 - name: __cpp_lib_ranges_as_const
   header_list: ranges
   rows:
@@ -1477,6 +1510,11 @@ library:
   rows:
   - value: 201907
     papers: P1135R6
+- name: __cpp_lib_senders
+  header_list: execution
+  rows:
+  - value: 202406
+    papers: P2300R10
 - name: __cpp_lib_shared_mutex
   header_list: shared_mutex
   rows:
