@@ -127,15 +127,17 @@ class Document(object):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser()
-    parser.add_argument('--kind', choices=['attributes', 'library', 'language'], required=True)
-    parser.add_argument('--name', required=True)
-    parser.add_argument('--value', required=True, type=int)
-    parser.add_argument('--papers', nargs='+')
-    parser.add_argument('--headers', nargs='*')
-    parser.add_argument('--macro-file', default='../macros.yaml')
+    parser.add_argument('--file', type=argparse.FileType("r"))
     args = parser.parse_args()
 
-    doc = Document(args.macro_file)
-    doc.add(kind=args.kind, name=args.name, value=args.value,
-            papers=args.papers, headers=args.headers)
+    contents = ordered_load(args.file)
+
+    doc = Document("../macros.yaml", value=contents.pop("value"))
+    for kind in contents:
+        for entry in contents.get(kind, []):
+            match entry:
+                case {"add": name, **kwargs}:
+                    doc.add(kind=kind, name=name, **kwargs)
+                case {"update": name, **kwargs}:
+                    doc.update(kind=kind, name=name, **kwargs)
     doc.dump()
