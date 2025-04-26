@@ -1,0 +1,51 @@
+value: 202411
+language:
+  # 4. Apply the changes in P3068R6 (Allowing exception throwing in constant-evaluation) to the C++ Working Paper.
+  - add: __cpp_constexpr_exceptions
+    papers: P3068R6
+  # 7. Apply the changes in P1061R10 (Structured Bindings can introduce a Pack) to the C++ Working Paper.
+  - update: __cpp_structured_bindings
+    papers: P1061R10
+  # 8. Apply the changes in P3176R1 (The Oxford variadic comma) to the C++ Working Paper.
+library:
+  # CWG 4. Apply the changes in P3068R6 (Allowing exception throwing in constant-evaluation) to the C++ Working Paper.
+  - add: __cpp_lib_constexpr_exceptions
+    papers: P3068R6
+    headers: exception
+  # 3. Apply the changes in P3138R5 (views::cache_latest) to the C++ working paper.
+  - add: __cpp_lib_ranges_cache_latest
+    papers: P3138R5
+    headers: ranges
+  # 4. Apply the changes in P3379R0 (Constrain std::expected equality operators) to the C++ working paper.
+  - update: __cpp_lib_constrained_equality
+    papers: P3379R0
+  # 7. Apply the changes in P2897R7 (aligned_accessor: An mdspan accessor expressing pointer over-alignment) to the C++ working paper.
+  - add: __cpp_lib_aligned_accessor
+    papers: P2897R7
+    headers: mdspan
+  - add: __cpp_lib_is_sufficiently_aligned
+    papers: P2897R7
+    headers: memory
+  # 8. Apply the changes in P3355R1 (Fix submdspan for C++26) to the C++ working paper.
+  - update: __cpp_lib_submdspan
+    papers: P3355R1
+  # 9. Apply the changes in P3222R0 (Fix C++26 by adding transposed special cases for P2642 layouts) to the C++ working paper.
+  # 10. Apply the changes in P3050R2 (Fix C++26 by optimizing linalg::conjugated for noncomplex value types) to the C++ working paper.
+  - update: __cpp_lib_linalg
+    papers: [P3222R0, P3050R2]
+  # 12. Apply the changes in P2835R7 (Expose std::atomic_ref's object address) to the C++ working paper.
+  - update: __cpp_lib_atomic_ref
+    papers: P2835R7
+  # 14. Apply the changes in P3508R0 (Wording for "constexpr for specialized memory algorithms") and P3369R0 (constexpr for uninitialized_default_construct) to the C++ working paper.
+  - update: __cpp_lib_raw_memory_algorithms
+    papers: P3508R0 P3369R0
+  # 16. Apply the changes in P3309R3 (constexpr atomic and atomic_ref) to the C++ working paper.
+  - add: __cpp_lib_constexpr_atomic
+    papers: P3309R3
+    headers: atomic
+  # 17. Apply the changes in P3019R11 (indirect and polymorphic: Vocabulary Types for Composite Class Design) to the C++ working paper. [NOT APPLIED to the Working Draft due to unclear specification. See Editor's Report.]
+  # Punted to Hagenberg
+  # 18. Apply the changes in P1928R15 (std::simd — merge data-parallel types from the Parallelism TS 2) to the C++ working paper.
+  - add: __cpp_lib_simd
+    papers: P1928R15
+    headers: simd

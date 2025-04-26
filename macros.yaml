@@ -134,6 +134,10 @@ language:
   rows:
   - value: 201907
     papers: P0784R7
+- name: __cpp_constexpr_exceptions
+  rows:
+  - value: 202411
+    papers: P3068R6
 - name: __cpp_constexpr_in_decltype
   rows:
   - value: 201711
@@ -357,6 +361,8 @@ language:
     papers: P0217R3
   - value: 202403
     papers: P0609R3
+  - value: 202411
+    papers: P1061R10
 - name: __cpp_template_template_args
   rows:
   - value: 201611
@@ -413,6 +419,11 @@ library:
   rows:
   - value: 202207
     papers: P2408R5
+- name: __cpp_lib_aligned_accessor
+  header_list: mdspan
+  rows:
+  - value: 202411
+    papers: P2897R7
 - name: __cpp_lib_allocate_at_least
   header_list: memory
   rows:
@@ -499,6 +510,8 @@ library:
   rows:
   - value: 201806
     papers: P0019R8
+  - value: 202411
+    papers: P2835R7
 - name: __cpp_lib_atomic_shared_ptr
   header_list: memory
   rows:
@@ -642,6 +655,11 @@ library:
     papers: P0879R0 LWG3256 LWG3792
   - value: 202306
     papers: P2562R1
+- name: __cpp_lib_constexpr_atomic
+  header_list: atomic
+  rows:
+  - value: 202411
+    papers: P3309R3
 - name: __cpp_lib_constexpr_bitset
   header_list: bitset
   rows:
@@ -671,6 +689,11 @@ library:
   rows:
   - value: 201907
     papers: P0784R7
+- name: __cpp_lib_constexpr_exceptions
+  header_list: exception
+  rows:
+  - value: 202411
+    papers: P3068R6
 - name: __cpp_lib_constexpr_functional
   header_list: functional
   rows:
@@ -741,6 +764,8 @@ library:
   rows:
   - value: 202403
     papers: P2944R3
+  - value: 202411
+    papers: P3379R0
 - name: __cpp_lib_containers_ranges
   header_list: vector list forward_list map set unordered_map unordered_set deque
     queue stack string
@@ -1149,6 +1174,11 @@ library:
   rows:
   - value: 202011
     papers: P1048R1
+- name: __cpp_lib_is_sufficiently_aligned
+  header_list: memory
+  rows:
+  - value: 202411
+    papers: P2897R7
 - name: __cpp_lib_is_swappable
   header_list: type_traits
   rows:
@@ -1186,6 +1216,8 @@ library:
   rows:
   - value: 202311
     papers: P1673R13
+  - value: 202411
+    papers: P3050R2 P3222R0
 - name: __cpp_lib_list_remove_return_type
   header_list: forward_list list
   rows:
@@ -1370,6 +1402,11 @@ library:
   rows:
   - value: 202207
     papers: P2446R2
+- name: __cpp_lib_ranges_cache_latest
+  header_list: ranges
+  rows:
+  - value: 202411
+    papers: P3138R5
 - name: __cpp_lib_ranges_cartesian_product
   header_list: ranges
   rows:
@@ -1460,6 +1497,8 @@ library:
   rows:
   - value: 201606
     papers: P0040R3
+  - value: 202411
+    papers: P3369R0 P3508R0
 - name: __cpp_lib_rcu
   header_list: rcu
   rows:
@@ -1544,6 +1583,11 @@ library:
     papers: P0769R2
   - value: 202202
     papers: P2440R1
+- name: __cpp_lib_simd
+  header_list: simd
+  rows:
+  - value: 202411
+    papers: P1928R15
 - name: __cpp_lib_smart_pointer_owner_equality
   header_list: memory
   rows:
@@ -1643,6 +1687,8 @@ library:
     papers: P2630R4
   - value: 202403
     papers: P2642R6
+  - value: 202411
+    papers: P3355R1
 - name: __cpp_lib_syncbuf
   header_list: syncstream
   rows:
