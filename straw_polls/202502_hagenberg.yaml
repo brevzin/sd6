@@ -1,0 +1,160 @@
+value: 202502
+language:
+  # 3. Apply the changes in P3074R7 (trivial unions (was std::uninitialized)) to the C++ Working Paper.
+  - add: __cpp_trivial_union
+    papers: P3542R0
+  # 5. Apply the changes in P2900R14 (Contracts for C++) to the C++ Working Paper.
+  - add: __cpp_contracts
+    papers: P2900R14
+  # 7. Apply the changes in P2841R7 (Concept and variable-template template-parameters) to the C++ Working Paper.
+  - add: __cpp_template_parameters
+    papers: P2841R7
+  # 8. Apply the changes in P2786R13 (Trivial Relocatability For C++26) to the C++ Working Paper.
+  - add: __cpp_trivial_relocatability
+    papers: P2786R13
+  # 9. Apply the changes in P1967R14 (#embed - a simple, scannable preprocessor-based resource acquisition method) to the C++ Working Paper.
+  #
+library:
+  # CWG2
+  - add: __cpp_lib_constexpr_inplace_vector
+    papers: P3542R0
+    headers: inplace_vector
+  # CWG5
+  - add: __cpp_lib_contracts
+    papers: P2900R14
+    headers: contracts
+  # CWG8
+  - add: __cpp_lib_trivially_relocatable
+    papers: P2786R13
+    headers: [memory, type_traits]
+  # 3. Apply the changes in P3137R3 (views::to_input) to the C++ working paper.
+  - add: __cpp_lib_ranges_to_input
+    papers: P3137R3
+    headers: ranges
+  # 6. Apply the changes in P3372R3 (constexpr containers and adaptors) to the C++ working paper.
+  - add: __cpp_lib_constexpr_deque
+    papers: P3349R1
+    headers: deque
+  - add: __cpp_lib_constexpr_flat_map
+    papers: P3349R1
+    headers: flat_map
+  - add: __cpp_lib_constexpr_flat_set
+    papers: P3349R1
+    headers: flat_set
+  - add: __cpp_lib_constexpr_forward_list
+    papers: P3349R1
+    headers: forward_list
+  - add: __cpp_lib_constexpr_list
+    papers: P3349R1
+    headers: list
+  - add: __cpp_lib_constexpr_map
+    papers: P3349R1
+    headers: map
+  - add: __cpp_lib_constexpr_queue
+    papers: P3349R1
+    headers: queue
+  - add: __cpp_lib_constexpr_set
+    papers: P3349R1
+    headers: set
+  - add: __cpp_lib_constexpr_stack
+    papers: P3349R1
+    headers: stack
+  - add: __cpp_lib_constexpr_unordered_map
+    papers: P3349R1
+    headers: unordered_map
+  - add: __cpp_lib_constexpr_unordered_set
+    papers: P3349R1
+    headers: unordered_set
+  # 7. Apply the changes in P3378R2 (constexpr exception types) to the C++ working paper.
+  - update: __cpp_lib_constexpr_exceptions
+    papers: P3378R2
+    headers: [stdexcept, expected, optional, variant, format]
+  # 8. Apply the changes in P3441R2 (Rename simd_split to simd_chunk) to the C++ working paper.
+  #
+  # 9. Apply the changes in P3287R3 (Exploration of namespaces for std::simd) to the C++ working paper.
+  #
+  # 10. Apply the changes in P2976R1 (Freestanding Library: algorithm, numeric, and random) to the C++ working paper.
+  - add: __cpp_lib_freestanding_execution
+    papers: P2976R1
+    headers: execution
+  - add: __cpp_lib_freestanding_random
+    papers: P2976R1
+    headers: random
+  - update: __cpp_lib_freestanding_algorithm
+    papers: P2976R1
+  - update: __cpp_lib_freestanding_memory
+    papers: P2976R1
+  - add: __cpp_lib_freestanding_numeric
+    papers: P2976R1
+    headers: numeric
+  - add: __cpp_lib_freestanding_random
+    papers: P2976R1
+    headers: random
+  # 11. Apply the changes in P3430R3 (simd issues: explicit, unsequenced, identity-element position, and members of disabled simd) to the C++ working paper.
+  #
+  # 12. Apply the changes in P2663R7 (Interleaved complex values support in std::simd) to the C++ working paper.
+  - add: __cpp_lib_simd_complex
+    papers: P2663R7
+    headers: simd
+  # 13. Apply the changes in P2933R4 (Extend ⟨bit⟩ header function with overloads for std::simd) to the C++ working paper.
+  - update: __cpp_lib_simd
+    papers: P2933R4
+  # 14. Apply the changes in P2846R6 (reserve_hint: Eagerly reserving memory for not-quite-sized lazy ranges) to the C++ working paper.
+  - add: __cpp_lib_ranges_reserve_hint
+    papers: P2846R6
+    headers: ranges
+  # 15. Apply the changes in P3471R4 (Standard Library Hardening) to the C++ working paper.
+  - add: __cpp_lib_hardened_array
+    papers: P3471R4
+    headers: array
+  - add: __cpp_lib_hardened_basic_string
+    papers: P3471R4
+    headers: string
+  - add: __cpp_lib_hardened_basic_string_view
+    papers: P3471R4
+    headers: string_view
+  - add: __cpp_lib_hardened_bitset
+    papers: P3471R4
+    headers: bitset
+  - add: __cpp_lib_hardened_deque
+    papers: P3471R4
+    headers: deque
+  - add: __cpp_lib_hardened_expected
+    papers: P3471R4
+    headers: expected
+  - add: __cpp_lib_hardened_forward_list
+    papers: P3471R4
+    headers: forward_list
+  - add: __cpp_lib_hardened_inplace_vector
+    papers: P3471R4
+    headers: inplace_vector
+  - add: __cpp_lib_hardened_list
+    papers: P3471R4
+    headers: list
+  - add: __cpp_lib_hardened_mdspan
+    papers: P3471R4
+    headers: mdspan
+  - add: __cpp_lib_hardened_optional
+    papers: P3471R4
+    headers: optional
+  - add: __cpp_lib_hardened_span
+    papers: P3471R4
+    headers: span
+  - add: __cpp_lib_hardened_valarray
+    papers: P3471R4
+    headers: valarray
+  - add: __cpp_lib_hardened_vector
+    papers: P3471R4
+    headers: vector
+  #
+  # 16. Apply the changes in P0447R28 (Introduction of std::hive to the standard library) to the C++ working paper.
+  - add: __cpp_lib_hive
+    papers: P0447R28
+    headers: hive
+  # 17. Apply the changes in P3019R14 (indirect and polymorphic: Vocabulary Types for Composite Class Design) to the C++ working paper.
+  - add: __cpp_lib_indirect
+    papers: P3019R11
+    headers: memory
+  - add: __cpp_lib_polymorphic
+    papers: P3019R11
+    headers: memory

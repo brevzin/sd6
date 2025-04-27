@@ -61,8 +61,8 @@ class Document(object):
     def remove(self, kind, name, papers, value=None):
         self.add(kind=kind, name=name, value=(value or self.value), papers=papers, _remove=True)
 
-    def update(self, kind, name, papers, value=None):
-        self.add(kind=kind, name=name, value=(value or self.value), papers=papers, _update=True)
+    def update(self, kind, name, papers, value=None, headers=None):
+        self.add(kind=kind, name=name, value=(value or self.value), papers=papers, _update=True, headers=headers)
 
     def update_library(self, **kwargs): self.update(kind='library', **kwargs)
     def update_language(self, **kwargs): self.update(kind='language', **kwargs)
@@ -97,6 +97,10 @@ class Document(object):
                         old_papers.extend(papers)
                         old_papers = sort_papers(old_papers)
                         entry['papers'] = ' '.join(old_papers)
+
+                        if headers is not None and _update:
+                            # updating headers?
+                            row['header_list'] = ' '.join(sorted(set(row['header_list'].split() + headers)))
                         break
                 else:
                     # add a new row
