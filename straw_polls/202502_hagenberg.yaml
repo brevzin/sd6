@@ -33,37 +33,37 @@ library:
     headers: ranges
   # 6. Apply the changes in P3372R3 (constexpr containers and adaptors) to the C++ working paper.
   - add: __cpp_lib_constexpr_deque
-    papers: P3349R1
+    papers: P3372R3
     headers: deque
   - add: __cpp_lib_constexpr_flat_map
-    papers: P3349R1
+    papers: P3372R3
     headers: flat_map
   - add: __cpp_lib_constexpr_flat_set
-    papers: P3349R1
+    papers: P3372R3
     headers: flat_set
   - add: __cpp_lib_constexpr_forward_list
-    papers: P3349R1
+    papers: P3372R3
     headers: forward_list
   - add: __cpp_lib_constexpr_list
-    papers: P3349R1
+    papers: P3372R3
     headers: list
   - add: __cpp_lib_constexpr_map
-    papers: P3349R1
+    papers: P3372R3
     headers: map
   - add: __cpp_lib_constexpr_queue
-    papers: P3349R1
+    papers: P3372R3
     headers: queue
   - add: __cpp_lib_constexpr_set
-    papers: P3349R1
+    papers: P3372R3
     headers: set
   - add: __cpp_lib_constexpr_stack
-    papers: P3349R1
+    papers: P3372R3
     headers: stack
   - add: __cpp_lib_constexpr_unordered_map
-    papers: P3349R1
+    papers: P3372R3
     headers: unordered_map
   - add: __cpp_lib_constexpr_unordered_set
-    papers: P3349R1
+    papers: P3372R3
     headers: unordered_set
   # 7. Apply the changes in P3378R2 (constexpr exception types) to the C++ working paper.
   - update: __cpp_lib_constexpr_exceptions
