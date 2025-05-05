@@ -1786,7 +1786,7 @@ library:
   - value: 202411
     papers: P1928R15
   - value: 202502
-    papers: P2933R4
+    papers: P3441R2 P3287R3 P2933R4
 - name: __cpp_lib_simd_complex
   header_list: simd
   rows:
