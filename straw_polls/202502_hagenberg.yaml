@@ -98,7 +98,7 @@ library:
     headers: simd
   # 13. Apply the changes in P2933R4 (Extend ⟨bit⟩ header function with overloads for std::simd) to the C++ working paper.
   - update: __cpp_lib_simd
-    papers: P2933R4
+    papers: P3441R2 P3287R3 P2933R4
   # 14. Apply the changes in P2846R6 (reserve_hint: Eagerly reserving memory for not-quite-sized lazy ranges) to the C++ working paper.
   - add: __cpp_lib_ranges_reserve_hint
     papers: P2846R6

@@ -704,7 +704,7 @@ library:
   header_list: deque
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_dynamic_alloc
   header_list: memory
   rows:
@@ -721,17 +721,17 @@ library:
   header_list: flat_map
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_flat_set
   header_list: flat_set
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_forward_list
   header_list: forward_list
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_functional
   header_list: functional
   rows:
@@ -753,12 +753,12 @@ library:
   header_list: list
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_map
   header_list: map
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_memory
   header_list: memory
   rows:
@@ -780,17 +780,17 @@ library:
   header_list: queue
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_set
   header_list: set
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_stack
   header_list: stack
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_string
   header_list: string
   rows:
@@ -821,12 +821,12 @@ library:
   header_list: unordered_map
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_unordered_set
   header_list: unordered_set
   rows:
   - value: 202502
-    papers: P3349R1
+    papers: P3372R3
 - name: __cpp_lib_constexpr_utility
   header_list: utility
   rows:
@@ -1786,7 +1786,7 @@ library:
   - value: 202411
     papers: P1928R15
   - value: 202502
-    papers: P3441R2 P3287R3 P2933R4
+    papers: P2933R4 P3287R3 P3441R2
 - name: __cpp_lib_simd_complex
   header_list: simd
   rows:
