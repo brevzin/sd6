@@ -466,7 +466,7 @@ references:
     citation-label: P1964R2
     title: "Wording for _`boolean-testable`_"
     author:
-      - family: Tim Song 
+      - family: Tim Song
     issued:
       year: 2020
     URL: https://wg21.link/P1964R2
@@ -478,6 +478,16 @@ references:
     issued:
       year: 2020
     URL: https://wg21.link/P1976R2
+  - id: P3074R7
+    citation-label: P3074R7
+    title: "trivial `union`s (was `std::uninitialized<T>`)"
+    author:
+      - family: Barry Revzin
+    issued:
+      - year: 2025
+        month: 02
+        day: 14
+    URL: https://wg21.link/p3074r7
   - id: LWG2247
     citation-label: LWG2247
     title: "Type traits and `std::nullptr_t`"

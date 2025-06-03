@@ -25169,7 +25169,7 @@
     "P3074R4": "trivial unions (was std::uninitialized<T>)",
     "P3074R5": "trivial unions (was std::uninitialized<T>)",
     "P3074R6": "trivial unions (was std::uninitialized<T>)",
-    "P3074R7": "trivial unions (was std::uninitialized<T>)",
+    "P3074R7": "trivial `union`s (was `std::uninitialized<T>`)",
     "P3075R0": "Adding an Undefined Behavior and IFNDR Annex",
     "P3079R0": "Should ignore and observe exist for constant evaluation of contracts?",
     "P3081R0": "Core safety Profiles: Specification, adoptability, and impact",

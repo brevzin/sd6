@@ -2,7 +2,7 @@ value: 202502
 language:
   # 3. Apply the changes in P3074R7 (trivial unions (was std::uninitialized)) to the C++ Working Paper.
   - add: __cpp_trivial_union
-    papers: P3542R0
+    papers: P3074R7
   # 5. Apply the changes in P2900R14 (Contracts for C++) to the C++ Working Paper.
   - add: __cpp_contracts
     papers: P2900R14

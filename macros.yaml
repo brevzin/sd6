@@ -386,7 +386,7 @@ language:
 - name: __cpp_trivial_union
   rows:
   - value: 202502
-    papers: P3542R0
+    papers: P3074R7
 - name: __cpp_unicode_characters
   rows:
   - value: 200704
