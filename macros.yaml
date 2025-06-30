@@ -743,7 +743,7 @@ library:
   header_list: inplace_vector
   rows:
   - value: 202502
-    papers: P3542R0
+    papers: P3074R7
 - name: __cpp_lib_constexpr_iterator
   header_list: iterator
   rows:
