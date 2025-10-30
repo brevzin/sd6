@@ -142,6 +142,10 @@ language:
   rows:
   - value: 201711
     papers: P0859R0
+- name: __cpp_constexpr_virtual_inheritance
+  rows:
+  - value: 202506
+    papers: P3533R2
 - name: __cpp_constinit
   rows:
   - value: 201907
@@ -184,6 +188,10 @@ language:
   rows:
   - value: 199711
     feature: Exception handling
+- name: __cpp_expansion_statements
+  rows:
+  - value: 202506
+    papers: P1306R5
 - name: __cpp_explicit_this_parameter
   rows:
   - value: 202110
@@ -224,6 +232,10 @@ language:
   rows:
   - value: 201806
     papers: P0722R3
+- name: __cpp_impl_reflection
+  rows:
+  - value: 202506
+    papers: P2996R13 P3096R12 P3293R3 P3394R4
 - name: __cpp_impl_three_way_comparison
   rows:
   - value: 201711
@@ -521,6 +533,13 @@ library:
   rows:
   - value: 202403
     papers: P0493R5
+  - value: 202506
+    papers: P3008R6
+- name: __cpp_lib_atomic_reductions
+  header_list: atomic
+  rows:
+  - value: 202506
+    papers: P3111R8
 - name: __cpp_lib_atomic_ref
   header_list: atomic
   rows:
@@ -662,6 +681,11 @@ library:
     papers: P1964R2
   - value: 202207
     papers: P2404R3
+- name: __cpp_lib_constant_wrapper
+  header_list: type_traits
+  rows:
+  - value: 202506
+    papers: P2781R9
 - name: __cpp_lib_constexpr_algorithms
   header_list: algorithm utility
   rows:
@@ -766,6 +790,8 @@ library:
     papers: P1006R1
   - value: 202202
     papers: P2273R3
+  - value: 202506
+    papers: P3037R6
 - name: __cpp_lib_constexpr_new
   header_list: new
   rows:
@@ -865,6 +891,11 @@ library:
   rows:
   - value: 201902
     papers: P0912R5 LWG3393
+- name: __cpp_lib_counting_scope
+  header_list: execution
+  rows:
+  - value: 202506
+    papers: P3149R11
 - name: __cpp_lib_debugging
   header_list: debugging
   rows:
@@ -881,6 +912,11 @@ library:
   rows:
   - value: 202403
     papers: P2248R8
+- name: __cpp_lib_define_static
+  header_list: meta
+  rows:
+  - value: 202506
+    papers: P3491R3
 - name: __cpp_lib_destroying_delete
   header_list: new
   rows:
@@ -903,6 +939,11 @@ library:
     papers: P1209R0
   - value: 202002
     papers: P1115R3
+- name: __cpp_lib_exception_ptr_cast
+  header_list: exception
+  rows:
+  - value: 202506
+    papers: P2927R3 P3748R0
 - name: __cpp_lib_exchange_function
   header_list: utility
   rows:
@@ -965,6 +1006,8 @@ library:
   rows:
   - value: 202403
     papers: P2845R8
+  - value: 202506
+    papers: P2319R5
 - name: __cpp_lib_format_ranges
   header_list: format
   rows:
@@ -1076,6 +1119,8 @@ library:
   rows:
   - value: 202311
     papers: P2407R5
+  - value: 202506
+    papers: P2988R12
 - name: __cpp_lib_freestanding_random
   header_list: random
   rows:
@@ -1159,6 +1204,11 @@ library:
   rows:
   - value: 202502
     papers: P3471R4
+- name: __cpp_lib_hardened_basic_stacktrace
+  header_list: stacktrace
+  rows:
+  - value: 202506
+    papers: P3697R1
 - name: __cpp_lib_hardened_basic_string
   header_list: string
   rows:
@@ -1174,6 +1224,16 @@ library:
   rows:
   - value: 202502
     papers: P3471R4
+- name: __cpp_lib_hardened_common_iterator
+  header_list: iterator
+  rows:
+  - value: 202506
+    papers: P3697R1
+- name: __cpp_lib_hardened_counted_iterator
+  header_list: iterator
+  rows:
+  - value: 202506
+    papers: P3697R1
 - name: __cpp_lib_hardened_deque
   header_list: deque
   rows:
@@ -1209,6 +1269,11 @@ library:
   rows:
   - value: 202502
     papers: P3471R4
+- name: __cpp_lib_hardened_shared_ptr_array
+  header_list: memory
+  rows:
+  - value: 202506
+    papers: P3697R1
 - name: __cpp_lib_hardened_span
   header_list: span
   rows:
@@ -1224,6 +1289,11 @@ library:
   rows:
   - value: 202502
     papers: P3471R4
+- name: __cpp_lib_hardened_view_interface
+  header_list: ranges
+  rows:
+  - value: 202506
+    papers: P3697R1
 - name: __cpp_lib_hardware_interference_size
   header_list: new
   rows:
@@ -1497,6 +1567,11 @@ library:
   rows:
   - value: 201304
     papers: N3644
+- name: __cpp_lib_observable_checkpoint
+  header_list: utility
+  rows:
+  - value: 202506
+    papers: P3641R0
 - name: __cpp_lib_optional
   header_list: optional
   rows:
@@ -1508,6 +1583,8 @@ library:
     papers: P2231R1
   - value: 202110
     papers: P0798R8 LWG3621
+  - value: 202506
+    papers: P2988R12
 - name: __cpp_lib_optional_range_support
   header_list: optional
   rows:
@@ -1525,6 +1602,13 @@ library:
   rows:
   - value: 201603
     papers: P0024R2
+  - value: 202506
+    papers: P3179R9
+- name: __cpp_lib_parallel_scheduler
+  header_list: execution
+  rows:
+  - value: 202506
+    papers: P2079R10
 - name: __cpp_lib_philox_engine
   header_list: random
   rows:
@@ -1634,6 +1718,11 @@ library:
   rows:
   - value: 202207
     papers: P2322R6
+- name: __cpp_lib_ranges_indices
+  header_list: ranges
+  rows:
+  - value: 202506
+    papers: P3060R3
 - name: __cpp_lib_ranges_iota
   header_list: numeric
   rows:
@@ -1711,6 +1800,11 @@ library:
   rows:
   - value: 202403
     papers: P2944R3
+- name: __cpp_lib_reflection
+  header_list: meta
+  rows:
+  - value: 202506
+    papers: P2996R13 P3096R12 P3293R3 P3394R4 P3560R2
 - name: __cpp_lib_remove_cvref
   header_list: type_traits
   rows:
@@ -1751,6 +1845,8 @@ library:
   rows:
   - value: 202406
     papers: P2300R10
+  - value: 202506
+    papers: P3570R2
 - name: __cpp_lib_shared_mutex
   header_list: shared_mutex
   rows:
@@ -1787,11 +1883,18 @@ library:
     papers: P1928R15
   - value: 202502
     papers: P2933R4 P3287R3 P3441R2
+  - value: 202506
+    papers: P2876R3 P3480R6
 - name: __cpp_lib_simd_complex
   header_list: simd
   rows:
   - value: 202502
     papers: P2663R7
+- name: __cpp_lib_simd_permutations
+  header_list: simd
+  rows:
+  - value: 202506
+    papers: P2664R11
 - name: __cpp_lib_smart_pointer_owner_equality
   header_list: memory
   rows:
@@ -1868,6 +1971,11 @@ library:
   rows:
   - value: 202110
     papers: P1072R10
+- name: __cpp_lib_string_subview
+  header_list: string string_view
+  rows:
+  - value: 202506
+    papers: P3044R2
 - name: __cpp_lib_string_udls
   header_list: string
   rows:
@@ -1900,6 +2008,11 @@ library:
     papers: P0053R7
   - value: 201803
     papers: P0753R2
+- name: __cpp_lib_task
+  header_list: execution
+  rows:
+  - value: 202506
+    papers: P3552R3
 - name: __cpp_lib_text_encoding
   header_list: text_encoding
   rows:
@@ -1978,6 +2091,11 @@ library:
   rows:
   - value: 201806
     papers: P0887R1
+- name: __cpp_lib_type_order
+  header_list: compare
+  rows:
+  - value: 202506
+    papers: P2830R10
 - name: __cpp_lib_type_trait_variable_templates
   header_list: type_traits
   rows:

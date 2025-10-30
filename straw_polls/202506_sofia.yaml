@@ -1,0 +1,111 @@
+value: 202506
+language:
+  # 4. Apply the changes in P2996R13 (Reflection for C++26) to the C++ Working Paper and accept as Defect Reports core issues 2701 and 3026 resolved thereby.
+  # 5. Apply the changes in P3394R4 (Annotations for Reflection) to the C++ Working Paper.
+  # 6. Apply the changes in P3293R3 (Splicing a base class subobject) to the C++ Working Paper.
+  # 9. Apply the changes in P3096R12 (Function Parameter Reflection in Reflection for C++26) to the C++ Working Paper.
+  - add: __cpp_impl_reflection
+    papers: [P2996R13, P3394R4, P3293R3, P3096R12]
+  # 8. Apply the changes in P1306R5 (Expansion Statements) to the C++ Working Paper.
+  - add: __cpp_expansion_statements
+    papers: P1306R5
+  # 10. Apply the changes in P3533R2 (constexpr virtual inheritance) to the C++ Working Paper.
+  - add: __cpp_constexpr_virtual_inheritance
+    papers: P3533R2
+library:
+  # CWG 4,5,6,9
+  # LWG 25. Apply the changes in P3560R2 (Error Handling in Reflection) to the C++ working paper.
+  - add: __cpp_lib_reflection
+    papers: [P2996R13, P3394R4, P3293R3, P3096R12, P3560R2]
+    headers: meta
+  # CWG 7. Apply the changes in P3491R3 (define_static_{string,object,array}) to the C++ Working Paper.
+  - add: __cpp_lib_define_static
+    papers: P3491R3
+    headers: meta
+  #  2. Apply the changes in P2988R12 (std::optional<‍T&‍>) to the C++ working paper.
+  - update: __cpp_lib_freestanding_optional
+    papers: P2988R12
+  - update: __cpp_lib_optional
+    papers: P2988R12
+  #  4. Apply the changes in P3037R6 (constexpr std::shared_ptr and friends) to the C++ working paper.
+  - update: __cpp_lib_constexpr_memory
+    papers: P3037R6
+  #  6. Apply the changes in P3179R9 (Parallel Range Algorithms) to the C++ working paper.
+  - update: __cpp_lib_parallel_algorithm
+    papers: P3179R9
+  #  8. Apply the changes in P3641R0 (Rename std::observable to std::observable_checkpoint, and add a feature-test macro) to the C++ working paper.
+  - add: __cpp_lib_observable_checkpoint
+    papers: P3641R0
+    headers: utility
+  # 9. Apply the changes in P3044R2 (sub string_view from string) to the C++ working paper.
+  - add: __cpp_lib_string_subview
+    papers: P3044R2
+    headers: [string, string_view]
+  # 10. Apply the changes in P2876R3 (Proposal to extend std::simd with more constructors and accessors) to the C++ working paper.
+  # 11. Apply the changes in P3480R6 (std::simd is a range) to the C++ working paper.
+  - update: __cpp_lib_simd
+    papers: [P2876R3, P3480R6]
+  # 12. Apply the changes in P2664R11 (Extend std::simd with permutation API) to the C++ working paper.
+  - add: __cpp_lib_simd_permutations
+    papers: P2664R11
+    headers: simd
+  # 15. Apply the changes in P2927R3 (Inspecting exception_ptr) to the C++ working paper.
+  - add: __cpp_lib_exception_ptr_cast
+    papers: P2927R3
+    headers: exception
+  # 16. Apply the changes in P3748R0 (Inspecting exception_ptr should be constexpr) to the C++ working paper.
+  - update: __cpp_lib_exception_ptr_cast
+    papers: P3748R0
+  # 17. Apply the changes in P2830R10 (Standardized Constexpr Type Ordering) to the C++ working paper.
+  - add: __cpp_lib_type_order
+    papers: P2830R10
+    headers: compare
+  # 18. Apply the changes in P3570R2 (optional variants in sender/receiver) to the C++ working paper.
+  - update: __cpp_lib_senders
+    papers: P3570R2
+  # 21. Apply the changes in P3149R11 (async_scope - Creating scopes for non-sequential concurrency) to the C++ working paper.
+  - add: __cpp_lib_counting_scope
+    papers: P3149R11
+    headers: execution
+  # 23. Apply the changes in P2079R10 (Parallel scheduler) to the C++ working paper.
+  - add: __cpp_lib_parallel_scheduler
+    papers: P2079R10
+    headers: execution
+  # 27. Apply the changes in P3008R6 (Atomic floating-point min/max) to the C++ working paper.
+  - update: __cpp_lib_atomic_min_max
+    papers: P3008R6
+  # 28. Apply the changes in P3111R8 (Atomic Reduction Operations) to the C++ working paper.
+  - add: __cpp_lib_atomic_reductions
+    papers: P3111R8
+    headers: atomic
+  # 29. Apply the changes in P3060R3 (Add std::views::indices(n)) to the C++ working paper.
+  - add: __cpp_lib_ranges_indices
+    papers: P3060R3
+    headers: ranges
+  # 30. Apply the changes in P2319R5 (Prevent path presentation problems) to the C++ working paper.
+  - update: __cpp_lib_format_path
+    papers: P2319R5
+  # 32. Apply the changes in P2781R9 (std::constant_wrapper) to the C++ working paper.
+  - add: __cpp_lib_constant_wrapper
+    papers: P2781R9
+    headers: type_traits
+  # 33. Apply the changes in P3697R1 (Minor additions to C++26 standard library hardening) to the C++ working paper.
+  - add: __cpp_lib_hardened_basic_stacktrace
+    papers: P3697R1
+    headers: stacktrace
+  - add: __cpp_lib_hardened_common_iterator
+    papers: P3697R1
+    headers: iterator
+  - add: __cpp_lib_hardened_counted_iterator
+    papers: P3697R1
+    headers: iterator
+  - add: __cpp_lib_hardened_shared_ptr_array
+    papers: P3697R1
+    headers: memory
+  - add: __cpp_lib_hardened_view_interface
+    papers: P3697R1
+    headers: ranges
+  # 34. Apply the changes in P3552R3 (Add a Coroutine Task Type) to the C++ working paper.
+  - add: __cpp_lib_task
+    papers: P3552R3
+    headers: execution
