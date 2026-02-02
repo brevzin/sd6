@@ -397,10 +397,6 @@ language:
   rows:
   - value: 200806
     papers: N2660
-- name: __cpp_trivial_relocatability
-  rows:
-  - value: 202502
-    papers: P2786R13
 - name: __cpp_trivial_union
   rows:
   - value: 202502
@@ -2104,11 +2100,6 @@ library:
     papers: N3421
   - value: 201510
     papers: P0074R0
-- name: __cpp_lib_trivially_relocatable
-  header_list: memory type_traits
-  rows:
-  - value: 202502
-    papers: P2786R13
 - name: __cpp_lib_tuple_element_t
   header_list: tuple
   rows:
