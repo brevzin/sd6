@@ -1,0 +1,33 @@
+value: 202511
+library:
+  # 3. Apply the changes in P3016R6 (Resolve inconsistencies in begin/end for valarray and braced initializer lists) to the C++ working paper.
+  - add: __cpp_lib_initializer_list
+    papers: P3016R6
+    headers: initializer_list
+  - add: __cpp_lib_valarray
+    papers: P3016R6
+    headers: valarray
+  # 4. Apply the changes in P3567R2 (flat_meow fixes) to the C++ working paper.
+  - update: __cpp_lib_flat_map
+    papers: P3567R2
+  - update: __cpp_lib_flat_set
+    papers: P3567R2
+  # 5. Apply the changes in P3663R3 (Future-proof submdspan_mapping) to the C++ working paper. This addresses ballot comments US 66-117 and PL 009.
+  - update: __cpp_lib_submdspan
+    papers: P3663R3
+  # 10. Apply the changes in P3774R1 (Rename std::nontype, and make it broadly useful) to the C++ working paper. This addresses ballot comments FR-021-218 and FR-019-210.
+  - update: __cpp_lib_function_ref
+    papers: P3774R1
+  # 14. Apply the changes in P1789R3 (Library Support for Expansion Statements) to the C++ working paper. This addresses ballot comments NC IT-002, FR 007-011-142, CZ 2-143, US 78-144.
+  - update: __cpp_lib_integer_sequence
+    papers: P1789R3
+  # 15. Apply the changes in P3922R1 (Missing deduction guide from simd::mask to simd::vec) to the C++ working paper. This addresses ballot comment DE-287.
+  - update: __cpp_lib_simd
+    papers: P3922R1
+  # 20. Apply the changes in P3371R5 (Fix C++26 by making the rank-1, rank-2, rank-k, and rank-2k updates consistent with the BLAS) to the C++ working paper. This addresses ballot comment US 168-277.
+  - update: __cpp_lib_linalg
+    papers: P3371R5
+  # 21. Apply the changes in P3391R2 (constexpr std::format) to the C++ working paper. This addresses ballot comment FR 028-271 and US 167-270.
+  - add: __cpp_lib_constexpr_format
+    papers: P3391R2
+    headers: format

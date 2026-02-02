@@ -757,6 +757,11 @@ library:
   rows:
   - value: 202502
     papers: P3372R3
+- name: __cpp_lib_constexpr_format
+  header_list: format
+  rows:
+  - value: 202511
+    papers: P3391R2
 - name: __cpp_lib_constexpr_forward_list
   header_list: forward_list
   rows:
@@ -983,11 +988,15 @@ library:
   rows:
   - value: 202207
     papers: P0429R9
+  - value: 202511
+    papers: P3567R2
 - name: __cpp_lib_flat_set
   header_list: flat_set
   rows:
   - value: 202207
     papers: P1222R4 LWG3751
+  - value: 202511
+    papers: P3567R2
 - name: __cpp_lib_format
   header_list: format
   rows:
@@ -1177,6 +1186,8 @@ library:
   rows:
   - value: 202306
     papers: P0792R14
+  - value: 202511
+    papers: P3774R1
 - name: __cpp_lib_gcd_lcm
   header_list: numeric
   rows:
@@ -1340,6 +1351,11 @@ library:
   rows:
   - value: 202502
     papers: P3019R11
+- name: __cpp_lib_initializer_list
+  header_list: initializer_list
+  rows:
+  - value: 202511
+    papers: P3016R6
 - name: __cpp_lib_inplace_vector
   header_list: inplace_vector
   rows:
@@ -1362,6 +1378,8 @@ library:
   rows:
   - value: 201304
     papers: N3658
+  - value: 202511
+    papers: P1789R3
 - name: __cpp_lib_integral_constant_callable
   header_list: type_traits
   rows:
@@ -1481,6 +1499,8 @@ library:
     papers: P1673R13
   - value: 202411
     papers: P3050R2 P3222R0
+  - value: 202511
+    papers: P3371R5
 - name: __cpp_lib_list_remove_return_type
   header_list: forward_list list
   rows:
@@ -1896,6 +1916,8 @@ library:
     papers: P2933R4 P3287R3 P3441R2
   - value: 202506
     papers: P2876R3 P3480R6
+  - value: 202511
+    papers: P3922R1
 - name: __cpp_lib_simd_complex
   header_list: simd
   rows:
@@ -2017,6 +2039,8 @@ library:
     papers: P2642R6
   - value: 202411
     papers: P3355R1
+  - value: 202511
+    papers: P3663R3
 - name: __cpp_lib_syncbuf
   header_list: syncstream
   rows:
@@ -2137,6 +2161,11 @@ library:
   rows:
   - value: 201811
     papers: P0318R1 LWG3348
+- name: __cpp_lib_valarray
+  header_list: valarray
+  rows:
+  - value: 202511
+    papers: P3016R6
 - name: __cpp_lib_variant
   header_list: variant
   rows:
