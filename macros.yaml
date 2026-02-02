@@ -176,6 +176,8 @@ language:
     papers: P0620R0
   - value: 201907
     papers: P1814R0 P1816R0
+  - value: 202207
+    papers: P2582R1
 - name: __cpp_delegating_constructors
   rows:
   - value: 200604
