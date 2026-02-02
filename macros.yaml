@@ -70,6 +70,10 @@ language:
   rows:
   - value: 200809
     papers: N2761
+- name: __cpp_auto_cast
+  rows:
+  - value: 202110
+    papers: P0849R8
 - name: __cpp_binary_literals
   rows:
   - value: 201304
@@ -172,6 +176,8 @@ language:
     papers: P0620R0
   - value: 201907
     papers: P1814R0 P1816R0
+  - value: 202207
+    papers: P2582R1
 - name: __cpp_delegating_constructors
   rows:
   - value: 200604
@@ -457,8 +463,8 @@ library:
   rows:
   - value: 202106
     papers: P0401R6
-  - value: 202306
-    papers: LWG3887
+  - value: 202302
+    papers: P2652R2 LWG3887
 - name: __cpp_lib_allocator_traits_is_always_equal
   header_list: memory scoped_allocator string deque forward_list list vector map set
     unordered_map unordered_set
@@ -864,7 +870,7 @@ library:
   - value: 201907
     papers: P1004R2
 - name: __cpp_lib_constrained_equality
-  header_list: utility tuple optional variant
+  header_list: utility tuple optional variant expected
   rows:
   - value: 202403
     papers: P2944R3
@@ -1018,6 +1024,11 @@ library:
   rows:
   - value: 202311
     papers: P2909R4
+- name: __cpp_lib_formatters
+  header_list: stacktrace thread
+  rows:
+  - value: 202302
+    papers: P2693R1
 - name: __cpp_lib_forward_like
   header_list: utility
   rows:
@@ -1110,7 +1121,7 @@ library:
   - value: 202502
     papers: P2976R1
 - name: __cpp_lib_freestanding_operator_new
-  header_list: operator_new
+  header_list: new
   rows:
   - value: 202306
     papers: P2198R7
@@ -1308,7 +1319,7 @@ library:
   header_list: hazard_pointer
   rows:
   - value: 202306
-    papers: P2545R4
+    papers: P2530R3
 - name: __cpp_lib_hive
   header_list: hive
   rows:
@@ -1905,6 +1916,11 @@ library:
   rows:
   - value: 202002
     papers: P1020R1 P1973R1
+- name: __cpp_lib_smart_ptr_owner_equality
+  header_list: memory
+  rows:
+  - value: 202306
+    papers: P1901R2
 - name: __cpp_lib_source_location
   header_list: source_location
   rows:
