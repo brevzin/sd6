@@ -42,10 +42,6 @@ attributes:
   - value: 201803
     papers: P0479R5
 language:
-- name: ' __cpp_deleted_function'
-  rows:
-  - value: 202403
-    papers: P2573R2
 - name: __cpp_aggregate_bases
   rows:
   - value: 201603
@@ -182,6 +178,10 @@ language:
   rows:
   - value: 200604
     papers: N1986
+- name: __cpp_deleted_function
+  rows:
+  - value: 202403
+    papers: P2573R2
 - name: __cpp_designated_initializers
   rows:
   - value: 201707
