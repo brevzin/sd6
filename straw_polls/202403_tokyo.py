@@ -7,7 +7,7 @@ doc = add_macro.Document('../macros.yaml', value=202403)
 doc.update_language(name="__cpp_structured_bindings", papers="P0609R3")
 
 # cwg motion 9: P2573R2 (= delete("should have a reason");)
-doc.add_language(name=" __cpp_deleted_function", papers="P2573R2")
+doc.add_language(name="__cpp_deleted_function", papers="P2573R2")
 
 # cwg motion 10:  P2893R3 (Variadic friends)
 doc.add_language(name="__cpp_variadic_friend", papers="P2893R3")
