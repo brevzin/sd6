@@ -42,7 +42,7 @@ attributes:
   - value: 201803
     papers: P0479R5
 language:
-- name: ' __cpp_deleted_function'
+- name: __cpp_deleted_function
   rows:
   - value: 202403
     papers: P2573R2
